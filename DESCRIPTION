@@ -21,3 +21,5 @@ Suggests:
     covr
 Imports: 
     utils
+URL: https://github.com/tyluRp/exoplanets
+BugReports: https://github.com/tyluRp/exoplanets/issues
