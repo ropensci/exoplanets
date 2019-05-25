@@ -21,7 +21,8 @@ Suggests:
     testthat (>= 2.1.0),
     covr,
     knitr,
-    rmarkdown
+    rmarkdown,
+    dplyr
 Imports: 
     utils
 URL: https://github.com/tyluRp/exoplanets

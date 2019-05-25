@@ -1,0 +1,80 @@
+---
+title: "Common queries"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{common-queries}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+NASA's Exoplanet API allows users to incorporate SQL into the URL when accessing the database. For example, you could add `&where=pl_kepflag=1` at the end of `https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&format=csv` to obtain all confirmed planets in the Kepler field and the default columns associated with the exoplanet table. To do this in `exoplanets` you would simply attached that URL to `exo_raw()` like so:
+
+```{r setup, message=FALSE}
+library(exoplanets)
+library(dplyr)
+
+exoplanets_kep <- exo_raw("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&table=exoplanets&format=csv&where=pl_kepflag=1")
+```
+
+If you aren't comfortable with SQL, you can easily fetch the entire dataset and manipulate in R:
+
+```{r}
+exoplanets_kep2 <- exo("exoplanets") %>% 
+  filter(pl_kepflag == 1)
+
+all.equal(
+  as.data.frame(exoplanets_kep), 
+  as.data.frame(exoplanets_kep2)
+  )
+```
+
+Below, is a list of common queries users might want to make to discover certain things. The archive refers to these as [pre-generated queries](https://exoplanetarchive.ipac.caltech.edu/docs/API_queries.html).
+
+### All confirmed planets and columns
+
+```{r}
+exoplanets <- exo(default_cols = FALSE) %>% 
+  as_tibble()
+
+exoplanets
+```
+
+### Confirmed planets in the Kepler field 
+
+```{r}
+exoplanets %>% 
+  filter(pl_kepflag == 1) %>% 
+  as_tibble()
+```
+
+### Stars known to host exoplanets listed in ascending order
+
+```{r}
+exoplanets %>% 
+  distinct(pl_hostname, .keep_all = TRUE) %>% 
+  arrange(pl_hostname)
+```
+
+### Confirmed planets that transit their host stars
+
+```{r}
+exoplanets %>% 
+  filter(pl_tranflag == 1)
+```
+
+### A current list of non-confirmed planet candidates
+
+```{r}
+cumulative <- exo("cumulative") 
+
+cumulative %>% 
+  filter(grepl("CANDIDATE", koi_disposition)) %>% 
+  as_tibble()
+```

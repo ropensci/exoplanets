@@ -57,6 +57,9 @@
   </a>
   <ul class="dropdown-menu" role="menu">
 <li>
+      <a href="articles/common-queries.html">Common queries</a>
+    </li>
+    <li>
       <a href="articles/getting-started.html">Get started</a>
     </li>
   </ul>
@@ -185,7 +188,7 @@
 <a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt; [27] "superwasptimeseries"      "k2targets"               </span></a>
 <a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt; [29] "k2candidates"             "k2names"                 </span></a>
 <a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">#&gt; [31] "missionstars"             "mission_exocat"</span></a></code></pre></div>
-<p>Finally, you can take a look at the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html">docs</a> and use <code>eco_raw</code> to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipec, or others:</p>
+<p>Finally, you can take a look at the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html">docs</a> and use <code>eco_raw</code> to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">exoplanets2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo_raw.html">exo_raw</a></span>(<span class="st">"https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"</span>)</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb5-3" data-line-number="3"><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>(exoplanets2)</a>

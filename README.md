@@ -129,7 +129,7 @@ Finally, you can take a look at the
 [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html)
 and use `eco_raw` to write out queries in their entirety. Spaces and
 single quotes will be escaped automatically. The only supported format
-is CSV so do not request JSON, ipec, or
+is CSV so do not request JSON, ipac, or
 others:
 
 ``` r

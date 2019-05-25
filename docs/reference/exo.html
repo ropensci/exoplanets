@@ -87,6 +87,9 @@ all available tables, see tbls." />
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
+      <a href="../articles/common-queries.html">Common queries</a>
+    </li>
+    <li>
       <a href="../articles/getting-started.html">Get started</a>
     </li>
   </ul>
@@ -124,7 +127,7 @@ all available tables, see <code>tbls</code>.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'>exo</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"exoplanets"</span>)</pre>
+    <pre class="usage"><span class='fu'>exo</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"exoplanets"</span>, <span class='kw'>default_cols</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -133,6 +136,11 @@ all available tables, see <code>tbls</code>.</p>
       <th>table</th>
       <td><p>The name of the table, see <code>tbls</code> for all available table
 names.</p></td>
+    </tr>
+    <tr>
+      <th>default_cols</th>
+      <td><p>Logical TRUE or FALSE to grab all columns or the
+default set, defaults to TRUE.</p></td>
     </tr>
     </table>
     
