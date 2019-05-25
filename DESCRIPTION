@@ -5,7 +5,8 @@ Authors@R:
     person(given = "Tyler",
            family = "Littlefield",
            role = c("aut", "cre"),
-           email = "tylurp1@gmail.com")
+           email = "tylurp1@gmail.com",
+           comment = c(ORCID = "0000-0002-6020-1125"))
 Description: The goal of exo is to provide access to NASA's Exoplanet Archive 
   database in by table name or by writing the URL query manually. For more
   information please read the documentation 
@@ -18,8 +19,11 @@ RoxygenNote: 6.1.1
 Suggests: 
     tibble,
     testthat (>= 2.1.0),
-    covr
+    covr,
+    knitr,
+    rmarkdown
 Imports: 
     utils
 URL: https://github.com/tyluRp/exoplanets
 BugReports: https://github.com/tyluRp/exoplanets/issues
+VignetteBuilder: knitr
