@@ -1,0 +1,37 @@
+## code to prepare `tbls` dataset goes here
+tbls <- list(
+  exoplanets = "exoplanets",
+  compositepars = "compositepars",
+  exomultpars = "exomultpars",
+  aliastable = "aliastable",
+  microlensing = "microlensing",
+  cumulative = "cumulative",
+  q1_q17_dr25_sup_koi = "q1_q17_dr25_sup_koi",
+  q1_q17_dr25_koi = "q1_q17_dr25_koi",
+  q1_q17_dr24_koi = "q1_q17_dr24_koi",
+  q1_q16_koi = "q1_q16_koi",
+  q1_q12_koi = "q1_q12_koi",
+  q1_q8_koi = "q1_q8_koi",
+  q1_q6_koi = "q1_q6_koi",
+  q1_q17_dr25_tce = "q1_q17_dr25_tce",
+  q1_q17_dr24_tce = "q1_q17_dr24_tce",
+  q1_q16_tce = "q1_q16_tce",
+  q1_q12_tce = "q1_q12_tce",
+  keplerstellar = "keplerstellar",
+  q1_q17_dr25_supp_stellar = "q1_q17_dr25_supp_stellar",
+  q1_q17_dr25_stellar = "q1_q17_dr25_stellar",
+  q1_q17_dr24_stellar = "q1_q17_dr24_stellar",
+  q1_q16_stellar = "q1_q16_stellar",
+  q1_q12_stellar = "q1_q12_stellar",
+  keplertimeseries = "keplertimeseries",
+  keplernames = "keplernames",
+  kelttimeseries = "kelttimeseries",
+  superwasptimeseries = "superwasptimeseries",
+  k2targets = "k2targets",
+  k2candidates = "k2candidates",
+  k2names = "k2names",
+  missionstars = "missionstars",
+  mission_exocat = "mission_exocat"
+)
+
+usethis::use_data(tbls)

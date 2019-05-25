@@ -1,0 +1,23 @@
+Package: exoplanets
+Title: Provides access to NASA's Exoplanet Archive, see <https://exoplanetarchive.ipac.caltech.edu/index.html>
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tyler",
+           family = "Littlefield",
+           role = c("aut", "cre"),
+           email = "tylurp1@gmail.com")
+Description: The goal of exo is to provide access to NASA's Exoplanet Archive 
+  database in by table name or by writing the URL query manually. For more
+  information please read the documentation 
+  <https://exoplanetarchive.ipac.caltech.edu/index.html>.
+Depends: R (>= 2.10)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.1.1
+Suggests: 
+    tibble,
+    testthat (>= 2.1.0),
+    covr
+Imports: 
+    utils
