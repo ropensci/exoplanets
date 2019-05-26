@@ -40,7 +40,7 @@ Below, is a list of common queries users might want to make to discover certain 
 ### All confirmed planets and columns
 
 ```{r}
-exoplanets <- exo(default_cols = FALSE) %>% 
+exoplanets <- exo(cols = "all") %>% 
   as_tibble()
 
 exoplanets

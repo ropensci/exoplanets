@@ -4,13 +4,14 @@
 \alias{exo}
 \title{Access NASA's Exoplanet Archive by Table}
 \usage{
-exo(table = "exoplanets", default_cols = TRUE)
+exo(table = "exoplanets", cols = "default")
 }
 \arguments{
 \item{table}{The name of the table, see \code{tbls} for all available table
 names.}
 
-\item{default_cols}{Logical TRUE or FALSE to grab all columns or the
+\item{cols}{Either "default" for default columns, "all" for all columns or
+individual column names separated by a comma, defaults to "default".
 default set, defaults to TRUE.}
 }
 \description{

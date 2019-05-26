@@ -24,19 +24,24 @@ exo_raw <- function(query) {
 #' all available tables, see \code{tbls}.
 #' @param table The name of the table, see \code{tbls} for all available table
 #' names.
-#' @param default_cols Logical TRUE or FALSE to grab all columns or the
+#' @param cols Either "default" for default columns, "all" for all columns or
+#' individual column names separated by a comma, defaults to "default".
 #' default set, defaults to TRUE.
 #' @examples
 #' exoplanets <- exo("exoplanets")
 #' k2candidates <- exo("k2candidates")
 #' @export
-exo <- function(table = "exoplanets", default_cols = TRUE) {
+exo <- function(table = "exoplanets", cols = "default") {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
-  if(default_cols)
+  if(cols == "default") {
     utils::read.csv(paste0(base_url, "table=", table), stringsAsFactors = FALSE)
-  else
+  } else if(cols == "all") {
     utils::read.csv(paste0(base_url, "table=", table, "&select=*"), stringsAsFactors = FALSE)
+  } else {
+    cols <- gsub(" ", "", cols)
+    utils::read.csv(paste0(base_url, "table=", table, "&select=", cols), stringsAsFactors = FALSE)
+  }
 }
 
 #' All Available Tables
