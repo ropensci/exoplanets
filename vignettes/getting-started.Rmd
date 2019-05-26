@@ -49,7 +49,7 @@ Finally, there are 3 tables which require an additional parameter in order to ac
 names(tbls)[which(grepl("timeseries", names(tbls)))]
 ```
 
-For example, the `kelttimeseries` table requires either the quarter or a Kepler ID, `exo("kelttimeseries&quarter=14")`. Note, these datasets are quite large and can take awhile. All of these additional parameter requirements are documented in the [documenation](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html).
+For example, the `kelttimeseries` table requires either the quarter or a Kepler ID, `exo("kelttimeseries&quarter=14")`. Note, these datasets are quite large and can take awhile. All of these additional parameter requirements are documented in the [documentation](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html).
 
 
 
