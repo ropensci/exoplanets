@@ -125,6 +125,15 @@ names(tbls)
 #> [31] "missionstars"             "mission_exocat"
 ```
 
+To get a vector of column names for a specific table:
+
+``` r
+str(exo_column_names("cumulative", "default")) # default columns
+#>  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...
+str(exo_column_names("cumulative", "all"))     # default columns
+#>  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...
+```
+
 Finally, you can take a look at the
 [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html)
 and use `eco_raw` to write out queries in their entirety. Spaces and
