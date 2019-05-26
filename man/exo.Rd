@@ -11,8 +11,7 @@ exo(table = "exoplanets", cols = "default")
 names.}
 
 \item{cols}{Either "default" for default columns, "all" for all columns or
-individual column names separated by a comma, defaults to "default".
-default set, defaults to TRUE.}
+individual column names separated by a comma, defaults to "default".}
 }
 \description{
 Access NASA's Exoplanet Archive by table name. For a list of

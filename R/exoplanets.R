@@ -26,7 +26,6 @@ exo_raw <- function(query) {
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns or
 #' individual column names separated by a comma, defaults to "default".
-#' default set, defaults to TRUE.
 #' @examples
 #' exoplanets <- exo("exoplanets")
 #' k2candidates <- exo("k2candidates")
@@ -41,6 +40,27 @@ exo <- function(table = "exoplanets", cols = "default") {
   } else {
     cols <- gsub(" ", "", cols)
     utils::read.csv(paste0(base_url, "table=", table, "&select=", cols), stringsAsFactors = FALSE)
+  }
+}
+
+#' Access column names for each table
+#'
+#' @description Simply pull column names for a specified table. You can either
+#' pull the default columns assigned to a table or all columns.
+#' @param table The name of the table, see \code{tbls} for all available table
+#' names.
+#' @param cols Either "default" for default columns, "all" for all columns,
+#' defaults to "default".
+#' @examples
+#' str(exo_column_names("cumulative", "default"))
+#' @export
+exo_column_names <- function(table = "exoplanets", cols = "default") {
+  base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
+
+  if(cols == "default") {
+    names(utils::read.csv(paste0(base_url, "table=", table, "&getDefaultColumns&format=csv")))
+  } else if(cols == "all") {
+    names(utils::read.csv(paste0(base_url, "table=", table, "&getAllColumns&format=csv")))
   }
 }
 

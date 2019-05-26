@@ -61,6 +61,14 @@ To get a list of all available tables:
 names(tbls) 
 ```
 
+To get a vector of column names for a specific table:
+
+```{r}
+str(exo_column_names("cumulative", "default")) # default columns
+str(exo_column_names("cumulative", "all"))     # default columns
+```
+
+
 Finally, you can take a look at the [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html) and use `eco_raw` to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:
 
 ```{r}

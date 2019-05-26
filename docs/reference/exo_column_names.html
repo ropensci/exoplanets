@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • exoplanets</title>
+<title>Access column names for each table — exo_column_names • exoplanets</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,11 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="Access column names for each table — exo_column_names" />
+
+<meta property="og:description" content="Simply pull column names for a specified table. You can either
+pull the default columns assigned to a table or all columns." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -109,60 +113,49 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>Access column names for each table</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tyluRp/exoplanets/blob/master/R/exoplanets.R'><code>R/exoplanets.R</code></a></small>
+    <div class="hidden name"><code>exo_column_names.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>Simply pull column names for a specified table. You can either
+pull the default columns assigned to a table or all columns.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
-
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="exo.html">exo()</a></code> </p>
-        </td>
-        <td><p>Access NASA's Exoplanet Archive by Table</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="exo_column_names.html">exo_column_names()</a></code> </p>
-        </td>
-        <td><p>Access column names for each table</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="exo_raw.html">exo_raw()</a></code> </p>
-        </td>
-        <td><p>Access NASA's Exoplanet Archive by URL</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="tbls.html">tbls</a></code> </p>
-        </td>
-        <td><p>All Available Tables</p></td>
-      </tr>
-    </tbody>
+    <pre class="usage"><span class='fu'>exo_column_names</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"exoplanets"</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='st'>"default"</span>)</pre>
+    
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
+    <table class="ref-arguments">
+    <colgroup><col class="name" /><col class="desc" /></colgroup>
+    <tr>
+      <th>table</th>
+      <td><p>The name of the table, see <code>tbls</code> for all available table
+names.</p></td>
+    </tr>
+    <tr>
+      <th>cols</th>
+      <td><p>Either "default" for default columns, "all" for all columns,
+defaults to "default".</p></td>
+    </tr>
     </table>
-  </div>
+    
 
+    <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/str'>str</a></span>(<span class='fu'>exo_column_names</span>(<span class='st'>"cumulative"</span>, <span class='st'>"default"</span>))</div><div class='output co'>#&gt;  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...</div></pre>
+  </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
+      <li><a href="#arguments">Arguments</a></li>
+            
+      <li><a href="#examples">Examples</a></li>
     </ul>
+
   </div>
 </div>
 
