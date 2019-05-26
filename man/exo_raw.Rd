@@ -11,9 +11,13 @@ exo_raw(query)
 is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 are escaped automatically.}
 }
+\value{
+A \code{data.frame} containing data for the respective table
+}
 \description{
 Access NASA's Exoplanet Archive by URL. For a list of example
-queries, see the documentation, <https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html>
+queries, see the documentation,
+\url{https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html}.
 }
 \examples{
 qry <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"

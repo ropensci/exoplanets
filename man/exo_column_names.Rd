@@ -13,6 +13,9 @@ names.}
 \item{cols}{Either "default" for default columns, "all" for all columns,
 defaults to "default".}
 }
+\value{
+A character vector containing column names for the respective table
+}
 \description{
 Simply pull column names for a specified table. You can either
 pull the default columns assigned to a table or all columns.

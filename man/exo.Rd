@@ -13,6 +13,9 @@ names.}
 \item{cols}{Either "default" for default columns, "all" for all columns or
 individual column names separated by a comma, defaults to "default".}
 }
+\value{
+A \code{data.frame} containing data for the respective table
+}
 \description{
 Access NASA's Exoplanet Archive by table name. For a list of
 all available tables, see \code{tbls}.

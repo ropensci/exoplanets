@@ -1,10 +1,12 @@
 #' Access NASA's Exoplanet Archive by URL
 #'
 #' @description Access NASA's Exoplanet Archive by URL. For a list of example
-#' queries, see the documentation, <https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html>
+#' queries, see the documentation,
+#' \url{https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html}.
 #' @param query The full query URL. At this time, the only supported format
 #' is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 #' are escaped automatically.
+#' @return A \code{data.frame} containing data for the respective table
 #' @examples
 #' qry <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
 #' exoplanets <- exo_raw(qry)
@@ -26,6 +28,7 @@ exo_raw <- function(query) {
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns or
 #' individual column names separated by a comma, defaults to "default".
+#' @return A \code{data.frame} containing data for the respective table
 #' @examples
 #' exoplanets <- exo("exoplanets")
 #' k2candidates <- exo("k2candidates")
@@ -51,6 +54,7 @@ exo <- function(table = "exoplanets", cols = "default") {
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns,
 #' defaults to "default".
+#' @return A character vector containing column names for the respective table
 #' @examples
 #' str(exo_column_names("cumulative", "default"))
 #' @export
