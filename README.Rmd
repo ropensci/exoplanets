@@ -64,8 +64,8 @@ names(tbls)
 To get a vector of column names for a specific table:
 
 ```{r}
-str(exo_column_names("cumulative", "default")) # default columns
-str(exo_column_names("cumulative", "all"))     # default columns
+str(exo_column_names("cumulative", "default"))
+str(exo_column_names("cumulative", "all"))
 ```
 
 

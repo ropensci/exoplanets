@@ -128,9 +128,9 @@ names(tbls)
 To get a vector of column names for a specific table:
 
 ``` r
-str(exo_column_names("cumulative", "default")) # default columns
+str(exo_column_names("cumulative", "default"))
 #>  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...
-str(exo_column_names("cumulative", "all"))     # default columns
+str(exo_column_names("cumulative", "all"))
 #>  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...
 ```
 
