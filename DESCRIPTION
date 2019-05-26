@@ -8,8 +8,8 @@ Authors@R:
            email = "tylurp1@gmail.com",
            comment = c(ORCID = "0000-0002-6020-1125"))
 Description: The goal of exoplanets is to provide access to NASA's Exoplanet 
-  Archive database in by table name or by writing the URL query manually. For 
-  more information please read the documentation 
+  Archive database by supplying a table name or by writing the URL query 
+  manually. For more information please read the documentation 
   <https://exoplanetarchive.ipac.caltech.edu/index.html>.
 Depends: R (>= 2.10)
 License: MIT + file LICENSE
