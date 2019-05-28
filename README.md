@@ -21,6 +21,8 @@ R interface to access exoplanet data in the following ways:
   - By providing a table name
   - By providing a query URL
 
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
 ## Installation
 
 You can install the development version from GitHub with:

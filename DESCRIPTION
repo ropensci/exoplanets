@@ -22,7 +22,10 @@ Suggests:
     covr,
     knitr,
     rmarkdown,
-    dplyr
+    dplyr,
+    tidyr,
+    ggplot2,
+    RColorBrewer
 Imports: 
     utils
 URL: https://github.com/tyluRp/exoplanets

@@ -25,6 +25,49 @@ The goal of exoplanets is to provide access to [NASA's Exoplanet Archive](https:
 * By providing a table name
 * By providing a query URL
 
+```{r, echo=FALSE, message=FALSE, dpi=300, fig.height=4}
+library(ggplot2)
+library(tidyr)
+library(dplyr)
+library(RColorBrewer)
+
+exoplanets <- exo::exo() %>% 
+  as_tibble()
+
+ggexoplanets <- exoplanets %>% 
+  select(pl_bmassj, pl_orbper, pl_discmethod) %>% 
+  drop_na() 
+
+n <- length(unique(ggexoplanets$pl_discmethod))
+qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
+col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+
+ggplot(ggexoplanets, aes(pl_orbper, pl_bmassj)) +
+  geom_point(aes(fill = pl_discmethod), color = "black", shape = 21, size = 1.5) +
+  scale_x_log10(
+    breaks = scales::trans_breaks("log10", function(x) 10^x),
+    labels = scales::trans_format("log10", scales::math_format(10^.x))
+  ) +
+  scale_y_log10(
+    breaks = scales::trans_breaks("log10", function(x) 10^x),
+    labels = scales::trans_format("log10", scales::math_format(10^.x))
+  ) +
+  labs(
+    x = "Period in days (pl_orbper)",
+    y = "Mass in Jupiter Masses (pl_bmassj)",
+    fill = "Discovery Method (pl_discmethod)",
+    caption = paste0(Sys.Date(), "\nexoplanetarchive.ipac.caltech.edu")
+  ) +
+  annotation_logticks() +
+  scale_fill_manual(values = rev(col_vector)) +
+  guides(fill = guide_legend(override.aes = list(size = 4))) +
+  theme_bw() +
+  theme(
+    panel.grid = element_blank()
+  )
+```
+
+
 ## Installation
 
 You can install the development version from GitHub with:
