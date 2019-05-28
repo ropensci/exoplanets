@@ -37,6 +37,8 @@ ggexoplanets <- exoplanets %>%
   select(pl_bmassj, pl_orbper, pl_discmethod) %>% 
   drop_na() 
 
+# cols_vec <- randomcoloR::distinctColorPalette(length(unique(ggexoplanets$pl_discmethod)))
+
 cols_vec <- c("#86E57B", "#77AFD7", "#DCD955", "#CFD49C", "#D5CCD1", "#84DECA", "#E15AB9", "#D4816C", "#BA91D1", "#A152DF")
 
 ggplot(ggexoplanets, aes(pl_orbper, pl_bmassj)) +
