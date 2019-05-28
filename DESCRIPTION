@@ -24,8 +24,7 @@ Suggests:
     rmarkdown,
     dplyr,
     tidyr,
-    ggplot2,
-    RColorBrewer
+    ggplot2
 Imports: 
     utils
 URL: https://github.com/tyluRp/exoplanets

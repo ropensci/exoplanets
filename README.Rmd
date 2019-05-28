@@ -29,7 +29,6 @@ The goal of exoplanets is to provide access to [NASA's Exoplanet Archive](https:
 library(ggplot2)
 library(tidyr)
 library(dplyr)
-library(RColorBrewer)
 
 exoplanets <- exo::exo() %>% 
   as_tibble()
@@ -38,12 +37,10 @@ ggexoplanets <- exoplanets %>%
   select(pl_bmassj, pl_orbper, pl_discmethod) %>% 
   drop_na() 
 
-n <- length(unique(ggexoplanets$pl_discmethod))
-qual_col_pals <- brewer.pal.info[brewer.pal.info$category == 'qual',]
-col_vector <- unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+cols_vec <- c("#86E57B", "#77AFD7", "#DCD955", "#CFD49C", "#D5CCD1", "#84DECA", "#E15AB9", "#D4816C", "#BA91D1", "#A152DF")
 
 ggplot(ggexoplanets, aes(pl_orbper, pl_bmassj)) +
-  geom_point(aes(fill = pl_discmethod), color = "black", shape = 21, size = 1.5) +
+  geom_point(aes(fill = pl_discmethod), color = "black", shape = 21, size = 2) +
   scale_x_log10(
     breaks = scales::trans_breaks("log10", function(x) 10^x),
     labels = scales::trans_format("log10", scales::math_format(10^.x))
@@ -59,7 +56,7 @@ ggplot(ggexoplanets, aes(pl_orbper, pl_bmassj)) +
     caption = paste0(Sys.Date(), "\nexoplanetarchive.ipac.caltech.edu")
   ) +
   annotation_logticks() +
-  scale_fill_manual(values = rev(col_vector)) +
+  scale_fill_manual(values = cols_vec) +
   guides(fill = guide_legend(override.aes = list(size = 4))) +
   theme_bw() +
   theme(
