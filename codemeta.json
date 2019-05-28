@@ -136,18 +136,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=ggplot2"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "RColorBrewer",
-      "name": "RColorBrewer",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=RColorBrewer"
     }
   ],
   "softwareRequirements": [
@@ -164,7 +152,7 @@
     }
   ],
   "readme": "https://github.com/tyluRp/exoplanets/blob/master/README.md",
-  "fileSize": "1207.581KB",
+  "fileSize": "1235.103KB",
   "contIntegration": [
     "https://travis-ci.org/tyluRp/exoplanets",
     "https://ci.appveyor.com/project/tyluRp/exoplanets",
