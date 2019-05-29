@@ -29,6 +29,7 @@ The goal of exoplanets is to provide access to [NASA's Exoplanet Archive](https:
 library(ggplot2)
 library(tidyr)
 library(dplyr)
+library(RColorBrewer)
 
 exoplanets <- exo::exo() %>% 
   as_tibble()
@@ -39,9 +40,18 @@ ggexoplanets <- exoplanets %>%
 
 # cols_vec <- randomcoloR::distinctColorPalette(length(unique(ggexoplanets$pl_discmethod)))
 
+library(tidyverse)
+
+exoplanets <- exo::exo() %>% 
+  as_tibble()
+
 cols_vec <- c("#86E57B", "#77AFD7", "#DCD955", "#CFD49C", "#D5CCD1", "#84DECA", "#E15AB9", "#D4816C", "#BA91D1", "#A152DF")
 
-ggplot(ggexoplanets, aes(pl_orbper, pl_bmassj)) +
+exoplanets %>% 
+  select(pl_name, pl_bmassj, pl_orbper, pl_discmethod) %>% 
+  drop_na(pl_bmassj, pl_orbper, pl_discmethod) %>% 
+  arrange(pl_name) %>% 
+  ggplot(aes(pl_orbper, pl_bmassj)) +
   geom_point(aes(fill = pl_discmethod), color = "black", shape = 21, size = 2) +
   scale_x_log10(
     breaks = scales::trans_breaks("log10", function(x) 10^x),
@@ -52,16 +62,28 @@ ggplot(ggexoplanets, aes(pl_orbper, pl_bmassj)) +
     labels = scales::trans_format("log10", scales::math_format(10^.x))
   ) +
   labs(
-    x = "Period in days (pl_orbper)",
-    y = "Mass in Jupiter Masses (pl_bmassj)",
-    fill = "Discovery Method (pl_discmethod)",
-    caption = paste0(Sys.Date(), "\nexoplanetarchive.ipac.caltech.edu")
+    x = "Period (days)",
+    y = "Mass (Jupiter Masses)",
+    fill = "Discovery Method"
   ) +
   annotation_logticks() +
   scale_fill_manual(values = cols_vec) +
   guides(fill = guide_legend(override.aes = list(size = 4))) +
+  geom_curve(aes(x = 100, y = 0.00070, xend = 6.0996151 + 0.6, yend = 0.00194 - 0.0002), 
+             colour = "#555555", 
+             size = 0.5, 
+             curvature = -0.2,
+             arrow = arrow(length = unit(0.03, "npc"))) + 
+  geom_label(aes(x = 100, y = 0.00070, label = "TRAPPIST-1 e"), 
+             hjust = 0, 
+             vjust = 0.5, 
+             label.size = NA, 
+             family = "SFProText-Regular", 
+             size = 5) +
   theme_bw() +
   theme(
+    text = element_text(family = "SFProText-Regular"),
+    plot.caption = element_text(family = "SFProText-RegularItalic"),
     panel.grid = element_blank()
   )
 ```
