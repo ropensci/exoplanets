@@ -25,6 +25,7 @@ Suggests:
     dplyr
 Imports: 
     utils
+Language: en-US
 URL: https://github.com/tyluRp/exoplanets
 BugReports: https://github.com/tyluRp/exoplanets/issues
 VignetteBuilder: knitr
