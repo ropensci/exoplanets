@@ -37,12 +37,15 @@ exo <- function(table = "exoplanets", cols = "default") {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
   if(cols == "default") {
-    utils::read.csv(paste0(base_url, "table=", table), stringsAsFactors = FALSE)
+    x <- paste0(base_url, "table=", table)
+    utils::read.csv(x, stringsAsFactors = FALSE)
   } else if(cols == "all") {
-    utils::read.csv(paste0(base_url, "table=", table, "&select=*"), stringsAsFactors = FALSE)
+    x <- paste0(base_url, "table=", table, "&select=*")
+    utils::read.csv(x, stringsAsFactors = FALSE)
   } else {
     cols <- gsub(" ", "", cols)
-    utils::read.csv(paste0(base_url, "table=", table, "&select=", cols), stringsAsFactors = FALSE)
+    x <- paste0(base_url, "table=", table, "&select=", cols)
+    utils::read.csv(x, stringsAsFactors = FALSE)
   }
 }
 
@@ -62,9 +65,11 @@ exo_column_names <- function(table = "exoplanets", cols = "default") {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
   if(cols == "default") {
-    names(utils::read.csv(paste0(base_url, "table=", table, "&getDefaultColumns&format=csv")))
+    x <- paste0(base_url, "table=", table, "&getDefaultColumns&format=csv")
+    names(utils::read.csv(x))
   } else if(cols == "all") {
-    names(utils::read.csv(paste0(base_url, "table=", table, "&getAllColumns&format=csv")))
+    x <- paste0(base_url, "table=", table, "&getAllColumns&format=csv")
+    names(utils::read.csv(x))
   }
 }
 
