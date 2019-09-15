@@ -4,9 +4,8 @@ test_that("exoplanets works", {
   # For speed, only the first column is taken.
 
   # set up
-  non_time_series <- names(exo_tables)[-which(grepl("timeseries", names(exo_tables)))]
-  # random_tbl <- sample(non_time_series, 1)
-  random_tbl <- non_time_series[1]
+  non_time_series <- names(exo_tables)[-which(grepl("timeseries|alias", names(exo_tables)))]
+  random_tbl <- sample(non_time_series, 1)
   random_tbl_cols <- exo_column_names(random_tbl, cols = "default")
   test <- paste0(random_tbl, "&select=", random_tbl_cols[1])
   cat(" [", test, "]")
