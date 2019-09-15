@@ -5,9 +5,11 @@ test_that("exoplanets works", {
 
   # set up
   non_time_series <- names(exo_tables)[-which(grepl("timeseries", names(exo_tables)))]
-  random_tbl <- sample(non_time_series, 1)
+  # random_tbl <- sample(non_time_series, 1)
+  random_tbl <- non_time_series[1]
   random_tbl_cols <- exo_column_names(random_tbl, cols = "default")
-  test <- paste0(random_tbl, "&select=", names(random_tbl_cols[1]))
+  test <- paste0(random_tbl, "&select=", random_tbl_cols[1])
+  cat(" [", test, "]")
   exo_output <- class(exo(test))
   exo_raw_output <- class(exo_raw(paste0("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=", test)))
   exo_cols_default <- exo_column_names()
