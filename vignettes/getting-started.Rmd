@@ -30,23 +30,23 @@ exoplanets2 <- exo_raw("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedA
 all.equal(exoplanets1, exoplanets2)
 ```
 
-To see a list of all available tables see the documentation [here](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html). Additionally, a list `tbls` is available:
+To see a list of all available tables see the documentation [here](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html). Additionally, a list `exo_tables` is available:
 
-```{r}
-names(tbls)
+```{r exo_tables}
+names(exo_tables)
 ```
 
 If using RStudio, this list allows convenient autocompletion in case you forget the table names:
 
-```{r}
-k2names <- exo(tbls$k2names)
+```{r exo_tables autocomplete}
+k2names <- exo(exo_tables$k2names)
 str(k2names)
 ```
 
 Finally, there are 3 tables which require an additional parameter in order to access them, these are all time series datasets:
 
-```{r}
-names(tbls)[which(grepl("timeseries", names(tbls)))]
+```{r exo_table time series}
+names(exo_tables)[which(grepl("timeseries", names(exo_tables)))]
 ```
 
 For example, the `kelttimeseries` table requires either the quarter or a Kepler ID, `exo("kelttimeseries&quarter=14")`. Note, these datasets are quite large and can take awhile. All of these additional parameter requirements are documented in the [documentation](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html).

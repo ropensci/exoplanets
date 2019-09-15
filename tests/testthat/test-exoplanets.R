@@ -4,7 +4,7 @@ test_that("exoplanets works", {
   # For speed, only the first column is taken.
 
   # set up
-  non_time_series <- names(tbls)[-which(grepl("timeseries", names(tbls)))]
+  non_time_series <- names(exo_tables)[-which(grepl("timeseries", names(exo_tables)))]
   random_tbl <- sample(non_time_series, 1)
   random_tbl_cols <- exo_column_names(random_tbl, cols = "default")
   test <- paste0(random_tbl, "&select=", names(random_tbl_cols[1]))
@@ -15,7 +15,7 @@ test_that("exoplanets works", {
 
   # tests
   expect_equal(exo_output, "data.frame")
-  expect_equal(class(tbls), "list")
+  expect_equal(class(exo_tables), "list")
   expect_equal(exo_raw_output, "data.frame")
   expect_error(exo_raw(NULL))
   expect_equal(class(exo_cols_default), "character")

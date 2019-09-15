@@ -44,20 +44,20 @@ library(tibble)
 exoplanets <- exo()
 
 as_tibble(exoplanets)
-#> # A tibble: 3,972 x 82
+#> # A tibble: 4,055 x 82
 #>    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum
 #>    <chr>       <chr>     <chr>   <chr>                  <int>   <int>
-#>  1 Kepler-162  c         Kepler… Transit                    0       2
-#>  2 Kepler-163  b         Kepler… Transit                    0       2
-#>  3 Kepler-163  c         Kepler… Transit                    0       2
-#>  4 Kepler-164  b         Kepler… Transit                    0       3
-#>  5 Kepler-164  c         Kepler… Transit                    0       3
-#>  6 Kepler-164  d         Kepler… Transit                    0       3
-#>  7 Kepler-165  b         Kepler… Transit                    0       2
-#>  8 Kepler-165  c         Kepler… Transit                    0       2
-#>  9 Kepler-166  b         Kepler… Transit                    0       3
-#> 10 Kepler-166  c         Kepler… Transit                    0       3
-#> # … with 3,962 more rows, and 76 more variables: pl_orbper <dbl>,
+#>  1 Kepler-150  d         Kepler… Transit                    0       5
+#>  2 Kepler-150  e         Kepler… Transit                    0       5
+#>  3 Kepler-151  b         Kepler… Transit                    0       2
+#>  4 Kepler-151  c         Kepler… Transit                    0       2
+#>  5 Kepler-152  b         Kepler… Transit                    0       2
+#>  6 Kepler-152  c         Kepler… Transit                    0       2
+#>  7 Kepler-153  b         Kepler… Transit                    0       2
+#>  8 Kepler-153  c         Kepler… Transit                    0       2
+#>  9 Kepler-154  b         Kepler… Transit                    0       5
+#> 10 Kepler-154  c         Kepler… Transit                    0       5
+#> # … with 4,045 more rows, and 76 more variables: pl_orbper <dbl>,
 #> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <int>,
 #> #   pl_orbpern <int>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
 #> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <int>, pl_orbsmaxn <int>,
@@ -88,7 +88,7 @@ To access data from a different table you can use the table parameter:
 keplernames <- exo(table = "keplernames")
 
 as_tibble(keplernames)
-#> # A tibble: 2,350 x 13
+#> # A tibble: 2,354 x 13
 #>     kepid    ra ra_err   dec dec_err ra_str dec_str kepoi_name kepler_name
 #>     <int> <dbl>  <dbl> <dbl>   <dbl> <chr>  <chr>   <chr>      <chr>      
 #>  1 1.10e7  293.      0  48.4       0 19h33… +48d26… K01931.02  Kepler-339…
@@ -101,14 +101,14 @@ as_tibble(keplernames)
 #>  8 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.01  Kepler-342…
 #>  9 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.04  Kepler-342…
 #> 10 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.02  Kepler-342…
-#> # … with 2,340 more rows, and 4 more variables: alt_name <chr>,
+#> # … with 2,344 more rows, and 4 more variables: alt_name <chr>,
 #> #   tm_designation <chr>, koi_list_flag <chr>, last_update <chr>
 ```
 
 To get a list of all available tables:
 
 ``` r
-names(tbls) 
+names(exo_tables) 
 #>  [1] "exoplanets"               "compositepars"           
 #>  [3] "exomultpars"              "aliastable"              
 #>  [5] "microlensing"             "cumulative"              
@@ -147,20 +147,20 @@ others:
 exoplanets2 <- exo_raw("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets")
 
 as_tibble(exoplanets2)
-#> # A tibble: 3,972 x 82
+#> # A tibble: 4,055 x 82
 #>    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum
 #>    <chr>       <chr>     <chr>   <chr>                  <int>   <int>
-#>  1 Kepler-162  c         Kepler… Transit                    0       2
-#>  2 Kepler-163  b         Kepler… Transit                    0       2
-#>  3 Kepler-163  c         Kepler… Transit                    0       2
-#>  4 Kepler-164  b         Kepler… Transit                    0       3
-#>  5 Kepler-164  c         Kepler… Transit                    0       3
-#>  6 Kepler-164  d         Kepler… Transit                    0       3
-#>  7 Kepler-165  b         Kepler… Transit                    0       2
-#>  8 Kepler-165  c         Kepler… Transit                    0       2
-#>  9 Kepler-166  b         Kepler… Transit                    0       3
-#> 10 Kepler-166  c         Kepler… Transit                    0       3
-#> # … with 3,962 more rows, and 76 more variables: pl_orbper <dbl>,
+#>  1 Kepler-150  d         Kepler… Transit                    0       5
+#>  2 Kepler-150  e         Kepler… Transit                    0       5
+#>  3 Kepler-151  b         Kepler… Transit                    0       2
+#>  4 Kepler-151  c         Kepler… Transit                    0       2
+#>  5 Kepler-152  b         Kepler… Transit                    0       2
+#>  6 Kepler-152  c         Kepler… Transit                    0       2
+#>  7 Kepler-153  b         Kepler… Transit                    0       2
+#>  8 Kepler-153  c         Kepler… Transit                    0       2
+#>  9 Kepler-154  b         Kepler… Transit                    0       5
+#> 10 Kepler-154  c         Kepler… Transit                    0       5
+#> # … with 4,045 more rows, and 76 more variables: pl_orbper <dbl>,
 #> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <int>,
 #> #   pl_orbpern <int>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
 #> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <int>, pl_orbsmaxn <int>,

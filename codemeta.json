@@ -6,7 +6,7 @@
   "@type": "SoftwareSourceCode",
   "identifier": "exoplanets",
   "description": "The goal of exoplanets is to provide access to NASA's Exoplanet \n  Archive database by supplying a table name or by writing the URL query \n  manually. For more information please read the documentation \n  <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
-  "name": "exoplanets: Provides access to NASA's Exoplanet Archive, see <https://exoplanetarchive.ipac.caltech.edu/index.html>",
+  "name": "exoplanets: Provides access to NASA's Exoplanet Archive, see \n  <https://exoplanetarchive.ipac.caltech.edu/index.html>",
   "codeRepository": "https://github.com/tyluRp/exoplanets",
   "issueTracker": "https://github.com/tyluRp/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
@@ -128,7 +128,7 @@
     }
   ],
   "readme": "https://github.com/tyluRp/exoplanets/blob/master/README.md",
-  "fileSize": "1306.662KB",
+  "fileSize": "1306.479KB",
   "contIntegration": [
     "https://travis-ci.org/tyluRp/exoplanets",
     "https://ci.appveyor.com/project/tyluRp/exoplanets",

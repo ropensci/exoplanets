@@ -1,5 +1,5 @@
-## code to prepare `tbls` dataset goes here
-tbls <- list(
+## code to prepare `exo_tables` dataset goes here
+exo_tables <- list(
   exoplanets = "exoplanets",
   compositepars = "compositepars",
   exomultpars = "exomultpars",
@@ -34,4 +34,4 @@ tbls <- list(
   mission_exocat = "mission_exocat"
 )
 
-usethis::use_data(tbls)
+usethis::use_data(exo_tables)

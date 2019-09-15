@@ -82,4 +82,4 @@ exo_column_names <- function(table = "exoplanets", cols = "default") {
 #' ID must be specified, e.g. \code{exo("keplertimeseries&quarter=14")}.
 #' This requirements only occurs for a small number of tables, mostly time
 #' series.
-"tbls"
+"exo_tables"
