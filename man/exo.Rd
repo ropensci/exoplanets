@@ -21,6 +21,8 @@ Access NASA's Exoplanet Archive by table name. For a list of
 all available tables, see \code{tbls}.
 }
 \examples{
+\dontrun{
 exoplanets <- exo("exoplanets")
 k2candidates <- exo("k2candidates")
+}
 }

@@ -8,8 +8,10 @@
 #' are escaped automatically.
 #' @return A \code{data.frame} containing data for the respective table
 #' @examples
+#' \dontrun{
 #' qry <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
 #' exoplanets <- exo_raw(qry)
+#' }
 #' @export
 exo_raw <- function(query) {
   if(is.null(query))
@@ -30,8 +32,10 @@ exo_raw <- function(query) {
 #' individual column names separated by a comma, defaults to "default".
 #' @return A \code{data.frame} containing data for the respective table
 #' @examples
+#' \dontrun{
 #' exoplanets <- exo("exoplanets")
 #' k2candidates <- exo("k2candidates")
+#' }
 #' @export
 exo <- function(table = "exoplanets", cols = "default") {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
@@ -59,7 +63,9 @@ exo <- function(table = "exoplanets", cols = "default") {
 #' defaults to "default".
 #' @return A character vector containing column names for the respective table
 #' @examples
+#' \dontrun{
 #' str(exo_column_names("cumulative", "default"))
+#' }
 #' @export
 exo_column_names <- function(table = "exoplanets", cols = "default") {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
