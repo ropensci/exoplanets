@@ -7,8 +7,8 @@
 exo_column_names(table = "exoplanets", cols = "default")
 }
 \arguments{
-\item{table}{The name of the table, see \code{tbls} for all available table
-names.}
+\item{table}{The name of the table, see \code{exo_tables} for all available
+table names.}
 
 \item{cols}{Either "default" for default columns, "all" for all columns,
 defaults to "default".}

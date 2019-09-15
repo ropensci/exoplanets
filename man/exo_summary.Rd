@@ -10,8 +10,16 @@ exo_summary(output = "list")
 \item{output}{One of \code{list} or \code{dataframe}, defaults to list.}
 }
 \value{
-An object of list or data.frame.
+An object of class \code{list} or \code{data.frame}.
 }
 \description{
-A list of data summarising the exoplanet database.
+A list of data summarising the exoplanet database. The goal of
+this function is to provide the information found here
+<\url{https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html}>. By
+default, a list is returned but a \code{data.frame} can be returned with
+\code{output = "dataframe"}.
+}
+\examples{
+x <- exo_summary(output = "dataframe")
+x
 }

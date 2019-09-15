@@ -24,8 +24,8 @@ exo_raw <- function(query) {
 #' Access NASA's Exoplanet Archive by Table
 #'
 #' @description Access NASA's Exoplanet Archive by table name. For a list of
-#' all available tables, see \code{tbls}.
-#' @param table The name of the table, see \code{tbls} for all available table
+#' all available tables, see \code{exo_tables}.
+#' @param table The name of the table, see \code{exo_tables} for all available table
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns or
 #' individual column names separated by a comma, defaults to "default".
@@ -57,8 +57,8 @@ exo <- function(table = "exoplanets", cols = "default") {
 #'
 #' @description Simply pull column names for a specified table. You can either
 #' pull the default columns assigned to a table or all columns.
-#' @param table The name of the table, see \code{tbls} for all available table
-#' names.
+#' @param table The name of the table, see \code{exo_tables} for all available
+#' table names.
 #' @param cols Either "default" for default columns, "all" for all columns,
 #' defaults to "default".
 #' @return A character vector containing column names for the respective table
@@ -80,10 +80,17 @@ exo_column_names <- function(table = "exoplanets", cols = "default") {
 
 #' Exoplanet Summary
 #'
-#' @description A list of data summarising the exoplanet database.
+#' @description A list of data summarising the exoplanet database. The goal of
+#' this function is to provide the information found here
+#' <\url{https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html}>. By
+#' default, a list is returned but a \code{data.frame} can be returned with
+#' \code{output = "dataframe"}.
 #'
 #' @param output One of \code{list} or \code{dataframe}, defaults to list.
-#' @return An object of list or data.frame.
+#' @return An object of class \code{list} or \code{data.frame}.
+#' @examples
+#' x <- exo_summary(output = "dataframe")
+#' x
 #' @export
 exo_summary <- function(output = "list") {
   exo_cols <- c(exo_column_names("exoplanets"), "pl_masse", "pl_rade")

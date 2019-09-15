@@ -7,7 +7,7 @@
 exo(table = "exoplanets", cols = "default")
 }
 \arguments{
-\item{table}{The name of the table, see \code{tbls} for all available table
+\item{table}{The name of the table, see \code{exo_tables} for all available table
 names.}
 
 \item{cols}{Either "default" for default columns, "all" for all columns or
@@ -18,7 +18,7 @@ A \code{data.frame} containing data for the respective table
 }
 \description{
 Access NASA's Exoplanet Archive by table name. For a list of
-all available tables, see \code{tbls}.
+all available tables, see \code{exo_tables}.
 }
 \examples{
 exoplanets <- exo("exoplanets")
