@@ -5,12 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Provides access to NASA's Exoplanet Archive, see <https:> • exoplanets</https:>
+<title>Provides access to NASA's Exoplanet Archive, see 
+  <https:> • exoplanets</https:>
 </title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/lumen/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="Provides access to NASA's Exoplanet Archive, see &lt;https://exoplanetarchive.ipac.caltech.edu/index.html&gt;">
+<script src="pkgdown.js"></script><meta property="og:title" content="Provides access to NASA's Exoplanet Archive, see 
+  &lt;https://exoplanetarchive.ipac.caltech.edu/index.html&gt;">
 <meta property="og:description" content="The goal of exoplanets is to provide access to NASA's Exoplanet 
   Archive database by supplying a table name or by writing the URL query 
   manually. For more information please read the documentation 
@@ -124,20 +126,20 @@
 <a class="sourceLine" id="cb2-4" data-line-number="4">exoplanets &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo.html">exo</a></span>()</a>
 <a class="sourceLine" id="cb2-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb2-6" data-line-number="6"><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>(exoplanets)</a>
-<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; # A tibble: 3,972 x 82</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt; # A tibble: 4,055 x 82</span></a>
 <a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum</span></a>
 <a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;                  &lt;int&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  1 Kepler-162  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  2 Kepler-163  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  3 Kepler-163  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  4 Kepler-164  b         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt;  5 Kepler-164  c         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt;  6 Kepler-164  d         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt;  7 Kepler-165  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt;  8 Kepler-165  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt;  9 Kepler-166  b         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt; 10 Kepler-166  c         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt; # … with 3,962 more rows, and 76 more variables: pl_orbper &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  1 Kepler-150  d         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  2 Kepler-150  e         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  3 Kepler-151  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  4 Kepler-151  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt;  5 Kepler-152  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt;  6 Kepler-152  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt;  7 Kepler-153  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt;  8 Kepler-153  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt;  9 Kepler-154  b         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt; 10 Kepler-154  c         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt; # … with 4,045 more rows, and 76 more variables: pl_orbper &lt;dbl&gt;,</span></a>
 <a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt; #   pl_orbpererr1 &lt;dbl&gt;, pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;int&gt;,</span></a>
 <a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt; #   pl_orbpern &lt;int&gt;, pl_orbsmax &lt;dbl&gt;, pl_orbsmaxerr1 &lt;dbl&gt;,</span></a>
 <a class="sourceLine" id="cb2-23" data-line-number="23"><span class="co">#&gt; #   pl_orbsmaxerr2 &lt;dbl&gt;, pl_orbsmaxlim &lt;int&gt;, pl_orbsmaxn &lt;int&gt;,</span></a>
@@ -164,7 +166,7 @@
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">keplernames &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo.html">exo</a></span>(<span class="dt">table =</span> <span class="st">"keplernames"</span>)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>(keplernames)</a>
-<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; # A tibble: 2,350 x 13</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt; # A tibble: 2,354 x 13</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;     kepid    ra ra_err   dec dec_err ra_str dec_str kepoi_name kepler_name</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;     &lt;int&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;      </span></a>
 <a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;  1 1.10e7  293.      0  48.4       0 19h33… +48d26… K01931.02  Kepler-339…</span></a>
@@ -177,10 +179,10 @@
 <a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  8 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.01  Kepler-342…</span></a>
 <a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;  9 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.04  Kepler-342…</span></a>
 <a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; 10 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.02  Kepler-342…</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; # … with 2,340 more rows, and 4 more variables: alt_name &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; # … with 2,344 more rows, and 4 more variables: alt_name &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt; #   tm_designation &lt;chr&gt;, koi_list_flag &lt;chr&gt;, last_update &lt;chr&gt;</span></a></code></pre></div>
 <p>To get a list of all available tables:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(tbls) </a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(exo_tables) </a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;  [1] "exoplanets"               "compositepars"           </span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3"><span class="co">#&gt;  [3] "exomultpars"              "aliastable"              </span></a>
 <a class="sourceLine" id="cb4-4" data-line-number="4"><span class="co">#&gt;  [5] "microlensing"             "cumulative"              </span></a>
@@ -206,20 +208,20 @@
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">exoplanets2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo_raw.html">exo_raw</a></span>(<span class="st">"https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"</span>)</a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"></a>
 <a class="sourceLine" id="cb6-3" data-line-number="3"><span class="kw"><a href="https://tibble.tidyverse.org/reference/as_tibble.html">as_tibble</a></span>(exoplanets2)</a>
-<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; # A tibble: 3,972 x 82</span></a>
+<a class="sourceLine" id="cb6-4" data-line-number="4"><span class="co">#&gt; # A tibble: 4,055 x 82</span></a>
 <a class="sourceLine" id="cb6-5" data-line-number="5"><span class="co">#&gt;    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum</span></a>
 <a class="sourceLine" id="cb6-6" data-line-number="6"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;                  &lt;int&gt;   &lt;int&gt;</span></a>
-<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt;  1 Kepler-162  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt;  2 Kepler-163  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt;  3 Kepler-163  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt;  4 Kepler-164  b         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;  5 Kepler-164  c         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt;  6 Kepler-164  d         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt;  7 Kepler-165  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt;  8 Kepler-165  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt;  9 Kepler-166  b         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt; 10 Kepler-166  c         Kepler… Transit                    0       3</span></a>
-<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; # … with 3,962 more rows, and 76 more variables: pl_orbper &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb6-7" data-line-number="7"><span class="co">#&gt;  1 Kepler-150  d         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb6-8" data-line-number="8"><span class="co">#&gt;  2 Kepler-150  e         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb6-9" data-line-number="9"><span class="co">#&gt;  3 Kepler-151  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb6-10" data-line-number="10"><span class="co">#&gt;  4 Kepler-151  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb6-11" data-line-number="11"><span class="co">#&gt;  5 Kepler-152  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb6-12" data-line-number="12"><span class="co">#&gt;  6 Kepler-152  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb6-13" data-line-number="13"><span class="co">#&gt;  7 Kepler-153  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb6-14" data-line-number="14"><span class="co">#&gt;  8 Kepler-153  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb6-15" data-line-number="15"><span class="co">#&gt;  9 Kepler-154  b         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb6-16" data-line-number="16"><span class="co">#&gt; 10 Kepler-154  c         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb6-17" data-line-number="17"><span class="co">#&gt; # … with 4,045 more rows, and 76 more variables: pl_orbper &lt;dbl&gt;,</span></a>
 <a class="sourceLine" id="cb6-18" data-line-number="18"><span class="co">#&gt; #   pl_orbpererr1 &lt;dbl&gt;, pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;int&gt;,</span></a>
 <a class="sourceLine" id="cb6-19" data-line-number="19"><span class="co">#&gt; #   pl_orbpern &lt;int&gt;, pl_orbsmax &lt;dbl&gt;, pl_orbsmaxerr1 &lt;dbl&gt;,</span></a>
 <a class="sourceLine" id="cb6-20" data-line-number="20"><span class="co">#&gt; #   pl_orbsmaxerr2 &lt;dbl&gt;, pl_orbsmaxlim &lt;int&gt;, pl_orbsmaxn &lt;int&gt;,</span></a>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Function reference • exoplanets</title>
+<title>All Available Tables — exo_tables • exoplanets</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -30,7 +30,15 @@
 
 
 
-<meta property="og:title" content="Function reference" />
+<meta property="og:title" content="All Available Tables — exo_tables" />
+
+<meta property="og:description" content="This dataset provides a list of all available tables and
+their names, convenient for calling on tables when using exo().
+Please note that a few tables require additional parameters. For example,
+the keplertimeseries table requires either the quarter or a Kepler
+ID must be specified, e.g. exo(&quot;keplertimeseries&amp;amp;quarter=14&quot;).
+This requirements only occurs for a small number of tables, mostly time
+series." />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -60,7 +68,7 @@
   </head>
 
   <body>
-    <div class="container template-reference-index">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -122,60 +130,40 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Reference</h1>
+    <h1>All Available Tables</h1>
+    <small class="dont-index">Source: <a href='https://github.com/tyluRp/exoplanets/blob/master/R/exoplanets.R'><code>R/exoplanets.R</code></a></small>
+    <div class="hidden name"><code>exo_tables.Rd</code></div>
     </div>
 
-    <table class="ref-index">
+    <div class="ref-description">
+    
+    <p>This dataset provides a list of all available tables and
+their names, convenient for calling on tables when using <code><a href='exo.html'>exo()</a></code>.
+Please note that a few tables require additional parameters. For example,
+the <code>keplertimeseries</code> table requires either the quarter or a Kepler
+ID must be specified, e.g. <code><a href='exo.html'>exo("keplertimeseries&amp;quarter=14")</a></code>.
+This requirements only occurs for a small number of tables, mostly time
+series.</p>
+    
+    </div>
 
-    <colgroup>
-      
-      <col class="alias" />
-      <col class="title" />
-    </colgroup>
+    <pre class="usage"><span class='no'>exo_tables</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <tbody>
-      <tr>
-        <th colspan="2">
-          <h2 id="section-all-functions" class="hasAnchor"><a href="#section-all-functions" class="anchor"></a>All functions</h2>
-          <p class="section-desc"></p>
-        </th>
-      </tr>
-      <tr>
-        
-        <td>
-          <p><code><a href="exo.html">exo()</a></code> </p>
-        </td>
-        <td><p>Access NASA's Exoplanet Archive by Table</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="exo_column_names.html">exo_column_names()</a></code> </p>
-        </td>
-        <td><p>Access column names for each table</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="exo_raw.html">exo_raw()</a></code> </p>
-        </td>
-        <td><p>Access NASA's Exoplanet Archive by URL</p></td>
-      </tr><tr>
-        
-        <td>
-          <p><code><a href="exo_tables.html">exo_tables</a></code> </p>
-        </td>
-        <td><p>All Available Tables</p></td>
-      </tr>
-    </tbody>
-    </table>
+    <p>An object of class <code>list</code> of length 32.</p>
+    
+
   </div>
-
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
-      <li><a href="#section-all-functions">All functions</a></li>
-    </ul>
+      
+      <li><a href="#format">Format</a></li>
+          </ul>
+
   </div>
 </div>
 

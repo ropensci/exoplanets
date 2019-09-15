@@ -112,8 +112,8 @@
 <a class="sourceLine" id="cb1-5" data-line-number="5"></a>
 <a class="sourceLine" id="cb1-6" data-line-number="6"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/all.equal">all.equal</a></span>(exoplanets1, exoplanets2)</a>
 <a class="sourceLine" id="cb1-7" data-line-number="7"><span class="co">#&gt; [1] TRUE</span></a></code></pre></div>
-<p>To see a list of all available tables see the documentation <a href="https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html">here</a>. Additionally, a list <code>tbls</code> is available:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(tbls)</a>
+<p>To see a list of all available tables see the documentation <a href="https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html">here</a>. Additionally, a list <code>exo_tables</code> is available:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(exo_tables)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="co">#&gt;  [1] "exoplanets"               "compositepars"           </span></a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"><span class="co">#&gt;  [3] "exomultpars"              "aliastable"              </span></a>
 <a class="sourceLine" id="cb2-4" data-line-number="4"><span class="co">#&gt;  [5] "microlensing"             "cumulative"              </span></a>
@@ -131,9 +131,9 @@
 <a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt; [29] "k2candidates"             "k2names"                 </span></a>
 <a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt; [31] "missionstars"             "mission_exocat"</span></a></code></pre></div>
 <p>If using RStudio, this list allows convenient autocompletion in case you forget the table names:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">k2names &lt;-<span class="st"> </span><span class="kw"><a href="../reference/exo.html">exo</a></span>(tbls<span class="op">$</span>k2names)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">k2names &lt;-<span class="st"> </span><span class="kw"><a href="../reference/exo.html">exo</a></span>(exo_tables<span class="op">$</span>k2names)</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/str">str</a></span>(k2names)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; 'data.frame':    395 obs. of  9 variables:</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; 'data.frame':    422 obs. of  9 variables:</span></a>
 <a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;  $ epic_host      : chr  "EPIC 60017806" "EPIC 60021410" "EPIC 201367065" "EPIC 201367065" ...</span></a>
 <a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;  $ k2_campaign_str: chr  "E" "E" "1" "1" ...</span></a>
 <a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  $ k2_name        : chr  "K2-1 b" "K2-2 b" "K2-3 b" "K2-3 c" ...</span></a>
@@ -144,7 +144,7 @@
 <a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  $ dec_str        : chr  "-01d34m48.2s" "+00d26m43.9s" "-01d27m17.2s" "-01d27m17.2s" ...</span></a>
 <a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  $ last_update    : chr  "2015-07-30" "2015-07-30" "2015-07-30" "2015-07-30" ...</span></a></code></pre></div>
 <p>Finally, there are 3 tables which require an additional parameter in order to access them, these are all time series datasets:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(tbls)[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/which">which</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"timeseries"</span>, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(tbls)))]</a>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(exo_tables)[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/which">which</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/grep">grepl</a></span>(<span class="st">"timeseries"</span>, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/names">names</a></span>(exo_tables)))]</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt; [1] "keplertimeseries"    "kelttimeseries"      "superwasptimeseries"</span></a></code></pre></div>
 <p>For example, the <code>kelttimeseries</code> table requires either the quarter or a Kepler ID, <code><a href="../reference/exo.html">exo("kelttimeseries&amp;quarter=14")</a></code>. Note, these datasets are quite large and can take awhile. All of these additional parameter requirements are documented in the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html">documentation</a>.</p>
   </div>
