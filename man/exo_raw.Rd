@@ -20,8 +20,7 @@ queries, see the documentation,
 \url{https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html}.
 }
 \examples{
-\dontrun{
-qry <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
-exoplanets <- exo_raw(qry)
-}
+x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
+exoplanets <- exo_raw(x)
+str(exoplanets[1:5])
 }

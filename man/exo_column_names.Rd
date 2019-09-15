@@ -21,7 +21,6 @@ Simply pull column names for a specified table. You can either
 pull the default columns assigned to a table or all columns.
 }
 \examples{
-\dontrun{
 str(exo_column_names("cumulative", "default"))
-}
+str(exo_column_names("cumulative", "all"))
 }
