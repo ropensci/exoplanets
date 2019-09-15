@@ -39,6 +39,8 @@ exo_raw <- function(query) {
 exo <- function(table = "exoplanets", cols = "default") {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
+  cols <- paste0(cols, collapse = ",")
+
   if(cols == "default") {
     x <- paste0(base_url, "table=", table)
     utils::read.csv(x, stringsAsFactors = FALSE)
@@ -46,7 +48,6 @@ exo <- function(table = "exoplanets", cols = "default") {
     x <- paste0(base_url, "table=", table, "&select=*")
     utils::read.csv(x, stringsAsFactors = FALSE)
   } else {
-    cols <- gsub(" ", "", cols)
     x <- paste0(base_url, "table=", table, "&select=", cols)
     utils::read.csv(x, stringsAsFactors = FALSE)
   }
@@ -82,11 +83,12 @@ exo_column_names <- function(table = "exoplanets", cols = "default") {
 #' @description A list of data summarising the exoplanet database.
 #'
 #' @param output One of \code{list} or \code{dataframe}, defaults to list.
+#' @return An object of list or data.frame.
 #' @export
 exo_summary <- function(output = "list") {
-  df_exo <- exo("exoplanets")
-  df_exo_mass <- exo("exoplanets", "pl_masse")
-  df_exo_rade <- exo("exoplanets", "pl_rade")
+  exo_cols <- c(exo_column_names("exoplanets"), "pl_masse", "pl_rade")
+
+  df_exo <- exo("exoplanets", exo_cols)
   df_cumulative <- exo("cumulative")
   df_k2_can <- exo("k2candidates")
 
@@ -105,7 +107,7 @@ exo_summary <- function(output = "list") {
 
   mass_summary <- as.list(table(
     cut(
-      x = df_exo_mass$pl_masse,
+      x = df_exo$pl_masse,
       breaks = c(0, 3, 10, 30, 100, 300, Inf),
       labels = c(
         "M <= 3 M_Earth",
@@ -120,7 +122,7 @@ exo_summary <- function(output = "list") {
 
   radius_summary <- as.list(table(
     cut(
-      x = df_exo_rade$pl_rade,
+      x = df_exo$pl_rade,
       breaks = c(0, 1.25, 2, 6, 15, Inf),
       labels = c(
         "R <= 1.25 R_Earth",

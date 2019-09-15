@@ -9,6 +9,9 @@ exo_summary(output = "list")
 \arguments{
 \item{output}{One of \code{list} or \code{dataframe}, defaults to list.}
 }
+\value{
+An object of list or data.frame.
+}
 \description{
 A list of data summarising the exoplanet database.
 }
