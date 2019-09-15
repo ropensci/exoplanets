@@ -13,6 +13,8 @@ test_that("exoplanets works", {
   exo_raw_output <- class(exo_raw(paste0("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=", test)))
   exo_cols_default <- exo_column_names()
   exo_cols_all <- exo_column_names(cols = "all")
+  list_db_summary <- exo_summary(output = "list")
+  df_db_summary <- exo_summary(output = "dataframe")
 
   # tests
   expect_equal(exo_output, "data.frame")
@@ -24,4 +26,6 @@ test_that("exoplanets works", {
   expect_true(length(exo_cols_default) < length(exo_cols_all))
   expect_equal(class(exo("cumulative", "all")), "data.frame")
   expect_equal(ncol(exo("cumulative", "kepid")), 1)
+  expect_equal(class(list_db_summary), "list")
+  expect_equal(unique(lapply(df_db_summary, class))[[1]], "data.frame")
 })
