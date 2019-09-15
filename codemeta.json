@@ -10,7 +10,7 @@
   "codeRepository": "https://github.com/tyluRp/exoplanets",
   "issueTracker": "https://github.com/tyluRp/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0",
+  "version": "0.0.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -128,7 +128,7 @@
     }
   ],
   "readme": "https://github.com/tyluRp/exoplanets/blob/master/README.md",
-  "fileSize": "1306.507KB",
+  "fileSize": "1308.066KB",
   "contIntegration": [
     "https://travis-ci.org/tyluRp/exoplanets",
     "https://ci.appveyor.com/project/tyluRp/exoplanets",
@@ -139,5 +139,6 @@
     "nasa",
     "exoplanets",
     "api"
-  ]
+  ],
+  "releaseNotes": "https://github.com/tyluRp/exoplanets/blob/master/NEWS.md"
 }

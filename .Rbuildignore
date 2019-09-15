@@ -11,3 +11,4 @@
 ^pkgdown$
 ^codemeta\.json$
 ^cran-comments\.md$
+^CRAN-RELEASE$

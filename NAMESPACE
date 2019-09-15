@@ -3,3 +3,4 @@
 export(exo)
 export(exo_column_names)
 export(exo_raw)
+export(exo_summary)

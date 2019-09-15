@@ -21,6 +21,8 @@ R interface to access exoplanet data in the following ways:
   - By providing a table name
   - By providing a query URL
 
+You can also summarise the database with `exo_summary`.
+
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 ## Installation
@@ -134,6 +136,51 @@ str(exo_column_names("cumulative", "default"))
 #>  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...
 str(exo_column_names("cumulative", "all"))
 #>  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...
+```
+
+To summarise the database, you can use `exo_summary`, which doesn’t
+include everything found
+[here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html)
+(yet) but might in the future. Notice the default output is a list, you
+can override this with `output = "dataframe"`:
+
+``` r
+df_exo_summary <- exo_summary()
+str(df_exo_summary)
+#> List of 4
+#>  $ counts_summary   :List of 8
+#>   ..$ all_exoplanets                                             : int 4055
+#>   ..$ confirmed_planets_with_kepler_light_curves_for_stellar_host: int 2354
+#>   ..$ confirmed_planets_discovered_by_kepler                     : int 2345
+#>   ..$ kepler_project_candidates_yet_to_be_confirmed              : int 2420
+#>   ..$ confirmed_planets_with_k2_light_curves_for_stellar_host    : int 422
+#>   ..$ confirmed_planets_discovered_by_k2                         : int 389
+#>   ..$ k2_candidates_yet_to_be_confirmed                          : int 877
+#>   ..$ confirmed_planets_discovered_by_tess                       : int 29
+#>  $ discovery_summary:List of 10
+#>   ..$ Astrometry                   : int 1
+#>   ..$ Eclipse Timing Variations    : int 11
+#>   ..$ Imaging                      : int 47
+#>   ..$ Microlensing                 : int 83
+#>   ..$ Orbital Brightness Modulation: int 6
+#>   ..$ Pulsar Timing                : int 6
+#>   ..$ Pulsation Timing Variations  : int 2
+#>   ..$ Radial Velocity              : int 764
+#>   ..$ Transit                      : int 3117
+#>   ..$ Transit Timing Variations    : int 18
+#>  $ mass_summary     :List of 6
+#>   ..$ M <= 3 M_Earth        : int 32
+#>   ..$ 3 < M <= 10 M_Earth   : int 126
+#>   ..$ 10 < M <= 30 M_Earth  : int 88
+#>   ..$ 30 < M <= 100 M_Earth : int 81
+#>   ..$ 100 < M <= 300 M_Earth: int 201
+#>   ..$ 300 M_Earth < M       : int 349
+#>  $ radius_summary   :List of 5
+#>   ..$ R <= 1.25 R_Earth    : int 400
+#>   ..$ 1.25 < R <= 2 R_Earth: int 847
+#>   ..$ 2 < R <= 6 R_Earth   : int 1309
+#>   ..$ 6 < R <= 15 R_Earth  : int 427
+#>   ..$ 15 R_Earth < R       : int 159
 ```
 
 Finally, you can take a look at the

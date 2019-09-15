@@ -25,6 +25,8 @@ The goal of exoplanets is to provide access to [NASA's Exoplanet Archive](https:
 * By providing a table name
 * By providing a query URL
 
+You can also summarise the database with `exo_summary`.
+
 ```{r, echo=FALSE, message=FALSE, dpi=300, fig.height=4}
 # library(ggplot2)
 # library(tidyr)
@@ -130,6 +132,13 @@ To get a vector of column names for a specific table:
 ```{r}
 str(exo_column_names("cumulative", "default"))
 str(exo_column_names("cumulative", "all"))
+```
+
+To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html) (yet) but might in the future. Notice the default output is a list, you can override this with `output = "dataframe"`:
+
+```{r}
+df_exo_summary <- exo_summary()
+str(df_exo_summary)
 ```
 
 
