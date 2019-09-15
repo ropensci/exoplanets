@@ -12,3 +12,6 @@
 ^codemeta\.json$
 ^cran-comments\.md$
 ^CRAN-RELEASE$
+.deploy_dir
+^Dockerfile$
+^\.github$
