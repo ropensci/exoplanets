@@ -9,6 +9,8 @@
 status](https://travis-ci.org/tyluRp/exoplanets.svg?branch=master)](https://travis-ci.org/tyluRp/exoplanets)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/tyluRp/exoplanets?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/exoplanets)
+[![Actions
+Status](https://wdp9fww0r9.execute-api.us-west-2.amazonaws.com/production/badge/tyluRp/exoplanets)](https://github.com/tyluRp/exoplanets/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
 <!-- badges: end -->
