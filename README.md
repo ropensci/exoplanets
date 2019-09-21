@@ -20,10 +20,9 @@ Archive](https://exoplanetarchive.ipac.caltech.edu/index.html) database
 in R. The functionality of this package is fairly minimal and is simply
 an R interface to access exoplanet data in the following ways:
 
-  - By providing a table name
-  - By providing a query URL
-
-You can also summarise the database with `exo_summary`.
+  - By providing a table name using `exo`
+  - By providing a query URL using `exo_raw`
+  - By summarising the database using `exo_summary`
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
