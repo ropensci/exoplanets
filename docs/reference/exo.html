@@ -135,7 +135,7 @@ all available tables, see <code>exo_tables</code>.</p>
     </div>
 
     <pre class="usage"><span class='fu'>exo</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"exoplanets"</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='st'>"default"</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -168,8 +168,7 @@ individual column names separated by a comma, defaults to "default".</p></td>
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>exoplanets</span> <span class='kw'>&lt;-</span> <span class='fu'>exo</span>(
   <span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"exoplanets"</span>,
-  <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+  <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
   )
 <span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='no'>exoplanets</span>[<span class='fl'>1</span>:<span class='fl'>5</span>])</div><div class='output co'>#&gt; Classes ‘tbl_df’, ‘tbl’ and 'data.frame':	4055 obs. of  5 variables:
 #&gt;  $ pl_hostname   : chr  "Kepler-150" "Kepler-150" "Kepler-151" "Kepler-151" ...

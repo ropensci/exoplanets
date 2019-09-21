@@ -10,16 +10,8 @@
 #' @param col_spec If FALSE, suppresses column specification message from
 #' \code{readr}.
 #' @return A \code{data.frame} containing data for the respective table
-#' @examples
-#' x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname"
-#' exoplanets <- exo_raw(
-#'   query = x,
-#'   progress = FALSE,
-#'   col_spec = FALSE
-#'   )
-#' str(exoplanets)
 #' @export
-exo_raw <- function(query, progress = TRUE, col_spec = TRUE) {
+exo_raw <- function(query, progress = TRUE, col_spec = FALSE) {
   if(is.null(query))
     stop("Please provide a valid query")
 
@@ -43,12 +35,11 @@ exo_raw <- function(query, progress = TRUE, col_spec = TRUE) {
 #' @examples
 #' exoplanets <- exo(
 #'   table = "exoplanets",
-#'   progress = FALSE,
-#'   col_spec = FALSE
+#'   progress = FALSE
 #'   )
 #' str(exoplanets[1:5])
 #' @export
-exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = TRUE) {
+exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
   cols <- paste0(cols, collapse = ",")
@@ -78,9 +69,14 @@ exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spe
 #' \code{readr}.
 #' @return A character vector containing column names for the respective table
 #' @examples
-#' str(exo_column_names("cumulative", "default", progress = FALSE))
+#' x <- exo_column_names(
+#'   table = "cumulative",
+#'   cols = "default",
+#'   progress = FALSE
+#'   )
+#' str(x)
 #' @export
-exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = TRUE) {
+exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
   if(cols == "default") {
@@ -108,12 +104,11 @@ exo_column_names <- function(table = "exoplanets", cols = "default", progress = 
 #' @examples
 #' x <- exo_summary(
 #'   output = "dataframe",
-#'   progress = FALSE,
-#'   col_spec = FALSE
+#'   progress = FALSE
 #' )
 #' x
 #' @export
-exo_summary <- function(output = "list", progress = TRUE, col_spec = TRUE) {
+exo_summary <- function(output = "list", progress = TRUE, col_spec = FALSE) {
   exo_cols <- c(exo_column_names("exoplanets", progress = progress, col_spec = col_spec), "pl_masse", "pl_rade")
 
   df_exo <- exo("exoplanets", exo_cols, progress = progress, col_spec = col_spec)

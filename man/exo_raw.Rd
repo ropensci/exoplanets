@@ -4,7 +4,7 @@
 \alias{exo_raw}
 \title{Access NASA's Exoplanet Archive by URL}
 \usage{
-exo_raw(query, progress = TRUE, col_spec = TRUE)
+exo_raw(query, progress = TRUE, col_spec = FALSE)
 }
 \arguments{
 \item{query}{The full query URL. At this time, the only supported format
@@ -23,13 +23,4 @@ A \code{data.frame} containing data for the respective table
 Access NASA's Exoplanet Archive by URL. For a list of example
 queries, see the documentation,
 \url{https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html}.
-}
-\examples{
-x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname"
-exoplanets <- exo_raw(
-  query = x,
-  progress = FALSE,
-  col_spec = FALSE
-  )
-str(exoplanets)
 }

@@ -5,7 +5,7 @@
 \title{Access column names for each table}
 \usage{
 exo_column_names(table = "exoplanets", cols = "default",
-  progress = TRUE, col_spec = TRUE)
+  progress = TRUE, col_spec = FALSE)
 }
 \arguments{
 \item{table}{The name of the table, see \code{exo_tables} for all available
@@ -27,5 +27,10 @@ Simply pull column names for a specified table. You can either
 pull the default columns assigned to a table or all columns.
 }
 \examples{
-str(exo_column_names("cumulative", "default", progress = FALSE))
+x <- exo_column_names(
+  table = "cumulative",
+  cols = "default",
+  progress = FALSE
+  )
+str(x)
 }

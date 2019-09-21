@@ -5,7 +5,7 @@
 \title{Access NASA's Exoplanet Archive by Table}
 \usage{
 exo(table = "exoplanets", cols = "default", progress = TRUE,
-  col_spec = TRUE)
+  col_spec = FALSE)
 }
 \arguments{
 \item{table}{The name of the table, see \code{exo_tables} for all available table
@@ -29,8 +29,7 @@ all available tables, see \code{exo_tables}.
 \examples{
 exoplanets <- exo(
   table = "exoplanets",
-  progress = FALSE,
-  col_spec = FALSE
+  progress = FALSE
   )
 str(exoplanets[1:5])
 }

@@ -38,9 +38,9 @@ devtools::install_github("tylurp/exoplanets")
 ## Example
 
 This is a basic example which shows you how to access data from the
-exoplanet table. Note that all these examples have `progress` and
-`col_spec` set to FALSE, the default is TRUE. I’m setting these
-parameters to FALSE to avoid a really long README file:
+exoplanet table. Note that all these examples have `progress` set to
+FALSE, the default is TRUE. I’m setting this parameter to FALSE to avoid
+a really long README file:
 
 ``` r
 library(exoplanets)
@@ -48,8 +48,7 @@ library(dplyr)
 
 exoplanets <- exo(
   table = "exoplanets", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   )
 as_tibble(exoplanets)
 #> # A tibble: 4,055 x 82
@@ -95,8 +94,7 @@ To access data from a different table you can use the table parameter:
 ``` r
 keplernames <- exo(
   table = "keplernames", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   )
 
 as_tibble(keplernames)
@@ -145,8 +143,7 @@ To get a vector of column names for a specific table:
 exo_column_names(
   table = "cumulative", 
   cols = "default", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   ) %>% 
   str()
 #>  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...
@@ -154,8 +151,7 @@ exo_column_names(
 exo_column_names(
   table = "cumulative", 
   cols = "all", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   ) %>% 
   str()
 #>  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...
@@ -168,10 +164,7 @@ include everything found
 can override this with `output = "dataframe"`:
 
 ``` r
-exo_summary(
-  progress = FALSE, 
-  col_spec = FALSE
-  ) %>% 
+exo_summary(progress = FALSE) %>% 
   str()
 #> List of 4
 #>  $ counts_summary   :List of 8
@@ -218,8 +211,7 @@ is CSV so do not request JSON, ipac, or others:
 ``` r
 exoplanets2 <- exo_raw(
   query = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   )
 
 as_tibble(exoplanets2)

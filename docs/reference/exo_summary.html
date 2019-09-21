@@ -140,7 +140,7 @@ default, a list is returned but a <code>data.frame</code> can be returned with
 <code>output = "dataframe"</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>exo_summary</span>(<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"list"</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>exo_summary</span>(<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"list"</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -167,8 +167,7 @@ default, a list is returned but a <code>data.frame</code> can be returned with
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>exo_summary</span>(
   <span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"dataframe"</span>,
-  <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+  <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
 )
 <span class='no'>x</span></div><div class='output co'>#&gt; $counts_summary
 #&gt;                                                           ind values

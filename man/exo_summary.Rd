@@ -4,7 +4,7 @@
 \alias{exo_summary}
 \title{Exoplanet Summary}
 \usage{
-exo_summary(output = "list", progress = TRUE, col_spec = TRUE)
+exo_summary(output = "list", progress = TRUE, col_spec = FALSE)
 }
 \arguments{
 \item{output}{One of \code{list} or \code{dataframe}, defaults to list.}
@@ -27,8 +27,7 @@ default, a list is returned but a \code{data.frame} can be returned with
 \examples{
 x <- exo_summary(
   output = "dataframe",
-  progress = FALSE,
-  col_spec = FALSE
+  progress = FALSE
 )
 x
 }

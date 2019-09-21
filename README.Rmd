@@ -101,7 +101,7 @@ devtools::install_github("tylurp/exoplanets")
 
 ## Example
 
-This is a basic example which shows you how to access data from the exoplanet table. Note that all these examples have `progress` and `col_spec` set to FALSE, the default is TRUE. I'm setting these parameters to FALSE to avoid a really long README file:
+This is a basic example which shows you how to access data from the exoplanet table. Note that all these examples have `progress` set to FALSE, the default is TRUE. I'm setting this parameter to FALSE to avoid a really long README file:
 
 ```{r example, message=FALSE}
 library(exoplanets)
@@ -109,8 +109,7 @@ library(dplyr)
 
 exoplanets <- exo(
   table = "exoplanets", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   )
 as_tibble(exoplanets)
 ```
@@ -120,8 +119,7 @@ To access data from a different table you can use the table parameter:
 ```{r}
 keplernames <- exo(
   table = "keplernames", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   )
 
 as_tibble(keplernames)
@@ -139,16 +137,14 @@ To get a vector of column names for a specific table:
 exo_column_names(
   table = "cumulative", 
   cols = "default", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   ) %>% 
   str()
 
 exo_column_names(
   table = "cumulative", 
   cols = "all", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   ) %>% 
   str()
 ```
@@ -156,10 +152,7 @@ exo_column_names(
 To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html) (yet) but might in the future. Notice the default output is a list, you can override this with `output = "dataframe"`:
 
 ```{r}
-exo_summary(
-  progress = FALSE, 
-  col_spec = FALSE
-  ) %>% 
+exo_summary(progress = FALSE) %>% 
   str()
 ```
 
@@ -169,8 +162,7 @@ Finally, you can take a look at the [docs](https://exoplanetarchive.ipac.caltech
 ```{r}
 exoplanets2 <- exo_raw(
   query = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets", 
-  progress = FALSE, 
-  col_spec = FALSE
+  progress = FALSE
   )
 
 as_tibble(exoplanets2)
