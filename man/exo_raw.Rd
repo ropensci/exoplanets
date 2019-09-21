@@ -4,12 +4,17 @@
 \alias{exo_raw}
 \title{Access NASA's Exoplanet Archive by URL}
 \usage{
-exo_raw(query)
+exo_raw(query, progress = TRUE, col_spec = TRUE)
 }
 \arguments{
 \item{query}{The full query URL. At this time, the only supported format
 is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 are escaped automatically.}
+
+\item{progress}{If FALSE, suppresses progress of request.}
+
+\item{col_spec}{If FALSE, suppresses column specification message from
+\code{readr}.}
 }
 \value{
 A \code{data.frame} containing data for the respective table
@@ -21,6 +26,10 @@ queries, see the documentation,
 }
 \examples{
 x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
-exoplanets <- exo_raw(x)
+exoplanets <- exo_raw(
+  query = x,
+  progress = FALSE,
+  col_spec = FALSE
+  )
 str(exoplanets[1:5])
 }

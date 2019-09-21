@@ -6,19 +6,26 @@
 #' @param query The full query URL. At this time, the only supported format
 #' is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 #' are escaped automatically.
+#' @param progress If FALSE, suppresses progress of request.
+#' @param col_spec If FALSE, suppresses column specification message from
+#' \code{readr}.
 #' @return A \code{data.frame} containing data for the respective table
 #' @examples
 #' x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
-#' exoplanets <- exo_raw(x)
+#' exoplanets <- exo_raw(
+#'   query = x,
+#'   progress = FALSE,
+#'   col_spec = FALSE
+#'   )
 #' str(exoplanets[1:5])
 #' @export
-exo_raw <- function(query) {
+exo_raw <- function(query, progress = TRUE, col_spec = TRUE) {
   if(is.null(query))
     stop("Please provide a valid query")
 
   query <- gsub(" ", "%20", query)
   query <- gsub("'", "%27", query)
-  utils::read.csv(query, stringsAsFactors = FALSE)
+  get_exo(query, progress = progress, col_spec = col_spec)
 }
 
 #' Access NASA's Exoplanet Archive by Table
@@ -29,27 +36,32 @@ exo_raw <- function(query) {
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns or
 #' individual column names separated by a comma, defaults to "default".
+#' @param progress If FALSE, suppresses progress of request.
+#' @param col_spec If FALSE, suppresses column specification message from
+#' \code{readr}.
 #' @return A \code{data.frame} containing data for the respective table
 #' @examples
-#' exoplanets <- exo("exoplanets")
-#' k2candidates <- exo("k2candidates")
+#' exoplanets <- exo(
+#'   table = "exoplanets",
+#'   progress = FALSE,
+#'   col_spec = FALSE
+#'   )
 #' str(exoplanets[1:5])
-#' str(k2candidates[1:5])
 #' @export
-exo <- function(table = "exoplanets", cols = "default") {
+exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = TRUE) {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
   cols <- paste0(cols, collapse = ",")
 
   if(cols == "default") {
     x <- paste0(base_url, "table=", table)
-    utils::read.csv(x, stringsAsFactors = FALSE)
+    get_exo(x, progress = progress, col_spec = col_spec)
   } else if(cols == "all") {
     x <- paste0(base_url, "table=", table, "&select=*")
-    utils::read.csv(x, stringsAsFactors = FALSE)
+    get_exo(x, progress = progress, col_spec = col_spec)
   } else {
     x <- paste0(base_url, "table=", table, "&select=", cols)
-    utils::read.csv(x, stringsAsFactors = FALSE)
+    get_exo(x, progress = progress, col_spec = col_spec)
   }
 }
 
@@ -61,20 +73,23 @@ exo <- function(table = "exoplanets", cols = "default") {
 #' table names.
 #' @param cols Either "default" for default columns, "all" for all columns,
 #' defaults to "default".
+#' @param progress If FALSE, suppresses progress of request.
+#' @param col_spec If FALSE, suppresses column specification message from
+#' \code{readr}.
 #' @return A character vector containing column names for the respective table
 #' @examples
-#' str(exo_column_names("cumulative", "default"))
-#' str(exo_column_names("cumulative", "all"))
+#' str(exo_column_names("cumulative", "default", progress = FALSE))
+#' str(exo_column_names("cumulative", "all", progress = FALSE))
 #' @export
-exo_column_names <- function(table = "exoplanets", cols = "default") {
+exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = TRUE) {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
 
   if(cols == "default") {
     x <- paste0(base_url, "table=", table, "&getDefaultColumns&format=csv")
-    names(utils::read.csv(x))
+    names(get_exo(x, progress = progress, col_spec = col_spec))
   } else if(cols == "all") {
     x <- paste0(base_url, "table=", table, "&getAllColumns&format=csv")
-    names(utils::read.csv(x))
+    names(get_exo(x, progress = progress, col_spec = col_spec))
   }
 }
 
@@ -87,17 +102,24 @@ exo_column_names <- function(table = "exoplanets", cols = "default") {
 #' \code{output = "dataframe"}.
 #'
 #' @param output One of \code{list} or \code{dataframe}, defaults to list.
+#' @param progress If FALSE, suppresses progress of request.
+#' @param col_spec If FALSE, suppresses column specification message from
+#' \code{readr}.
 #' @return An object of class \code{list} or \code{data.frame}.
 #' @examples
-#' x <- exo_summary(output = "dataframe")
+#' x <- exo_summary(
+#'   output = "dataframe",
+#'   progress = FALSE,
+#'   col_spec = FALSE
+#' )
 #' x
 #' @export
-exo_summary <- function(output = "list") {
-  exo_cols <- c(exo_column_names("exoplanets"), "pl_masse", "pl_rade")
+exo_summary <- function(output = "list", progress = TRUE, col_spec = TRUE) {
+  exo_cols <- c(exo_column_names("exoplanets", progress = progress, col_spec = col_spec), "pl_masse", "pl_rade")
 
-  df_exo <- exo("exoplanets", exo_cols)
-  df_cumulative <- exo("cumulative")
-  df_k2_can <- exo("k2candidates")
+  df_exo <- exo("exoplanets", exo_cols, progress = progress, col_spec = col_spec)
+  df_cumulative <- exo("cumulative", progress = progress, col_spec = col_spec)
+  df_k2_can <- exo("k2candidates", progress = progress, col_spec = col_spec)
 
   counts_summary <- list(
     all_exoplanets = nrow(df_exo),

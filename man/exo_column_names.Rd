@@ -4,7 +4,8 @@
 \alias{exo_column_names}
 \title{Access column names for each table}
 \usage{
-exo_column_names(table = "exoplanets", cols = "default")
+exo_column_names(table = "exoplanets", cols = "default",
+  progress = TRUE, col_spec = TRUE)
 }
 \arguments{
 \item{table}{The name of the table, see \code{exo_tables} for all available
@@ -12,6 +13,11 @@ table names.}
 
 \item{cols}{Either "default" for default columns, "all" for all columns,
 defaults to "default".}
+
+\item{progress}{If FALSE, suppresses progress of request.}
+
+\item{col_spec}{If FALSE, suppresses column specification message from
+\code{readr}.}
 }
 \value{
 A character vector containing column names for the respective table
@@ -21,6 +27,6 @@ Simply pull column names for a specified table. You can either
 pull the default columns assigned to a table or all columns.
 }
 \examples{
-str(exo_column_names("cumulative", "default"))
-str(exo_column_names("cumulative", "all"))
+str(exo_column_names("cumulative", "default", progress = FALSE))
+str(exo_column_names("cumulative", "all", progress = FALSE))
 }

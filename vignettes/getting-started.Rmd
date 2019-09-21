@@ -24,8 +24,16 @@ Where `exo()` simply requires the name of a table and `exo_raw()` requires the f
 ```{r setup}
 library(exoplanets)
 
-exoplanets1 <- exo("exoplanets")
-exoplanets2 <- exo_raw("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets")
+exoplanets1 <- exo(
+  table = "exoplanets", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
+exoplanets2 <- exo_raw(
+  query = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 
 all.equal(exoplanets1, exoplanets2)
 ```
@@ -39,7 +47,11 @@ names(exo_tables)
 If using RStudio, this list allows convenient autocompletion in case you forget the table names:
 
 ```{r exo_tables autocomplete}
-k2names <- exo(exo_tables$k2names)
+k2names <- exo(
+  table = exo_tables$k2names, 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 str(k2names)
 ```
 
@@ -50,6 +62,3 @@ names(exo_tables)[which(grepl("timeseries", names(exo_tables)))]
 ```
 
 For example, the `kelttimeseries` table requires either the quarter or a Kepler ID, `exo("kelttimeseries&quarter=14")`. Note, these datasets are quite large and can take awhile. All of these additional parameter requirements are documented in the [documentation](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html).
-
-
-

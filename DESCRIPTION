@@ -25,7 +25,9 @@ Suggests:
     rmarkdown,
     dplyr
 Imports: 
-    utils
+    utils,
+    httr,
+    readr
 Language: en-US
 URL: https://github.com/tyluRp/exoplanets
 BugReports: https://github.com/tyluRp/exoplanets/issues

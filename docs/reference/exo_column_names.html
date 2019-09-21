@@ -149,7 +149,8 @@ pull the default columns assigned to a table or all columns." />
 pull the default columns assigned to a table or all columns.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>exo_column_names</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"exoplanets"</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='st'>"default"</span>)</pre>
+    <pre class="usage"><span class='fu'>exo_column_names</span>(<span class='kw'>table</span> <span class='kw'>=</span> <span class='st'>"exoplanets"</span>, <span class='kw'>cols</span> <span class='kw'>=</span> <span class='st'>"default"</span>,
+  <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,6 +165,15 @@ table names.</p></td>
       <td><p>Either "default" for default columns, "all" for all columns,
 defaults to "default".</p></td>
     </tr>
+    <tr>
+      <th>progress</th>
+      <td><p>If FALSE, suppresses progress of request.</p></td>
+    </tr>
+    <tr>
+      <th>col_spec</th>
+      <td><p>If FALSE, suppresses column specification message from
+<code>readr</code>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -171,7 +181,13 @@ defaults to "default".</p></td>
     <p>A character vector containing column names for the respective table</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>exo_column_names</span>(<span class='st'>"cumulative"</span>, <span class='st'>"default"</span>))</div><div class='output co'>#&gt;  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>exo_column_names</span>(<span class='st'>"cumulative"</span>, <span class='st'>"all"</span>))</div><div class='output co'>#&gt;  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>exo_column_names</span>(<span class='st'>"cumulative"</span>, <span class='st'>"default"</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
+#&gt; <span class='message'>cols(</span>
+#&gt; <span class='message'>  .default = col_character()</span>
+#&gt; <span class='message'>)</span></div><div class='output co'>#&gt; <span class='message'>See spec(...) for full column specifications.</span></div><div class='output co'>#&gt;  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...</div><div class='input'><span class='fu'><a href='https://rdrr.io/r/utils/str.html'>str</a></span>(<span class='fu'>exo_column_names</span>(<span class='st'>"cumulative"</span>, <span class='st'>"all"</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>))</div><div class='output co'>#&gt; <span class='message'>Parsed with column specification:</span>
+#&gt; <span class='message'>cols(</span>
+#&gt; <span class='message'>  .default = col_character()</span>
+#&gt; <span class='message'>)</span></div><div class='output co'>#&gt; <span class='message'>See spec(...) for full column specifications.</span></div><div class='output co'>#&gt;  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

@@ -4,10 +4,15 @@
 \alias{exo_summary}
 \title{Exoplanet Summary}
 \usage{
-exo_summary(output = "list")
+exo_summary(output = "list", progress = TRUE, col_spec = TRUE)
 }
 \arguments{
 \item{output}{One of \code{list} or \code{dataframe}, defaults to list.}
+
+\item{progress}{If FALSE, suppresses progress of request.}
+
+\item{col_spec}{If FALSE, suppresses column specification message from
+\code{readr}.}
 }
 \value{
 An object of class \code{list} or \code{data.frame}.
@@ -20,6 +25,10 @@ default, a list is returned but a \code{data.frame} can be returned with
 \code{output = "dataframe"}.
 }
 \examples{
-x <- exo_summary(output = "dataframe")
+x <- exo_summary(
+  output = "dataframe",
+  progress = FALSE,
+  col_spec = FALSE
+)
 x
 }

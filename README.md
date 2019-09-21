@@ -17,8 +17,8 @@ coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)
 
 The goal of exoplanets is to provide access to [NASA’s Exoplanet
 Archive](https://exoplanetarchive.ipac.caltech.edu/index.html) database
-in R. The functionality of this package is very minimal and is simply an
-R interface to access exoplanet data in the following ways:
+in R. The functionality of this package is fairly minimal and is simply
+an R interface to access exoplanet data in the following ways:
 
   - By providing a table name
   - By providing a query URL
@@ -26,6 +26,11 @@ R interface to access exoplanet data in the following ways:
 You can also summarise the database with `exo_summary`.
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+
+By default, exoplanets uses `httr` to display the progress of each
+request and `readr` to display the column specification:
+
+![](man/figures/demo.gif)
 
 ## Installation
 
@@ -39,18 +44,23 @@ devtools::install_github("tylurp/exoplanets")
 ## Example
 
 This is a basic example which shows you how to access data from the
-exoplanet table:
+exoplanet table. Note that all these examples have `progress` and
+`col_spec` set to FALSE, the default is TRUE. I’m setting these
+parameters to FALSE to avoid a really long README file:
 
 ``` r
 library(exoplanets)
-library(tibble)
+library(dplyr)
 
-exoplanets <- exo()
-
+exoplanets <- exo(
+  table = "exoplanets", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 as_tibble(exoplanets)
 #> # A tibble: 4,055 x 82
 #>    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum
-#>    <chr>       <chr>     <chr>   <chr>                  <int>   <int>
+#>    <chr>       <chr>     <chr>   <chr>                  <dbl>   <dbl>
 #>  1 Kepler-150  d         Kepler… Transit                    0       5
 #>  2 Kepler-150  e         Kepler… Transit                    0       5
 #>  3 Kepler-151  b         Kepler… Transit                    0       2
@@ -62,39 +72,43 @@ as_tibble(exoplanets)
 #>  9 Kepler-154  b         Kepler… Transit                    0       5
 #> 10 Kepler-154  c         Kepler… Transit                    0       5
 #> # … with 4,045 more rows, and 76 more variables: pl_orbper <dbl>,
-#> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <int>,
-#> #   pl_orbpern <int>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
-#> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <int>, pl_orbsmaxn <int>,
+#> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <dbl>,
+#> #   pl_orbpern <dbl>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
+#> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <dbl>, pl_orbsmaxn <dbl>,
 #> #   pl_orbeccen <dbl>, pl_orbeccenerr1 <dbl>, pl_orbeccenerr2 <dbl>,
-#> #   pl_orbeccenlim <int>, pl_orbeccenn <int>, pl_orbincl <dbl>,
-#> #   pl_orbinclerr1 <dbl>, pl_orbinclerr2 <dbl>, pl_orbincllim <int>,
-#> #   pl_orbincln <int>, pl_bmassj <dbl>, pl_bmassjerr1 <dbl>,
-#> #   pl_bmassjerr2 <dbl>, pl_bmassjlim <int>, pl_bmassn <int>,
+#> #   pl_orbeccenlim <dbl>, pl_orbeccenn <dbl>, pl_orbincl <dbl>,
+#> #   pl_orbinclerr1 <dbl>, pl_orbinclerr2 <dbl>, pl_orbincllim <dbl>,
+#> #   pl_orbincln <dbl>, pl_bmassj <dbl>, pl_bmassjerr1 <dbl>,
+#> #   pl_bmassjerr2 <dbl>, pl_bmassjlim <dbl>, pl_bmassn <dbl>,
 #> #   pl_bmassprov <chr>, pl_radj <dbl>, pl_radjerr1 <dbl>,
-#> #   pl_radjerr2 <dbl>, pl_radjlim <int>, pl_radn <int>, pl_dens <dbl>,
-#> #   pl_denserr1 <dbl>, pl_denserr2 <dbl>, pl_denslim <int>,
-#> #   pl_densn <int>, pl_ttvflag <int>, pl_kepflag <int>, pl_k2flag <int>,
+#> #   pl_radjerr2 <dbl>, pl_radjlim <dbl>, pl_radn <dbl>, pl_dens <dbl>,
+#> #   pl_denserr1 <dbl>, pl_denserr2 <dbl>, pl_denslim <dbl>,
+#> #   pl_densn <dbl>, pl_ttvflag <dbl>, pl_kepflag <dbl>, pl_k2flag <dbl>,
 #> #   ra_str <chr>, dec_str <chr>, ra <dbl>, st_raerr <dbl>, dec <dbl>,
-#> #   st_decerr <dbl>, st_posn <int>, st_dist <dbl>, st_disterr1 <dbl>,
-#> #   st_disterr2 <dbl>, st_distlim <int>, st_distn <int>, st_optmag <dbl>,
-#> #   st_optmagerr <dbl>, st_optmaglim <int>, st_optband <chr>,
-#> #   gaia_gmag <dbl>, gaia_gmagerr <lgl>, gaia_gmaglim <int>,
-#> #   st_teff <dbl>, st_tefferr1 <dbl>, st_tefferr2 <dbl>, st_tefflim <int>,
-#> #   st_teffn <int>, st_mass <dbl>, st_masserr1 <dbl>, st_masserr2 <dbl>,
-#> #   st_masslim <int>, st_massn <int>, st_rad <dbl>, st_raderr1 <dbl>,
-#> #   st_raderr2 <dbl>, st_radlim <int>, st_radn <int>, pl_nnotes <int>,
-#> #   rowupdate <chr>, pl_facility <chr>
+#> #   st_decerr <dbl>, st_posn <dbl>, st_dist <dbl>, st_disterr1 <dbl>,
+#> #   st_disterr2 <dbl>, st_distlim <dbl>, st_distn <dbl>, st_optmag <dbl>,
+#> #   st_optmagerr <dbl>, st_optmaglim <dbl>, st_optband <chr>,
+#> #   gaia_gmag <dbl>, gaia_gmagerr <lgl>, gaia_gmaglim <dbl>,
+#> #   st_teff <dbl>, st_tefferr1 <dbl>, st_tefferr2 <dbl>, st_tefflim <dbl>,
+#> #   st_teffn <dbl>, st_mass <dbl>, st_masserr1 <dbl>, st_masserr2 <dbl>,
+#> #   st_masslim <dbl>, st_massn <dbl>, st_rad <dbl>, st_raderr1 <dbl>,
+#> #   st_raderr2 <dbl>, st_radlim <dbl>, st_radn <dbl>, pl_nnotes <dbl>,
+#> #   rowupdate <date>, pl_facility <chr>
 ```
 
 To access data from a different table you can use the table parameter:
 
 ``` r
-keplernames <- exo(table = "keplernames")
+keplernames <- exo(
+  table = "keplernames", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 
 as_tibble(keplernames)
 #> # A tibble: 2,354 x 13
 #>     kepid    ra ra_err   dec dec_err ra_str dec_str kepoi_name kepler_name
-#>     <int> <dbl>  <dbl> <dbl>   <dbl> <chr>  <chr>   <chr>      <chr>      
+#>     <dbl> <dbl>  <dbl> <dbl>   <dbl> <chr>  <chr>   <chr>      <chr>      
 #>  1 1.10e7  293.      0  48.4       0 19h33… +48d26… K01931.02  Kepler-339…
 #>  2 5.20e6  296.      0  40.3       0 19h43… +40d18… K01932.02  Kepler-340…
 #>  3 5.20e6  296.      0  40.3       0 19h43… +40d18… K01932.01  Kepler-340…
@@ -106,7 +120,7 @@ as_tibble(keplernames)
 #>  9 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.04  Kepler-342…
 #> 10 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.02  Kepler-342…
 #> # … with 2,344 more rows, and 4 more variables: alt_name <chr>,
-#> #   tm_designation <chr>, koi_list_flag <chr>, last_update <chr>
+#> #   tm_designation <chr>, koi_list_flag <chr>, last_update <date>
 ```
 
 To get a list of all available tables:
@@ -134,9 +148,22 @@ names(exo_tables)
 To get a vector of column names for a specific table:
 
 ``` r
-str(exo_column_names("cumulative", "default"))
+exo_column_names(
+  table = "cumulative", 
+  cols = "default", 
+  progress = FALSE, 
+  col_spec = FALSE
+  ) %>% 
+  str()
 #>  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...
-str(exo_column_names("cumulative", "all"))
+
+exo_column_names(
+  table = "cumulative", 
+  cols = "all", 
+  progress = FALSE, 
+  col_spec = FALSE
+  ) %>% 
+  str()
 #>  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...
 ```
 
@@ -147,8 +174,11 @@ include everything found
 can override this with `output = "dataframe"`:
 
 ``` r
-df_exo_summary <- exo_summary()
-str(df_exo_summary)
+exo_summary(
+  progress = FALSE, 
+  col_spec = FALSE
+  ) %>% 
+  str()
 #> List of 4
 #>  $ counts_summary   :List of 8
 #>   ..$ all_exoplanets                                             : int 4055
@@ -189,16 +219,19 @@ Finally, you can take a look at the
 [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html)
 and use `eco_raw` to write out queries in their entirety. Spaces and
 single quotes will be escaped automatically. The only supported format
-is CSV so do not request JSON, ipac, or
-others:
+is CSV so do not request JSON, ipac, or others:
 
 ``` r
-exoplanets2 <- exo_raw("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets")
+exoplanets2 <- exo_raw(
+  query = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 
 as_tibble(exoplanets2)
 #> # A tibble: 4,055 x 82
 #>    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum
-#>    <chr>       <chr>     <chr>   <chr>                  <int>   <int>
+#>    <chr>       <chr>     <chr>   <chr>                  <dbl>   <dbl>
 #>  1 Kepler-150  d         Kepler… Transit                    0       5
 #>  2 Kepler-150  e         Kepler… Transit                    0       5
 #>  3 Kepler-151  b         Kepler… Transit                    0       2
@@ -210,26 +243,26 @@ as_tibble(exoplanets2)
 #>  9 Kepler-154  b         Kepler… Transit                    0       5
 #> 10 Kepler-154  c         Kepler… Transit                    0       5
 #> # … with 4,045 more rows, and 76 more variables: pl_orbper <dbl>,
-#> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <int>,
-#> #   pl_orbpern <int>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
-#> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <int>, pl_orbsmaxn <int>,
+#> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <dbl>,
+#> #   pl_orbpern <dbl>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
+#> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <dbl>, pl_orbsmaxn <dbl>,
 #> #   pl_orbeccen <dbl>, pl_orbeccenerr1 <dbl>, pl_orbeccenerr2 <dbl>,
-#> #   pl_orbeccenlim <int>, pl_orbeccenn <int>, pl_orbincl <dbl>,
-#> #   pl_orbinclerr1 <dbl>, pl_orbinclerr2 <dbl>, pl_orbincllim <int>,
-#> #   pl_orbincln <int>, pl_bmassj <dbl>, pl_bmassjerr1 <dbl>,
-#> #   pl_bmassjerr2 <dbl>, pl_bmassjlim <int>, pl_bmassn <int>,
+#> #   pl_orbeccenlim <dbl>, pl_orbeccenn <dbl>, pl_orbincl <dbl>,
+#> #   pl_orbinclerr1 <dbl>, pl_orbinclerr2 <dbl>, pl_orbincllim <dbl>,
+#> #   pl_orbincln <dbl>, pl_bmassj <dbl>, pl_bmassjerr1 <dbl>,
+#> #   pl_bmassjerr2 <dbl>, pl_bmassjlim <dbl>, pl_bmassn <dbl>,
 #> #   pl_bmassprov <chr>, pl_radj <dbl>, pl_radjerr1 <dbl>,
-#> #   pl_radjerr2 <dbl>, pl_radjlim <int>, pl_radn <int>, pl_dens <dbl>,
-#> #   pl_denserr1 <dbl>, pl_denserr2 <dbl>, pl_denslim <int>,
-#> #   pl_densn <int>, pl_ttvflag <int>, pl_kepflag <int>, pl_k2flag <int>,
+#> #   pl_radjerr2 <dbl>, pl_radjlim <dbl>, pl_radn <dbl>, pl_dens <dbl>,
+#> #   pl_denserr1 <dbl>, pl_denserr2 <dbl>, pl_denslim <dbl>,
+#> #   pl_densn <dbl>, pl_ttvflag <dbl>, pl_kepflag <dbl>, pl_k2flag <dbl>,
 #> #   ra_str <chr>, dec_str <chr>, ra <dbl>, st_raerr <dbl>, dec <dbl>,
-#> #   st_decerr <dbl>, st_posn <int>, st_dist <dbl>, st_disterr1 <dbl>,
-#> #   st_disterr2 <dbl>, st_distlim <int>, st_distn <int>, st_optmag <dbl>,
-#> #   st_optmagerr <dbl>, st_optmaglim <int>, st_optband <chr>,
-#> #   gaia_gmag <dbl>, gaia_gmagerr <lgl>, gaia_gmaglim <int>,
-#> #   st_teff <dbl>, st_tefferr1 <dbl>, st_tefferr2 <dbl>, st_tefflim <int>,
-#> #   st_teffn <int>, st_mass <dbl>, st_masserr1 <dbl>, st_masserr2 <dbl>,
-#> #   st_masslim <int>, st_massn <int>, st_rad <dbl>, st_raderr1 <dbl>,
-#> #   st_raderr2 <dbl>, st_radlim <int>, st_radn <int>, pl_nnotes <int>,
-#> #   rowupdate <chr>, pl_facility <chr>
+#> #   st_decerr <dbl>, st_posn <dbl>, st_dist <dbl>, st_disterr1 <dbl>,
+#> #   st_disterr2 <dbl>, st_distlim <dbl>, st_distn <dbl>, st_optmag <dbl>,
+#> #   st_optmagerr <dbl>, st_optmaglim <dbl>, st_optband <chr>,
+#> #   gaia_gmag <dbl>, gaia_gmagerr <lgl>, gaia_gmaglim <dbl>,
+#> #   st_teff <dbl>, st_tefferr1 <dbl>, st_tefferr2 <dbl>, st_tefflim <dbl>,
+#> #   st_teffn <dbl>, st_mass <dbl>, st_masserr1 <dbl>, st_masserr2 <dbl>,
+#> #   st_masslim <dbl>, st_massn <dbl>, st_rad <dbl>, st_raderr1 <dbl>,
+#> #   st_raderr2 <dbl>, st_radlim <dbl>, st_radn <dbl>, pl_nnotes <dbl>,
+#> #   rowupdate <date>, pl_facility <chr>
 ```

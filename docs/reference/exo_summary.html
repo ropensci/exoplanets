@@ -155,7 +155,7 @@ default, a list is returned but a <code>data.frame</code> can be returned with
 <code>output = "dataframe"</code>.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>exo_summary</span>(<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"list"</span>)</pre>
+    <pre class="usage"><span class='fu'>exo_summary</span>(<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"list"</span>, <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -164,6 +164,15 @@ default, a list is returned but a <code>data.frame</code> can be returned with
       <th>output</th>
       <td><p>One of <code>list</code> or <code>dataframe</code>, defaults to list.</p></td>
     </tr>
+    <tr>
+      <th>progress</th>
+      <td><p>If FALSE, suppresses progress of request.</p></td>
+    </tr>
+    <tr>
+      <th>col_spec</th>
+      <td><p>If FALSE, suppresses column specification message from
+<code>readr</code>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
@@ -171,7 +180,11 @@ default, a list is returned but a <code>data.frame</code> can be returned with
     <p>An object of class <code>list</code> or <code>data.frame</code>.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>exo_summary</span>(<span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"dataframe"</span>)
+    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'>exo_summary</span>(
+  <span class='kw'>output</span> <span class='kw'>=</span> <span class='st'>"dataframe"</span>,
+  <span class='kw'>progress</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>col_spec</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>
+)
 <span class='no'>x</span></div><div class='output co'>#&gt; $counts_summary
 #&gt;                                                           ind values
 #&gt; 1                                              all_exoplanets   4055

@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
 <!-- badges: end -->
 
-The goal of exoplanets is to provide access to [NASA's Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/index.html) database in R. The functionality of this package is very minimal and is simply an R interface to access exoplanet data in the following ways:
+The goal of exoplanets is to provide access to [NASA's Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/index.html) database in R. The functionality of this package is fairly minimal and is simply an R interface to access exoplanet data in the following ways:
 
 * By providing a table name
 * By providing a query URL
@@ -91,6 +91,9 @@ You can also summarise the database with `exo_summary`.
 knitr::include_graphics("man/figures/README-unnamed-chunk-2-1.png")
 ```
 
+By default, exoplanets uses `httr` to display the progress of each request and `readr` to display the column specification:
+
+![](man/figures/demo.gif)
 
 ## Installation
 
@@ -103,21 +106,28 @@ devtools::install_github("tylurp/exoplanets")
 
 ## Example
 
-This is a basic example which shows you how to access data from the exoplanet table:
+This is a basic example which shows you how to access data from the exoplanet table. Note that all these examples have `progress` and `col_spec` set to FALSE, the default is TRUE. I'm setting these parameters to FALSE to avoid a really long README file:
 
-```{r example}
+```{r example, message=FALSE}
 library(exoplanets)
-library(tibble)
+library(dplyr)
 
-exoplanets <- exo()
-
+exoplanets <- exo(
+  table = "exoplanets", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 as_tibble(exoplanets)
 ```
 
 To access data from a different table you can use the table parameter:
 
 ```{r}
-keplernames <- exo(table = "keplernames")
+keplernames <- exo(
+  table = "keplernames", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 
 as_tibble(keplernames)
 ```
@@ -131,22 +141,42 @@ names(exo_tables)
 To get a vector of column names for a specific table:
 
 ```{r}
-str(exo_column_names("cumulative", "default"))
-str(exo_column_names("cumulative", "all"))
+exo_column_names(
+  table = "cumulative", 
+  cols = "default", 
+  progress = FALSE, 
+  col_spec = FALSE
+  ) %>% 
+  str()
+
+exo_column_names(
+  table = "cumulative", 
+  cols = "all", 
+  progress = FALSE, 
+  col_spec = FALSE
+  ) %>% 
+  str()
 ```
 
 To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html) (yet) but might in the future. Notice the default output is a list, you can override this with `output = "dataframe"`:
 
 ```{r}
-df_exo_summary <- exo_summary()
-str(df_exo_summary)
+exo_summary(
+  progress = FALSE, 
+  col_spec = FALSE
+  ) %>% 
+  str()
 ```
 
 
 Finally, you can take a look at the [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html) and use `eco_raw` to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:
 
 ```{r}
-exoplanets2 <- exo_raw("https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets")
+exoplanets2 <- exo_raw(
+  query = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets", 
+  progress = FALSE, 
+  col_spec = FALSE
+  )
 
 as_tibble(exoplanets2)
 ```

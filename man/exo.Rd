@@ -4,7 +4,8 @@
 \alias{exo}
 \title{Access NASA's Exoplanet Archive by Table}
 \usage{
-exo(table = "exoplanets", cols = "default")
+exo(table = "exoplanets", cols = "default", progress = TRUE,
+  col_spec = TRUE)
 }
 \arguments{
 \item{table}{The name of the table, see \code{exo_tables} for all available table
@@ -12,6 +13,11 @@ names.}
 
 \item{cols}{Either "default" for default columns, "all" for all columns or
 individual column names separated by a comma, defaults to "default".}
+
+\item{progress}{If FALSE, suppresses progress of request.}
+
+\item{col_spec}{If FALSE, suppresses column specification message from
+\code{readr}.}
 }
 \value{
 A \code{data.frame} containing data for the respective table
@@ -21,8 +27,10 @@ Access NASA's Exoplanet Archive by table name. For a list of
 all available tables, see \code{exo_tables}.
 }
 \examples{
-exoplanets <- exo("exoplanets")
-k2candidates <- exo("k2candidates")
+exoplanets <- exo(
+  table = "exoplanets",
+  progress = FALSE,
+  col_spec = FALSE
+  )
 str(exoplanets[1:5])
-str(k2candidates[1:5])
 }
