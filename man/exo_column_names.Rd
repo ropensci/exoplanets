@@ -26,11 +26,3 @@ A character vector containing column names for the respective table
 Simply pull column names for a specified table. You can either
 pull the default columns assigned to a table or all columns.
 }
-\examples{
-x <- exo_column_names(
-  table = "cumulative",
-  cols = "default",
-  progress = FALSE
-  )
-str(x)
-}

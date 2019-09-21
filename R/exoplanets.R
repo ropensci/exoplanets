@@ -32,12 +32,6 @@ exo_raw <- function(query, progress = TRUE, col_spec = FALSE) {
 #' @param col_spec If FALSE, suppresses column specification message from
 #' \code{readr}.
 #' @return A \code{data.frame} containing data for the respective table
-#' @examples
-#' exoplanets <- exo(
-#'   table = "exoplanets",
-#'   progress = FALSE
-#'   )
-#' str(exoplanets[1:5])
 #' @export
 exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
@@ -68,13 +62,6 @@ exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spe
 #' @param col_spec If FALSE, suppresses column specification message from
 #' \code{readr}.
 #' @return A character vector containing column names for the respective table
-#' @examples
-#' x <- exo_column_names(
-#'   table = "cumulative",
-#'   cols = "default",
-#'   progress = FALSE
-#'   )
-#' str(x)
 #' @export
 exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
@@ -101,12 +88,6 @@ exo_column_names <- function(table = "exoplanets", cols = "default", progress = 
 #' @param col_spec If FALSE, suppresses column specification message from
 #' \code{readr}.
 #' @return An object of class \code{list} or \code{data.frame}.
-#' @examples
-#' x <- exo_summary(
-#'   output = "dataframe",
-#'   progress = FALSE
-#' )
-#' x
 #' @export
 exo_summary <- function(output = "list", progress = TRUE, col_spec = FALSE) {
   exo_cols <- c(exo_column_names("exoplanets", progress = progress, col_spec = col_spec), "pl_masse", "pl_rade")

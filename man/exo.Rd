@@ -26,10 +26,3 @@ A \code{data.frame} containing data for the respective table
 Access NASA's Exoplanet Archive by table name. For a list of
 all available tables, see \code{exo_tables}.
 }
-\examples{
-exoplanets <- exo(
-  table = "exoplanets",
-  progress = FALSE
-  )
-str(exoplanets[1:5])
-}

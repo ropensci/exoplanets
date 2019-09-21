@@ -24,10 +24,3 @@ this function is to provide the information found here
 default, a list is returned but a \code{data.frame} can be returned with
 \code{output = "dataframe"}.
 }
-\examples{
-x <- exo_summary(
-  output = "dataframe",
-  progress = FALSE
-)
-x
-}
