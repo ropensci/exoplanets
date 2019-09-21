@@ -27,11 +27,6 @@ You can also summarise the database with `exo_summary`.
 
 <img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
-By default, exoplanets uses `httr` to display the progress of each
-request and `readr` to display the column specification:
-
-![](inst/extdata/demo.gif)
-
 ## Installation
 
 You can install the development version from GitHub with:
