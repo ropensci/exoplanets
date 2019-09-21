@@ -93,7 +93,7 @@ knitr::include_graphics("man/figures/README-unnamed-chunk-2-1.png")
 
 By default, exoplanets uses `httr` to display the progress of each request and `readr` to display the column specification:
 
-![](man/figures/demo.gif)
+![](inst/extdata/demo.gif)
 
 ## Installation
 

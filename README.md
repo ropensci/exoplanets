@@ -30,7 +30,7 @@ You can also summarise the database with `exo_summary`.
 By default, exoplanets uses `httr` to display the progress of each
 request and `readr` to display the column specification:
 
-![](man/figures/demo.gif)
+![](inst/extdata/demo.gif)
 
 ## Installation
 
