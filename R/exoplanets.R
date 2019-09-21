@@ -11,13 +11,13 @@
 #' \code{readr}.
 #' @return A \code{data.frame} containing data for the respective table
 #' @examples
-#' x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
+#' x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname"
 #' exoplanets <- exo_raw(
 #'   query = x,
 #'   progress = FALSE,
 #'   col_spec = FALSE
 #'   )
-#' str(exoplanets[1:5])
+#' str(exoplanets)
 #' @export
 exo_raw <- function(query, progress = TRUE, col_spec = TRUE) {
   if(is.null(query))
@@ -79,7 +79,6 @@ exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spe
 #' @return A character vector containing column names for the respective table
 #' @examples
 #' str(exo_column_names("cumulative", "default", progress = FALSE))
-#' str(exo_column_names("cumulative", "all", progress = FALSE))
 #' @export
 exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = TRUE) {
   base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"

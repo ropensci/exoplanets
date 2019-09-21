@@ -25,11 +25,11 @@ queries, see the documentation,
 \url{https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html}.
 }
 \examples{
-x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"
+x <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname"
 exoplanets <- exo_raw(
   query = x,
   progress = FALSE,
   col_spec = FALSE
   )
-str(exoplanets[1:5])
+str(exoplanets)
 }

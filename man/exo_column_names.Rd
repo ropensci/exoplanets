@@ -28,5 +28,4 @@ pull the default columns assigned to a table or all columns.
 }
 \examples{
 str(exo_column_names("cumulative", "default", progress = FALSE))
-str(exo_column_names("cumulative", "all", progress = FALSE))
 }
