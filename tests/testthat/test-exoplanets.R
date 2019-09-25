@@ -26,5 +26,5 @@ test_that("exoplanets works", {
   expect_true(length(exo_cols_default) < length(exo_cols_all))
   expect_equal(class(list_db_summary), "list")
   expect_equal(unique(lapply(df_db_summary, class))[[1]], "data.frame")
-  # expect_equal(ncol(exo("cumulative", "kepid")), 1)
+  expect_equal(ncol(exo("cumulative", "kepid")), 1)
 })

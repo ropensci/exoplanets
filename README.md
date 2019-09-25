@@ -252,3 +252,9 @@ as_tibble(exoplanets2)
 #> #   st_raderr2 <dbl>, st_radlim <dbl>, st_radn <dbl>, pl_nnotes <dbl>,
 #> #   rowupdate <date>, pl_facility <chr>
 ```
+
+## Contributing
+
+Please note that the ‘exoplanets’ project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.
