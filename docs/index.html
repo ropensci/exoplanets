@@ -111,73 +111,67 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to access data from the exoplanet table. Note that all these examples have <code>progress</code> set to FALSE, the default is TRUE. I’m setting this parameter to FALSE to avoid a really long README file:</p>
+<p>This is a basic example which shows you how to access data from the exoplanet table:</p>
+<p>s</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(exoplanets)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(dplyr)</a>
 <a class="sourceLine" id="cb2-3" data-line-number="3"></a>
-<a class="sourceLine" id="cb2-4" data-line-number="4">exoplanets &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo.html">exo</a></span>(</a>
-<a class="sourceLine" id="cb2-5" data-line-number="5">  <span class="dt">table =</span> <span class="st">"exoplanets"</span>, </a>
-<a class="sourceLine" id="cb2-6" data-line-number="6">  <span class="dt">progress =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb2-7" data-line-number="7">  )</a>
-<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">as_tibble</a></span>(exoplanets)</a>
-<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt; # A tibble: 4,055 x 82</span></a>
-<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum</span></a>
-<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;                  &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  1 Kepler-150  d         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  2 Kepler-150  e         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt;  3 Kepler-151  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt;  4 Kepler-151  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt;  5 Kepler-152  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt;  6 Kepler-152  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt;  7 Kepler-153  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt;  8 Kepler-153  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt;  9 Kepler-154  b         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt; 10 Kepler-154  c         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt; # … with 4,045 more rows, and 76 more variables: pl_orbper &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="co">#&gt; #   pl_orbpererr1 &lt;dbl&gt;, pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-24" data-line-number="24"><span class="co">#&gt; #   pl_orbpern &lt;dbl&gt;, pl_orbsmax &lt;dbl&gt;, pl_orbsmaxerr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="co">#&gt; #   pl_orbsmaxerr2 &lt;dbl&gt;, pl_orbsmaxlim &lt;dbl&gt;, pl_orbsmaxn &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-26" data-line-number="26"><span class="co">#&gt; #   pl_orbeccen &lt;dbl&gt;, pl_orbeccenerr1 &lt;dbl&gt;, pl_orbeccenerr2 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; #   pl_orbeccenlim &lt;dbl&gt;, pl_orbeccenn &lt;dbl&gt;, pl_orbincl &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">#&gt; #   pl_orbinclerr1 &lt;dbl&gt;, pl_orbinclerr2 &lt;dbl&gt;, pl_orbincllim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">#&gt; #   pl_orbincln &lt;dbl&gt;, pl_bmassj &lt;dbl&gt;, pl_bmassjerr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="co">#&gt; #   pl_bmassjerr2 &lt;dbl&gt;, pl_bmassjlim &lt;dbl&gt;, pl_bmassn &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="co">#&gt; #   pl_bmassprov &lt;chr&gt;, pl_radj &lt;dbl&gt;, pl_radjerr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co">#&gt; #   pl_radjerr2 &lt;dbl&gt;, pl_radjlim &lt;dbl&gt;, pl_radn &lt;dbl&gt;, pl_dens &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-33" data-line-number="33"><span class="co">#&gt; #   pl_denserr1 &lt;dbl&gt;, pl_denserr2 &lt;dbl&gt;, pl_denslim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-34" data-line-number="34"><span class="co">#&gt; #   pl_densn &lt;dbl&gt;, pl_ttvflag &lt;dbl&gt;, pl_kepflag &lt;dbl&gt;, pl_k2flag &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-35" data-line-number="35"><span class="co">#&gt; #   ra_str &lt;chr&gt;, dec_str &lt;chr&gt;, ra &lt;dbl&gt;, st_raerr &lt;dbl&gt;, dec &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-36" data-line-number="36"><span class="co">#&gt; #   st_decerr &lt;dbl&gt;, st_posn &lt;dbl&gt;, st_dist &lt;dbl&gt;, st_disterr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-37" data-line-number="37"><span class="co">#&gt; #   st_disterr2 &lt;dbl&gt;, st_distlim &lt;dbl&gt;, st_distn &lt;dbl&gt;, st_optmag &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-38" data-line-number="38"><span class="co">#&gt; #   st_optmagerr &lt;dbl&gt;, st_optmaglim &lt;dbl&gt;, st_optband &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb2-39" data-line-number="39"><span class="co">#&gt; #   gaia_gmag &lt;dbl&gt;, gaia_gmagerr &lt;lgl&gt;, gaia_gmaglim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-40" data-line-number="40"><span class="co">#&gt; #   st_teff &lt;dbl&gt;, st_tefferr1 &lt;dbl&gt;, st_tefferr2 &lt;dbl&gt;, st_tefflim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-41" data-line-number="41"><span class="co">#&gt; #   st_teffn &lt;dbl&gt;, st_mass &lt;dbl&gt;, st_masserr1 &lt;dbl&gt;, st_masserr2 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-42" data-line-number="42"><span class="co">#&gt; #   st_masslim &lt;dbl&gt;, st_massn &lt;dbl&gt;, st_rad &lt;dbl&gt;, st_raderr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-43" data-line-number="43"><span class="co">#&gt; #   st_raderr2 &lt;dbl&gt;, st_radlim &lt;dbl&gt;, st_radn &lt;dbl&gt;, pl_nnotes &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb2-44" data-line-number="44"><span class="co">#&gt; #   rowupdate &lt;date&gt;, pl_facility &lt;chr&gt;</span></a></code></pre></div>
+<a class="sourceLine" id="cb2-4" data-line-number="4">exoplanets &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo.html">exo</a></span>(<span class="dt">table =</span> <span class="st">"exoplanets"</span>)</a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">as_tibble</a></span>(exoplanets)</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"><span class="co">#&gt; # A tibble: 4,055 x 82</span></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7"><span class="co">#&gt;    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum</span></a>
+<a class="sourceLine" id="cb2-8" data-line-number="8"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;                  &lt;dbl&gt;   &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"><span class="co">#&gt;  1 Kepler-150  d         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10"><span class="co">#&gt;  2 Kepler-150  e         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"><span class="co">#&gt;  3 Kepler-151  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12"><span class="co">#&gt;  4 Kepler-151  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-13" data-line-number="13"><span class="co">#&gt;  5 Kepler-152  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-14" data-line-number="14"><span class="co">#&gt;  6 Kepler-152  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-15" data-line-number="15"><span class="co">#&gt;  7 Kepler-153  b         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-16" data-line-number="16"><span class="co">#&gt;  8 Kepler-153  c         Kepler… Transit                    0       2</span></a>
+<a class="sourceLine" id="cb2-17" data-line-number="17"><span class="co">#&gt;  9 Kepler-154  b         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-18" data-line-number="18"><span class="co">#&gt; 10 Kepler-154  c         Kepler… Transit                    0       5</span></a>
+<a class="sourceLine" id="cb2-19" data-line-number="19"><span class="co">#&gt; # … with 4,045 more rows, and 76 more variables: pl_orbper &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-20" data-line-number="20"><span class="co">#&gt; #   pl_orbpererr1 &lt;dbl&gt;, pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-21" data-line-number="21"><span class="co">#&gt; #   pl_orbpern &lt;dbl&gt;, pl_orbsmax &lt;dbl&gt;, pl_orbsmaxerr1 &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-22" data-line-number="22"><span class="co">#&gt; #   pl_orbsmaxerr2 &lt;dbl&gt;, pl_orbsmaxlim &lt;dbl&gt;, pl_orbsmaxn &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-23" data-line-number="23"><span class="co">#&gt; #   pl_orbeccen &lt;dbl&gt;, pl_orbeccenerr1 &lt;dbl&gt;, pl_orbeccenerr2 &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-24" data-line-number="24"><span class="co">#&gt; #   pl_orbeccenlim &lt;dbl&gt;, pl_orbeccenn &lt;dbl&gt;, pl_orbincl &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-25" data-line-number="25"><span class="co">#&gt; #   pl_orbinclerr1 &lt;dbl&gt;, pl_orbinclerr2 &lt;dbl&gt;, pl_orbincllim &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-26" data-line-number="26"><span class="co">#&gt; #   pl_orbincln &lt;dbl&gt;, pl_bmassj &lt;dbl&gt;, pl_bmassjerr1 &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-27" data-line-number="27"><span class="co">#&gt; #   pl_bmassjerr2 &lt;dbl&gt;, pl_bmassjlim &lt;dbl&gt;, pl_bmassn &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-28" data-line-number="28"><span class="co">#&gt; #   pl_bmassprov &lt;chr&gt;, pl_radj &lt;dbl&gt;, pl_radjerr1 &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-29" data-line-number="29"><span class="co">#&gt; #   pl_radjerr2 &lt;dbl&gt;, pl_radjlim &lt;dbl&gt;, pl_radn &lt;dbl&gt;, pl_dens &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-30" data-line-number="30"><span class="co">#&gt; #   pl_denserr1 &lt;dbl&gt;, pl_denserr2 &lt;dbl&gt;, pl_denslim &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-31" data-line-number="31"><span class="co">#&gt; #   pl_densn &lt;dbl&gt;, pl_ttvflag &lt;dbl&gt;, pl_kepflag &lt;dbl&gt;, pl_k2flag &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-32" data-line-number="32"><span class="co">#&gt; #   ra_str &lt;chr&gt;, dec_str &lt;chr&gt;, ra &lt;dbl&gt;, st_raerr &lt;dbl&gt;, dec &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-33" data-line-number="33"><span class="co">#&gt; #   st_decerr &lt;dbl&gt;, st_posn &lt;dbl&gt;, st_dist &lt;dbl&gt;, st_disterr1 &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-34" data-line-number="34"><span class="co">#&gt; #   st_disterr2 &lt;dbl&gt;, st_distlim &lt;dbl&gt;, st_distn &lt;dbl&gt;, st_optmag &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-35" data-line-number="35"><span class="co">#&gt; #   st_optmagerr &lt;dbl&gt;, st_optmaglim &lt;dbl&gt;, st_optband &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb2-36" data-line-number="36"><span class="co">#&gt; #   gaia_gmag &lt;dbl&gt;, gaia_gmagerr &lt;lgl&gt;, gaia_gmaglim &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-37" data-line-number="37"><span class="co">#&gt; #   st_teff &lt;dbl&gt;, st_tefferr1 &lt;dbl&gt;, st_tefferr2 &lt;dbl&gt;, st_tefflim &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-38" data-line-number="38"><span class="co">#&gt; #   st_teffn &lt;dbl&gt;, st_mass &lt;dbl&gt;, st_masserr1 &lt;dbl&gt;, st_masserr2 &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-39" data-line-number="39"><span class="co">#&gt; #   st_masslim &lt;dbl&gt;, st_massn &lt;dbl&gt;, st_rad &lt;dbl&gt;, st_raderr1 &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-40" data-line-number="40"><span class="co">#&gt; #   st_raderr2 &lt;dbl&gt;, st_radlim &lt;dbl&gt;, st_radn &lt;dbl&gt;, pl_nnotes &lt;dbl&gt;,</span></a>
+<a class="sourceLine" id="cb2-41" data-line-number="41"><span class="co">#&gt; #   rowupdate &lt;date&gt;, pl_facility &lt;chr&gt;</span></a></code></pre></div>
 <p>To access data from a different table you can use the table parameter:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">keplernames &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo.html">exo</a></span>(</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="dt">table =</span> <span class="st">"keplernames"</span>, </a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">  <span class="dt">progress =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb3-4" data-line-number="4">  )</a>
-<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">as_tibble</a></span>(keplernames)</a>
-<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt; # A tibble: 2,354 x 13</span></a>
-<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;     kepid    ra ra_err   dec dec_err ra_str dec_str kepoi_name kepler_name</span></a>
-<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;      </span></a>
-<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  1 1.10e7  293.      0  48.4       0 19h33… +48d26… K01931.02  Kepler-339…</span></a>
-<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  2 5.20e6  296.      0  40.3       0 19h43… +40d18… K01932.02  Kepler-340…</span></a>
-<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  3 5.20e6  296.      0  40.3       0 19h43… +40d18… K01932.01  Kepler-340…</span></a>
-<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  4 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.03  Kepler-341…</span></a>
-<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  5 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.01  Kepler-341…</span></a>
-<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt;  6 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.02  Kepler-341…</span></a>
-<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt;  7 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.04  Kepler-341…</span></a>
-<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt;  8 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.01  Kepler-342…</span></a>
-<a class="sourceLine" id="cb3-18" data-line-number="18"><span class="co">#&gt;  9 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.04  Kepler-342…</span></a>
-<a class="sourceLine" id="cb3-19" data-line-number="19"><span class="co">#&gt; 10 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.02  Kepler-342…</span></a>
-<a class="sourceLine" id="cb3-20" data-line-number="20"><span class="co">#&gt; # … with 2,344 more rows, and 4 more variables: alt_name &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb3-21" data-line-number="21"><span class="co">#&gt; #   tm_designation &lt;chr&gt;, koi_list_flag &lt;chr&gt;, last_update &lt;date&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">keplernames &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo.html">exo</a></span>(<span class="dt">table =</span> <span class="st">"keplernames"</span>)</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">as_tibble</a></span>(keplernames)</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">#&gt; # A tibble: 2,354 x 13</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">#&gt;     kepid    ra ra_err   dec dec_err ra_str dec_str kepoi_name kepler_name</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="co">#&gt;     &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;chr&gt;      &lt;chr&gt;      </span></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"><span class="co">#&gt;  1 1.10e7  293.      0  48.4       0 19h33… +48d26… K01931.02  Kepler-339…</span></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="co">#&gt;  2 5.20e6  296.      0  40.3       0 19h43… +40d18… K01932.02  Kepler-340…</span></a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt;  3 5.20e6  296.      0  40.3       0 19h43… +40d18… K01932.01  Kepler-340…</span></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt;  4 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.03  Kepler-341…</span></a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"><span class="co">#&gt;  5 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.01  Kepler-341…</span></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="co">#&gt;  6 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.02  Kepler-341…</span></a>
+<a class="sourceLine" id="cb3-12" data-line-number="12"><span class="co">#&gt;  7 7.75e6  290.      0  43.5       0 19h19… +43d28… K01952.04  Kepler-341…</span></a>
+<a class="sourceLine" id="cb3-13" data-line-number="13"><span class="co">#&gt;  8 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.01  Kepler-342…</span></a>
+<a class="sourceLine" id="cb3-14" data-line-number="14"><span class="co">#&gt;  9 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.04  Kepler-342…</span></a>
+<a class="sourceLine" id="cb3-15" data-line-number="15"><span class="co">#&gt; 10 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.02  Kepler-342…</span></a>
+<a class="sourceLine" id="cb3-16" data-line-number="16"><span class="co">#&gt; # … with 2,344 more rows, and 4 more variables: alt_name &lt;chr&gt;,</span></a>
+<a class="sourceLine" id="cb3-17" data-line-number="17"><span class="co">#&gt; #   tm_designation &lt;chr&gt;, koi_list_flag &lt;chr&gt;, last_update &lt;date&gt;</span></a></code></pre></div>
 <p>To get a list of all available tables:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/names.html">names</a></span>(exo_tables) </a>
 <a class="sourceLine" id="cb4-2" data-line-number="2"><span class="co">#&gt;  [1] "exoplanets"               "compositepars"           </span></a>
@@ -199,19 +193,17 @@
 <p>To get a vector of column names for a specific table:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw"><a href="reference/exo_column_names.html">exo_column_names</a></span>(</a>
 <a class="sourceLine" id="cb5-2" data-line-number="2">  <span class="dt">table =</span> <span class="st">"cumulative"</span>, </a>
-<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="dt">cols =</span> <span class="st">"default"</span>, </a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">  <span class="dt">progress =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb5-5" data-line-number="5">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>()</a>
-<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="co">#&gt;  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...</span></a>
-<a class="sourceLine" id="cb5-8" data-line-number="8"></a>
-<a class="sourceLine" id="cb5-9" data-line-number="9"><span class="kw"><a href="reference/exo_column_names.html">exo_column_names</a></span>(</a>
-<a class="sourceLine" id="cb5-10" data-line-number="10">  <span class="dt">table =</span> <span class="st">"cumulative"</span>, </a>
-<a class="sourceLine" id="cb5-11" data-line-number="11">  <span class="dt">cols =</span> <span class="st">"all"</span>, </a>
-<a class="sourceLine" id="cb5-12" data-line-number="12">  <span class="dt">progress =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb5-13" data-line-number="13">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
-<a class="sourceLine" id="cb5-14" data-line-number="14"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>()</a>
-<a class="sourceLine" id="cb5-15" data-line-number="15"><span class="co">#&gt;  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...</span></a></code></pre></div>
+<a class="sourceLine" id="cb5-3" data-line-number="3">  <span class="dt">cols =</span> <span class="st">"default"</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>()</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="co">#&gt;  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8"><span class="kw"><a href="reference/exo_column_names.html">exo_column_names</a></span>(</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9">  <span class="dt">table =</span> <span class="st">"cumulative"</span>, </a>
+<a class="sourceLine" id="cb5-10" data-line-number="10">  <span class="dt">cols =</span> <span class="st">"all"</span></a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">  ) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb5-12" data-line-number="12"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>()</a>
+<a class="sourceLine" id="cb5-13" data-line-number="13"><span class="co">#&gt;  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...</span></a></code></pre></div>
 <p>To summarise the database, you can use <code>exo_summary</code>, which doesn’t include everything found <a href="https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html">here</a> (yet) but might in the future. Notice the default output is a list, you can override this with <code>output = "dataframe"</code>:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw"><a href="reference/exo_summary.html">exo_summary</a></span>(<span class="dt">progress =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
 <a class="sourceLine" id="cb6-2" data-line-number="2"><span class="st">  </span><span class="kw"><a href="https://rdrr.io/r/utils/str.html">str</a></span>()</a>
@@ -250,48 +242,28 @@
 <a class="sourceLine" id="cb6-35" data-line-number="35"><span class="co">#&gt;   ..$ 6 &lt; R &lt;= 15 R_Earth  : int 427</span></a>
 <a class="sourceLine" id="cb6-36" data-line-number="36"><span class="co">#&gt;   ..$ 15 R_Earth &lt; R       : int 159</span></a></code></pre></div>
 <p>Finally, you can take a look at the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html">docs</a> and use <code>eco_raw</code> to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">exoplanets2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo_raw.html">exo_raw</a></span>(</a>
-<a class="sourceLine" id="cb7-2" data-line-number="2">  <span class="dt">query =</span> <span class="st">"https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets"</span>, </a>
-<a class="sourceLine" id="cb7-3" data-line-number="3">  <span class="dt">progress =</span> <span class="ot">FALSE</span></a>
-<a class="sourceLine" id="cb7-4" data-line-number="4">  )</a>
-<a class="sourceLine" id="cb7-5" data-line-number="5"></a>
-<a class="sourceLine" id="cb7-6" data-line-number="6"><span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">as_tibble</a></span>(exoplanets2)</a>
-<a class="sourceLine" id="cb7-7" data-line-number="7"><span class="co">#&gt; # A tibble: 4,055 x 82</span></a>
-<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="co">#&gt;    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum</span></a>
-<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;                  &lt;dbl&gt;   &lt;dbl&gt;</span></a>
-<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt;  1 Kepler-150  d         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">#&gt;  2 Kepler-150  e         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt;  3 Kepler-151  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co">#&gt;  4 Kepler-151  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt;  5 Kepler-152  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co">#&gt;  6 Kepler-152  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="co">#&gt;  7 Kepler-153  b         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb7-17" data-line-number="17"><span class="co">#&gt;  8 Kepler-153  c         Kepler… Transit                    0       2</span></a>
-<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co">#&gt;  9 Kepler-154  b         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb7-19" data-line-number="19"><span class="co">#&gt; 10 Kepler-154  c         Kepler… Transit                    0       5</span></a>
-<a class="sourceLine" id="cb7-20" data-line-number="20"><span class="co">#&gt; # … with 4,045 more rows, and 76 more variables: pl_orbper &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co">#&gt; #   pl_orbpererr1 &lt;dbl&gt;, pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-22" data-line-number="22"><span class="co">#&gt; #   pl_orbpern &lt;dbl&gt;, pl_orbsmax &lt;dbl&gt;, pl_orbsmaxerr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-23" data-line-number="23"><span class="co">#&gt; #   pl_orbsmaxerr2 &lt;dbl&gt;, pl_orbsmaxlim &lt;dbl&gt;, pl_orbsmaxn &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-24" data-line-number="24"><span class="co">#&gt; #   pl_orbeccen &lt;dbl&gt;, pl_orbeccenerr1 &lt;dbl&gt;, pl_orbeccenerr2 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-25" data-line-number="25"><span class="co">#&gt; #   pl_orbeccenlim &lt;dbl&gt;, pl_orbeccenn &lt;dbl&gt;, pl_orbincl &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-26" data-line-number="26"><span class="co">#&gt; #   pl_orbinclerr1 &lt;dbl&gt;, pl_orbinclerr2 &lt;dbl&gt;, pl_orbincllim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-27" data-line-number="27"><span class="co">#&gt; #   pl_orbincln &lt;dbl&gt;, pl_bmassj &lt;dbl&gt;, pl_bmassjerr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-28" data-line-number="28"><span class="co">#&gt; #   pl_bmassjerr2 &lt;dbl&gt;, pl_bmassjlim &lt;dbl&gt;, pl_bmassn &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-29" data-line-number="29"><span class="co">#&gt; #   pl_bmassprov &lt;chr&gt;, pl_radj &lt;dbl&gt;, pl_radjerr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-30" data-line-number="30"><span class="co">#&gt; #   pl_radjerr2 &lt;dbl&gt;, pl_radjlim &lt;dbl&gt;, pl_radn &lt;dbl&gt;, pl_dens &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-31" data-line-number="31"><span class="co">#&gt; #   pl_denserr1 &lt;dbl&gt;, pl_denserr2 &lt;dbl&gt;, pl_denslim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-32" data-line-number="32"><span class="co">#&gt; #   pl_densn &lt;dbl&gt;, pl_ttvflag &lt;dbl&gt;, pl_kepflag &lt;dbl&gt;, pl_k2flag &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-33" data-line-number="33"><span class="co">#&gt; #   ra_str &lt;chr&gt;, dec_str &lt;chr&gt;, ra &lt;dbl&gt;, st_raerr &lt;dbl&gt;, dec &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-34" data-line-number="34"><span class="co">#&gt; #   st_decerr &lt;dbl&gt;, st_posn &lt;dbl&gt;, st_dist &lt;dbl&gt;, st_disterr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-35" data-line-number="35"><span class="co">#&gt; #   st_disterr2 &lt;dbl&gt;, st_distlim &lt;dbl&gt;, st_distn &lt;dbl&gt;, st_optmag &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-36" data-line-number="36"><span class="co">#&gt; #   st_optmagerr &lt;dbl&gt;, st_optmaglim &lt;dbl&gt;, st_optband &lt;chr&gt;,</span></a>
-<a class="sourceLine" id="cb7-37" data-line-number="37"><span class="co">#&gt; #   gaia_gmag &lt;dbl&gt;, gaia_gmagerr &lt;lgl&gt;, gaia_gmaglim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-38" data-line-number="38"><span class="co">#&gt; #   st_teff &lt;dbl&gt;, st_tefferr1 &lt;dbl&gt;, st_tefferr2 &lt;dbl&gt;, st_tefflim &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-39" data-line-number="39"><span class="co">#&gt; #   st_teffn &lt;dbl&gt;, st_mass &lt;dbl&gt;, st_masserr1 &lt;dbl&gt;, st_masserr2 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-40" data-line-number="40"><span class="co">#&gt; #   st_masslim &lt;dbl&gt;, st_massn &lt;dbl&gt;, st_rad &lt;dbl&gt;, st_raderr1 &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-41" data-line-number="41"><span class="co">#&gt; #   st_raderr2 &lt;dbl&gt;, st_radlim &lt;dbl&gt;, st_radn &lt;dbl&gt;, pl_nnotes &lt;dbl&gt;,</span></a>
-<a class="sourceLine" id="cb7-42" data-line-number="42"><span class="co">#&gt; #   rowupdate &lt;date&gt;, pl_facility &lt;chr&gt;</span></a></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1">base &lt;-<span class="st"> "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"</span></a>
+<a class="sourceLine" id="cb7-2" data-line-number="2">table &lt;-<span class="st"> "table=exoplanets"</span></a>
+<a class="sourceLine" id="cb7-3" data-line-number="3">columns &lt;-<span class="st"> "&amp;select=pl_hostname,ra,dec"</span></a>
+<a class="sourceLine" id="cb7-4" data-line-number="4">parameters &lt;-<span class="st"> "&amp;order=dec"</span></a>
+<a class="sourceLine" id="cb7-5" data-line-number="5">query &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste0</a></span>(base, table, columns, parameters)</a>
+<a class="sourceLine" id="cb7-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb7-7" data-line-number="7">exoplanets2 &lt;-<span class="st"> </span><span class="kw"><a href="reference/exo_raw.html">exo_raw</a></span>(<span class="dt">query =</span> query)</a>
+<a class="sourceLine" id="cb7-8" data-line-number="8"><span class="kw"><a href="https://dplyr.tidyverse.org/reference/reexports.html">as_tibble</a></span>(exoplanets2)</a>
+<a class="sourceLine" id="cb7-9" data-line-number="9"><span class="co">#&gt; # A tibble: 4,055 x 3</span></a>
+<a class="sourceLine" id="cb7-10" data-line-number="10"><span class="co">#&gt;    pl_hostname     ra   dec</span></a>
+<a class="sourceLine" id="cb7-11" data-line-number="11"><span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb7-12" data-line-number="12"><span class="co">#&gt;  1 HD 142022 A 243.   -84.2</span></a>
+<a class="sourceLine" id="cb7-13" data-line-number="13"><span class="co">#&gt;  2 HD 39091     84.3  -80.5</span></a>
+<a class="sourceLine" id="cb7-14" data-line-number="14"><span class="co">#&gt;  3 HD 39091     84.3  -80.5</span></a>
+<a class="sourceLine" id="cb7-15" data-line-number="15"><span class="co">#&gt;  4 HD 137388   234.   -80.2</span></a>
+<a class="sourceLine" id="cb7-16" data-line-number="16"><span class="co">#&gt;  5 GJ 3021       4.05 -79.9</span></a>
+<a class="sourceLine" id="cb7-17" data-line-number="17"><span class="co">#&gt;  6 HD 63454    115.   -78.3</span></a>
+<a class="sourceLine" id="cb7-18" data-line-number="18"><span class="co">#&gt;  7 HD 212301   337.   -77.7</span></a>
+<a class="sourceLine" id="cb7-19" data-line-number="19"><span class="co">#&gt;  8 CHXR 73     167.   -77.6</span></a>
+<a class="sourceLine" id="cb7-20" data-line-number="20"><span class="co">#&gt;  9 HD 221420   353.   -77.4</span></a>
+<a class="sourceLine" id="cb7-21" data-line-number="21"><span class="co">#&gt; 10 CT Cha      166.   -76.5</span></a>
+<a class="sourceLine" id="cb7-22" data-line-number="22"><span class="co">#&gt; # … with 4,045 more rows</span></a></code></pre></div>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">

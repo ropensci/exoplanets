@@ -101,27 +101,27 @@ devtools::install_github("tylurp/exoplanets")
 
 ## Example
 
-This is a basic example which shows you how to access data from the exoplanet table. Note that all these examples have `progress` set to FALSE, the default is TRUE. I'm setting this parameter to FALSE to avoid a really long README file:
+This is a basic example which shows you how to access data from the exoplanet table:
+
+```{r echo=FALSE}
+library(exoplanets)
+formals(exo)$progress <- FALSE
+formals(exo_raw)$progress <- FALSE
+formals(exo_column_names)$progress <- FALSE
+```
 
 ```{r example, message=FALSE}
 library(exoplanets)
 library(dplyr)
 
-exoplanets <- exo(
-  table = "exoplanets", 
-  progress = FALSE
-  )
+exoplanets <- exo(table = "exoplanets")
 as_tibble(exoplanets)
 ```
 
 To access data from a different table you can use the table parameter:
 
 ```{r}
-keplernames <- exo(
-  table = "keplernames", 
-  progress = FALSE
-  )
-
+keplernames <- exo(table = "keplernames")
 as_tibble(keplernames)
 ```
 
@@ -136,15 +136,13 @@ To get a vector of column names for a specific table:
 ```{r}
 exo_column_names(
   table = "cumulative", 
-  cols = "default", 
-  progress = FALSE
+  cols = "default"
   ) %>% 
   str()
 
 exo_column_names(
   table = "cumulative", 
-  cols = "all", 
-  progress = FALSE
+  cols = "all"
   ) %>% 
   str()
 ```
@@ -160,11 +158,13 @@ exo_summary(progress = FALSE) %>%
 Finally, you can take a look at the [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html) and use `eco_raw` to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:
 
 ```{r}
-exoplanets2 <- exo_raw(
-  query = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets", 
-  progress = FALSE
-  )
+base <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
+table <- "table=exoplanets"
+columns <- "&select=pl_hostname,ra,dec"
+parameters <- "&order=dec"
+query <- paste0(base, table, columns, parameters)
 
+exoplanets2 <- exo_raw(query = query)
 as_tibble(exoplanets2)
 ```
 
