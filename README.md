@@ -40,8 +40,6 @@ devtools::install_github("tylurp/exoplanets")
 This is a basic example which shows you how to access data from the
 exoplanet table:
 
-s
-
 ``` r
 library(exoplanets)
 library(dplyr)

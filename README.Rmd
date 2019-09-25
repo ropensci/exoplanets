@@ -118,7 +118,7 @@ exoplanets <- exo(table = "exoplanets")
 as_tibble(exoplanets)
 ```
 
-To access data from a different table you can use the table parameter:
+To access data from a different table you can use the table parameter: 
 
 ```{r}
 keplernames <- exo(table = "keplernames")
