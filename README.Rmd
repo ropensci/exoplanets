@@ -112,17 +112,14 @@ formals(exo_column_names)$progress <- FALSE
 
 ```{r example, message=FALSE}
 library(exoplanets)
-library(dplyr)
 
-exoplanets <- exo(table = "exoplanets")
-as_tibble(exoplanets)
+exo(table = "exoplanets")
 ```
 
 To access data from a different table you can use the table parameter: 
 
 ```{r}
-keplernames <- exo(table = "keplernames")
-as_tibble(keplernames)
+exo(table = "keplernames")
 ```
 
 To get a list of all available tables:
@@ -134,24 +131,25 @@ names(exo_tables)
 To get a vector of column names for a specific table:
 
 ```{r}
-exo_column_names(
+default_names <- exo_column_names(
   table = "cumulative", 
   cols = "default"
-  ) %>% 
-  str()
+  )
 
-exo_column_names(
+all_names <- exo_column_names(
   table = "cumulative", 
   cols = "all"
-  ) %>% 
-  str()
+  )
+
+str(default_names)
+str(all_names)
 ```
 
-To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html) (yet) but might in the future. Notice the default output is a list, you can override this with `output = "dataframe"`:
+To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html) (yet) but might in the future. The default output is a list, you can override this with `output = "dataframe"`:
 
 ```{r}
-exo_summary(progress = FALSE) %>% 
-  str()
+db_summary <- exo_summary(output = "dataframe", progress = FALSE)
+str(db_summary)
 ```
 
 
@@ -164,8 +162,7 @@ columns <- "&select=pl_hostname,ra,dec"
 parameters <- "&order=dec"
 query <- paste0(base, table, columns, parameters)
 
-exoplanets2 <- exo_raw(query = query)
-as_tibble(exoplanets2)
+exo_raw(query = query)
 ```
 
 ## Contributing
