@@ -156,13 +156,16 @@ str(db_summary)
 Finally, you can take a look at the [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html) and use `eco_raw` to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:
 
 ```{r}
-base <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
-table <- "table=exoplanets"
-columns <- "&select=pl_hostname,ra,dec"
-parameters <- "&order=dec"
-query <- paste0(base, table, columns, parameters)
+x <- c(
+  base = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?",
+  table = "table=exoplanets",
+  columns = "&select=pl_hostname,ra,dec",
+  parameters = "&order=dec"
+)
 
-exo_raw(query = query)
+query <- paste(x, collapse = "")
+
+exo_raw(query)
 ```
 
 ## Contributing

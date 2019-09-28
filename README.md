@@ -44,20 +44,20 @@ exoplanet table:
 library(exoplanets)
 
 exo(table = "exoplanets")
-#> # A tibble: 4,055 x 82
+#> # A tibble: 4,057 x 82
 #>    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum
 #>    <chr>       <chr>     <chr>   <chr>                  <dbl>   <dbl>
-#>  1 Kepler-150  d         Kepler… Transit                    0       5
-#>  2 Kepler-150  e         Kepler… Transit                    0       5
-#>  3 Kepler-151  b         Kepler… Transit                    0       2
-#>  4 Kepler-151  c         Kepler… Transit                    0       2
-#>  5 Kepler-152  b         Kepler… Transit                    0       2
-#>  6 Kepler-152  c         Kepler… Transit                    0       2
-#>  7 Kepler-153  b         Kepler… Transit                    0       2
-#>  8 Kepler-153  c         Kepler… Transit                    0       2
-#>  9 Kepler-154  b         Kepler… Transit                    0       5
-#> 10 Kepler-154  c         Kepler… Transit                    0       5
-#> # … with 4,045 more rows, and 76 more variables: pl_orbper <dbl>,
+#>  1 Kepler-163  b         Kepler… Transit                    0       2
+#>  2 Kepler-163  c         Kepler… Transit                    0       2
+#>  3 Kepler-164  b         Kepler… Transit                    0       3
+#>  4 Kepler-164  c         Kepler… Transit                    0       3
+#>  5 Kepler-164  d         Kepler… Transit                    0       3
+#>  6 Kepler-165  b         Kepler… Transit                    0       2
+#>  7 Kepler-165  c         Kepler… Transit                    0       2
+#>  8 Kepler-166  b         Kepler… Transit                    0       3
+#>  9 Kepler-166  c         Kepler… Transit                    0       3
+#> 10 Kepler-167  b         Kepler… Transit                    0       4
+#> # … with 4,047 more rows, and 76 more variables: pl_orbper <dbl>,
 #> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <dbl>,
 #> #   pl_orbpern <dbl>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
 #> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <dbl>, pl_orbsmaxn <dbl>,
@@ -156,34 +156,36 @@ str(db_summary)
 #> List of 4
 #>  $ counts_summary   :'data.frame':   8 obs. of  2 variables:
 #>   ..$ ind   : Factor w/ 8 levels "all_exoplanets",..: 1 2 3 4 5 6 7 8
-#>   ..$ values: int [1:8] 4055 2354 2345 2420 422 389 877 29
+#>   ..$ values: int [1:8] 4057 2354 2345 2420 422 389 892 29
 #>  $ discovery_summary:'data.frame':   10 obs. of  2 variables:
 #>   ..$ ind   : Factor w/ 10 levels "Astrometry","Eclipse Timing Variations",..: 1 2 3 4 5 6 7 8 9 10
-#>   ..$ values: int [1:10] 1 11 47 83 6 6 2 764 3117 18
+#>   ..$ values: int [1:10] 1 11 47 83 6 6 2 764 3119 18
 #>  $ mass_summary     :'data.frame':   6 obs. of  2 variables:
 #>   ..$ ind   : Factor w/ 6 levels "M <= 3 M_Earth",..: 1 2 3 4 5 6
-#>   ..$ values: int [1:6] 32 126 88 81 201 349
+#>   ..$ values: int [1:6] 32 126 89 81 202 352
 #>  $ radius_summary   :'data.frame':   5 obs. of  2 variables:
 #>   ..$ ind   : Factor w/ 5 levels "R <= 1.25 R_Earth",..: 1 2 3 4 5
-#>   ..$ values: int [1:5] 400 847 1309 427 159
+#>   ..$ values: int [1:5] 400 847 1309 429 159
 ```
 
 Finally, you can take a look at the
 [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html)
 and use `eco_raw` to write out queries in their entirety. Spaces and
 single quotes will be escaped automatically. The only supported format
-is CSV so do not request JSON, ipac, or
-others:
+is CSV so do not request JSON, ipac, or others:
 
 ``` r
-base <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
-table <- "table=exoplanets"
-columns <- "&select=pl_hostname,ra,dec"
-parameters <- "&order=dec"
-query <- paste0(base, table, columns, parameters)
+x <- c(
+  base = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?",
+  table = "table=exoplanets",
+  columns = "&select=pl_hostname,ra,dec",
+  parameters = "&order=dec"
+)
 
-exo_raw(query = query)
-#> # A tibble: 4,055 x 3
+query <- paste(x, collapse = "")
+
+exo_raw(query)
+#> # A tibble: 4,057 x 3
 #>    pl_hostname     ra   dec
 #>    <chr>        <dbl> <dbl>
 #>  1 HD 142022 A 243.   -84.2
@@ -196,7 +198,7 @@ exo_raw(query = query)
 #>  8 CHXR 73     167.   -77.6
 #>  9 HD 221420   353.   -77.4
 #> 10 CT Cha      166.   -76.5
-#> # … with 4,045 more rows
+#> # … with 4,047 more rows
 ```
 
 ## Contributing
