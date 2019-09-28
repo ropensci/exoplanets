@@ -11,10 +11,10 @@ exo_raw(query, progress = TRUE, col_spec = FALSE)
 is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 are escaped automatically.}
 
-\item{progress}{If FALSE, suppresses progress of request.}
+\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
 
 \item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr}.}
+\code{readr} (unix OS only).}
 }
 \value{
 A \code{data.frame} containing data for the respective table

@@ -14,10 +14,10 @@ table names.}
 \item{cols}{Either "default" for default columns, "all" for all columns,
 defaults to "default".}
 
-\item{progress}{If FALSE, suppresses progress of request.}
+\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
 
 \item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr}.}
+\code{readr} (unix OS only).}
 }
 \value{
 A character vector containing column names for the respective table

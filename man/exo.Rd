@@ -14,10 +14,10 @@ names.}
 \item{cols}{Either "default" for default columns, "all" for all columns or
 individual column names separated by a comma, defaults to "default".}
 
-\item{progress}{If FALSE, suppresses progress of request.}
+\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
 
 \item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr}.}
+\code{readr} (unix OS only).}
 }
 \value{
 A \code{data.frame} containing data for the respective table

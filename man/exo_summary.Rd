@@ -9,10 +9,10 @@ exo_summary(output = "list", progress = TRUE, col_spec = FALSE)
 \arguments{
 \item{output}{One of \code{list} or \code{dataframe}, defaults to list.}
 
-\item{progress}{If FALSE, suppresses progress of request.}
+\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
 
 \item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr}.}
+\code{readr} (unix OS only).}
 }
 \value{
 An object of class \code{list} or \code{data.frame}.

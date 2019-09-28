@@ -1,0 +1,21 @@
+---
+title: "Introduction to exoplanets"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{introduction-to-exoplanets}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+The exoplanet package is a minimal interface to the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/index.html).
+
+```{r setup}
+library(exoplanets)
+```

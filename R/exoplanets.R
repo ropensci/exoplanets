@@ -6,9 +6,9 @@
 #' @param query The full query URL. At this time, the only supported format
 #' is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 #' are escaped automatically.
-#' @param progress If FALSE, suppresses progress of request.
+#' @param progress If FALSE, suppresses progress of request (unix OS only).
 #' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr}.
+#' \code{readr} (unix OS only).
 #' @return A \code{data.frame} containing data for the respective table
 #' @export
 exo_raw <- function(query, progress = TRUE, col_spec = FALSE) {
@@ -28,13 +28,13 @@ exo_raw <- function(query, progress = TRUE, col_spec = FALSE) {
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns or
 #' individual column names separated by a comma, defaults to "default".
-#' @param progress If FALSE, suppresses progress of request.
+#' @param progress If FALSE, suppresses progress of request (unix OS only).
 #' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr}.
+#' \code{readr} (unix OS only).
 #' @return A \code{data.frame} containing data for the respective table
 #' @export
 exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
-  base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
+  base_url <- base_url()
 
   cols <- paste0(cols, collapse = ",")
 
@@ -58,13 +58,13 @@ exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spe
 #' table names.
 #' @param cols Either "default" for default columns, "all" for all columns,
 #' defaults to "default".
-#' @param progress If FALSE, suppresses progress of request.
+#' @param progress If FALSE, suppresses progress of request (unix OS only).
 #' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr}.
+#' \code{readr} (unix OS only).
 #' @return A character vector containing column names for the respective table
 #' @export
 exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
-  base_url <- "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
+  base_url <- base_url()
 
   if(cols == "default") {
     x <- paste0(base_url, "table=", table, "&getDefaultColumns&format=csv")
@@ -84,9 +84,9 @@ exo_column_names <- function(table = "exoplanets", cols = "default", progress = 
 #' \code{output = "dataframe"}.
 #'
 #' @param output One of \code{list} or \code{dataframe}, defaults to list.
-#' @param progress If FALSE, suppresses progress of request.
+#' @param progress If FALSE, suppresses progress of request (unix OS only).
 #' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr}.
+#' \code{readr} (unix OS only).
 #' @return An object of class \code{list} or \code{data.frame}.
 #' @export
 exo_summary <- function(output = "list", progress = TRUE, col_spec = FALSE) {
@@ -155,6 +155,98 @@ exo_summary <- function(output = "list", progress = TRUE, col_spec = FALSE) {
   )
 
 }
+
+#' SuperWASP Time Series Table
+#'
+#' The NASA Exoplanet Archive provides access to the public SuperWASP light
+#' curves from Data Release One. See the SuperWASP page for more information
+#' on the SuperWASP data products available at the NASA Exoplanet Archive.
+#' The following table lists all of the data columns in the SuperWASP Time
+#' Series table (superwasptimeseries) that can be returned through the
+#' Exoplanet Archive's Application Programming Interface (API).
+#'
+#' @param tile Survey Tile, subdivision of DR1 targets for survey processing,
+#' tile168060 for example.
+#' @param sourceid SuperWASP Object ID, 1SWASP J191645.46+474912.3 for example.
+#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param col_spec If FALSE, suppresses column specification message from
+#' \code{readr} (unix OS only).
+#' @export
+exo_wasp <- function(tile = NULL, sourceid = NULL, progress = TRUE,
+                     col_spec = FALSE) {
+  params <- c(tile = tile, sourceid = sourceid)
+  if (!is.null(tile) && !is.null(sourceid))
+    stop(paste("Only one of tile or sourceid can be provided, not both."))
+  else if (is.null(tile) && is.null(sourceid))
+    stop(paste("One of tile or sourceid must be provided."))
+
+  base_url <- base_url()
+  table <- "&table=superwasptimeseries&"
+  x <- paste0(base_url, table, names(params), "=", params)
+  exo_raw(x, progress, col_spec)
+}
+
+#' KELT light curves (not including KELT Praesepe data)
+#'
+#' The NASA Exoplanet Archive provides access to KELT time series through a
+#' search interface and the application programming interface (API). The
+#' following table lists all the data columns in the KELT Time Series table
+#' (kelttimeseries) that can be returned through the API. See the KELT page
+#' for more information on the KELT data products available at the NASA
+#' Exoplanet Archive.
+#'
+#' @param kelt_field KELT field of observation. Fields available are N02, N04,
+#' N06, N08, N10 and N12.
+#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param col_spec If FALSE, suppresses column specification message from
+#' \code{readr} (unix OS only).
+#' @export
+exo_kelt <- function(kelt_field = NULL, progress = TRUE, col_spec = FALSE) {
+  if(is.null(kelt_field))
+    stop("Missing value for kelt_field.")
+
+  param <- c(kelt_field = kelt_field)
+  base_url <- base_url()
+  table <- "&table=kelttimeseries&"
+  x <- paste0(base_url, table, names(param), "=", param)
+  exo_raw(x, progress, col_spec)
+}
+
+#' Kepler Time Series Table
+#'
+#' The NASA Exoplanet Archive provides access to the public Kepler light
+#' curves as they are released to the community. The primary mission archive
+#' to all Kepler data is provided by MAST at STScI. The NASA Exoplanet Archive
+#' also serves Kepler Objects of Interest (KOIs). See the Kepler Mission
+#' Summary Page for more information on the Kepler mission data products
+#' available at the NASA Exoplanet Archive. The following table lists all of
+#' the data columns in the Kepler Time Series table (keplertimeseries) that
+#' can be returned through the Exoplanet Archive's Application Programming
+#' Interface (API).
+#'
+#' @param quarter Kepler operates observing campaigns in 'quarters' with
+#' durations of ~90 days, including safe mode and other interruptions to the
+#' data collection. After the conclusion of a quarter, the spacecraft is
+#' rotated 90 degrees to compensate for the orbital motion of the spacecraft.
+#' Quarter 0 and 1 were shorter, 10 and 33 days in duration respectively.
+#' @param kepid Kepler Input Catalog Number, 8561063 for example.
+#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param col_spec If FALSE, suppresses column specification message from
+#' \code{readr} (unix OS only).
+exo_kepler <- function(quarter = NULL, kepid = NULL, progress = TRUE,
+                       col_spec = FALSE) {
+  params <- c(quarter = quarter, kepid = kepid)
+  if (!is.null(quarter) && !is.null(kepid))
+    stop(paste("Only one of quarter or kepid can be provided, not both."))
+  else if (is.null(quarter) && is.null(kepid))
+    stop(paste("One of quarter or kepid must be provided."))
+
+  base_url <- base_url()
+  table <- "&table=keplertimeseries&"
+  x <- paste0(base_url, table, names(params), "=", params)
+  exo_raw(x, progress, col_spec)
+}
+
 
 #' All Available Tables
 #'

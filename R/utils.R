@@ -42,3 +42,7 @@ get_exo <- function(x, progress = TRUE, col_spec = TRUE) {
     get_exo_unix(x, progress, col_spec)
   )
 }
+
+base_url <- function() {
+  "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"
+}
