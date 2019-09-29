@@ -3,6 +3,7 @@
 export(exo)
 export(exo_column_names)
 export(exo_kelt)
+export(exo_kepler)
 export(exo_raw)
 export(exo_summary)
 export(exo_wasp)

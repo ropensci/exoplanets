@@ -30,6 +30,14 @@ The exoplanet package is a minimal interface to the [NASA Exoplanet Archive](htt
 
 # Data Access
 
+There are 3 ways to access data from the API:
+
+1. `exo`: provide a table name, see `exo_tables` for all available tables. Note this function doesn't support time series tables.
+2. `exo_kelt`, `exo_kepler`, and `exo_wasp`: no table name needed, they are hardcoded and designed for a specific table, just provide the apporpriate arguments.
+3. `exo_raw`: provide the raw URL.
+
+### By table name
+
 By default, `exo` will pull from the exoplanets table.
 
 ```{r setup}
@@ -50,7 +58,7 @@ df_stars <- exo(exo_tables$missionstars)
 df_stars
 ```
 
-# Time Series Data Access
+### Time series
 
 There is one caveat to `exo`, it is not equiped to handle some of the available datasets, specifically time series datasets. This is because time series datasets are very large and require additional parameters to narrow in on a subset of the data.
 
@@ -65,3 +73,20 @@ df_wasp <- exo_wasp(sourceid = "1SWASP J191645.46+474912.3")
 df_wasp
 ```
 
+### Raw URL
+
+The documentation has an excellent graphic to explain how the URL's are constructed, see [here](https://exoplanetarchive.ipac.caltech.edu/images/help/api_breakdown.jpg). Generally, you will not need to touch `exo_raw`, the `exo` function and time series functions should be all you need. However, if you have a very specific query you might find `exo_raw` to be helpful as the API supports SQL syntax in the URL.
+
+```{r}
+x <- c(
+  base = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?",
+  table = "table=exoplanets",
+  columns = "&select=pl_hostname,ra,dec",
+  parameters = "&order=dec"
+)
+
+query <- paste(x, collapse = "")
+
+df_raw <- exo_raw(query)
+df_raw
+```

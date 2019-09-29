@@ -233,6 +233,7 @@ exo_kelt <- function(kelt_field = NULL, progress = TRUE, col_spec = FALSE) {
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
 #' @param col_spec If FALSE, suppresses column specification message from
 #' \code{readr} (unix OS only).
+#' @export
 exo_kepler <- function(quarter = NULL, kepid = NULL, progress = TRUE,
                        col_spec = FALSE) {
   params <- c(quarter = quarter, kepid = kepid)

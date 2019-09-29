@@ -118,6 +118,18 @@
 <div id="data-access" class="section level1">
 <h1 class="hasAnchor">
 <a href="#data-access" class="anchor"></a>Data Access</h1>
+<p>There are 3 ways to access data from the API:</p>
+<ol style="list-style-type: decimal">
+<li>
+<code>exo</code>: provide a table name, see <code>exo_tables</code> for all available tables. Note this function doesn’t support time series tables.</li>
+<li>
+<code>exo_kelt</code>, <code>exo_kepler</code>, and <code>exo_wasp</code>: no table name needed, they are hardcoded and designed for a specific table, just provide the apporpriate arguments.</li>
+<li>
+<code>exo_raw</code>: provide the raw URL.</li>
+</ol>
+<div id="by-table-name" class="section level3">
+<h3 class="hasAnchor">
+<a href="#by-table-name" class="anchor"></a>By table name</h3>
 <p>By default, <code>exo</code> will pull from the exoplanets table.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(exoplanets)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2"></a>
@@ -219,9 +231,9 @@
 <a class="sourceLine" id="cb2-57" data-line-number="57"><span class="co">#&gt; #   st_vmagsrc &lt;chr&gt;, st_bmv &lt;dbl&gt;, st_bmverr &lt;dbl&gt;, st_bmvsrc &lt;chr&gt;,</span></a>
 <a class="sourceLine" id="cb2-58" data-line-number="58"><span class="co">#&gt; #   st_spttype &lt;chr&gt;, st_lbol &lt;dbl&gt;, st_lbolerr &lt;dbl&gt;, st_lbolsrc &lt;chr&gt;</span></a></code></pre></div>
 </div>
-<div id="time-series-data-access" class="section level1">
-<h1 class="hasAnchor">
-<a href="#time-series-data-access" class="anchor"></a>Time Series Data Access</h1>
+<div id="time-series" class="section level3">
+<h3 class="hasAnchor">
+<a href="#time-series" class="anchor"></a>Time series</h3>
 <p>There is one caveat to <code>exo</code>, it is not equiped to handle some of the available datasets, specifically time series datasets. This is because time series datasets are very large and require additional parameters to narrow in on a subset of the data.</p>
 <p>Instead of cramming additional functionality into <code>exo</code>, 3 functions have been added specifically for time series data, they are:</p>
 <ol style="list-style-type: decimal">
@@ -242,6 +254,37 @@
 <a class="sourceLine" id="cb3-8" data-line-number="8"><span class="co">#&gt; #   dec &lt;dbl&gt;, wasp_mag &lt;dbl&gt;, npts &lt;dbl&gt;, tile &lt;chr&gt;, tm_statnpts &lt;dbl&gt;,</span></a>
 <a class="sourceLine" id="cb3-9" data-line-number="9"><span class="co">#&gt; #   tm_median &lt;dbl&gt;, tm_stddevwrtmed &lt;dbl&gt;, tm_range595 &lt;dbl&gt;</span></a></code></pre></div>
 </div>
+<div id="raw-url" class="section level3">
+<h3 class="hasAnchor">
+<a href="#raw-url" class="anchor"></a>Raw URL</h3>
+<p>The documentation has an excellent graphic to explain how the URL’s are constructed, see <a href="https://exoplanetarchive.ipac.caltech.edu/images/help/api_breakdown.jpg">here</a>. Generally, you will not need to touch <code>exo_raw</code>, the <code>exo</code> function and time series functions should be all you need. However, if you have a very specific query you might find <code>exo_raw</code> to be helpful as the API supports SQL syntax in the URL.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">  <span class="dt">base =</span> <span class="st">"https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"</span>,</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">  <span class="dt">table =</span> <span class="st">"table=exoplanets"</span>,</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">  <span class="dt">columns =</span> <span class="st">"&amp;select=pl_hostname,ra,dec"</span>,</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">  <span class="dt">parameters =</span> <span class="st">"&amp;order=dec"</span></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">)</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8">query &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/paste.html">paste</a></span>(x, <span class="dt">collapse =</span> <span class="st">""</span>)</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10">df_raw &lt;-<span class="st"> </span><span class="kw"><a href="../reference/exo_raw.html">exo_raw</a></span>(query)</a>
+<a class="sourceLine" id="cb4-11" data-line-number="11">df_raw</a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"><span class="co">#&gt; # A tibble: 4,057 x 3</span></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="co">#&gt;    pl_hostname     ra   dec</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;</span></a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="co">#&gt;  1 HD 142022 A 243.   -84.2</span></a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="co">#&gt;  2 HD 39091     84.3  -80.5</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="co">#&gt;  3 HD 39091     84.3  -80.5</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="co">#&gt;  4 HD 137388   234.   -80.2</span></a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"><span class="co">#&gt;  5 GJ 3021       4.05 -79.9</span></a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="co">#&gt;  6 HD 63454    115.   -78.3</span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="co">#&gt;  7 HD 212301   337.   -77.7</span></a>
+<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="co">#&gt;  8 CHXR 73     167.   -77.6</span></a>
+<a class="sourceLine" id="cb4-23" data-line-number="23"><span class="co">#&gt;  9 HD 221420   353.   -77.4</span></a>
+<a class="sourceLine" id="cb4-24" data-line-number="24"><span class="co">#&gt; 10 CT Cha      166.   -76.5</span></a>
+<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="co">#&gt; # … with 4,047 more rows</span></a></code></pre></div>
+</div>
+</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -252,7 +295,6 @@
       <ul class="nav nav-pills nav-stacked">
 <li><a href="#introduction">Introduction</a></li>
       <li><a href="#data-access">Data Access</a></li>
-      <li><a href="#time-series-data-access">Time Series Data Access</a></li>
       </ul>
 </div>
       </div>
