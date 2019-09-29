@@ -12,10 +12,56 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+library(exoplanets)
+formals(exo)$progress <- FALSE
+formals(exo_raw)$progress <- FALSE
+formals(exo_column_names)$progress <- FALSE
+formals(exo_wasp)$progress <- FALSE
 ```
 
-The exoplanet package is a minimal interface to the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/index.html).
+# Introduction
+
+The exoplanet package is a minimal interface to the [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/index.html). The goal is to make it as easy as possible to interact with the API from R. Some key features are:
+
+1. `exo`: the main function for pulling data from the API via table names
+2. `exo_kelt`, `exo_kepler`, and `exo_wasp`: the functions for pulling time series data
+3. `exo_summary`: a function for summarising the database
+
+# Data Access
+
+By default, `exo` will pull from the exoplanets table.
 
 ```{r setup}
 library(exoplanets)
+
+df_exo <- exo()
+df_exo
 ```
+
+If you want to explore other datasets, take a look at `exo_tables` a list that contains all available data. One nice feature of having a list of available data is that we can utilize autocompletion (assuming you're using RStudio). Autocompletion paired with `exo` is an easy solution to pull whatever data you're interested in, no need to memorize the table name.
+
+```{r}
+# available data
+str(exo_tables)
+
+# using exo_tables with exo
+df_stars <- exo(exo_tables$missionstars)
+df_stars
+```
+
+# Time Series Data Access
+
+There is one caveat to `exo`, it is not equiped to handle some of the available datasets, specifically time series datasets. This is because time series datasets are very large and require additional parameters to narrow in on a subset of the data.
+
+Instead of cramming additional functionality into `exo`, 3 functions have been added specifically for time series data, they are: 
+
+1. `exo_kelt`: for the `kelttimeseries` table
+2. `exo_kepler`: for the `keplertimeseries` table
+3. `exo_wasp`: for the `superwasptimeseries` table
+
+```{r}
+df_wasp <- exo_wasp(sourceid = "1SWASP J191645.46+474912.3")
+df_wasp
+```
+

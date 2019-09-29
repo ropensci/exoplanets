@@ -12,7 +12,7 @@ exo(table = "exoplanets", cols = "default", progress = TRUE,
 names.}
 
 \item{cols}{Either "default" for default columns, "all" for all columns or
-individual column names separated by a comma, defaults to "default".}
+individual column names.}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
 

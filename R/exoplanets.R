@@ -27,7 +27,7 @@ exo_raw <- function(query, progress = TRUE, col_spec = FALSE) {
 #' @param table The name of the table, see \code{exo_tables} for all available table
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns or
-#' individual column names separated by a comma, defaults to "default".
+#' individual column names.
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
 #' @param col_spec If FALSE, suppresses column specification message from
 #' \code{readr} (unix OS only).
