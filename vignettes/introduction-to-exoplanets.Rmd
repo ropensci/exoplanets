@@ -60,7 +60,7 @@ df_stars
 
 ### Time series
 
-There is one caveat to `exo`, it is not equiped to handle some of the available datasets, specifically time series datasets. This is because time series datasets are very large and require additional parameters to narrow in on a subset of the data.
+There is one caveat to `exo`, it is not equipped to handle some of the available datasets, specifically time series datasets. This is because time series datasets are very large and require additional parameters to narrow in on a subset of the data.
 
 Instead of cramming additional functionality into `exo`, 3 functions have been added specifically for time series data, they are: 
 

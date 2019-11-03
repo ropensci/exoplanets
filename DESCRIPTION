@@ -1,7 +1,7 @@
 Package: exoplanets
-Title: Provides access to NASA's Exoplanet Archive, see 
+Title: Access NASA's Exoplanet Archive Data, see 
   <https://exoplanetarchive.ipac.caltech.edu/index.html>
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Tyler",
            family = "Littlefield",
