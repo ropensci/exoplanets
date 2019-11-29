@@ -34,7 +34,7 @@ get_exo_windows <- function(x) {
   utils::read.csv(x)
 }
 
-get_exo_linux <- get_exo_windows
+get_exo_linux <- get_exo_macos
 
 get_exo <- function(x, progress = TRUE, col_spec = TRUE) {
   os <- detect_os()
@@ -44,6 +44,8 @@ get_exo <- function(x, progress = TRUE, col_spec = TRUE) {
     "linux" = get_exo_linux(x),
     "macos" = get_exo_macos(x, progress, col_spec)
   )
+
+  # utils::read.csv(x)
 }
 
 base_url <- function() {
