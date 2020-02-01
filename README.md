@@ -9,8 +9,8 @@
 status](https://travis-ci.org/tyluRp/exoplanets.svg?branch=master)](https://travis-ci.org/tyluRp/exoplanets)
 [![AppVeyor build
 status](https://ci.appveyor.com/api/projects/status/github/tyluRp/exoplanets?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/exoplanets)
-[![Actions
-Status](https://github.com/tylurp/exoplanets/workflows/build/badge.svg)](https://github.com/tylurp/exoplanets/actions)
+[![R build
+status](https://github.com/tyluRp/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/exoplanets)
 [![Codecov test
 coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
 <!-- badges: end -->
@@ -44,20 +44,20 @@ exoplanet table:
 library(exoplanets)
 
 exo(table = "exoplanets")
-#> # A tibble: 4,057 x 82
+#> # A tibble: 4,116 x 82
 #>    pl_hostname pl_letter pl_name pl_discmethod pl_controvflag pl_pnum
 #>    <chr>       <chr>     <chr>   <chr>                  <dbl>   <dbl>
-#>  1 Kepler-163  b         Kepler… Transit                    0       2
-#>  2 Kepler-163  c         Kepler… Transit                    0       2
-#>  3 Kepler-164  b         Kepler… Transit                    0       3
-#>  4 Kepler-164  c         Kepler… Transit                    0       3
-#>  5 Kepler-164  d         Kepler… Transit                    0       3
-#>  6 Kepler-165  b         Kepler… Transit                    0       2
-#>  7 Kepler-165  c         Kepler… Transit                    0       2
-#>  8 Kepler-166  b         Kepler… Transit                    0       3
-#>  9 Kepler-166  c         Kepler… Transit                    0       3
-#> 10 Kepler-167  b         Kepler… Transit                    0       4
-#> # … with 4,047 more rows, and 76 more variables: pl_orbper <dbl>,
+#>  1 HD 128311   c         HD 128… Radial Veloc…              0       2
+#>  2 HD 129445   b         HD 129… Radial Veloc…              0       1
+#>  3 HD 130322   b         HD 130… Radial Veloc…              0       1
+#>  4 HD 131496   b         HD 131… Radial Veloc…              0       1
+#>  5 HD 132406   b         HD 132… Radial Veloc…              0       1
+#>  6 HD 132563   b         HD 132… Radial Veloc…              0       1
+#>  7 HD 131664   b         HD 131… Radial Veloc…              0       1
+#>  8 HD 134987   b         HD 134… Radial Veloc…              0       2
+#>  9 HD 134987   c         HD 134… Radial Veloc…              0       2
+#> 10 HD 136418   b         HD 136… Radial Veloc…              0       1
+#> # … with 4,106 more rows, and 76 more variables: pl_orbper <dbl>,
 #> #   pl_orbpererr1 <dbl>, pl_orbpererr2 <dbl>, pl_orbperlim <dbl>,
 #> #   pl_orbpern <dbl>, pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>,
 #> #   pl_orbsmaxerr2 <dbl>, pl_orbsmaxlim <dbl>, pl_orbsmaxn <dbl>,
@@ -86,7 +86,7 @@ To access data from a different table you can use the table parameter:
 
 ``` r
 exo(table = "keplernames")
-#> # A tibble: 2,354 x 13
+#> # A tibble: 2,356 x 13
 #>     kepid    ra ra_err   dec dec_err ra_str dec_str kepoi_name kepler_name
 #>     <dbl> <dbl>  <dbl> <dbl>   <dbl> <chr>  <chr>   <chr>      <chr>      
 #>  1 1.10e7  293.      0  48.4       0 19h33… +48d26… K01931.02  Kepler-339…
@@ -99,7 +99,7 @@ exo(table = "keplernames")
 #>  8 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.01  Kepler-342…
 #>  9 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.04  Kepler-342…
 #> 10 9.89e6  293.      0  46.7       0 19h30… +46d43… K01955.02  Kepler-342…
-#> # … with 2,344 more rows, and 4 more variables: alt_name <chr>,
+#> # … with 2,346 more rows, and 4 more variables: alt_name <chr>,
 #> #   tm_designation <chr>, koi_list_flag <chr>, last_update <date>
 ```
 
@@ -156,16 +156,16 @@ str(db_summary)
 #> List of 4
 #>  $ counts_summary   :'data.frame':   8 obs. of  2 variables:
 #>   ..$ ind   : Factor w/ 8 levels "all_exoplanets",..: 1 2 3 4 5 6 7 8
-#>   ..$ values: int [1:8] 4057 2354 2345 2420 422 389 892 29
-#>  $ discovery_summary:'data.frame':   10 obs. of  2 variables:
-#>   ..$ ind   : Factor w/ 10 levels "Astrometry","Eclipse Timing Variations",..: 1 2 3 4 5 6 7 8 9 10
-#>   ..$ values: int [1:10] 1 11 47 83 6 6 2 764 3119 18
+#>   ..$ values: int [1:8] 4116 2356 2347 2420 427 394 891 38
+#>  $ discovery_summary:'data.frame':   11 obs. of  2 variables:
+#>   ..$ ind   : Factor w/ 11 levels "Astrometry","Disk Kinematics",..: 1 2 3 4 5 6 7 8 9 10 ...
+#>   ..$ values: int [1:11] 1 1 16 49 86 6 7 2 789 3138 ...
 #>  $ mass_summary     :'data.frame':   6 obs. of  2 variables:
 #>   ..$ ind   : Factor w/ 6 levels "M <= 3 M_Earth",..: 1 2 3 4 5 6
-#>   ..$ values: int [1:6] 32 126 89 81 202 352
+#>   ..$ values: int [1:6] 32 128 89 83 208 364
 #>  $ radius_summary   :'data.frame':   5 obs. of  2 variables:
 #>   ..$ ind   : Factor w/ 5 levels "R <= 1.25 R_Earth",..: 1 2 3 4 5
-#>   ..$ values: int [1:5] 400 847 1309 429 159
+#>   ..$ values: int [1:5] 401 849 1314 438 160
 ```
 
 Finally, you can take a look at the
@@ -185,7 +185,7 @@ x <- c(
 query <- paste(x, collapse = "")
 
 exo_raw(query)
-#> # A tibble: 4,057 x 3
+#> # A tibble: 4,116 x 3
 #>    pl_hostname     ra   dec
 #>    <chr>        <dbl> <dbl>
 #>  1 HD 142022 A 243.   -84.2
@@ -195,10 +195,10 @@ exo_raw(query)
 #>  5 GJ 3021       4.05 -79.9
 #>  6 HD 63454    115.   -78.3
 #>  7 HD 212301   337.   -77.7
-#>  8 CHXR 73     167.   -77.6
-#>  9 HD 221420   353.   -77.4
-#> 10 CT Cha      166.   -76.5
-#> # … with 4,047 more rows
+#>  8 HD 97048    167.   -77.7
+#>  9 CHXR 73     167.   -77.6
+#> 10 HD 221420   353.   -77.4
+#> # … with 4,106 more rows
 ```
 
 ## Contributing
