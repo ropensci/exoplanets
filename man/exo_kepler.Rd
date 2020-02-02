@@ -15,7 +15,7 @@ Quarter 0 and 1 were shorter, 10 and 33 days in duration respectively.}
 
 \item{kepid}{Kepler Input Catalog Number, 8561063 for example.}
 
-\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
+\item{progress}{If FALSE, suppresses progress of request.}
 }
 \description{
 The NASA Exoplanet Archive provides access to the public Kepler light

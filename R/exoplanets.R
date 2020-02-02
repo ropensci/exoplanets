@@ -6,7 +6,7 @@
 #' @param query The full query URL. At this time, the only supported format
 #' is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 #' are escaped automatically.
-#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param progress If FALSE, suppresses progress of request.
 #' @return A \code{data.frame} containing data for the respective table
 #' @export
 exo_raw <- function(query, progress = TRUE) {
@@ -26,7 +26,7 @@ exo_raw <- function(query, progress = TRUE) {
 #' names.
 #' @param cols Either "default" for default columns, "all" for all columns or
 #' individual column names.
-#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param progress If FALSE, suppresses progress of request.
 #' @return A \code{data.frame} containing data for the respective table
 #' @export
 exo <- function(table = "exoplanets", cols = "default", progress = TRUE) {
@@ -54,7 +54,7 @@ exo <- function(table = "exoplanets", cols = "default", progress = TRUE) {
 #' table names.
 #' @param cols Either "default" for default columns, "all" for all columns,
 #' defaults to "default".
-#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param progress If FALSE, suppresses progress of request.
 #' @return A character vector containing column names for the respective table
 #' @export
 exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE) {
@@ -78,7 +78,7 @@ exo_column_names <- function(table = "exoplanets", cols = "default", progress = 
 #' \code{output = "dataframe"}.
 #'
 #' @param output One of \code{list} or \code{dataframe}, defaults to list.
-#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param progress If FALSE, suppresses progress of request.
 #' @return An object of class \code{list} or \code{data.frame}.
 #' @export
 exo_summary <- function(output = "list", progress = TRUE) {
@@ -160,7 +160,7 @@ exo_summary <- function(output = "list", progress = TRUE) {
 #' @param tile Survey Tile, subdivision of DR1 targets for survey processing,
 #' tile168060 for example.
 #' @param sourceid SuperWASP Object ID, 1SWASP J191645.46+474912.3 for example.
-#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param progress If FALSE, suppresses progress of request.
 #' @export
 exo_wasp <- function(tile = NULL, sourceid = NULL, progress = TRUE) {
   params <- c(tile = tile, sourceid = sourceid)
@@ -186,7 +186,7 @@ exo_wasp <- function(tile = NULL, sourceid = NULL, progress = TRUE) {
 #'
 #' @param kelt_field KELT field of observation. Fields available are N02, N04,
 #' N06, N08, N10 and N12.
-#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param progress If FALSE, suppresses progress of request.
 #' @export
 exo_kelt <- function(kelt_field = NULL, progress = TRUE) {
   if(is.null(kelt_field))
@@ -217,7 +217,7 @@ exo_kelt <- function(kelt_field = NULL, progress = TRUE) {
 #' rotated 90 degrees to compensate for the orbital motion of the spacecraft.
 #' Quarter 0 and 1 were shorter, 10 and 33 days in duration respectively.
 #' @param kepid Kepler Input Catalog Number, 8561063 for example.
-#' @param progress If FALSE, suppresses progress of request (unix OS only).
+#' @param progress If FALSE, suppresses progress of request.
 #' @export
 exo_kepler <- function(quarter = NULL, kepid = NULL, progress = TRUE) {
   params <- c(quarter = quarter, kepid = kepid)

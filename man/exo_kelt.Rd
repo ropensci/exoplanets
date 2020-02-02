@@ -10,7 +10,7 @@ exo_kelt(kelt_field = NULL, progress = TRUE)
 \item{kelt_field}{KELT field of observation. Fields available are N02, N04,
 N06, N08, N10 and N12.}
 
-\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
+\item{progress}{If FALSE, suppresses progress of request.}
 }
 \description{
 The NASA Exoplanet Archive provides access to KELT time series through a

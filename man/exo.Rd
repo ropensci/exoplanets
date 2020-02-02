@@ -13,7 +13,7 @@ names.}
 \item{cols}{Either "default" for default columns, "all" for all columns or
 individual column names.}
 
-\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
+\item{progress}{If FALSE, suppresses progress of request.}
 }
 \value{
 A \code{data.frame} containing data for the respective table

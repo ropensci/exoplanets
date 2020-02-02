@@ -11,7 +11,7 @@ exo_raw(query, progress = TRUE)
 is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 are escaped automatically.}
 
-\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
+\item{progress}{If FALSE, suppresses progress of request.}
 }
 \value{
 A \code{data.frame} containing data for the respective table

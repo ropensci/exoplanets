@@ -9,7 +9,7 @@ exo_summary(output = "list", progress = TRUE)
 \arguments{
 \item{output}{One of \code{list} or \code{dataframe}, defaults to list.}
 
-\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
+\item{progress}{If FALSE, suppresses progress of request.}
 }
 \value{
 An object of class \code{list} or \code{data.frame}.

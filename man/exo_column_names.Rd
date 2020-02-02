@@ -14,7 +14,7 @@ table names.}
 \item{cols}{Either "default" for default columns, "all" for all columns,
 defaults to "default".}
 
-\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
+\item{progress}{If FALSE, suppresses progress of request.}
 }
 \value{
 A character vector containing column names for the respective table

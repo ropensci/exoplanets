@@ -1,10 +1,6 @@
-## Test environments
-* local OS X install, R 3.6.0
-* ubuntu 14.04 (on travis-ci), R 3.6.0
-* win-builder (devel and release)
+## Resubmission
+This is a resubmission. In this version I have:
 
-## R CMD check results
+* Converted the DESCRIPTION title to title case.
 
-0 errors | 0 warnings | 1 note
-
-* This is a new release.
+* Implemented a tryCatch when fetching data from the API. There were cases where the function would fail when using curl but pass when using read.csv from base, see https://github.com/jeroen/curl/issues/206.

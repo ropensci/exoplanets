@@ -1,5 +1,5 @@
 Package: exoplanets
-Title: Access NASA's Exoplanet Archive Data, see 
+Title: Access NASA's Exoplanet Archive Data, See 
   <https://exoplanetarchive.ipac.caltech.edu/index.html>
 Version: 0.1.0
 Authors@R: 
@@ -10,8 +10,8 @@ Authors@R:
            comment = c(ORCID = "0000-0002-6020-1125"))
 Description: The goal of exoplanets is to provide access to NASA's Exoplanet 
   Archive database by supplying a table name or by writing the URL query 
-  manually. For more information please read the documentation 
-  <https://exoplanetarchive.ipac.caltech.edu/index.html>.
+  manually. For more information regarding the API please read the 
+  documentation <https://exoplanetarchive.ipac.caltech.edu/index.html>.
 Depends: R (>= 2.10)
 License: MIT + file LICENSE
 Encoding: UTF-8

@@ -5,8 +5,8 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "exoplanets",
-  "description": "The goal of exoplanets is to provide access to NASA's Exoplanet \n  Archive database by supplying a table name or by writing the URL query \n  manually. For more information please read the documentation \n  <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
-  "name": "exoplanets: Access NASA's Exoplanet Archive Data, see \n  <https://exoplanetarchive.ipac.caltech.edu/index.html>",
+  "description": "The goal of exoplanets is to provide access to NASA's Exoplanet \n  Archive database by supplying a table name or by writing the URL query \n  manually. For more information regarding the API please read the \n  documentation <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
+  "name": "exoplanets: Access NASA's Exoplanet Archive Data, See \n  <https://exoplanetarchive.ipac.caltech.edu/index.html>",
   "codeRepository": "https://github.com/tyluRp/exoplanets",
   "issueTracker": "https://github.com/tyluRp/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
@@ -152,7 +152,7 @@
     }
   ],
   "readme": "https://github.com/tyluRp/exoplanets/blob/master/README.md",
-  "fileSize": "1310.422KB",
+  "fileSize": "1310.341KB",
   "contIntegration": [
     "https://travis-ci.org/tyluRp/exoplanets",
     "https://ci.appveyor.com/project/tyluRp/exoplanets",
@@ -163,5 +163,6 @@
     "nasa",
     "exoplanets",
     "api"
-  ]
+  ],
+  "releaseNotes": "https://github.com/tyluRp/exoplanets/blob/master/NEWS.md"
 }

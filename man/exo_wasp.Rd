@@ -12,7 +12,7 @@ tile168060 for example.}
 
 \item{sourceid}{SuperWASP Object ID, 1SWASP J191645.46+474912.3 for example.}
 
-\item{progress}{If FALSE, suppresses progress of request (unix OS only).}
+\item{progress}{If FALSE, suppresses progress of request.}
 }
 \description{
 The NASA Exoplanet Archive provides access to the public SuperWASP light
