@@ -1,51 +1,27 @@
-detect_os <- function() {
-  switch(Sys.info()[['sysname']],
-    Windows = "windows",
-    Linux   = "linux",
-    Darwin  = "macos"
-  )
-}
-
-get_exo_macos <- function(x, progress = TRUE, col_spec = TRUE) {
+fetch_with_httr <- function(x, progress = TRUE) {
   if (progress) {
     response <- httr::GET(x, httr::progress())
     cat("\n")
-  }
-  else {
+  } else {
     response <- httr::GET(x)
   }
 
-  if (col_spec)
-    httr::content(
-      response,
-      type = "text/csv",
-      encoding = "UTF-8"
-    )
-  else
-    httr::content(
-      response,
-      type = "text/csv",
-      encoding = "UTF-8",
-      col_types = readr::cols()
-    )
+  httr::content(
+    x = response,
+    type = "text/csv",
+    encoding = "UTF-8",
+    col_types = readr::cols()
+  )
 }
 
-get_exo_windows <- function(x) {
+fetch_with_base <- function(x) {
   utils::read.csv(x)
 }
 
-get_exo_linux <- get_exo_macos
-
-get_exo <- function(x, progress = TRUE, col_spec = TRUE) {
-  os <- detect_os()
-
-  switch (os,
-    "windows" = get_exo_windows(x),
-    "linux" = get_exo_linux(x),
-    "macos" = get_exo_macos(x, progress, col_spec)
+fetch_data <- function(x, progress = TRUE) {
+  tryCatch(fetch_with_httr(x, progress),
+    error = function(c) fetch_with_base(x)
   )
-
-  # utils::read.csv(x)
 }
 
 base_url <- function() {

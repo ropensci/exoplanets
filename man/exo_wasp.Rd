@@ -4,8 +4,7 @@
 \alias{exo_wasp}
 \title{SuperWASP Time Series Table}
 \usage{
-exo_wasp(tile = NULL, sourceid = NULL, progress = TRUE,
-  col_spec = FALSE)
+exo_wasp(tile = NULL, sourceid = NULL, progress = TRUE)
 }
 \arguments{
 \item{tile}{Survey Tile, subdivision of DR1 targets for survey processing,
@@ -14,9 +13,6 @@ tile168060 for example.}
 \item{sourceid}{SuperWASP Object ID, 1SWASP J191645.46+474912.3 for example.}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
-
-\item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr} (unix OS only).}
 }
 \description{
 The NASA Exoplanet Archive provides access to the public SuperWASP light

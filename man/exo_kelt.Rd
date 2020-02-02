@@ -4,16 +4,13 @@
 \alias{exo_kelt}
 \title{KELT light curves (not including KELT Praesepe data)}
 \usage{
-exo_kelt(kelt_field = NULL, progress = TRUE, col_spec = FALSE)
+exo_kelt(kelt_field = NULL, progress = TRUE)
 }
 \arguments{
 \item{kelt_field}{KELT field of observation. Fields available are N02, N04,
 N06, N08, N10 and N12.}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
-
-\item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr} (unix OS only).}
 }
 \description{
 The NASA Exoplanet Archive provides access to KELT time series through a

@@ -7,17 +7,15 @@
 #' is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 #' are escaped automatically.
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
-#' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr} (unix OS only).
 #' @return A \code{data.frame} containing data for the respective table
 #' @export
-exo_raw <- function(query, progress = TRUE, col_spec = FALSE) {
+exo_raw <- function(query, progress = TRUE) {
   if(is.null(query))
     stop("Please provide a valid query")
 
   query <- gsub(" ", "%20", query)
   query <- gsub("'", "%27", query)
-  get_exo(query, progress = progress, col_spec = col_spec)
+  fetch_data(query, progress = progress)
 }
 
 #' Access NASA's Exoplanet Archive by Table
@@ -29,24 +27,22 @@ exo_raw <- function(query, progress = TRUE, col_spec = FALSE) {
 #' @param cols Either "default" for default columns, "all" for all columns or
 #' individual column names.
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
-#' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr} (unix OS only).
 #' @return A \code{data.frame} containing data for the respective table
 #' @export
-exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
+exo <- function(table = "exoplanets", cols = "default", progress = TRUE) {
   base_url <- base_url()
 
   cols <- paste0(cols, collapse = ",")
 
   if(cols == "default") {
     x <- paste0(base_url, "table=", table)
-    get_exo(x, progress = progress, col_spec = col_spec)
+    fetch_data(x, progress = progress)
   } else if(cols == "all") {
     x <- paste0(base_url, "table=", table, "&select=*")
-    get_exo(x, progress = progress, col_spec = col_spec)
+    fetch_data(x, progress = progress)
   } else {
     x <- paste0(base_url, "table=", table, "&select=", cols)
-    get_exo(x, progress = progress, col_spec = col_spec)
+    fetch_data(x, progress = progress)
   }
 }
 
@@ -59,19 +55,17 @@ exo <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spe
 #' @param cols Either "default" for default columns, "all" for all columns,
 #' defaults to "default".
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
-#' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr} (unix OS only).
 #' @return A character vector containing column names for the respective table
 #' @export
-exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE, col_spec = FALSE) {
+exo_column_names <- function(table = "exoplanets", cols = "default", progress = TRUE) {
   base_url <- base_url()
 
   if(cols == "default") {
     x <- paste0(base_url, "table=", table, "&getDefaultColumns&format=csv")
-    names(get_exo(x, progress = progress, col_spec = col_spec))
+    names(fetch_data(x, progress = progress))
   } else if(cols == "all") {
     x <- paste0(base_url, "table=", table, "&getAllColumns&format=csv")
-    names(get_exo(x, progress = progress, col_spec = col_spec))
+    names(fetch_data(x, progress = progress))
   }
 }
 
@@ -85,16 +79,14 @@ exo_column_names <- function(table = "exoplanets", cols = "default", progress = 
 #'
 #' @param output One of \code{list} or \code{dataframe}, defaults to list.
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
-#' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr} (unix OS only).
 #' @return An object of class \code{list} or \code{data.frame}.
 #' @export
-exo_summary <- function(output = "list", progress = TRUE, col_spec = FALSE) {
-  exo_cols <- c(exo_column_names("exoplanets", progress = progress, col_spec = col_spec), "pl_masse", "pl_rade")
+exo_summary <- function(output = "list", progress = TRUE) {
+  exo_cols <- c(exo_column_names("exoplanets", progress = progress), "pl_masse", "pl_rade")
 
-  df_exo <- exo("exoplanets", exo_cols, progress = progress, col_spec = col_spec)
-  df_cumulative <- exo("cumulative", progress = progress, col_spec = col_spec)
-  df_k2_can <- exo("k2candidates", progress = progress, col_spec = col_spec)
+  df_exo <- exo("exoplanets", exo_cols, progress = progress)
+  df_cumulative <- exo("cumulative", progress = progress)
+  df_k2_can <- exo("k2candidates", progress = progress)
 
   counts_summary <- list(
     all_exoplanets = nrow(df_exo),
@@ -169,11 +161,8 @@ exo_summary <- function(output = "list", progress = TRUE, col_spec = FALSE) {
 #' tile168060 for example.
 #' @param sourceid SuperWASP Object ID, 1SWASP J191645.46+474912.3 for example.
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
-#' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr} (unix OS only).
 #' @export
-exo_wasp <- function(tile = NULL, sourceid = NULL, progress = TRUE,
-                     col_spec = FALSE) {
+exo_wasp <- function(tile = NULL, sourceid = NULL, progress = TRUE) {
   params <- c(tile = tile, sourceid = sourceid)
   if (!is.null(tile) && !is.null(sourceid))
     stop(paste("Only one of tile or sourceid can be provided, not both."))
@@ -183,7 +172,7 @@ exo_wasp <- function(tile = NULL, sourceid = NULL, progress = TRUE,
   base_url <- base_url()
   table <- "&table=superwasptimeseries&"
   x <- paste0(base_url, table, names(params), "=", params)
-  exo_raw(x, progress, col_spec)
+  exo_raw(x, progress)
 }
 
 #' KELT light curves (not including KELT Praesepe data)
@@ -198,10 +187,8 @@ exo_wasp <- function(tile = NULL, sourceid = NULL, progress = TRUE,
 #' @param kelt_field KELT field of observation. Fields available are N02, N04,
 #' N06, N08, N10 and N12.
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
-#' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr} (unix OS only).
 #' @export
-exo_kelt <- function(kelt_field = NULL, progress = TRUE, col_spec = FALSE) {
+exo_kelt <- function(kelt_field = NULL, progress = TRUE) {
   if(is.null(kelt_field))
     stop("Missing value for kelt_field.")
 
@@ -209,7 +196,7 @@ exo_kelt <- function(kelt_field = NULL, progress = TRUE, col_spec = FALSE) {
   base_url <- base_url()
   table <- "&table=kelttimeseries&"
   x <- paste0(base_url, table, names(param), "=", param)
-  exo_raw(x, progress, col_spec)
+  exo_raw(x, progress)
 }
 
 #' Kepler Time Series Table
@@ -231,11 +218,8 @@ exo_kelt <- function(kelt_field = NULL, progress = TRUE, col_spec = FALSE) {
 #' Quarter 0 and 1 were shorter, 10 and 33 days in duration respectively.
 #' @param kepid Kepler Input Catalog Number, 8561063 for example.
 #' @param progress If FALSE, suppresses progress of request (unix OS only).
-#' @param col_spec If FALSE, suppresses column specification message from
-#' \code{readr} (unix OS only).
 #' @export
-exo_kepler <- function(quarter = NULL, kepid = NULL, progress = TRUE,
-                       col_spec = FALSE) {
+exo_kepler <- function(quarter = NULL, kepid = NULL, progress = TRUE) {
   params <- c(quarter = quarter, kepid = kepid)
   if (!is.null(quarter) && !is.null(kepid))
     stop(paste("Only one of quarter or kepid can be provided, not both."))
@@ -245,7 +229,7 @@ exo_kepler <- function(quarter = NULL, kepid = NULL, progress = TRUE,
   base_url <- base_url()
   table <- "&table=keplertimeseries&"
   x <- paste0(base_url, table, names(params), "=", params)
-  exo_raw(x, progress, col_spec)
+  exo_raw(x, progress)
 }
 
 

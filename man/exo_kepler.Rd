@@ -4,8 +4,7 @@
 \alias{exo_kepler}
 \title{Kepler Time Series Table}
 \usage{
-exo_kepler(quarter = NULL, kepid = NULL, progress = TRUE,
-  col_spec = FALSE)
+exo_kepler(quarter = NULL, kepid = NULL, progress = TRUE)
 }
 \arguments{
 \item{quarter}{Kepler operates observing campaigns in 'quarters' with
@@ -17,9 +16,6 @@ Quarter 0 and 1 were shorter, 10 and 33 days in duration respectively.}
 \item{kepid}{Kepler Input Catalog Number, 8561063 for example.}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
-
-\item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr} (unix OS only).}
 }
 \description{
 The NASA Exoplanet Archive provides access to the public Kepler light

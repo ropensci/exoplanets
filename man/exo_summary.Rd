@@ -4,15 +4,12 @@
 \alias{exo_summary}
 \title{Exoplanet Summary}
 \usage{
-exo_summary(output = "list", progress = TRUE, col_spec = FALSE)
+exo_summary(output = "list", progress = TRUE)
 }
 \arguments{
 \item{output}{One of \code{list} or \code{dataframe}, defaults to list.}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
-
-\item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr} (unix OS only).}
 }
 \value{
 An object of class \code{list} or \code{data.frame}.

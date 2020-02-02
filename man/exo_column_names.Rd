@@ -5,7 +5,7 @@
 \title{Access column names for each table}
 \usage{
 exo_column_names(table = "exoplanets", cols = "default",
-  progress = TRUE, col_spec = FALSE)
+  progress = TRUE)
 }
 \arguments{
 \item{table}{The name of the table, see \code{exo_tables} for all available
@@ -15,9 +15,6 @@ table names.}
 defaults to "default".}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
-
-\item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr} (unix OS only).}
 }
 \value{
 A character vector containing column names for the respective table

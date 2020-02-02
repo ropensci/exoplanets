@@ -4,7 +4,7 @@
 \alias{exo_raw}
 \title{Access NASA's Exoplanet Archive by URL}
 \usage{
-exo_raw(query, progress = TRUE, col_spec = FALSE)
+exo_raw(query, progress = TRUE)
 }
 \arguments{
 \item{query}{The full query URL. At this time, the only supported format
@@ -12,9 +12,6 @@ is CSV. If utilizing SQL, do not worry about spaces or single quotes, these
 are escaped automatically.}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
-
-\item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr} (unix OS only).}
 }
 \value{
 A \code{data.frame} containing data for the respective table

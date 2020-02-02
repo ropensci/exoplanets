@@ -4,8 +4,7 @@
 \alias{exo}
 \title{Access NASA's Exoplanet Archive by Table}
 \usage{
-exo(table = "exoplanets", cols = "default", progress = TRUE,
-  col_spec = FALSE)
+exo(table = "exoplanets", cols = "default", progress = TRUE)
 }
 \arguments{
 \item{table}{The name of the table, see \code{exo_tables} for all available table
@@ -15,9 +14,6 @@ names.}
 individual column names.}
 
 \item{progress}{If FALSE, suppresses progress of request (unix OS only).}
-
-\item{col_spec}{If FALSE, suppresses column specification message from
-\code{readr} (unix OS only).}
 }
 \value{
 A \code{data.frame} containing data for the respective table
