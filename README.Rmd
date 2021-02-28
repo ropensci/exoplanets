@@ -15,9 +15,8 @@ knitr::opts_chunk$set(
 # exoplanets <img src="man/figures/logo.png" align="right" height=150/>
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/tyluRp/exoplanets.svg?branch=master)](https://travis-ci.org/tyluRp/exoplanets)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/tyluRp/exoplanets?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/exoplanets)
 [![R build status](https://github.com/tyluRp/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/exoplanets)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/tyluRp/exoplanets?branch=master&svg=true)](https://ci.appveyor.com/project/tyluRp/exoplanets)
 [![Codecov test coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
 <!-- badges: end -->
 
@@ -105,21 +104,21 @@ This is a basic example which shows you how to access data from the exoplanet ta
 
 ```{r echo=FALSE}
 library(exoplanets)
-formals(exo)$progress <- FALSE
-formals(exo_raw)$progress <- FALSE
-formals(exo_column_names)$progress <- FALSE
+# formals(exo)$progress <- FALSE
+# formals(exo_raw)$progress <- FALSE
+# formals(exo_column_names)$progress <- FALSE
 ```
 
 ```{r example, message=FALSE}
 library(exoplanets)
 
-exo(table = "exoplanets")
+exo("exoplanets")
 ```
 
 To access data from a different table you can use the table parameter: 
 
 ```{r}
-exo(table = "keplernames")
+exo("keplernames")
 ```
 
 To get a list of all available tables:
@@ -131,25 +130,17 @@ names(exo_tables)
 To get a vector of column names for a specific table:
 
 ```{r}
-default_names <- exo_column_names(
-  table = "cumulative", 
-  cols = "default"
-  )
-
-all_names <- exo_column_names(
-  table = "cumulative", 
-  cols = "all"
-  )
+default_names <- exo_columns("cumulative", "default")
+all_names <- exo_columns("cumulative", "all")
 
 str(default_names)
 str(all_names)
 ```
 
-To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html) (yet) but might in the future. The default output is a list, you can override this with `output = "dataframe"`:
+To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html), but might in the future:
 
 ```{r}
-db_summary <- exo_summary(output = "dataframe", progress = FALSE)
-str(db_summary)
+exo_summary()
 ```
 
 

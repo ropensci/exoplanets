@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 library(exoplanets)
 formals(exo)$progress <- FALSE
 formals(exo_raw)$progress <- FALSE
-formals(exo_column_names)$progress <- FALSE
+formals(exo_columns)$progress <- FALSE
 formals(exo_wasp)$progress <- FALSE
 ```
 

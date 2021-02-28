@@ -8,14 +8,14 @@ reference:
 - title: Functions
   desc: ~
   contents:
-  - '`exo`'
-  - '`exo_column_names`'
-  - '`exo_kelt`'
-  - '`exo_kepler`'
-  - '`exo_raw`'
-  - '`exo_summary`'
-  - '`exo_wasp`'
+  - exo
+  - exo_columns
+  - exo_kelt
+  - exo_kepler
+  - exo_summary
+  - exo_wasp
+  - exo_raw
 - title: Data
   desc: ~
   contents:
-  - '`exo_tables`'
+  - exo_tables
