@@ -142,7 +142,7 @@
 <span class="va">df_exo</span>
 <span class="co">#&gt; # A tibble: 4,352 x 82</span>
 <span class="co">#&gt;    pl_hostname pl_letter pl_name  pl_discmethod pl_controvflag pl_pnum pl_orbper</span>
-<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;</span>
+<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                  &lt;int&gt;   &lt;int&gt;     &lt;dbl&gt;</span>
 <span class="co">#&gt;  1 Kepler-128  b         Kepler-… Transit                    0       2     15.1 </span>
 <span class="co">#&gt;  2 Kepler-128  c         Kepler-… Transit                    0       2     22.8 </span>
 <span class="co">#&gt;  3 Kepler-129  b         Kepler-… Transit                    0       2     15.8 </span>
@@ -154,26 +154,26 @@
 <span class="co">#&gt;  9 Kepler-131  c         Kepler-… Transit                    0       2     25.5 </span>
 <span class="co">#&gt; 10 Kepler-132  b         Kepler-… Transit                    0       4      6.18</span>
 <span class="co">#&gt; # … with 4,342 more rows, and 75 more variables: pl_orbpererr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;dbl&gt;, pl_orbpern &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;int&gt;, pl_orbpern &lt;int&gt;,</span>
 <span class="co">#&gt; #   pl_orbsmax &lt;dbl&gt;, pl_orbsmaxerr1 &lt;dbl&gt;, pl_orbsmaxerr2 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbsmaxlim &lt;dbl&gt;, pl_orbsmaxn &lt;dbl&gt;, pl_orbeccen &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbeccenerr1 &lt;dbl&gt;, pl_orbeccenerr2 &lt;dbl&gt;, pl_orbeccenlim &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbeccenn &lt;dbl&gt;, pl_orbincl &lt;dbl&gt;, pl_orbinclerr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbinclerr2 &lt;dbl&gt;, pl_orbincllim &lt;dbl&gt;, pl_orbincln &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   pl_orbsmaxlim &lt;int&gt;, pl_orbsmaxn &lt;int&gt;, pl_orbeccen &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   pl_orbeccenerr1 &lt;dbl&gt;, pl_orbeccenerr2 &lt;dbl&gt;, pl_orbeccenlim &lt;int&gt;,</span>
+<span class="co">#&gt; #   pl_orbeccenn &lt;int&gt;, pl_orbincl &lt;dbl&gt;, pl_orbinclerr1 &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   pl_orbinclerr2 &lt;dbl&gt;, pl_orbincllim &lt;int&gt;, pl_orbincln &lt;int&gt;,</span>
 <span class="co">#&gt; #   pl_bmassj &lt;dbl&gt;, pl_bmassjerr1 &lt;dbl&gt;, pl_bmassjerr2 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_bmassjlim &lt;dbl&gt;, pl_bmassn &lt;dbl&gt;, pl_bmassprov &lt;chr&gt;, pl_radj &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_radjerr1 &lt;dbl&gt;, pl_radjerr2 &lt;dbl&gt;, pl_radjlim &lt;dbl&gt;, pl_radn &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_dens &lt;dbl&gt;, pl_denserr1 &lt;dbl&gt;, pl_denserr2 &lt;dbl&gt;, pl_denslim &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_densn &lt;dbl&gt;, pl_ttvflag &lt;dbl&gt;, pl_kepflag &lt;dbl&gt;, pl_k2flag &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   pl_bmassjlim &lt;int&gt;, pl_bmassn &lt;int&gt;, pl_bmassprov &lt;chr&gt;, pl_radj &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   pl_radjerr1 &lt;dbl&gt;, pl_radjerr2 &lt;dbl&gt;, pl_radjlim &lt;int&gt;, pl_radn &lt;int&gt;,</span>
+<span class="co">#&gt; #   pl_dens &lt;dbl&gt;, pl_denserr1 &lt;dbl&gt;, pl_denserr2 &lt;dbl&gt;, pl_denslim &lt;int&gt;,</span>
+<span class="co">#&gt; #   pl_densn &lt;int&gt;, pl_ttvflag &lt;int&gt;, pl_kepflag &lt;int&gt;, pl_k2flag &lt;int&gt;,</span>
 <span class="co">#&gt; #   ra_str &lt;chr&gt;, dec_str &lt;chr&gt;, ra &lt;dbl&gt;, st_raerr &lt;dbl&gt;, dec &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_decerr &lt;dbl&gt;, st_posn &lt;dbl&gt;, st_dist &lt;dbl&gt;, st_disterr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_disterr2 &lt;dbl&gt;, st_distlim &lt;dbl&gt;, st_distn &lt;dbl&gt;, st_optmag &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_optmagerr &lt;dbl&gt;, st_optmaglim &lt;dbl&gt;, st_optband &lt;chr&gt;, gaia_gmag &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   gaia_gmagerr &lt;lgl&gt;, gaia_gmaglim &lt;dbl&gt;, st_teff &lt;dbl&gt;, st_tefferr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_tefferr2 &lt;dbl&gt;, st_tefflim &lt;dbl&gt;, st_teffn &lt;dbl&gt;, st_mass &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_masserr1 &lt;dbl&gt;, st_masserr2 &lt;dbl&gt;, st_masslim &lt;dbl&gt;, st_massn &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_rad &lt;dbl&gt;, st_raderr1 &lt;dbl&gt;, st_raderr2 &lt;dbl&gt;, st_radlim &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_radn &lt;dbl&gt;, pl_nnotes &lt;dbl&gt;, rowupdate &lt;date&gt;, pl_facility &lt;chr&gt;</span></code></pre></div>
+<span class="co">#&gt; #   st_decerr &lt;dbl&gt;, st_posn &lt;int&gt;, st_dist &lt;dbl&gt;, st_disterr1 &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   st_disterr2 &lt;dbl&gt;, st_distlim &lt;int&gt;, st_distn &lt;int&gt;, st_optmag &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   st_optmagerr &lt;dbl&gt;, st_optmaglim &lt;int&gt;, st_optband &lt;chr&gt;, gaia_gmag &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   gaia_gmagerr &lt;lgl&gt;, gaia_gmaglim &lt;int&gt;, st_teff &lt;dbl&gt;, st_tefferr1 &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   st_tefferr2 &lt;dbl&gt;, st_tefflim &lt;int&gt;, st_teffn &lt;int&gt;, st_mass &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   st_masserr1 &lt;dbl&gt;, st_masserr2 &lt;dbl&gt;, st_masslim &lt;int&gt;, st_massn &lt;int&gt;,</span>
+<span class="co">#&gt; #   st_rad &lt;dbl&gt;, st_raderr1 &lt;dbl&gt;, st_raderr2 &lt;dbl&gt;, st_radlim &lt;int&gt;,</span>
+<span class="co">#&gt; #   st_radn &lt;int&gt;, pl_nnotes &lt;int&gt;, rowupdate &lt;chr&gt;, pl_facility &lt;chr&gt;</span></code></pre></div>
 <p>If you want to explore other datasets, take a look at <code>exo_tables</code> a list that contains all available data. One nice feature of having a list of available data is that we can utilize autocompletion (assuming you’re using RStudio). Autocompletion paired with <code>exo</code> is an easy solution to pull whatever data you’re interested in, no need to memorize the table name.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># available data</span>
@@ -218,7 +218,7 @@
 <span class="va">df_stars</span>
 <span class="co">#&gt; # A tibble: 360 x 27</span>
 <span class="co">#&gt;    star_name  hip_name  hd_name gj_name tm_name     st_exocatflag st_coronagflag</span>
-<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;               &lt;dbl&gt;          &lt;dbl&gt;</span>
+<span class="co">#&gt;    &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;   &lt;chr&gt;   &lt;chr&gt;               &lt;int&gt;          &lt;int&gt;</span>
 <span class="co">#&gt;  1 HIP 3419   HIP 3419  HD 4128 GJ 31   2MASS J004…             1              1</span>
 <span class="co">#&gt;  2 HIP 3765   HIP 3765  HD 4628 GJ 33   2MASS J004…             1              1</span>
 <span class="co">#&gt;  3 HIP 3821 A HIP 3821… HD 4614 GJ 34 A 2MASS J004…             1              1</span>
@@ -229,8 +229,8 @@
 <span class="co">#&gt;  8 ups And    HIP 7513  HD 9826 GJ 61 A 2MASS J013…             1              1</span>
 <span class="co">#&gt;  9 HIP 7751 B HIP 7751… HD 103… GJ 66 B 2MASS J013…             1              0</span>
 <span class="co">#&gt; 10 HIP 7918   HIP 7918  HD 103… GJ 67   2MASS J014…             1              1</span>
-<span class="co">#&gt; # … with 350 more rows, and 20 more variables: st_starshadeflag &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_wfirstflag &lt;dbl&gt;, st_lbtiflag &lt;dbl&gt;, st_rvflag &lt;dbl&gt;, st_ppnum &lt;dbl&gt;,</span>
+<span class="co">#&gt; # … with 350 more rows, and 20 more variables: st_starshadeflag &lt;int&gt;,</span>
+<span class="co">#&gt; #   st_wfirstflag &lt;int&gt;, st_lbtiflag &lt;int&gt;, st_rvflag &lt;int&gt;, st_ppnum &lt;int&gt;,</span>
 <span class="co">#&gt; #   rastr &lt;chr&gt;, decstr &lt;chr&gt;, st_dist &lt;dbl&gt;, st_disterr1 &lt;dbl&gt;,</span>
 <span class="co">#&gt; #   st_disterr2 &lt;dbl&gt;, st_vmag &lt;dbl&gt;, st_vmagerr &lt;dbl&gt;, st_vmagsrc &lt;chr&gt;,</span>
 <span class="co">#&gt; #   st_bmv &lt;dbl&gt;, st_bmverr &lt;dbl&gt;, st_bmvsrc &lt;chr&gt;, st_spttype &lt;chr&gt;,</span>
@@ -254,12 +254,12 @@
 <span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?&amp;table=superwasptimeseries&amp;sourceid=1SWASP%20J191645.46+474912.3&gt;</span>
 <span class="va">df_wasp</span>
 <span class="co">#&gt; # A tibble: 1 x 17</span>
-<span class="co">#&gt;   sourceid      hjdstart hjdstop hjd_ref obsstart            obsstop            </span>
-<span class="co">#&gt;   &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;dttm&gt;              &lt;dttm&gt;             </span>
-<span class="co">#&gt; 1 1SWASP J1916… 2453129.  2.45e6  2.45e6 2004-05-03 03:07:41 2008-08-10 02:47:57</span>
-<span class="co">#&gt; # … with 11 more variables: tstart &lt;dbl&gt;, tstop &lt;dbl&gt;, ra &lt;dbl&gt;, dec &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   wasp_mag &lt;dbl&gt;, npts &lt;dbl&gt;, tile &lt;chr&gt;, tm_statnpts &lt;dbl&gt;, tm_median &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   tm_stddevwrtmed &lt;dbl&gt;, tm_range595 &lt;dbl&gt;</span></code></pre></div>
+<span class="co">#&gt;   sourceid  hjdstart  hjdstop hjd_ref obsstart obsstop tstart  tstop    ra   dec</span>
+<span class="co">#&gt;   &lt;chr&gt;        &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;    &lt;int&gt;  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;</span>
+<span class="co">#&gt; 1 1SWASP J… 2453129. 2454689.  2.45e6 2004-05… 2008-0… 1.06e7 1.45e8  289.  47.8</span>
+<span class="co">#&gt; # … with 7 more variables: wasp_mag &lt;dbl&gt;, npts &lt;int&gt;, tile &lt;chr&gt;,</span>
+<span class="co">#&gt; #   tm_statnpts &lt;int&gt;, tm_median &lt;dbl&gt;, tm_stddevwrtmed &lt;dbl&gt;,</span>
+<span class="co">#&gt; #   tm_range595 &lt;dbl&gt;</span></code></pre></div>
 </div>
 <div id="raw-url" class="section level3">
 <h3 class="hasAnchor">
