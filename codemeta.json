@@ -14,16 +14,15 @@
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
-    "version": "3.6.0",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 3.6.0 (2019-04-26)",
+  "runtimePlatform": "R version 4.0.3 (2020-10-10)",
   "author": [
     {
       "@type": "Person",
       "givenName": "Tyler",
       "familyName": "Littlefield",
-      "email": "tylurp1@gmail.com",
+      "email": "tylerlittlefield@hey.com",
       "@id": "https://orcid.org/0000-0002-6020-1125"
     }
   ],
@@ -35,23 +34,11 @@
       "@type": "Person",
       "givenName": "Tyler",
       "familyName": "Littlefield",
-      "email": "tylurp1@gmail.com",
+      "email": "tylerlittlefield@hey.com",
       "@id": "https://orcid.org/0000-0002-6020-1125"
     }
   ],
   "softwareSuggestions": [
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "tibble",
-      "name": "tibble",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=tibble"
-    },
     {
       "@type": "SoftwareApplication",
       "identifier": "testthat",
@@ -149,15 +136,35 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "memoise",
+      "name": "memoise",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=memoise"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "tibble",
+      "name": "tibble",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=tibble"
     }
   ],
   "readme": "https://github.com/tyluRp/exoplanets/blob/master/README.md",
-  "fileSize": "1310.341KB",
-  "contIntegration": [
-    "https://travis-ci.org/tyluRp/exoplanets",
-    "https://ci.appveyor.com/project/tyluRp/exoplanets",
-    "https://codecov.io/gh/tyluRp/exoplanets?branch=master"
-  ],
+  "fileSize": "3381.418KB",
+  "contIntegration": "https://codecov.io/gh/tyluRp/exoplanets?branch=master",
   "keywords": [
     "rstats",
     "nasa",
