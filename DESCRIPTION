@@ -6,7 +6,7 @@ Authors@R:
     person(given = "Tyler",
            family = "Littlefield",
            role = c("aut", "cre"),
-           email = "tylurp1@gmail.com",
+           email = "tylerlittlefield@hey.com",
            comment = c(ORCID = "0000-0002-6020-1125"))
 Description: The goal of exoplanets is to provide access to NASA's Exoplanet 
   Archive database by supplying a table name or by writing the URL query 
