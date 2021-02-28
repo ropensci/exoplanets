@@ -33,7 +33,7 @@ The exoplanet package is a minimal interface to the [NASA Exoplanet Archive](htt
 There are 3 ways to access data from the API:
 
 1. `exo`: provide a table name, see `exo_tables` for all available tables. Note this function doesn't support time series tables.
-2. `exo_kelt`, `exo_kepler`, and `exo_wasp`: no table name needed, they are hardcoded and designed for a specific table, just provide the apporpriate arguments.
+2. `exo_kelt`, `exo_kepler`, and `exo_wasp`: no table name needed, they are hard-coded and designed for a specific table, just provide the appropriate arguments.
 3. `exo_raw`: provide the raw URL.
 
 ### By table name
