@@ -63,8 +63,6 @@ with_mock_dir("exoplanets-json", {
   })
 })
 
-# ----
-
 with_mock_dir("exoplanets-default-select", {
   test_that("exoplanets default works when selecting", {
     r <- quiet(exoplanets("k2names", c("epic_id", "k2_name")))
@@ -94,5 +92,47 @@ with_mock_dir("exoplanets-json-select", {
     r <- quiet(exoplanets("k2names", c("epic_id", "k2_name"), format = "json"))
     expect_true("list" %in% class(r))
     expect_true(all(c("epic_id", "k2_name") %in% unique(unlist(lapply(r, names)))))
+  })
+})
+
+with_mock_dir("exoplanets-table-ps", {
+  test_that("ps table works", {
+    column <- "pl_name"
+    expect_true("data.frame" %in% class(quiet(exoplanets("ps", column))))
+  })
+})
+
+with_mock_dir("exoplanets-table-pscomppars", {
+  test_that("pscomppars table works", {
+    column <- "pl_name"
+    expect_true("data.frame" %in% class(quiet(exoplanets("pscomppars", column))))
+  })
+})
+
+with_mock_dir("exoplanets-table-keplernames", {
+  test_that("keplernames table works", {
+    column <- "pl_name"
+    expect_true("data.frame" %in% class(quiet(exoplanets("keplernames", column))))
+  })
+})
+
+with_mock_dir("exoplanets-table-k2names", {
+  test_that("k2names table works", {
+    column <- "pl_name"
+    expect_true("data.frame" %in% class(quiet(exoplanets("k2names", column))))
+  })
+})
+
+with_mock_dir("exoplanets-table-emissionspec", {
+  test_that("emissionspec table works", {
+    column <- "centralwavelng"
+    expect_true("data.frame" %in% class(quiet(exoplanets("emissionspec", column))))
+  })
+})
+
+with_mock_dir("exoplanets-table-transitspec", {
+  test_that("transitspec table works", {
+    column <- "centralwavelng"
+    expect_true("data.frame" %in% class(quiet(exoplanets("transitspec", column))))
   })
 })
