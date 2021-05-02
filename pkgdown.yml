@@ -2,6 +2,6 @@ pandoc: 2.7.3
 pkgdown: 1.6.1
 pkgdown_sha: ~
 articles:
-  introduction-to-exoplanets: introduction-to-exoplanets.html
-last_built: 2021-02-28T20:06Z
+  exoplanets: exoplanets.html
+last_built: 2021-05-02T20:00Z
 

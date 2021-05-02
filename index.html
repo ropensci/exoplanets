@@ -63,19 +63,10 @@
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="articles/exoplanets.html">Get started</a>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Articles
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
 <li>
-      <a href="articles/introduction-to-exoplanets.html">Introduction to exoplanets</a>
-    </li>
-  </ul>
+  <a href="reference/index.html">Reference</a>
 </li>
 <li>
   <a href="news/index.html">Changelog</a>
@@ -106,16 +97,8 @@
 </h1></div>
 <!-- badges: start -->
 
-<p>The goal of exoplanets is to provide access to <a href="https://exoplanetarchive.ipac.caltech.edu/index.html">NASA’s Exoplanet Archive</a> database in R. The functionality of this package is fairly minimal and is simply an R interface to access exoplanet data in the following ways:</p>
-<ul>
-<li>By providing a table name using <code>exo</code>
-</li>
-<li>By providing a query URL using <code>exo_raw</code>
-</li>
-<li>By summarising the database using <code>exo_summary</code>
-</li>
-</ul>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
+<p>The goal of exoplanets is to provide access to <a href="https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html">NASA’s Exoplanet Archive TAP Service</a>. The functionality of this package is minimal and is simply an R interface to access exoplanet data.</p>
+<p><img src="reference/figures/README-unnamed-chunk-2-1.png" title="Exoplanets color coded by discovery method" alt="Exoplanets color coded by discovery method" width="100%"></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -127,176 +110,72 @@
 <div id="example" class="section level2">
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to access data from the exoplanet table:</p>
+<p>This is a basic example which shows you how to access data from the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/API_k2names_columns.html">k2names</a> table:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tyluRp/exoplanets">exoplanets</a></span><span class="op">)</span>
 
-<span class="fu"><a href="reference/exo.html">exo</a></span><span class="op">(</span><span class="st">"exoplanets"</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 4,352 x 82</span>
-<span class="co">#&gt;    pl_hostname pl_letter pl_name  pl_discmethod pl_controvflag pl_pnum pl_orbper</span>
-<span class="co">#&gt;    &lt;chr&gt;       &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;                  &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 Kepler-128  b         Kepler-… Transit                    0       2     15.1 </span>
-<span class="co">#&gt;  2 Kepler-128  c         Kepler-… Transit                    0       2     22.8 </span>
-<span class="co">#&gt;  3 Kepler-129  b         Kepler-… Transit                    0       2     15.8 </span>
-<span class="co">#&gt;  4 Kepler-129  c         Kepler-… Transit                    0       2     82.2 </span>
-<span class="co">#&gt;  5 Kepler-130  b         Kepler-… Transit                    0       3      8.46</span>
-<span class="co">#&gt;  6 Kepler-130  c         Kepler-… Transit                    0       3     27.5 </span>
-<span class="co">#&gt;  7 Kepler-130  d         Kepler-… Transit                    0       3     87.5 </span>
-<span class="co">#&gt;  8 Kepler-131  b         Kepler-… Transit                    0       2     16.1 </span>
-<span class="co">#&gt;  9 Kepler-131  c         Kepler-… Transit                    0       2     25.5 </span>
-<span class="co">#&gt; 10 Kepler-132  b         Kepler-… Transit                    0       4      6.18</span>
-<span class="co">#&gt; # … with 4,342 more rows, and 75 more variables: pl_orbpererr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbpererr2 &lt;dbl&gt;, pl_orbperlim &lt;dbl&gt;, pl_orbpern &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbsmax &lt;dbl&gt;, pl_orbsmaxerr1 &lt;dbl&gt;, pl_orbsmaxerr2 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbsmaxlim &lt;dbl&gt;, pl_orbsmaxn &lt;dbl&gt;, pl_orbeccen &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbeccenerr1 &lt;dbl&gt;, pl_orbeccenerr2 &lt;dbl&gt;, pl_orbeccenlim &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbeccenn &lt;dbl&gt;, pl_orbincl &lt;dbl&gt;, pl_orbinclerr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_orbinclerr2 &lt;dbl&gt;, pl_orbincllim &lt;dbl&gt;, pl_orbincln &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_bmassj &lt;dbl&gt;, pl_bmassjerr1 &lt;dbl&gt;, pl_bmassjerr2 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_bmassjlim &lt;dbl&gt;, pl_bmassn &lt;dbl&gt;, pl_bmassprov &lt;chr&gt;, pl_radj &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_radjerr1 &lt;dbl&gt;, pl_radjerr2 &lt;dbl&gt;, pl_radjlim &lt;dbl&gt;, pl_radn &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_dens &lt;dbl&gt;, pl_denserr1 &lt;dbl&gt;, pl_denserr2 &lt;dbl&gt;, pl_denslim &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   pl_densn &lt;dbl&gt;, pl_ttvflag &lt;dbl&gt;, pl_kepflag &lt;dbl&gt;, pl_k2flag &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   ra_str &lt;chr&gt;, dec_str &lt;chr&gt;, ra &lt;dbl&gt;, st_raerr &lt;dbl&gt;, dec &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_decerr &lt;dbl&gt;, st_posn &lt;dbl&gt;, st_dist &lt;dbl&gt;, st_disterr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_disterr2 &lt;dbl&gt;, st_distlim &lt;dbl&gt;, st_distn &lt;dbl&gt;, st_optmag &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_optmagerr &lt;dbl&gt;, st_optmaglim &lt;dbl&gt;, st_optband &lt;chr&gt;, gaia_gmag &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   gaia_gmagerr &lt;lgl&gt;, gaia_gmaglim &lt;dbl&gt;, st_teff &lt;dbl&gt;, st_tefferr1 &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_tefferr2 &lt;dbl&gt;, st_tefflim &lt;dbl&gt;, st_teffn &lt;dbl&gt;, st_mass &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_masserr1 &lt;dbl&gt;, st_masserr2 &lt;dbl&gt;, st_masslim &lt;dbl&gt;, st_massn &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_rad &lt;dbl&gt;, st_raderr1 &lt;dbl&gt;, st_raderr2 &lt;dbl&gt;, st_radlim &lt;dbl&gt;,</span>
-<span class="co">#&gt; #   st_radn &lt;dbl&gt;, pl_nnotes &lt;dbl&gt;, rowupdate &lt;date&gt;, pl_facility &lt;chr&gt;</span></code></pre></div>
-<p>To access data from a different table you can use the table parameter:</p>
+<span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"k2names"</span>, progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; ● https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&amp;format=csv</span>
+<span class="co">#&gt; # A tibble: 449 x 3</span>
+<span class="co">#&gt;    epic_id        k2_name  pl_name     </span>
+<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       </span>
+<span class="co">#&gt;  1 EPIC 246199087 K2-112 f TRAPPIST-1 f</span>
+<span class="co">#&gt;  2 EPIC 246199087 K2-112 h TRAPPIST-1 h</span>
+<span class="co">#&gt;  3 EPIC 220383386 K2-96 d  HD 3167 d   </span>
+<span class="co">#&gt;  4 EPIC 211331236 K2-117 c K2-117 c    </span>
+<span class="co">#&gt;  5 EPIC 212398486 K2-125 b K2-125 b    </span>
+<span class="co">#&gt;  6 EPIC 217941732 K2-130 b K2-130 b    </span>
+<span class="co">#&gt;  7 EPIC 228754001 K2-132 b K2-132 b    </span>
+<span class="co">#&gt;  8 EPIC 247887989 K2-133 d K2-133 d    </span>
+<span class="co">#&gt;  9 EPIC 246389858 K2-135 b GJ 9827 b   </span>
+<span class="co">#&gt; 10 EPIC 247589423 K2-136 b K2-136 b    </span>
+<span class="co">#&gt; # … with 439 more rows</span></code></pre></div>
+<p>If you wish, you can select only the columns you need:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/exo.html">exo</a></span><span class="op">(</span><span class="st">"keplernames"</span><span class="op">)</span>
-<span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=keplernames&gt;</span>
-<span class="co">#&gt; # A tibble: 2,414 x 13</span>
-<span class="co">#&gt;      kepid    ra ra_err   dec dec_err ra_str    dec_str   kepoi_name kepler_name</span>
-<span class="co">#&gt;      &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt;      </span>
-<span class="co">#&gt;  1  1.10e7  293.      0  48.4       0 19h33m24… +48d26m4… K01931.02  Kepler-339…</span>
-<span class="co">#&gt;  2  5.20e6  296.      0  40.3       0 19h43m44… +40d18m0… K01932.02  Kepler-340…</span>
-<span class="co">#&gt;  3  5.20e6  296.      0  40.3       0 19h43m44… +40d18m0… K01932.01  Kepler-340…</span>
-<span class="co">#&gt;  4  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.03  Kepler-341…</span>
-<span class="co">#&gt;  5  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.01  Kepler-341…</span>
-<span class="co">#&gt;  6  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.02  Kepler-341…</span>
-<span class="co">#&gt;  7  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.04  Kepler-341…</span>
-<span class="co">#&gt;  8  9.89e6  293.      0  46.7       0 19h30m42… +46d43m3… K01955.01  Kepler-342…</span>
-<span class="co">#&gt;  9  9.89e6  293.      0  46.7       0 19h30m42… +46d43m3… K01955.04  Kepler-342…</span>
-<span class="co">#&gt; 10  9.89e6  293.      0  46.7       0 19h30m42… +46d43m3… K01955.02  Kepler-342…</span>
-<span class="co">#&gt; # … with 2,404 more rows, and 4 more variables: alt_name &lt;chr&gt;,</span>
-<span class="co">#&gt; #   tm_designation &lt;chr&gt;, koi_list_flag &lt;chr&gt;, last_update &lt;date&gt;</span></code></pre></div>
-<p>To get a list of all available tables:</p>
+<code class="sourceCode R"><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"ps"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"pl_name"</span>, <span class="st">"hostname"</span><span class="op">)</span>, progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; ● https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&amp;format=csv</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   pl_name = col_character(),</span>
+<span class="co">#&gt;   hostname = col_character()</span>
+<span class="co">#&gt; )</span>
+<span class="co">#&gt; # A tibble: 29,398 x 2</span>
+<span class="co">#&gt;    pl_name      hostname  </span>
+<span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;     </span>
+<span class="co">#&gt;  1 Kepler-11 c  Kepler-11 </span>
+<span class="co">#&gt;  2 Kepler-11 f  Kepler-11 </span>
+<span class="co">#&gt;  3 HAT-P-1 b    HAT-P-1   </span>
+<span class="co">#&gt;  4 OGLE-TR-10 b OGLE-TR-10</span>
+<span class="co">#&gt;  5 TrES-2 b     TrES-2    </span>
+<span class="co">#&gt;  6 WASP-3 b     WASP-3    </span>
+<span class="co">#&gt;  7 47 UMa b     47 UMa    </span>
+<span class="co">#&gt;  8 47 UMa d     47 UMa    </span>
+<span class="co">#&gt;  9 HD 167042 b  HD 167042 </span>
+<span class="co">#&gt; 10 HD 210702 b  HD 210702 </span>
+<span class="co">#&gt; # … with 29,388 more rows</span></code></pre></div>
+<p>Information on the tables and columns available can be found with:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="va">exo_tables</span><span class="op">)</span> 
-<span class="co">#&gt;  [1] "exoplanets"               "compositepars"           </span>
-<span class="co">#&gt;  [3] "exomultpars"              "aliastable"              </span>
-<span class="co">#&gt;  [5] "microlensing"             "cumulative"              </span>
-<span class="co">#&gt;  [7] "q1_q17_dr25_sup_koi"      "q1_q17_dr25_koi"         </span>
-<span class="co">#&gt;  [9] "q1_q17_dr24_koi"          "q1_q16_koi"              </span>
-<span class="co">#&gt; [11] "q1_q12_koi"               "q1_q8_koi"               </span>
-<span class="co">#&gt; [13] "q1_q6_koi"                "q1_q17_dr25_tce"         </span>
-<span class="co">#&gt; [15] "q1_q17_dr24_tce"          "q1_q16_tce"              </span>
-<span class="co">#&gt; [17] "q1_q12_tce"               "keplerstellar"           </span>
-<span class="co">#&gt; [19] "q1_q17_dr25_supp_stellar" "q1_q17_dr25_stellar"     </span>
-<span class="co">#&gt; [21] "q1_q17_dr24_stellar"      "q1_q16_stellar"          </span>
-<span class="co">#&gt; [23] "q1_q12_stellar"           "keplertimeseries"        </span>
-<span class="co">#&gt; [25] "keplernames"              "kelttimeseries"          </span>
-<span class="co">#&gt; [27] "superwasptimeseries"      "k2targets"               </span>
-<span class="co">#&gt; [29] "k2candidates"             "k2names"                 </span>
-<span class="co">#&gt; [31] "missionstars"             "mission_exocat"</span></code></pre></div>
-<p>To get a vector of column names for a specific table:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">default_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/exo_columns.html">exo_columns</a></span><span class="op">(</span><span class="st">"cumulative"</span>, <span class="st">"default"</span><span class="op">)</span>
-<span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&amp;getDefaultColumns&amp;format=csv&gt;</span>
-<span class="va">all_names</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/exo_columns.html">exo_columns</a></span><span class="op">(</span><span class="st">"cumulative"</span>, <span class="st">"all"</span><span class="op">)</span>
-<span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&amp;getAllColumns&amp;format=csv&gt;</span>
-
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">default_names</span><span class="op">)</span>
-<span class="co">#&gt;  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...</span>
-<span class="fu"><a href="https://rdrr.io/r/utils/str.html">str</a></span><span class="op">(</span><span class="va">all_names</span><span class="op">)</span>
-<span class="co">#&gt;  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...</span></code></pre></div>
-<p>To summarise the database, you can use <code>exo_summary</code>, which doesn’t include everything found <a href="https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html">here</a>, but might in the future:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/exo_summary.html">exo_summary</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&amp;getDefaultColumns&amp;format=csv&gt;</span>
-<span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&amp;select=pl_hostname,pl_letter,pl_name,pl_discmethod,pl_controvflag,pl_pnum,pl_orbper,pl_orbpererr1,pl_orbpererr2,pl_orbperlim,pl_orbpern,pl_orbsmax,pl_orbsmaxerr1,pl_orbsmaxerr2,pl_orbsmaxlim,pl_orbsmaxn,pl_orbeccen,pl_orbeccenerr1,pl_orbeccenerr2,pl_orbeccenlim,pl_orbeccenn,pl_orbincl,pl_orbinclerr1,pl_orbinclerr2,pl_orbincllim,pl_orbincln,pl_bmassj,pl_bmassjerr1,pl_bmassjerr2,pl_bmassjlim,pl_bmassn,pl_bmassprov,pl_radj,pl_radjerr1,pl_radjerr2,pl_radjlim,pl_radn,pl_dens,pl_denserr1,pl_denserr2,pl_denslim,pl_densn,pl_ttvflag,pl_kepflag,pl_k2flag,ra_str,dec_str,ra,st_raerr,dec,st_decerr,st_posn,st_dist,st_disterr1,st_disterr2,st_distlim,st_distn,st_optmag,st_optmagerr,st_optmaglim,st_optband,gaia_gmag,gaia_gmagerr,gaia_gmaglim,st_teff,st_tefferr1,st_tefferr2,st_tefflim,st_teffn,st_mass,st_masserr1,st_masserr2,st_masslim,st_massn,st_rad,st_raderr1,st_raderr2,st_radlim,st_radn,pl_nnotes,rowupdate,pl_facility,pl_masse,pl_rade&gt;</span>
-<span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&gt;</span>
-<span class="co">#&gt; * &lt;https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=k2candidates&gt;</span>
-<span class="co">#&gt; $counts_summary</span>
-<span class="co">#&gt; # A tibble: 8 x 2</span>
-<span class="co">#&gt;   ind                                                         values</span>
-<span class="co">#&gt;   &lt;fct&gt;                                                        &lt;int&gt;</span>
-<span class="co">#&gt; 1 all_exoplanets                                                4352</span>
-<span class="co">#&gt; 2 confirmed_planets_with_kepler_light_curves_for_stellar_host   2414</span>
-<span class="co">#&gt; 3 confirmed_planets_discovered_by_kepler                        2394</span>
-<span class="co">#&gt; 4 kepler_project_candidates_yet_to_be_confirmed                 2366</span>
-<span class="co">#&gt; 5 confirmed_planets_with_k2_light_curves_for_stellar_host        450</span>
-<span class="co">#&gt; 6 confirmed_planets_discovered_by_k2                             425</span>
-<span class="co">#&gt; 7 k2_candidates_yet_to_be_confirmed                              889</span>
-<span class="co">#&gt; 8 confirmed_planets_discovered_by_tess                           113</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $discovery_summary</span>
-<span class="co">#&gt; # A tibble: 11 x 2</span>
-<span class="co">#&gt;    ind                           values</span>
-<span class="co">#&gt;    &lt;fct&gt;                          &lt;int&gt;</span>
-<span class="co">#&gt;  1 Astrometry                         1</span>
-<span class="co">#&gt;  2 Disk Kinematics                    1</span>
-<span class="co">#&gt;  3 Eclipse Timing Variations         16</span>
-<span class="co">#&gt;  4 Imaging                           51</span>
-<span class="co">#&gt;  5 Microlensing                     106</span>
-<span class="co">#&gt;  6 Orbital Brightness Modulation      6</span>
-<span class="co">#&gt;  7 Pulsar Timing                      7</span>
-<span class="co">#&gt;  8 Pulsation Timing Variations        2</span>
-<span class="co">#&gt;  9 Radial Velocity                  827</span>
-<span class="co">#&gt; 10 Transit                         3314</span>
-<span class="co">#&gt; 11 Transit Timing Variations         21</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $mass_summary</span>
-<span class="co">#&gt; # A tibble: 6 x 2</span>
-<span class="co">#&gt;   ind                    values</span>
-<span class="co">#&gt;   &lt;fct&gt;                   &lt;int&gt;</span>
-<span class="co">#&gt; 1 M &lt;= 3 M_Earth             44</span>
-<span class="co">#&gt; 2 3 &lt; M &lt;= 10 M_Earth       154</span>
-<span class="co">#&gt; 3 10 &lt; M &lt;= 30 M_Earth      106</span>
-<span class="co">#&gt; 4 30 &lt; M &lt;= 100 M_Earth      98</span>
-<span class="co">#&gt; 5 100 &lt; M &lt;= 300 M_Earth    229</span>
-<span class="co">#&gt; 6 300 M_Earth &lt; M           393</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; $radius_summary</span>
-<span class="co">#&gt; # A tibble: 5 x 2</span>
-<span class="co">#&gt;   ind                   values</span>
-<span class="co">#&gt;   &lt;fct&gt;                  &lt;int&gt;</span>
-<span class="co">#&gt; 1 R &lt;= 1.25 R_Earth        419</span>
-<span class="co">#&gt; 2 1.25 &lt; R &lt;= 2 R_Earth    880</span>
-<span class="co">#&gt; 3 2 &lt; R &lt;= 6 R_Earth      1399</span>
-<span class="co">#&gt; 4 6 &lt; R &lt;= 15 R_Earth      475</span>
-<span class="co">#&gt; 5 15 R_Earth &lt; R           165</span></code></pre></div>
-<p>Finally, you can take a look at the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html">docs</a> and use <code>eco_raw</code> to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span>
-  base <span class="op">=</span> <span class="st">"https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?"</span>,
-  table <span class="op">=</span> <span class="st">"table=exoplanets"</span>,
-  columns <span class="op">=</span> <span class="st">"&amp;select=pl_hostname,ra,dec"</span>,
-  parameters <span class="op">=</span> <span class="st">"&amp;order=dec"</span>
-<span class="op">)</span>
-
-<span class="va">query</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="va">x</span>, collapse <span class="op">=</span> <span class="st">""</span><span class="op">)</span>
-
-<span class="fu"><a href="reference/exo_raw.html">exo_raw</a></span><span class="op">(</span><span class="va">query</span><span class="op">)</span>
-<span class="co">#&gt; # A tibble: 4,352 x 3</span>
-<span class="co">#&gt;    pl_hostname     ra   dec</span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;</span>
-<span class="co">#&gt;  1 HD 142022 A 243.   -84.2</span>
-<span class="co">#&gt;  2 HD 39091     84.3  -80.5</span>
-<span class="co">#&gt;  3 HD 39091     84.3  -80.5</span>
-<span class="co">#&gt;  4 HD 137388   234.   -80.2</span>
-<span class="co">#&gt;  5 GJ 3021       4.05 -79.9</span>
-<span class="co">#&gt;  6 HD 63454    115.   -78.3</span>
-<span class="co">#&gt;  7 HD 212301   337.   -77.7</span>
-<span class="co">#&gt;  8 HD 97048    167.   -77.7</span>
-<span class="co">#&gt;  9 CHXR 73     167.   -77.6</span>
-<span class="co">#&gt; 10 HD 221420   353.   -77.4</span>
-<span class="co">#&gt; # … with 4,342 more rows</span></code></pre></div>
+<code class="sourceCode R"><span class="va">tableinfo</span>
+<span class="co">#&gt; # A tibble: 1,800 x 3</span>
+<span class="co">#&gt;    table                  column       description          </span>
+<span class="co">#&gt;    &lt;chr&gt;                  &lt;chr&gt;        &lt;chr&gt;                </span>
+<span class="co">#&gt;  1 Planetary Systems (PS) pl_name      Planet Name          </span>
+<span class="co">#&gt;  2 Planetary Systems (PS) hostname     Host Name            </span>
+<span class="co">#&gt;  3 Planetary Systems (PS) pl_letter    Planet Letter        </span>
+<span class="co">#&gt;  4 Planetary Systems (PS) hd_name      HD ID                </span>
+<span class="co">#&gt;  5 Planetary Systems (PS) hip_name     HIP ID               </span>
+<span class="co">#&gt;  6 Planetary Systems (PS) tic_id       TIC ID               </span>
+<span class="co">#&gt;  7 Planetary Systems (PS) gaia_id      GAIA ID              </span>
+<span class="co">#&gt;  8 Planetary Systems (PS) default_flag Default Parameter Set</span>
+<span class="co">#&gt;  9 Planetary Systems (PS) sy_snum      Number of Stars      </span>
+<span class="co">#&gt; 10 Planetary Systems (PS) sy_pnum      Number of Planets    </span>
+<span class="co">#&gt; # … with 1,790 more rows</span></code></pre></div>
+</div>
+<div id="capabilities" class="section level2">
+<h2 class="hasAnchor">
+<a href="#capabilities" class="anchor"></a>Capabilities</h2>
+<p>At one time, this package used the <em>Exoplanet Archive Application Programming Interface (API)</em>. Since then, a handful of tables have been transitioned to the <em>Table Access Protocol (TAP) service</em>. More tables will be transitioned to TAP and as such, this package only supports queries from TAP. For more information, you can read <a href="https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021" class="uri">https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021</a>.</p>
 </div>
 <div id="contributing" class="section level2">
 <h2 class="hasAnchor">
@@ -326,7 +205,7 @@
 <div class="community">
 <h2>Community</h2>
 <ul class="list-unstyled">
-<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 </ul>
 </div>
 <div class="developers">
