@@ -19,3 +19,9 @@ exoplanets(table, columns = NULL, format = "csv", progress = TRUE)
 A simple interface for accessing exoplanet data. At the bare minimum, a table
 name is required. Tables names are documented in the `tap` dataset.
 }
+\examples{
+if (interactive()) {
+  exoplanets("ps", columns = c("pl_name", "pl_massj"))
+}
+
+}

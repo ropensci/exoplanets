@@ -49,6 +49,11 @@ fetch_data <- function(table, columns, format, progress) {
 #' @param format Desired format, either csv, tsv, or json
 #' @param progress Whether or not to display the progress of the request
 #'
+#' @examples
+#' if (interactive()) {
+#'   exoplanets("ps", columns = c("pl_name", "pl_massj"))
+#' }
+#'
 #' @export
 exoplanets <- function(table, columns = NULL, format = "csv", progress = TRUE) {
   if (is.null(columns)) columns <- "*"
