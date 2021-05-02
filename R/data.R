@@ -1,10 +1,11 @@
-#' All Available Tables
+#' Table Information
 #'
-#' @description This dataset provides a list of all available tables and
-#' their names, convenient for calling on tables when using \code{exo()}.
-#' Please note that a few tables require additional parameters. For example,
-#' the \code{keplertimeseries} table requires either the quarter or a Kepler
-#' ID must be specified, e.g. \code{exo("keplertimeseries&quarter=14")}.
-#' This requirements only occurs for a small number of tables, mostly time
-#' series.
-"exo_tables"
+#' This dataset provides table information for NASA's Exoplanet
+#' Archive TAP service. In particular, the table name, columns, and column
+#' descriptions are provided.
+#'
+#' @examples
+#' tableinfo
+#'
+#' @source https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html
+"tableinfo"
