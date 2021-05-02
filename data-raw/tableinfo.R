@@ -1,19 +1,43 @@
-r <- httr::GET("https://exoplanetarchive.ipac.caltech.edu/docs/Exoplanet_Archive_Column_Mapping_CSV.csv")
-df <- httr::content(r, encoding = "UTF-8")
+library(rvest)
+library(dplyr)
+library(purrr)
+library(janitor)
+library(stringr)
 
-parse_table_info <- function(x) {
-  table_name <- unlist(x[1, 1], use.names = FALSE)
-  table <- x[-c(1, 2), ]
-  names(table) <- c("column", "description")
-  table$table <- table_name
-  table[c("table", "column", "description")]
+r <- "https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html" %>%
+  read_html() %>%
+  html_nodes("table.half_table")
+
+tables <- r %>%
+  html_table() %>%
+  .[[1]] %>%
+  select(X1, X2) %>%
+  set_names("title", "table")
+
+links <- r %>%
+  html_nodes("a") %>%
+  html_attr("href")
+
+tables$link <- paste0("https://exoplanetarchive.ipac.caltech.edu", links)
+
+get_table_info <- function(link) {
+  link %>%
+    read_html() %>%
+    html_table() %>%
+    map(clean_names) %>%
+    bind_rows() %>%
+    mutate_if(is.character, str_squish) %>%
+    mutate(default = case_when(
+      str_detect(database_column_name, "†") ~ TRUE,
+      TRUE ~ FALSE
+    )) %>%
+    mutate(database_column_name = str_remove(database_column_name, "†"))
 }
 
-i <- 1:ncol(df)
-idx <- split(i, ceiling(seq_along(i) / 2))
+tableinfo <- lapply(tables$link, get_table_info)
 
-tableinfo <- dplyr::bind_rows(lapply(idx, function(j) {
-  parse_table_info(df[j])
-}))
+names(tableinfo) <- tables$table
+
+tableinfo <- bind_rows(tableinfo, .id = "table")
 
 usethis::use_data(tableinfo, overwrite = TRUE)

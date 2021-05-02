@@ -86,20 +86,23 @@ Information on the tables and columns available can be found with:
 
 ``` r
 tableinfo
-#> # A tibble: 1,800 x 3
-#>    table                  column       description          
-#>    <chr>                  <chr>        <chr>                
-#>  1 Planetary Systems (PS) pl_name      Planet Name          
-#>  2 Planetary Systems (PS) hostname     Host Name            
-#>  3 Planetary Systems (PS) pl_letter    Planet Letter        
-#>  4 Planetary Systems (PS) hd_name      HD ID                
-#>  5 Planetary Systems (PS) hip_name     HIP ID               
-#>  6 Planetary Systems (PS) tic_id       TIC ID               
-#>  7 Planetary Systems (PS) gaia_id      GAIA ID              
-#>  8 Planetary Systems (PS) default_flag Default Parameter Set
-#>  9 Planetary Systems (PS) sy_snum      Number of Stars      
-#> 10 Planetary Systems (PS) sy_pnum      Number of Planets    
-#> # … with 1,790 more rows
+#> # A tibble: 394 x 13
+#>    table database_column_… table_label description  in_ps_table in_ps_comp_pars…
+#>    <chr> <chr>             <chr>       <chr>        <chr>       <chr>           
+#>  1 ps    default_flag      Default Pa… Boolean fla… X           ""              
+#>  2 ps    soltype           Solution T… Disposition… X           ""              
+#>  3 ps    pl_controv_flag   Controvers… Flag indica… X           "X"             
+#>  4 ps    pl_name           Planet Name Planet name… X           "X"             
+#>  5 ps    hostname          Host Name   Stellar nam… X           "X"             
+#>  6 ps    pl_letter         Planet Let… Letter assi… X           "X"             
+#>  7 ps    hd_name           HD ID       Name of the… X           "X"             
+#>  8 ps    hip_name          HIP ID      Name of the… X           "X"             
+#>  9 ps    tic_id            TIC ID      Name of the… X           "X"             
+#> 10 ps    gaia_id           GAIA ID     Name of the… X           "X"             
+#> # … with 384 more rows, and 7 more variables:
+#> #   uncertainties_column_positive_negative <chr>, limit_column <chr>,
+#> #   default <lgl>, notes <chr>, displayed_string_name <chr>, flag_column <lgl>,
+#> #   number_of_measurements <lgl>
 ```
 
 ## Capabilities
