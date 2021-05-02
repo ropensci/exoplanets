@@ -1,0 +1,2247 @@
+[
+    {
+        "epic_id": "EPIC 246199087",
+        "k2_name": "K2-112 f",
+        "pl_name": "TRAPPIST-1 f"
+    },
+    {
+        "epic_id": "EPIC 246199087",
+        "k2_name": "K2-112 h",
+        "pl_name": "TRAPPIST-1 h"
+    },
+    {
+        "epic_id": "EPIC 220383386",
+        "k2_name": "K2-96 d",
+        "pl_name": "HD 3167 d"
+    },
+    {
+        "epic_id": "EPIC 211331236",
+        "k2_name": "K2-117 c",
+        "pl_name": "K2-117 c"
+    },
+    {
+        "epic_id": "EPIC 212398486",
+        "k2_name": "K2-125 b",
+        "pl_name": "K2-125 b"
+    },
+    {
+        "epic_id": "EPIC 217941732",
+        "k2_name": "K2-130 b",
+        "pl_name": "K2-130 b"
+    },
+    {
+        "epic_id": "EPIC 228754001",
+        "k2_name": "K2-132 b",
+        "pl_name": "K2-132 b"
+    },
+    {
+        "epic_id": "EPIC 247887989",
+        "k2_name": "K2-133 d",
+        "pl_name": "K2-133 d"
+    },
+    {
+        "epic_id": "EPIC 246389858",
+        "k2_name": "K2-135 b",
+        "pl_name": "GJ 9827 b"
+    },
+    {
+        "epic_id": "EPIC 247589423",
+        "k2_name": "K2-136 b",
+        "pl_name": "K2-136 b"
+    },
+    {
+        "epic_id": "EPIC 247589423",
+        "k2_name": "K2-136 d",
+        "pl_name": "K2-136 d"
+    },
+    {
+        "epic_id": "EPIC 201912552",
+        "k2_name": "K2-18 c",
+        "pl_name": "K2-18 c"
+    },
+    {
+        "epic_id": "EPIC 245950175",
+        "k2_name": "K2-138 b",
+        "pl_name": "K2-138 b"
+    },
+    {
+        "epic_id": "EPIC 245950175",
+        "k2_name": "K2-138 e",
+        "pl_name": "K2-138 e"
+    },
+    {
+        "epic_id": "EPIC 246393474",
+        "k2_name": "K2-141 b",
+        "pl_name": "K2-141 b"
+    },
+    {
+        "epic_id": "EPIC 220194974",
+        "k2_name": "K2-148 b",
+        "pl_name": "K2-148 b"
+    },
+    {
+        "epic_id": "EPIC 220194974",
+        "k2_name": "K2-148 d",
+        "pl_name": "K2-148 d"
+    },
+    {
+        "epic_id": "EPIC 201128338",
+        "k2_name": "K2-152 b",
+        "pl_name": "K2-152 b"
+    },
+    {
+        "epic_id": "EPIC 228934525",
+        "k2_name": "K2-154 b",
+        "pl_name": "K2-154 b"
+    },
+    {
+        "epic_id": "EPIC 210897587",
+        "k2_name": "K2-155 c",
+        "pl_name": "K2-155 c"
+    },
+    {
+        "epic_id": "EPIC 247098361",
+        "k2_name": "K2-232 b",
+        "pl_name": "K2-232 b"
+    },
+    {
+        "epic_id": "EPIC 249622103",
+        "k2_name": "K2-233 c",
+        "pl_name": "K2-233 c"
+    },
+    {
+        "epic_id": "EPIC 248777106",
+        "k2_name": "K2-234 b",
+        "pl_name": "HD 89345 b"
+    },
+    {
+        "epic_id": "EPIC 248545986",
+        "k2_name": "K2-239 d",
+        "pl_name": "K2-239 d"
+    },
+    {
+        "epic_id": "EPIC 249801827",
+        "k2_name": "K2-240 c",
+        "pl_name": "K2-240 c"
+    },
+    {
+        "epic_id": "EPIC 201092629",
+        "k2_name": "K2-241 b",
+        "pl_name": "K2-241 b"
+    },
+    {
+        "epic_id": "EPIC 201132684",
+        "k2_name": "K2-158 c",
+        "pl_name": "K2-158 c"
+    },
+    {
+        "epic_id": "EPIC 201357643",
+        "k2_name": "K2-245 b",
+        "pl_name": "K2-245 b"
+    },
+    {
+        "epic_id": "EPIC 228725791",
+        "k2_name": "K2-247 b",
+        "pl_name": "K2-247 b"
+    },
+    {
+        "epic_id": "EPIC 228748383",
+        "k2_name": "K2-249 b",
+        "pl_name": "K2-249 b"
+    },
+    {
+        "epic_id": "EPIC 228758778",
+        "k2_name": "K2-251 b",
+        "pl_name": "K2-251 b"
+    },
+    {
+        "epic_id": "EPIC 228849382",
+        "k2_name": "K2-254 b",
+        "pl_name": "K2-254 b"
+    },
+    {
+        "epic_id": "EPIC 228894622",
+        "k2_name": "K2-255 b",
+        "pl_name": "K2-255 b"
+    },
+    {
+        "epic_id": "EPIC 229017395",
+        "k2_name": "K2-258 b",
+        "pl_name": "K2-258 b"
+    },
+    {
+        "epic_id": "EPIC 201498078",
+        "k2_name": "K2-261 b",
+        "pl_name": "K2-261 b"
+    },
+    {
+        "epic_id": "EPIC 211964830",
+        "k2_name": "K2-264 c",
+        "pl_name": "K2-264 c"
+    },
+    {
+        "epic_id": "EPIC 248435473",
+        "k2_name": "K2-266 b",
+        "pl_name": "K2-266 b"
+    },
+    {
+        "epic_id": "EPIC 248435473",
+        "k2_name": "K2-266 e",
+        "pl_name": "K2-266 e"
+    },
+    {
+        "epic_id": "EPIC 247267267",
+        "k2_name": "K2-284 b",
+        "pl_name": "K2-284 b"
+    },
+    {
+        "epic_id": "EPIC 246471491",
+        "k2_name": "K2-285 d",
+        "pl_name": "K2-285 d"
+    },
+    {
+        "epic_id": "EPIC 249889081",
+        "k2_name": "K2-286 b",
+        "pl_name": "K2-286 b"
+    },
+    {
+        "epic_id": "EPIC 249624646",
+        "k2_name": "K2-290 b",
+        "pl_name": "K2-290 b"
+    },
+    {
+        "epic_id": "EPIC 247418783",
+        "k2_name": "K2-291 b",
+        "pl_name": "K2-291 b"
+    },
+    {
+        "epic_id": "EPIC 246078672",
+        "k2_name": "K2-294 b",
+        "pl_name": "K2-294 b"
+    },
+    {
+        "epic_id": "EPIC 205071984",
+        "k2_name": "K2-32 e",
+        "pl_name": "K2-32 e"
+    },
+    {
+        "epic_id": "EPIC 201615463",
+        "k2_name": "K2-166 c",
+        "pl_name": "EPIC 201615463 c"
+    },
+    {
+        "epic_id": "EPIC 201841433",
+        "k2_name": "K2-298 b",
+        "pl_name": "EPIC 201841433 b"
+    },
+    {
+        "epic_id": "EPIC 206032309",
+        "k2_name": "K2-300 b",
+        "pl_name": "EPIC 206032309 b"
+    },
+    {
+        "epic_id": "EPIC 206317286",
+        "k2_name": "K2-303 b",
+        "pl_name": "EPIC 206317286 b"
+    },
+    {
+        "epic_id": "EPIC 212499991",
+        "k2_name": "K2-306 b",
+        "pl_name": "EPIC 212499991 b"
+    },
+    {
+        "epic_id": "EPIC 246865365",
+        "k2_name": "K2-308 b",
+        "pl_name": "K2-308 b"
+    },
+    {
+        "epic_id": "EPIC 248847494",
+        "k2_name": "K2-311 b",
+        "pl_name": "EPIC 248847494 b"
+    },
+    {
+        "epic_id": "EPIC 211924657",
+        "k2_name": "K2-146 c",
+        "pl_name": "K2-146 c"
+    },
+    {
+        "epic_id": "EPIC 210818897",
+        "k2_name": "K2-309 e",
+        "pl_name": "V1298 Tau e"
+    },
+    {
+        "epic_id": "EPIC 249893012",
+        "k2_name": "K2-314 d",
+        "pl_name": "EPIC 249893012 d"
+    },
+    {
+        "epic_id": "EPIC 249384674",
+        "k2_name": "K2-316 c",
+        "pl_name": "K2-316 c"
+    },
+    {
+        "epic_id": "EPIC 249826231",
+        "k2_name": "K2-318 b",
+        "pl_name": "K2-318 b"
+    },
+    {
+        "epic_id": "EPIC 248480671",
+        "k2_name": "K2-321 b",
+        "pl_name": "K2-321 b"
+    },
+    {
+        "epic_id": "EPIC 248616368",
+        "k2_name": "K2-323 b",
+        "pl_name": "K2-323 b"
+    },
+    {
+        "epic_id": "EPIC 246472939",
+        "k2_name": "K2-326 b",
+        "pl_name": "K2-326 b"
+    },
+    {
+        "epic_id": "EPIC 201757695",
+        "k2_name": "K2-328 b",
+        "pl_name": "EPIC 201757695.02"
+    },
+    {
+        "epic_id": "EPIC 228724232",
+        "k2_name": "K2-235 c",
+        "pl_name": "WASP-107 c"
+    },
+    {
+        "epic_id": "EPIC 201403446",
+        "k2_name": "K2-46 b",
+        "pl_name": "K2-46 b"
+    },
+    {
+        "epic_id": "EPIC 201546283",
+        "k2_name": "K2-27 b",
+        "pl_name": "K2-27 b"
+    },
+    {
+        "epic_id": "EPIC 201205469",
+        "k2_name": "K2-43 b",
+        "pl_name": "K2-43 b"
+    },
+    {
+        "epic_id": "EPIC 201460826",
+        "k2_name": "K2-164 b",
+        "pl_name": "K2-164 b"
+    },
+    {
+        "epic_id": "EPIC 201549860",
+        "k2_name": "K2-35 b",
+        "pl_name": "K2-35 b"
+    },
+    {
+        "epic_id": "EPIC 201690311",
+        "k2_name": "K2-49 b",
+        "pl_name": "K2-49 b"
+    },
+    {
+        "epic_id": "EPIC 201713348",
+        "k2_name": "K2-36 b",
+        "pl_name": "K2-36 b"
+    },
+    {
+        "epic_id": "EPIC 201862715",
+        "k2_name": "K2-94 b",
+        "pl_name": "WASP-85 A b"
+    },
+    {
+        "epic_id": "EPIC 203776696",
+        "k2_name": "K2-52 b",
+        "pl_name": "K2-52 b"
+    },
+    {
+        "epic_id": "EPIC 203826436",
+        "k2_name": "K2-37 d",
+        "pl_name": "K2-37 d"
+    },
+    {
+        "epic_id": "EPIC 204129699",
+        "k2_name": "K2-31 b",
+        "pl_name": "K2-31 b"
+    },
+    {
+        "epic_id": "EPIC 205071984",
+        "k2_name": "K2-32 d",
+        "pl_name": "K2-32 d"
+    },
+    {
+        "epic_id": "EPIC 205117205",
+        "k2_name": "K2-33 b",
+        "pl_name": "K2-33 b"
+    },
+    {
+        "epic_id": "EPIC 205904628",
+        "k2_name": "K2-167 b",
+        "pl_name": "K2-167 b"
+    },
+    {
+        "epic_id": "EPIC 206007892",
+        "k2_name": "K2-169 b",
+        "pl_name": "K2-169 b"
+    },
+    {
+        "epic_id": "EPIC 206008091",
+        "k2_name": "K2-170 b",
+        "pl_name": "K2-170 b"
+    },
+    {
+        "epic_id": "EPIC 206026136",
+        "k2_name": "K2-57 b",
+        "pl_name": "K2-57 b"
+    },
+    {
+        "epic_id": "EPIC 206026904",
+        "k2_name": "K2-58 d",
+        "pl_name": "K2-58 d"
+    },
+    {
+        "epic_id": "EPIC 206027655",
+        "k2_name": "K2-59 c",
+        "pl_name": "K2-59 c"
+    },
+    {
+        "epic_id": "EPIC 206044803",
+        "k2_name": "K2-61 b",
+        "pl_name": "K2-61 b"
+    },
+    {
+        "epic_id": "EPIC 206082454",
+        "k2_name": "K2-172 b",
+        "pl_name": "K2-172 b"
+    },
+    {
+        "epic_id": "EPIC 206096602",
+        "k2_name": "K2-62 c",
+        "pl_name": "K2-62 c"
+    },
+    {
+        "epic_id": "EPIC 206101302",
+        "k2_name": "K2-63 b",
+        "pl_name": "K2-63 b"
+    },
+    {
+        "epic_id": "EPIC 206144956",
+        "k2_name": "K2-65 b",
+        "pl_name": "K2-65 b"
+    },
+    {
+        "epic_id": "EPIC 206159027",
+        "k2_name": "K2-68 b",
+        "pl_name": "K2-68 b"
+    },
+    {
+        "epic_id": "EPIC 206181769",
+        "k2_name": "K2-70 b",
+        "pl_name": "K2-70 b"
+    },
+    {
+        "epic_id": "EPIC 206209135",
+        "k2_name": "K2-72 b",
+        "pl_name": "K2-72 b"
+    },
+    {
+        "epic_id": "EPIC 206268299",
+        "k2_name": "K2-74 b",
+        "pl_name": "K2-74 b"
+    },
+    {
+        "epic_id": "EPIC 206348688",
+        "k2_name": "K2-75 b",
+        "pl_name": "K2-75 b"
+    },
+    {
+        "epic_id": "EPIC 210707130",
+        "k2_name": "K2-85 b",
+        "pl_name": "K2-85 b"
+    },
+    {
+        "epic_id": "EPIC 206209135",
+        "k2_name": "K2-72 d",
+        "pl_name": "K2-72 d"
+    },
+    {
+        "epic_id": "EPIC 210363145",
+        "k2_name": "K2-77 b",
+        "pl_name": "K2-77 b"
+    },
+    {
+        "epic_id": "EPIC 210403955",
+        "k2_name": "K2-80 b",
+        "pl_name": "K2-80 b"
+    },
+    {
+        "epic_id": "EPIC 210448987",
+        "k2_name": "K2-81 b",
+        "pl_name": "K2-81 b"
+    },
+    {
+        "epic_id": "EPIC 210558622",
+        "k2_name": "K2-174 b",
+        "pl_name": "K2-174 b"
+    },
+    {
+        "epic_id": "EPIC 210577548",
+        "k2_name": "K2-84 c",
+        "pl_name": "K2-84 c"
+    },
+    {
+        "epic_id": "EPIC 210731500",
+        "k2_name": "K2-87 b",
+        "pl_name": "K2-87 b"
+    },
+    {
+        "epic_id": "EPIC 210894022",
+        "k2_name": "K2-111 b",
+        "pl_name": "K2-111 b"
+    },
+    {
+        "epic_id": "EPIC 210968143",
+        "k2_name": "K2-90 c",
+        "pl_name": "K2-90 c"
+    },
+    {
+        "epic_id": "EPIC 211319617",
+        "k2_name": "K2-180 b",
+        "pl_name": "K2-180 b"
+    },
+    {
+        "epic_id": "EPIC 211355342",
+        "k2_name": "K2-181 b",
+        "pl_name": "K2-181 b"
+    },
+    {
+        "epic_id": "EPIC 211391664",
+        "k2_name": "K2-98 b",
+        "pl_name": "K2-98 b"
+    },
+    {
+        "epic_id": "EPIC 211442297",
+        "k2_name": "K2-115 b",
+        "pl_name": "K2-115 b"
+    },
+    {
+        "epic_id": "EPIC 211525389",
+        "k2_name": "K2-105 b",
+        "pl_name": "K2-105 b"
+    },
+    {
+        "epic_id": "EPIC 211562654",
+        "k2_name": "K2-183 c",
+        "pl_name": "K2-183 c"
+    },
+    {
+        "epic_id": "EPIC 211736671",
+        "k2_name": "K2-108 b",
+        "pl_name": "K2-108 b"
+    },
+    {
+        "epic_id": "EPIC 211816003",
+        "k2_name": "K2-272 b",
+        "pl_name": "K2-272 b"
+    },
+    {
+        "epic_id": "EPIC 211924657",
+        "k2_name": "K2-146 b",
+        "pl_name": "K2-146 b"
+    },
+    {
+        "epic_id": "EPIC 211969807",
+        "k2_name": "K2-104 b",
+        "pl_name": "K2-104 b"
+    },
+    {
+        "epic_id": "EPIC 212008766",
+        "k2_name": "K2-274 b",
+        "pl_name": "K2-274 b"
+    },
+    {
+        "epic_id": "EPIC 212130773",
+        "k2_name": "K2-276 b",
+        "pl_name": "K2-276 b"
+    },
+    {
+        "epic_id": "EPIC 212157262",
+        "k2_name": "K2-187 d",
+        "pl_name": "K2-187 d"
+    },
+    {
+        "epic_id": "EPIC 212394689",
+        "k2_name": "K2-189 c",
+        "pl_name": "K2-189 c"
+    },
+    {
+        "epic_id": "EPIC 212460519",
+        "k2_name": "K2-126 b",
+        "pl_name": "K2-126 b"
+    },
+    {
+        "epic_id": "EPIC 212521166",
+        "k2_name": "K2-110 b",
+        "pl_name": "K2-110 b"
+    },
+    {
+        "epic_id": "EPIC 212555594",
+        "k2_name": "K2-192 b",
+        "pl_name": "K2-192 b"
+    },
+    {
+        "epic_id": "EPIC 212689874",
+        "k2_name": "K2-195 b",
+        "pl_name": "K2-195 b"
+    },
+    {
+        "epic_id": "EPIC 212737443",
+        "k2_name": "K2-310 b",
+        "pl_name": "EPIC 212737443 b"
+    },
+    {
+        "epic_id": "EPIC 212828909",
+        "k2_name": "K2-200 b",
+        "pl_name": "K2-200 b"
+    },
+    {
+        "epic_id": "EPIC 212012119",
+        "k2_name": "K2-275 c",
+        "pl_name": "K2-275 c"
+    },
+    {
+        "epic_id": "EPIC 212768333",
+        "k2_name": "K2-198 b",
+        "pl_name": "K2-198 b"
+    },
+    {
+        "epic_id": "EPIC 212779596",
+        "k2_name": "K2-199 c",
+        "pl_name": "K2-199 c"
+    },
+    {
+        "epic_id": "EPIC 211791178",
+        "k2_name": "K2-120 b",
+        "pl_name": "K2-120 b"
+    },
+    {
+        "epic_id": "EPIC 211562654",
+        "k2_name": "K2-183 d",
+        "pl_name": "K2-183 d"
+    },
+    {
+        "epic_id": "EPIC 212157262",
+        "k2_name": "K2-187 e",
+        "pl_name": "K2-187 e"
+    },
+    {
+        "epic_id": "EPIC 212157262",
+        "k2_name": "K2-187 c",
+        "pl_name": "K2-187 c"
+    },
+    {
+        "epic_id": "EPIC 211529065",
+        "k2_name": "K2-270 b",
+        "pl_name": "K2-270 b"
+    },
+    {
+        "epic_id": "EPIC 216494238",
+        "k2_name": "K2-280 b",
+        "pl_name": "K2-280 b"
+    },
+    {
+        "epic_id": "EPIC 215969174",
+        "k2_name": "K2-145 b",
+        "pl_name": "HATS-36 b"
+    },
+    {
+        "epic_id": "EPIC 220709978",
+        "k2_name": "K2-222 b",
+        "pl_name": "K2-222 b"
+    },
+    {
+        "epic_id": "EPIC 220376054",
+        "k2_name": "K2-214 b",
+        "pl_name": "K2-214 b"
+    },
+    {
+        "epic_id": "EPIC 220621788",
+        "k2_name": "K2-220 b",
+        "pl_name": "K2-220 b"
+    },
+    {
+        "epic_id": "EPIC 220481411",
+        "k2_name": "K2-216 b",
+        "pl_name": "K2-216 b"
+    },
+    {
+        "epic_id": "EPIC 220321605",
+        "k2_name": "K2-212 b",
+        "pl_name": "K2-212 b"
+    },
+    {
+        "epic_id": "EPIC 220621087",
+        "k2_name": "K2-151 b",
+        "pl_name": "K2-151 b"
+    },
+    {
+        "epic_id": "EPIC 220501947",
+        "k2_name": "K2-295 b",
+        "pl_name": "K2-295 b"
+    },
+    {
+        "epic_id": "EPIC 220554210",
+        "k2_name": "K2-282 b",
+        "pl_name": "K2-282 b"
+    },
+    {
+        "epic_id": "EPIC 220629489",
+        "k2_name": "K2-283 b",
+        "pl_name": "K2-283 b"
+    },
+    {
+        "epic_id": "EPIC 220522262",
+        "k2_name": "K2-281 b",
+        "pl_name": "K2-281 b"
+    },
+    {
+        "epic_id": "EPIC 201110617",
+        "k2_name": "K2-156 b",
+        "pl_name": "K2-156 b"
+    },
+    {
+        "epic_id": "EPIC 201130233",
+        "k2_name": "K2-157 b",
+        "pl_name": "K2-157 b"
+    },
+    {
+        "epic_id": "EPIC 201132684",
+        "k2_name": "K2-158 b",
+        "pl_name": "K2-158 b"
+    },
+    {
+        "epic_id": "EPIC 201211526",
+        "k2_name": "K2-244 b",
+        "pl_name": "K2-244 b"
+    },
+    {
+        "epic_id": "EPIC 201225286",
+        "k2_name": "K2-159 b",
+        "pl_name": "K2-159 b"
+    },
+    {
+        "epic_id": "EPIC 201227197",
+        "k2_name": "K2-160 b",
+        "pl_name": "K2-160 b"
+    },
+    {
+        "epic_id": "EPIC 201231064",
+        "k2_name": "K2-161 b",
+        "pl_name": "K2-161 b"
+    },
+    {
+        "epic_id": "EPIC 201390048",
+        "k2_name": "K2-162 b",
+        "pl_name": "K2-162 b"
+    },
+    {
+        "epic_id": "EPIC 201427874",
+        "k2_name": "K2-163 b",
+        "pl_name": "K2-163 b"
+    },
+    {
+        "epic_id": "EPIC 201528828",
+        "k2_name": "K2-165 b",
+        "pl_name": "K2-165 b"
+    },
+    {
+        "epic_id": "EPIC 201528828",
+        "k2_name": "K2-165 c",
+        "pl_name": "K2-165 c"
+    },
+    {
+        "epic_id": "EPIC 201528828",
+        "k2_name": "K2-165 d",
+        "pl_name": "K2-165 d"
+    },
+    {
+        "epic_id": "EPIC 201615463",
+        "k2_name": "K2-166 b",
+        "pl_name": "K2-166 b"
+    },
+    {
+        "epic_id": "EPIC 210643811",
+        "k2_name": "K2-175 b",
+        "pl_name": "K2-175 b"
+    },
+    {
+        "epic_id": "EPIC 210667381",
+        "k2_name": "K2-176 b",
+        "pl_name": "K2-176 b"
+    },
+    {
+        "epic_id": "EPIC 210857328",
+        "k2_name": "K2-177 b",
+        "pl_name": "K2-177 b"
+    },
+    {
+        "epic_id": "EPIC 210965800",
+        "k2_name": "K2-178 b",
+        "pl_name": "K2-178 b"
+    },
+    {
+        "epic_id": "EPIC 211562654",
+        "k2_name": "K2-183 b",
+        "pl_name": "K2-183 b"
+    },
+    {
+        "epic_id": "EPIC 211611158",
+        "k2_name": "K2-185 b",
+        "pl_name": "K2-185 b"
+    },
+    {
+        "epic_id": "EPIC 211682544",
+        "k2_name": "K2-263 b",
+        "pl_name": "K2-263 b"
+    },
+    {
+        "epic_id": "EPIC 211906650",
+        "k2_name": "K2-186 b",
+        "pl_name": "K2-186 b"
+    },
+    {
+        "epic_id": "EPIC 212157262",
+        "k2_name": "K2-187 b",
+        "pl_name": "K2-187 b"
+    },
+    {
+        "epic_id": "EPIC 212164470",
+        "k2_name": "K2-188 b",
+        "pl_name": "K2-188 b"
+    },
+    {
+        "epic_id": "EPIC 212394689",
+        "k2_name": "K2-189 b",
+        "pl_name": "K2-189 b"
+    },
+    {
+        "epic_id": "EPIC 212480208",
+        "k2_name": "K2-190 c",
+        "pl_name": "K2-190 c"
+    },
+    {
+        "epic_id": "EPIC 212689874",
+        "k2_name": "K2-195 c",
+        "pl_name": "K2-195 c"
+    },
+    {
+        "epic_id": "EPIC 212691422",
+        "k2_name": "K2-196 b",
+        "pl_name": "K2-196 b"
+    },
+    {
+        "epic_id": "EPIC 216008129",
+        "k2_name": "K2-201 b",
+        "pl_name": "K2-201 b"
+    },
+    {
+        "epic_id": "EPIC 216008129",
+        "k2_name": "K2-201 c",
+        "pl_name": "K2-201 c"
+    },
+    {
+        "epic_id": "EPIC 216405287",
+        "k2_name": "K2-202 b",
+        "pl_name": "K2-202 b"
+    },
+    {
+        "epic_id": "EPIC 220170303",
+        "k2_name": "K2-203 b",
+        "pl_name": "K2-203 b"
+    },
+    {
+        "epic_id": "EPIC 220186645",
+        "k2_name": "K2-204 b",
+        "pl_name": "K2-204 b"
+    },
+    {
+        "epic_id": "EPIC 220211923",
+        "k2_name": "K2-205 b",
+        "pl_name": "K2-205 b"
+    },
+    {
+        "epic_id": "EPIC 220216730",
+        "k2_name": "K2-206 b",
+        "pl_name": "K2-206 b"
+    },
+    {
+        "epic_id": "EPIC 220218012",
+        "k2_name": "K2-207 b",
+        "pl_name": "K2-207 b"
+    },
+    {
+        "epic_id": "EPIC 220225178",
+        "k2_name": "K2-208 b",
+        "pl_name": "K2-208 b"
+    },
+    {
+        "epic_id": "EPIC 220241529",
+        "k2_name": "K2-209 b",
+        "pl_name": "K2-209 b"
+    },
+    {
+        "epic_id": "EPIC 220250254",
+        "k2_name": "K2-210 b",
+        "pl_name": "K2-210 b"
+    },
+    {
+        "epic_id": "EPIC 220256496",
+        "k2_name": "K2-211 b",
+        "pl_name": "K2-211 b"
+    },
+    {
+        "epic_id": "EPIC 220341183",
+        "k2_name": "K2-213 b",
+        "pl_name": "K2-213 b"
+    },
+    {
+        "epic_id": "EPIC 220471666",
+        "k2_name": "K2-215 b",
+        "pl_name": "K2-215 b"
+    },
+    {
+        "epic_id": "EPIC 220487418",
+        "k2_name": "K2-217 b",
+        "pl_name": "K2-217 b"
+    },
+    {
+        "epic_id": "EPIC 220503236",
+        "k2_name": "K2-218 b",
+        "pl_name": "K2-218 b"
+    },
+    {
+        "epic_id": "EPIC 220592745",
+        "k2_name": "K2-219 b",
+        "pl_name": "K2-219 b"
+    },
+    {
+        "epic_id": "EPIC 220592745",
+        "k2_name": "K2-219 c",
+        "pl_name": "K2-219 c"
+    },
+    {
+        "epic_id": "EPIC 220592745",
+        "k2_name": "K2-219 d",
+        "pl_name": "K2-219 d"
+    },
+    {
+        "epic_id": "EPIC 220650439",
+        "k2_name": "K2-221 b",
+        "pl_name": "K2-221 b"
+    },
+    {
+        "epic_id": "EPIC 228721452",
+        "k2_name": "K2-223 b",
+        "pl_name": "K2-223 b"
+    },
+    {
+        "epic_id": "EPIC 228721452",
+        "k2_name": "K2-223 c",
+        "pl_name": "K2-223 c"
+    },
+    {
+        "epic_id": "EPIC 228725972",
+        "k2_name": "K2-224 b",
+        "pl_name": "K2-224 b"
+    },
+    {
+        "epic_id": "EPIC 228725972",
+        "k2_name": "K2-224 c",
+        "pl_name": "K2-224 c"
+    },
+    {
+        "epic_id": "EPIC 228734900",
+        "k2_name": "K2-225 b",
+        "pl_name": "K2-225 b"
+    },
+    {
+        "epic_id": "EPIC 228736155",
+        "k2_name": "K2-226 b",
+        "pl_name": "K2-226 b"
+    },
+    {
+        "epic_id": "EPIC 228760097",
+        "k2_name": "K2-227 b",
+        "pl_name": "K2-227 b"
+    },
+    {
+        "epic_id": "EPIC 228798746",
+        "k2_name": "K2-228 b",
+        "pl_name": "K2-228 b"
+    },
+    {
+        "epic_id": "EPIC 228801451",
+        "k2_name": "K2-229 b",
+        "pl_name": "K2-229 b"
+    },
+    {
+        "epic_id": "EPIC 228801451",
+        "k2_name": "K2-229 c",
+        "pl_name": "K2-229 c"
+    },
+    {
+        "epic_id": "EPIC 228804845",
+        "k2_name": "K2-230 b",
+        "pl_name": "K2-230 b"
+    },
+    {
+        "epic_id": "EPIC 229131722",
+        "k2_name": "K2-259 b",
+        "pl_name": "K2-259 b"
+    },
+    {
+        "epic_id": "EPIC 210403955",
+        "k2_name": "K2-80 d",
+        "pl_name": "K2-80 d"
+    },
+    {
+        "epic_id": "EPIC 212048748",
+        "k2_name": "K2-313 b",
+        "pl_name": "G 9-40 b"
+    },
+    {
+        "epic_id": "EPIC 251279430",
+        "k2_name": "K2-312 b",
+        "pl_name": "HD 80653 b"
+    },
+    {
+        "epic_id": "EPIC 60017806",
+        "k2_name": "K2-1 b",
+        "pl_name": "WASP-28 b"
+    },
+    {
+        "epic_id": "EPIC 206103150",
+        "k2_name": "K2-23 b",
+        "pl_name": "WASP-47 b"
+    },
+    {
+        "epic_id": "EPIC 206154641",
+        "k2_name": "K2-40 b",
+        "pl_name": "WASP-75 b"
+    },
+    {
+        "epic_id": "EPIC 60021410",
+        "k2_name": "K2-2 b",
+        "pl_name": "HIP 116454 b"
+    },
+    {
+        "epic_id": "EPIC 201367065",
+        "k2_name": "K2-3 b",
+        "pl_name": "K2-3 b"
+    },
+    {
+        "epic_id": "EPIC 201367065",
+        "k2_name": "K2-3 c",
+        "pl_name": "K2-3 c"
+    },
+    {
+        "epic_id": "EPIC 201367065",
+        "k2_name": "K2-3 d",
+        "pl_name": "K2-3 d"
+    },
+    {
+        "epic_id": "EPIC 217671466",
+        "k2_name": "K2-142 b",
+        "pl_name": "HATS-9 b"
+    },
+    {
+        "epic_id": "EPIC 201208431",
+        "k2_name": "K2-4 b",
+        "pl_name": "K2-4 b"
+    },
+    {
+        "epic_id": "EPIC 201338508",
+        "k2_name": "K2-5 b",
+        "pl_name": "K2-5 b"
+    },
+    {
+        "epic_id": "EPIC 201338508",
+        "k2_name": "K2-5 c",
+        "pl_name": "K2-5 c"
+    },
+    {
+        "epic_id": "EPIC 201384232",
+        "k2_name": "K2-6 b",
+        "pl_name": "K2-6 b"
+    },
+    {
+        "epic_id": "EPIC 201393098",
+        "k2_name": "K2-7 b",
+        "pl_name": "K2-7 b"
+    },
+    {
+        "epic_id": "EPIC 201445392",
+        "k2_name": "K2-8 b",
+        "pl_name": "K2-8 b"
+    },
+    {
+        "epic_id": "EPIC 201465501",
+        "k2_name": "K2-9 b",
+        "pl_name": "K2-9 b"
+    },
+    {
+        "epic_id": "EPIC 201505350",
+        "k2_name": "K2-19 b",
+        "pl_name": "K2-19 b"
+    },
+    {
+        "epic_id": "EPIC 201505350",
+        "k2_name": "K2-19 c",
+        "pl_name": "K2-19 c"
+    },
+    {
+        "epic_id": "EPIC 201577035",
+        "k2_name": "K2-10 b",
+        "pl_name": "K2-10 b"
+    },
+    {
+        "epic_id": "EPIC 201596316",
+        "k2_name": "K2-11 b",
+        "pl_name": "K2-11 b"
+    },
+    {
+        "epic_id": "EPIC 201613023",
+        "k2_name": "K2-12 b",
+        "pl_name": "K2-12 b"
+    },
+    {
+        "epic_id": "EPIC 201629650",
+        "k2_name": "K2-13 b",
+        "pl_name": "K2-13 b"
+    },
+    {
+        "epic_id": "EPIC 201635569",
+        "k2_name": "K2-14 b",
+        "pl_name": "K2-14 b"
+    },
+    {
+        "epic_id": "EPIC 201736247",
+        "k2_name": "K2-15 b",
+        "pl_name": "K2-15 b"
+    },
+    {
+        "epic_id": "EPIC 201754305",
+        "k2_name": "K2-16 b",
+        "pl_name": "K2-16 b"
+    },
+    {
+        "epic_id": "EPIC 201754305",
+        "k2_name": "K2-16 c",
+        "pl_name": "K2-16 c"
+    },
+    {
+        "epic_id": "EPIC 201855371",
+        "k2_name": "K2-17 b",
+        "pl_name": "K2-17 b"
+    },
+    {
+        "epic_id": "EPIC 201912552",
+        "k2_name": "K2-18 b",
+        "pl_name": "K2-18 b"
+    },
+    {
+        "epic_id": "EPIC 202126852",
+        "k2_name": "K2-20 b",
+        "pl_name": "HAT-P-56 b"
+    },
+    {
+        "epic_id": "EPIC 206011691",
+        "k2_name": "K2-21 b",
+        "pl_name": "K2-21 b"
+    },
+    {
+        "epic_id": "EPIC 206011691",
+        "k2_name": "K2-21 c",
+        "pl_name": "K2-21 c"
+    },
+    {
+        "epic_id": "EPIC 201637175",
+        "k2_name": "K2-22 b",
+        "pl_name": "K2-22 b"
+    },
+    {
+        "epic_id": "EPIC 206103150",
+        "k2_name": "K2-23 c",
+        "pl_name": "WASP-47 c"
+    },
+    {
+        "epic_id": "EPIC 206103150",
+        "k2_name": "K2-23 d",
+        "pl_name": "WASP-47 d"
+    },
+    {
+        "epic_id": "EPIC 206103150",
+        "k2_name": "K2-23 e",
+        "pl_name": "WASP-47 e"
+    },
+    {
+        "epic_id": "EPIC 210490365",
+        "k2_name": "K2-25 b",
+        "pl_name": "K2-25 b"
+    },
+    {
+        "epic_id": "EPIC 202083828",
+        "k2_name": "K2-26 b",
+        "pl_name": "K2-26 b"
+    },
+    {
+        "epic_id": "EPIC 211089792",
+        "k2_name": "K2-29 b",
+        "pl_name": "K2-29 b"
+    },
+    {
+        "epic_id": "EPIC 210957318",
+        "k2_name": "K2-30 b",
+        "pl_name": "K2-30 b"
+    },
+    {
+        "epic_id": "EPIC 246199087",
+        "k2_name": "K2-112 b",
+        "pl_name": "TRAPPIST-1 b"
+    },
+    {
+        "epic_id": "EPIC 246199087",
+        "k2_name": "K2-112 c",
+        "pl_name": "TRAPPIST-1 c"
+    },
+    {
+        "epic_id": "EPIC 246199087",
+        "k2_name": "K2-112 d",
+        "pl_name": "TRAPPIST-1 d"
+    },
+    {
+        "epic_id": "EPIC 212110888",
+        "k2_name": "K2-34 b",
+        "pl_name": "K2-34 b"
+    },
+    {
+        "epic_id": "EPIC 212697709",
+        "k2_name": "K2-41 b",
+        "pl_name": "WASP-157 b"
+    },
+    {
+        "epic_id": "EPIC 204221263",
+        "k2_name": "K2-38 b",
+        "pl_name": "K2-38 b"
+    },
+    {
+        "epic_id": "EPIC 204221263",
+        "k2_name": "K2-38 c",
+        "pl_name": "K2-38 c"
+    },
+    {
+        "epic_id": "EPIC 211311380",
+        "k2_name": "K2-93 b",
+        "pl_name": "HIP 41378 b"
+    },
+    {
+        "epic_id": "EPIC 211311380",
+        "k2_name": "K2-93 c",
+        "pl_name": "HIP 41378 c"
+    },
+    {
+        "epic_id": "EPIC 211311380",
+        "k2_name": "K2-93 d",
+        "pl_name": "HIP 41378 d"
+    },
+    {
+        "epic_id": "EPIC 211311380",
+        "k2_name": "K2-93 e",
+        "pl_name": "HIP 41378 e"
+    },
+    {
+        "epic_id": "EPIC 211311380",
+        "k2_name": "K2-93 f",
+        "pl_name": "HIP 41378 f"
+    },
+    {
+        "epic_id": "EPIC 210848071",
+        "k2_name": "K2-56 b",
+        "pl_name": "BD+20 594 b"
+    },
+    {
+        "epic_id": "EPIC 211916756",
+        "k2_name": "K2-95 b",
+        "pl_name": "K2-95 b"
+    },
+    {
+        "epic_id": "EPIC 220383386",
+        "k2_name": "K2-96 b",
+        "pl_name": "HD 3167 b"
+    },
+    {
+        "epic_id": "EPIC 220383386",
+        "k2_name": "K2-96 c",
+        "pl_name": "HD 3167 c"
+    },
+    {
+        "epic_id": "EPIC 216414930",
+        "k2_name": "K2-143 b",
+        "pl_name": "HATS-11 b"
+    },
+    {
+        "epic_id": "EPIC 218131080",
+        "k2_name": "K2-144 b",
+        "pl_name": "HATS-12 b"
+    },
+    {
+        "epic_id": "EPIC 211913977",
+        "k2_name": "K2-101 b",
+        "pl_name": "K2-101 b"
+    },
+    {
+        "epic_id": "EPIC 211970147",
+        "k2_name": "K2-102 b",
+        "pl_name": "K2-102 b"
+    },
+    {
+        "epic_id": "EPIC 211822797",
+        "k2_name": "K2-103 b",
+        "pl_name": "EPIC 211822797 b"
+    },
+    {
+        "epic_id": "EPIC 220674823",
+        "k2_name": "K2-106 b",
+        "pl_name": "EPIC 220674823 b"
+    },
+    {
+        "epic_id": "EPIC 220674823",
+        "k2_name": "K2-106 c",
+        "pl_name": "EPIC 220674823 c"
+    },
+    {
+        "epic_id": "EPIC 216468514",
+        "k2_name": "K2-107 b",
+        "pl_name": "K2-107 b"
+    },
+    {
+        "epic_id": "EPIC 246199087",
+        "k2_name": "K2-112 e",
+        "pl_name": "TRAPPIST-1 e"
+    },
+    {
+        "epic_id": "EPIC 246199087",
+        "k2_name": "K2-112 g",
+        "pl_name": "TRAPPIST-1 g"
+    },
+    {
+        "epic_id": "EPIC 201437844",
+        "k2_name": "K2-109 b",
+        "pl_name": "HD 106315 b"
+    },
+    {
+        "epic_id": "EPIC 201437844",
+        "k2_name": "K2-109 c",
+        "pl_name": "HD 106315 c"
+    },
+    {
+        "epic_id": "EPIC 220504338",
+        "k2_name": "K2-113 b",
+        "pl_name": "K2-113 b"
+    },
+    {
+        "epic_id": "EPIC 228724232",
+        "k2_name": "K2-235 b",
+        "pl_name": "WASP-107 b"
+    },
+    {
+        "epic_id": "EPIC 211680698",
+        "k2_name": "K2-118 b",
+        "pl_name": "K2-118 b"
+    },
+    {
+        "epic_id": "EPIC 212686205",
+        "k2_name": "K2-128 b",
+        "pl_name": "K2-128 b"
+    },
+    {
+        "epic_id": "EPIC 214787262",
+        "k2_name": "K2-129 b",
+        "pl_name": "K2-129 b"
+    },
+    {
+        "epic_id": "EPIC 228732031",
+        "k2_name": "K2-131 b",
+        "pl_name": "K2-131 b"
+    },
+    {
+        "epic_id": "EPIC 247887989",
+        "k2_name": "K2-133 b",
+        "pl_name": "K2-133 b"
+    },
+    {
+        "epic_id": "EPIC 247887989",
+        "k2_name": "K2-133 c",
+        "pl_name": "K2-133 c"
+    },
+    {
+        "epic_id": "EPIC 246441449",
+        "k2_name": "K2-134 b",
+        "pl_name": "WASP-151 b"
+    },
+    {
+        "epic_id": "EPIC 246389858",
+        "k2_name": "K2-135 c",
+        "pl_name": "GJ 9827 c"
+    },
+    {
+        "epic_id": "EPIC 246389858",
+        "k2_name": "K2-135 d",
+        "pl_name": "GJ 9827 d"
+    },
+    {
+        "epic_id": "EPIC 247589423",
+        "k2_name": "K2-136 c",
+        "pl_name": "K2-136 c"
+    },
+    {
+        "epic_id": "EPIC 228813918",
+        "k2_name": "K2-137 b",
+        "pl_name": "K2-137 b"
+    },
+    {
+        "epic_id": "EPIC 218916923",
+        "k2_name": "K2-139 b",
+        "pl_name": "K2-139 b"
+    },
+    {
+        "epic_id": "EPIC 228735255",
+        "k2_name": "K2-140 b",
+        "pl_name": "K2-140 b"
+    },
+    {
+        "epic_id": "EPIC 245950175",
+        "k2_name": "K2-138 c",
+        "pl_name": "K2-138 c"
+    },
+    {
+        "epic_id": "EPIC 245950175",
+        "k2_name": "K2-138 d",
+        "pl_name": "K2-138 d"
+    },
+    {
+        "epic_id": "EPIC 245950175",
+        "k2_name": "K2-138 f",
+        "pl_name": "K2-138 f"
+    },
+    {
+        "epic_id": "EPIC 246393474",
+        "k2_name": "K2-141 c",
+        "pl_name": "K2-141 c"
+    },
+    {
+        "epic_id": "EPIC 213715787",
+        "k2_name": "K2-147 b",
+        "pl_name": "K2-147 b"
+    },
+    {
+        "epic_id": "EPIC 220194974",
+        "k2_name": "K2-148 c",
+        "pl_name": "K2-148 c"
+    },
+    {
+        "epic_id": "EPIC 220522664",
+        "k2_name": "K2-149 b",
+        "pl_name": "K2-149 b"
+    },
+    {
+        "epic_id": "EPIC 220598331",
+        "k2_name": "K2-150 b",
+        "pl_name": "K2-150 b"
+    },
+    {
+        "epic_id": "EPIC 201598502",
+        "k2_name": "K2-153 b",
+        "pl_name": "K2-153 b"
+    },
+    {
+        "epic_id": "EPIC 228934525",
+        "k2_name": "K2-154 c",
+        "pl_name": "K2-154 c"
+    },
+    {
+        "epic_id": "EPIC 210897587",
+        "k2_name": "K2-155 b",
+        "pl_name": "K2-155 b"
+    },
+    {
+        "epic_id": "EPIC 210897587",
+        "k2_name": "K2-155 d",
+        "pl_name": "K2-155 d"
+    },
+    {
+        "epic_id": "EPIC 219800881",
+        "k2_name": "K2-231 b",
+        "pl_name": "K2-231 b"
+    },
+    {
+        "epic_id": "EPIC 249622103",
+        "k2_name": "K2-233 b",
+        "pl_name": "K2-233 b"
+    },
+    {
+        "epic_id": "EPIC 249622103",
+        "k2_name": "K2-233 d",
+        "pl_name": "K2-233 d"
+    },
+    {
+        "epic_id": "EPIC 248545986",
+        "k2_name": "K2-239 b",
+        "pl_name": "K2-239 b"
+    },
+    {
+        "epic_id": "EPIC 248545986",
+        "k2_name": "K2-239 c",
+        "pl_name": "K2-239 c"
+    },
+    {
+        "epic_id": "EPIC 249801827",
+        "k2_name": "K2-240 b",
+        "pl_name": "K2-240 b"
+    },
+    {
+        "epic_id": "EPIC 229426032",
+        "k2_name": "K2-237 b",
+        "pl_name": "K2-237 b"
+    },
+    {
+        "epic_id": "EPIC 246067459",
+        "k2_name": "K2-238 b",
+        "pl_name": "K2-238 b"
+    },
+    {
+        "epic_id": "EPIC 201102594",
+        "k2_name": "K2-242 b",
+        "pl_name": "K2-242 b"
+    },
+    {
+        "epic_id": "EPIC 201166680",
+        "k2_name": "K2-243 b",
+        "pl_name": "K2-243 b"
+    },
+    {
+        "epic_id": "EPIC 201166680",
+        "k2_name": "K2-243 c",
+        "pl_name": "K2-243 c"
+    },
+    {
+        "epic_id": "EPIC 201386739",
+        "k2_name": "K2-246 b",
+        "pl_name": "K2-246 b"
+    },
+    {
+        "epic_id": "EPIC 228725791",
+        "k2_name": "K2-247 c",
+        "pl_name": "K2-247 c"
+    },
+    {
+        "epic_id": "EPIC 228739306",
+        "k2_name": "K2-248 b",
+        "pl_name": "K2-248 b"
+    },
+    {
+        "epic_id": "EPIC 228748826",
+        "k2_name": "K2-250 b",
+        "pl_name": "K2-250 b"
+    },
+    {
+        "epic_id": "EPIC 228763938",
+        "k2_name": "K2-252 b",
+        "pl_name": "K2-252 b"
+    },
+    {
+        "epic_id": "EPIC 228809550",
+        "k2_name": "K2-253 b",
+        "pl_name": "K2-253 b"
+    },
+    {
+        "epic_id": "EPIC 228849382",
+        "k2_name": "K2-254 c",
+        "pl_name": "K2-254 c"
+    },
+    {
+        "epic_id": "EPIC 228968232",
+        "k2_name": "K2-256 b",
+        "pl_name": "K2-256 b"
+    },
+    {
+        "epic_id": "EPIC 228974324",
+        "k2_name": "K2-257 b",
+        "pl_name": "K2-257 b"
+    },
+    {
+        "epic_id": "EPIC 246911830",
+        "k2_name": "K2-260 b",
+        "pl_name": "K2-260 b"
+    },
+    {
+        "epic_id": "EPIC 212779563",
+        "k2_name": "K2-262 b",
+        "pl_name": "Wolf 503 b"
+    },
+    {
+        "epic_id": "EPIC 211964830",
+        "k2_name": "K2-264 b",
+        "pl_name": "K2-264 b"
+    },
+    {
+        "epic_id": "EPIC 246851721",
+        "k2_name": "K2-267 b",
+        "pl_name": "EPIC 246851721 b"
+    },
+    {
+        "epic_id": "EPIC 248435473",
+        "k2_name": "K2-266 c",
+        "pl_name": "K2-266 c"
+    },
+    {
+        "epic_id": "EPIC 248435473",
+        "k2_name": "K2-266 d",
+        "pl_name": "K2-266 d"
+    },
+    {
+        "epic_id": "EPIC 211413752",
+        "k2_name": "K2-268 b",
+        "pl_name": "K2-268 b"
+    },
+    {
+        "epic_id": "EPIC 246471491",
+        "k2_name": "K2-285 b",
+        "pl_name": "K2-285 b"
+    },
+    {
+        "epic_id": "EPIC 246471491",
+        "k2_name": "K2-285 c",
+        "pl_name": "K2-285 c"
+    },
+    {
+        "epic_id": "EPIC 246471491",
+        "k2_name": "K2-285 e",
+        "pl_name": "K2-285 e"
+    },
+    {
+        "epic_id": "EPIC 249451861",
+        "k2_name": "K2-287 b",
+        "pl_name": "K2-287 b"
+    },
+    {
+        "epic_id": "EPIC 210693462",
+        "k2_name": "K2-288 B b",
+        "pl_name": "K2-288 B b"
+    },
+    {
+        "epic_id": "EPIC 249624646",
+        "k2_name": "K2-290 c",
+        "pl_name": "K2-290 c"
+    },
+    {
+        "epic_id": "EPIC 212628254",
+        "k2_name": "K2-292 b",
+        "pl_name": "K2-292 b"
+    },
+    {
+        "epic_id": "EPIC 246151543",
+        "k2_name": "K2-293 b",
+        "pl_name": "K2-293 b"
+    },
+    {
+        "epic_id": "EPIC 247887989",
+        "k2_name": "K2-133 e",
+        "pl_name": "K2-133 e"
+    },
+    {
+        "epic_id": "EPIC 201238110",
+        "k2_name": "K2-296 b",
+        "pl_name": "EPIC 201238110 b"
+    },
+    {
+        "epic_id": "EPIC 201497682",
+        "k2_name": "K2-297 b",
+        "pl_name": "EPIC 201497682 b"
+    },
+    {
+        "epic_id": "EPIC 201754305",
+        "k2_name": "K2-16 d",
+        "pl_name": "EPIC 201754305 d"
+    },
+    {
+        "epic_id": "EPIC 201833600",
+        "k2_name": "K2-50 c",
+        "pl_name": "EPIC 201833600 c"
+    },
+    {
+        "epic_id": "EPIC 205950854",
+        "k2_name": "K2-168 c",
+        "pl_name": "EPIC 205950854 c"
+    },
+    {
+        "epic_id": "EPIC 206024342",
+        "k2_name": "K2-299 b",
+        "pl_name": "EPIC 206024342 b"
+    },
+    {
+        "epic_id": "EPIC 206042996",
+        "k2_name": "K2-301 b",
+        "pl_name": "EPIC 206042996 b"
+    },
+    {
+        "epic_id": "EPIC 206215704",
+        "k2_name": "K2-302 b",
+        "pl_name": "EPIC 206215704 b"
+    },
+    {
+        "epic_id": "EPIC 212297394",
+        "k2_name": "K2-304 b",
+        "pl_name": "EPIC 212297394 b"
+    },
+    {
+        "epic_id": "EPIC 212424622",
+        "k2_name": "K2-305 b",
+        "pl_name": "EPIC 212424622 b"
+    },
+    {
+        "epic_id": "EPIC 212587672",
+        "k2_name": "K2-307 b",
+        "pl_name": "EPIC 212587672 b"
+    },
+    {
+        "epic_id": "EPIC 220554210",
+        "k2_name": "K2-282 c",
+        "pl_name": "EPIC 220554210 c"
+    },
+    {
+        "epic_id": "EPIC 210818897",
+        "k2_name": "K2-309 b",
+        "pl_name": "V1298 Tau b"
+    },
+    {
+        "epic_id": "EPIC 212737443",
+        "k2_name": "K2-310 c",
+        "pl_name": "EPIC 212737443 c"
+    },
+    {
+        "epic_id": "EPIC 201205469",
+        "k2_name": "K2-43 c",
+        "pl_name": "K2-43 c"
+    },
+    {
+        "epic_id": "EPIC 210818897",
+        "k2_name": "K2-309 c",
+        "pl_name": "V1298 Tau c"
+    },
+    {
+        "epic_id": "EPIC 210818897",
+        "k2_name": "K2-309 d",
+        "pl_name": "V1298 Tau d"
+    },
+    {
+        "epic_id": "EPIC 249893012",
+        "k2_name": "K2-314 b",
+        "pl_name": "EPIC 249893012 b"
+    },
+    {
+        "epic_id": "EPIC 249893012",
+        "k2_name": "K2-314 c",
+        "pl_name": "EPIC 249893012 c"
+    },
+    {
+        "epic_id": "EPIC 249631677",
+        "k2_name": "K2-315 b",
+        "pl_name": "K2-315 b"
+    },
+    {
+        "epic_id": "EPIC 249384674",
+        "k2_name": "K2-316 b",
+        "pl_name": "K2-316 b"
+    },
+    {
+        "epic_id": "EPIC 249557502",
+        "k2_name": "K2-317 b",
+        "pl_name": "K2-317 b"
+    },
+    {
+        "epic_id": "EPIC 201663879",
+        "k2_name": "K2-319 b",
+        "pl_name": "K2-319 b"
+    },
+    {
+        "epic_id": "EPIC 201796690",
+        "k2_name": "K2-320 b",
+        "pl_name": "K2-320 b"
+    },
+    {
+        "epic_id": "EPIC 248558190",
+        "k2_name": "K2-322 b",
+        "pl_name": "K2-322 b"
+    },
+    {
+        "epic_id": "EPIC 248639308",
+        "k2_name": "K2-324 b",
+        "pl_name": "K2-324 b"
+    },
+    {
+        "epic_id": "EPIC 246074965",
+        "k2_name": "K2-325 b",
+        "pl_name": "K2-325 b"
+    },
+    {
+        "epic_id": "EPIC 201170410",
+        "k2_name": "K2-327 b",
+        "pl_name": "EPIC 201170410.02"
+    },
+    {
+        "epic_id": "EPIC 246193072",
+        "k2_name": "K2-329 b",
+        "pl_name": "K2-329 b"
+    },
+    {
+        "epic_id": "EPIC 210894022",
+        "k2_name": "K2-111 c",
+        "pl_name": "K2-111 c"
+    },
+    {
+        "epic_id": "EPIC 245950175",
+        "k2_name": "K2-138 g",
+        "pl_name": "K2-138 g"
+    },
+    {
+        "epic_id": "EPIC 201295312",
+        "k2_name": "K2-44 b",
+        "pl_name": "K2-44 b"
+    },
+    {
+        "epic_id": "EPIC 201445392",
+        "k2_name": "K2-8 c",
+        "pl_name": "K2-8 c"
+    },
+    {
+        "epic_id": "EPIC 201549860",
+        "k2_name": "K2-35 c",
+        "pl_name": "K2-35 c"
+    },
+    {
+        "epic_id": "EPIC 201155177",
+        "k2_name": "K2-42 b",
+        "pl_name": "K2-42 b"
+    },
+    {
+        "epic_id": "EPIC 201345483",
+        "k2_name": "K2-45 b",
+        "pl_name": "K2-45 b"
+    },
+    {
+        "epic_id": "EPIC 201505350",
+        "k2_name": "K2-19 d",
+        "pl_name": "K2-19 d"
+    },
+    {
+        "epic_id": "EPIC 201647718",
+        "k2_name": "K2-47 b",
+        "pl_name": "K2-47 b"
+    },
+    {
+        "epic_id": "EPIC 201677835",
+        "k2_name": "K2-48 b",
+        "pl_name": "K2-48 b"
+    },
+    {
+        "epic_id": "EPIC 201713348",
+        "k2_name": "K2-36 c",
+        "pl_name": "K2-36 c"
+    },
+    {
+        "epic_id": "EPIC 201833600",
+        "k2_name": "K2-50 b",
+        "pl_name": "K2-50 b"
+    },
+    {
+        "epic_id": "EPIC 203771098",
+        "k2_name": "K2-24 c",
+        "pl_name": "K2-24 c"
+    },
+    {
+        "epic_id": "EPIC 203771098",
+        "k2_name": "K2-24 b",
+        "pl_name": "K2-24 b"
+    },
+    {
+        "epic_id": "EPIC 203826436",
+        "k2_name": "K2-37 c",
+        "pl_name": "K2-37 c"
+    },
+    {
+        "epic_id": "EPIC 203826436",
+        "k2_name": "K2-37 b",
+        "pl_name": "K2-37 b"
+    },
+    {
+        "epic_id": "EPIC 204890128",
+        "k2_name": "K2-53 b",
+        "pl_name": "K2-53 b"
+    },
+    {
+        "epic_id": "EPIC 205071984",
+        "k2_name": "K2-32 b",
+        "pl_name": "K2-32 b"
+    },
+    {
+        "epic_id": "EPIC 205071984",
+        "k2_name": "K2-32 c",
+        "pl_name": "K2-32 c"
+    },
+    {
+        "epic_id": "EPIC 205686202",
+        "k2_name": "K2-289 b",
+        "pl_name": "K2-289 b"
+    },
+    {
+        "epic_id": "EPIC 205924614",
+        "k2_name": "K2-55 b",
+        "pl_name": "K2-55 b"
+    },
+    {
+        "epic_id": "EPIC 205950854",
+        "k2_name": "K2-168 b",
+        "pl_name": "K2-168 b"
+    },
+    {
+        "epic_id": "EPIC 206008091",
+        "k2_name": "K2-170 c",
+        "pl_name": "K2-170 c"
+    },
+    {
+        "epic_id": "EPIC 206011496",
+        "k2_name": "K2-265 b",
+        "pl_name": "K2-265 b"
+    },
+    {
+        "epic_id": "EPIC 206026904",
+        "k2_name": "K2-58 b",
+        "pl_name": "K2-58 b"
+    },
+    {
+        "epic_id": "EPIC 206026904",
+        "k2_name": "K2-58 c",
+        "pl_name": "K2-58 c"
+    },
+    {
+        "epic_id": "EPIC 206027655",
+        "k2_name": "K2-59 b",
+        "pl_name": "K2-59 b"
+    },
+    {
+        "epic_id": "EPIC 206038483",
+        "k2_name": "K2-60 b",
+        "pl_name": "K2-60 b"
+    },
+    {
+        "epic_id": "EPIC 206049764",
+        "k2_name": "K2-171 b",
+        "pl_name": "K2-171 b"
+    },
+    {
+        "epic_id": "EPIC 206082454",
+        "k2_name": "K2-172 c",
+        "pl_name": "K2-172 c"
+    },
+    {
+        "epic_id": "EPIC 206096602",
+        "k2_name": "K2-62 b",
+        "pl_name": "K2-62 b"
+    },
+    {
+        "epic_id": "EPIC 206101302",
+        "k2_name": "K2-63 c",
+        "pl_name": "K2-63 c"
+    },
+    {
+        "epic_id": "EPIC 206119924",
+        "k2_name": "K2-116 b",
+        "pl_name": "K2-116 b"
+    },
+    {
+        "epic_id": "EPIC 206125618",
+        "k2_name": "K2-64 b",
+        "pl_name": "K2-64 b"
+    },
+    {
+        "epic_id": "EPIC 206153219",
+        "k2_name": "K2-66 b",
+        "pl_name": "K2-66 b"
+    },
+    {
+        "epic_id": "EPIC 206162305",
+        "k2_name": "K2-69 b",
+        "pl_name": "K2-69 b"
+    },
+    {
+        "epic_id": "EPIC 206192813",
+        "k2_name": "K2-71 b",
+        "pl_name": "K2-71 b"
+    },
+    {
+        "epic_id": "EPIC 206245553",
+        "k2_name": "K2-73 b",
+        "pl_name": "K2-73 b"
+    },
+    {
+        "epic_id": "EPIC 206247743",
+        "k2_name": "K2-39 b",
+        "pl_name": "K2-39 b"
+    },
+    {
+        "epic_id": "EPIC 206318379",
+        "k2_name": "K2-28 b",
+        "pl_name": "K2-28 b"
+    },
+    {
+        "epic_id": "EPIC 206348688",
+        "k2_name": "K2-75 c",
+        "pl_name": "K2-75 c"
+    },
+    {
+        "epic_id": "EPIC 205916793",
+        "k2_name": "K2-54 b",
+        "pl_name": "K2-54 b"
+    },
+    {
+        "epic_id": "EPIC 206209135",
+        "k2_name": "K2-72 c",
+        "pl_name": "K2-72 c"
+    },
+    {
+        "epic_id": "EPIC 206209135",
+        "k2_name": "K2-72 e",
+        "pl_name": "K2-72 e"
+    },
+    {
+        "epic_id": "EPIC 210402237",
+        "k2_name": "K2-79 b",
+        "pl_name": "K2-79 b"
+    },
+    {
+        "epic_id": "EPIC 210403955",
+        "k2_name": "K2-80 c",
+        "pl_name": "K2-80 c"
+    },
+    {
+        "epic_id": "EPIC 210508766",
+        "k2_name": "K2-83 b",
+        "pl_name": "K2-83 b"
+    },
+    {
+        "epic_id": "EPIC 210508766",
+        "k2_name": "K2-83 c",
+        "pl_name": "K2-83 c"
+    },
+    {
+        "epic_id": "EPIC 210577548",
+        "k2_name": "K2-84 b",
+        "pl_name": "K2-84 b"
+    },
+    {
+        "epic_id": "EPIC 210718708",
+        "k2_name": "K2-86 b",
+        "pl_name": "K2-86 b"
+    },
+    {
+        "epic_id": "EPIC 210750726",
+        "k2_name": "K2-88 b",
+        "pl_name": "K2-88 b"
+    },
+    {
+        "epic_id": "EPIC 210838726",
+        "k2_name": "K2-89 b",
+        "pl_name": "K2-89 b"
+    },
+    {
+        "epic_id": "EPIC 210968143",
+        "k2_name": "K2-90 b",
+        "pl_name": "K2-90 b"
+    },
+    {
+        "epic_id": "EPIC 211077024",
+        "k2_name": "K2-91 b",
+        "pl_name": "K2-91 b"
+    },
+    {
+        "epic_id": "EPIC 211331236",
+        "k2_name": "K2-117 b",
+        "pl_name": "K2-117 b"
+    },
+    {
+        "epic_id": "EPIC 211351816",
+        "k2_name": "K2-97 b",
+        "pl_name": "K2-97 b"
+    },
+    {
+        "epic_id": "EPIC 211359660",
+        "k2_name": "K2-182 b",
+        "pl_name": "K2-182 b"
+    },
+    {
+        "epic_id": "EPIC 211413752",
+        "k2_name": "K2-268 c",
+        "pl_name": "K2-268 c"
+    },
+    {
+        "epic_id": "EPIC 211418729",
+        "k2_name": "K2-114 b",
+        "pl_name": "K2-114 b"
+    },
+    {
+        "epic_id": "EPIC 211491383",
+        "k2_name": "K2-269 b",
+        "pl_name": "K2-269 b"
+    },
+    {
+        "epic_id": "EPIC 211529065",
+        "k2_name": "K2-270 c",
+        "pl_name": "K2-270 c"
+    },
+    {
+        "epic_id": "EPIC 211594205",
+        "k2_name": "K2-184 b",
+        "pl_name": "K2-184 b"
+    },
+    {
+        "epic_id": "EPIC 211713099",
+        "k2_name": "K2-271 b",
+        "pl_name": "K2-271 b"
+    },
+    {
+        "epic_id": "EPIC 211770795",
+        "k2_name": "K2-119 b",
+        "pl_name": "K2-119 b"
+    },
+    {
+        "epic_id": "EPIC 211818569",
+        "k2_name": "K2-121 b",
+        "pl_name": "K2-121 b"
+    },
+    {
+        "epic_id": "EPIC 211919004",
+        "k2_name": "K2-273 b",
+        "pl_name": "K2-273 b"
+    },
+    {
+        "epic_id": "EPIC 211945201",
+        "k2_name": "K2-236 b",
+        "pl_name": "EPIC 211945201 b"
+    },
+    {
+        "epic_id": "EPIC 211990866",
+        "k2_name": "K2-100 b",
+        "pl_name": "K2-100 b"
+    },
+    {
+        "epic_id": "EPIC 212006344",
+        "k2_name": "K2-122 b",
+        "pl_name": "K2-122 b"
+    },
+    {
+        "epic_id": "EPIC 212069861",
+        "k2_name": "K2-123 b",
+        "pl_name": "K2-123 b"
+    },
+    {
+        "epic_id": "EPIC 212154564",
+        "k2_name": "K2-124 b",
+        "pl_name": "K2-124 b"
+    },
+    {
+        "epic_id": "EPIC 212164470",
+        "k2_name": "K2-188 c",
+        "pl_name": "K2-188 c"
+    },
+    {
+        "epic_id": "EPIC 212357477",
+        "k2_name": "K2-277 b",
+        "pl_name": "K2-277 b"
+    },
+    {
+        "epic_id": "EPIC 212418133",
+        "k2_name": "K2-278 b",
+        "pl_name": "K2-278 b"
+    },
+    {
+        "epic_id": "EPIC 212480208",
+        "k2_name": "K2-190 b",
+        "pl_name": "K2-190 b"
+    },
+    {
+        "epic_id": "EPIC 212496592",
+        "k2_name": "K2-191 b",
+        "pl_name": "K2-191 b"
+    },
+    {
+        "epic_id": "EPIC 212554013",
+        "k2_name": "K2-127 b",
+        "pl_name": "K2-127 b"
+    },
+    {
+        "epic_id": "EPIC 212580872",
+        "k2_name": "K2-193 b",
+        "pl_name": "K2-193 b"
+    },
+    {
+        "epic_id": "EPIC 212672300",
+        "k2_name": "K2-194 b",
+        "pl_name": "K2-194 b"
+    },
+    {
+        "epic_id": "EPIC 212735333",
+        "k2_name": "K2-197 b",
+        "pl_name": "K2-197 b"
+    },
+    {
+        "epic_id": "EPIC 212782836",
+        "k2_name": "K2-279 b",
+        "pl_name": "K2-279 b"
+    },
+    {
+        "epic_id": "EPIC 212803289",
+        "k2_name": "K2-99 b",
+        "pl_name": "K2-99 b"
+    },
+    {
+        "epic_id": "EPIC 212012119",
+        "k2_name": "K2-275 b",
+        "pl_name": "K2-275 b"
+    },
+    {
+        "epic_id": "EPIC 212768333",
+        "k2_name": "K2-198 c",
+        "pl_name": "K2-198 c"
+    },
+    {
+        "epic_id": "EPIC 212768333",
+        "k2_name": "K2-198 d",
+        "pl_name": "K2-198 d"
+    },
+    {
+        "epic_id": "EPIC 212779596",
+        "k2_name": "K2-199 b",
+        "pl_name": "K2-199 b"
+    },
+    {
+        "epic_id": "EPIC 210512842",
+        "k2_name": "K2-173 b",
+        "pl_name": "K2-173 b"
+    },
+    {
+        "epic_id": "EPIC 211048999",
+        "k2_name": "K2-179 b",
+        "pl_name": "K2-179 b"
+    }
+]
