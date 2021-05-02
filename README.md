@@ -11,16 +11,13 @@ status](https://github.com/tyluRp/exoplanets/workflows/R-CMD-check/badge.svg)](h
 coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
 <!-- badges: end -->
 
-The goal of exoplanets is to provide access to [NASA’s Exoplanet
-Archive](https://exoplanetarchive.ipac.caltech.edu/index.html) database
-in R. The functionality of this package is fairly minimal and is simply
-an R interface to access exoplanet data in the following ways:
+The goal of exoplanets is to provide access to [NASA’s Exoplanet Archive
+TAP
+Service](https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html).
+The functionality of this package is minimal and is simply an R
+interface to access exoplanet data.
 
--   By providing a table name using `exo`
--   By providing a query URL using `exo_raw`
--   By summarising the database using `exo_summary`
-
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-1.png" title="Exoplanets color coded by discovery method" alt="Exoplanets color coded by discovery method" width="100%" />
 
 ## Installation
 
@@ -34,200 +31,85 @@ devtools::install_github("tylurp/exoplanets")
 ## Example
 
 This is a basic example which shows you how to access data from the
-exoplanet table:
+[k2names](https://exoplanetarchive.ipac.caltech.edu/docs/API_k2names_columns.html)
+table:
 
 ``` r
 library(exoplanets)
 
-exo("exoplanets")
-#> # A tibble: 4,352 x 82
-#>    pl_hostname pl_letter pl_name  pl_discmethod pl_controvflag pl_pnum pl_orbper
-#>    <chr>       <chr>     <chr>    <chr>                  <dbl>   <dbl>     <dbl>
-#>  1 Kepler-128  b         Kepler-… Transit                    0       2     15.1 
-#>  2 Kepler-128  c         Kepler-… Transit                    0       2     22.8 
-#>  3 Kepler-129  b         Kepler-… Transit                    0       2     15.8 
-#>  4 Kepler-129  c         Kepler-… Transit                    0       2     82.2 
-#>  5 Kepler-130  b         Kepler-… Transit                    0       3      8.46
-#>  6 Kepler-130  c         Kepler-… Transit                    0       3     27.5 
-#>  7 Kepler-130  d         Kepler-… Transit                    0       3     87.5 
-#>  8 Kepler-131  b         Kepler-… Transit                    0       2     16.1 
-#>  9 Kepler-131  c         Kepler-… Transit                    0       2     25.5 
-#> 10 Kepler-132  b         Kepler-… Transit                    0       4      6.18
-#> # … with 4,342 more rows, and 75 more variables: pl_orbpererr1 <dbl>,
-#> #   pl_orbpererr2 <dbl>, pl_orbperlim <dbl>, pl_orbpern <dbl>,
-#> #   pl_orbsmax <dbl>, pl_orbsmaxerr1 <dbl>, pl_orbsmaxerr2 <dbl>,
-#> #   pl_orbsmaxlim <dbl>, pl_orbsmaxn <dbl>, pl_orbeccen <dbl>,
-#> #   pl_orbeccenerr1 <dbl>, pl_orbeccenerr2 <dbl>, pl_orbeccenlim <dbl>,
-#> #   pl_orbeccenn <dbl>, pl_orbincl <dbl>, pl_orbinclerr1 <dbl>,
-#> #   pl_orbinclerr2 <dbl>, pl_orbincllim <dbl>, pl_orbincln <dbl>,
-#> #   pl_bmassj <dbl>, pl_bmassjerr1 <dbl>, pl_bmassjerr2 <dbl>,
-#> #   pl_bmassjlim <dbl>, pl_bmassn <dbl>, pl_bmassprov <chr>, pl_radj <dbl>,
-#> #   pl_radjerr1 <dbl>, pl_radjerr2 <dbl>, pl_radjlim <dbl>, pl_radn <dbl>,
-#> #   pl_dens <dbl>, pl_denserr1 <dbl>, pl_denserr2 <dbl>, pl_denslim <dbl>,
-#> #   pl_densn <dbl>, pl_ttvflag <dbl>, pl_kepflag <dbl>, pl_k2flag <dbl>,
-#> #   ra_str <chr>, dec_str <chr>, ra <dbl>, st_raerr <dbl>, dec <dbl>,
-#> #   st_decerr <dbl>, st_posn <dbl>, st_dist <dbl>, st_disterr1 <dbl>,
-#> #   st_disterr2 <dbl>, st_distlim <dbl>, st_distn <dbl>, st_optmag <dbl>,
-#> #   st_optmagerr <dbl>, st_optmaglim <dbl>, st_optband <chr>, gaia_gmag <dbl>,
-#> #   gaia_gmagerr <lgl>, gaia_gmaglim <dbl>, st_teff <dbl>, st_tefferr1 <dbl>,
-#> #   st_tefferr2 <dbl>, st_tefflim <dbl>, st_teffn <dbl>, st_mass <dbl>,
-#> #   st_masserr1 <dbl>, st_masserr2 <dbl>, st_masslim <dbl>, st_massn <dbl>,
-#> #   st_rad <dbl>, st_raderr1 <dbl>, st_raderr2 <dbl>, st_radlim <dbl>,
-#> #   st_radn <dbl>, pl_nnotes <dbl>, rowupdate <date>, pl_facility <chr>
+exoplanets("k2names", progress = FALSE)
+#> ● https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&format=csv
+#> # A tibble: 449 x 3
+#>    epic_id        k2_name  pl_name     
+#>    <chr>          <chr>    <chr>       
+#>  1 EPIC 246199087 K2-112 f TRAPPIST-1 f
+#>  2 EPIC 246199087 K2-112 h TRAPPIST-1 h
+#>  3 EPIC 220383386 K2-96 d  HD 3167 d   
+#>  4 EPIC 211331236 K2-117 c K2-117 c    
+#>  5 EPIC 212398486 K2-125 b K2-125 b    
+#>  6 EPIC 217941732 K2-130 b K2-130 b    
+#>  7 EPIC 228754001 K2-132 b K2-132 b    
+#>  8 EPIC 247887989 K2-133 d K2-133 d    
+#>  9 EPIC 246389858 K2-135 b GJ 9827 b   
+#> 10 EPIC 247589423 K2-136 b K2-136 b    
+#> # … with 439 more rows
 ```
 
-To access data from a different table you can use the table parameter:
+If you wish, you can select only the columns you need:
 
 ``` r
-exo("keplernames")
-#> * <https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=keplernames>
-#> # A tibble: 2,414 x 13
-#>      kepid    ra ra_err   dec dec_err ra_str    dec_str   kepoi_name kepler_name
-#>      <dbl> <dbl>  <dbl> <dbl>   <dbl> <chr>     <chr>     <chr>      <chr>      
-#>  1  1.10e7  293.      0  48.4       0 19h33m24… +48d26m4… K01931.02  Kepler-339…
-#>  2  5.20e6  296.      0  40.3       0 19h43m44… +40d18m0… K01932.02  Kepler-340…
-#>  3  5.20e6  296.      0  40.3       0 19h43m44… +40d18m0… K01932.01  Kepler-340…
-#>  4  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.03  Kepler-341…
-#>  5  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.01  Kepler-341…
-#>  6  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.02  Kepler-341…
-#>  7  7.75e6  290.      0  43.5       0 19h19m26… +43d28m2… K01952.04  Kepler-341…
-#>  8  9.89e6  293.      0  46.7       0 19h30m42… +46d43m3… K01955.01  Kepler-342…
-#>  9  9.89e6  293.      0  46.7       0 19h30m42… +46d43m3… K01955.04  Kepler-342…
-#> 10  9.89e6  293.      0  46.7       0 19h30m42… +46d43m3… K01955.02  Kepler-342…
-#> # … with 2,404 more rows, and 4 more variables: alt_name <chr>,
-#> #   tm_designation <chr>, koi_list_flag <chr>, last_update <date>
-```
-
-To get a list of all available tables:
-
-``` r
-names(exo_tables) 
-#>  [1] "exoplanets"               "compositepars"           
-#>  [3] "exomultpars"              "aliastable"              
-#>  [5] "microlensing"             "cumulative"              
-#>  [7] "q1_q17_dr25_sup_koi"      "q1_q17_dr25_koi"         
-#>  [9] "q1_q17_dr24_koi"          "q1_q16_koi"              
-#> [11] "q1_q12_koi"               "q1_q8_koi"               
-#> [13] "q1_q6_koi"                "q1_q17_dr25_tce"         
-#> [15] "q1_q17_dr24_tce"          "q1_q16_tce"              
-#> [17] "q1_q12_tce"               "keplerstellar"           
-#> [19] "q1_q17_dr25_supp_stellar" "q1_q17_dr25_stellar"     
-#> [21] "q1_q17_dr24_stellar"      "q1_q16_stellar"          
-#> [23] "q1_q12_stellar"           "keplertimeseries"        
-#> [25] "keplernames"              "kelttimeseries"          
-#> [27] "superwasptimeseries"      "k2targets"               
-#> [29] "k2candidates"             "k2names"                 
-#> [31] "missionstars"             "mission_exocat"
-```
-
-To get a vector of column names for a specific table:
-
-``` r
-default_names <- exo_columns("cumulative", "default")
-#> * <https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&getDefaultColumns&format=csv>
-all_names <- exo_columns("cumulative", "all")
-#> * <https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative&getAllColumns&format=csv>
-
-str(default_names)
-#>  chr [1:50] "kepid" "kepoi_name" "kepler_name" "koi_disposition" ...
-str(all_names)
-#>  chr [1:153] "kepid" "kepoi_name" "kepler_name" "ra" "ra_err" "ra_str" ...
-```
-
-To summarise the database, you can use `exo_summary`, which doesn’t
-include everything found
-[here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html),
-but might in the future:
-
-``` r
-exo_summary()
-#> * <https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&getDefaultColumns&format=csv>
-#> * <https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=exoplanets&select=pl_hostname,pl_letter,pl_name,pl_discmethod,pl_controvflag,pl_pnum,pl_orbper,pl_orbpererr1,pl_orbpererr2,pl_orbperlim,pl_orbpern,pl_orbsmax,pl_orbsmaxerr1,pl_orbsmaxerr2,pl_orbsmaxlim,pl_orbsmaxn,pl_orbeccen,pl_orbeccenerr1,pl_orbeccenerr2,pl_orbeccenlim,pl_orbeccenn,pl_orbincl,pl_orbinclerr1,pl_orbinclerr2,pl_orbincllim,pl_orbincln,pl_bmassj,pl_bmassjerr1,pl_bmassjerr2,pl_bmassjlim,pl_bmassn,pl_bmassprov,pl_radj,pl_radjerr1,pl_radjerr2,pl_radjlim,pl_radn,pl_dens,pl_denserr1,pl_denserr2,pl_denslim,pl_densn,pl_ttvflag,pl_kepflag,pl_k2flag,ra_str,dec_str,ra,st_raerr,dec,st_decerr,st_posn,st_dist,st_disterr1,st_disterr2,st_distlim,st_distn,st_optmag,st_optmagerr,st_optmaglim,st_optband,gaia_gmag,gaia_gmagerr,gaia_gmaglim,st_teff,st_tefferr1,st_tefferr2,st_tefflim,st_teffn,st_mass,st_masserr1,st_masserr2,st_masslim,st_massn,st_rad,st_raderr1,st_raderr2,st_radlim,st_radn,pl_nnotes,rowupdate,pl_facility,pl_masse,pl_rade>
-#> * <https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=cumulative>
-#> * <https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?table=k2candidates>
-#> $counts_summary
-#> # A tibble: 8 x 2
-#>   ind                                                         values
-#>   <fct>                                                        <int>
-#> 1 all_exoplanets                                                4352
-#> 2 confirmed_planets_with_kepler_light_curves_for_stellar_host   2414
-#> 3 confirmed_planets_discovered_by_kepler                        2394
-#> 4 kepler_project_candidates_yet_to_be_confirmed                 2366
-#> 5 confirmed_planets_with_k2_light_curves_for_stellar_host        450
-#> 6 confirmed_planets_discovered_by_k2                             425
-#> 7 k2_candidates_yet_to_be_confirmed                              889
-#> 8 confirmed_planets_discovered_by_tess                           113
+exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
+#> ● https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&format=csv
 #> 
-#> $discovery_summary
-#> # A tibble: 11 x 2
-#>    ind                           values
-#>    <fct>                          <int>
-#>  1 Astrometry                         1
-#>  2 Disk Kinematics                    1
-#>  3 Eclipse Timing Variations         16
-#>  4 Imaging                           51
-#>  5 Microlensing                     106
-#>  6 Orbital Brightness Modulation      6
-#>  7 Pulsar Timing                      7
-#>  8 Pulsation Timing Variations        2
-#>  9 Radial Velocity                  827
-#> 10 Transit                         3314
-#> 11 Transit Timing Variations         21
-#> 
-#> $mass_summary
-#> # A tibble: 6 x 2
-#>   ind                    values
-#>   <fct>                   <int>
-#> 1 M <= 3 M_Earth             44
-#> 2 3 < M <= 10 M_Earth       154
-#> 3 10 < M <= 30 M_Earth      106
-#> 4 30 < M <= 100 M_Earth      98
-#> 5 100 < M <= 300 M_Earth    229
-#> 6 300 M_Earth < M           393
-#> 
-#> $radius_summary
-#> # A tibble: 5 x 2
-#>   ind                   values
-#>   <fct>                  <int>
-#> 1 R <= 1.25 R_Earth        419
-#> 2 1.25 < R <= 2 R_Earth    880
-#> 3 2 < R <= 6 R_Earth      1399
-#> 4 6 < R <= 15 R_Earth      475
-#> 5 15 R_Earth < R           165
+#> ── Column specification ────────────────────────────────────────────────────────
+#> cols(
+#>   pl_name = col_character(),
+#>   hostname = col_character()
+#> )
+#> # A tibble: 29,398 x 2
+#>    pl_name      hostname  
+#>    <chr>        <chr>     
+#>  1 Kepler-11 c  Kepler-11 
+#>  2 Kepler-11 f  Kepler-11 
+#>  3 HAT-P-1 b    HAT-P-1   
+#>  4 OGLE-TR-10 b OGLE-TR-10
+#>  5 TrES-2 b     TrES-2    
+#>  6 WASP-3 b     WASP-3    
+#>  7 47 UMa b     47 UMa    
+#>  8 47 UMa d     47 UMa    
+#>  9 HD 167042 b  HD 167042 
+#> 10 HD 210702 b  HD 210702 
+#> # … with 29,388 more rows
 ```
 
-Finally, you can take a look at the
-[docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html)
-and use `eco_raw` to write out queries in their entirety. Spaces and
-single quotes will be escaped automatically. The only supported format
-is CSV so do not request JSON, ipac, or others:
+Information on the tables and columns available can be found with:
 
 ``` r
-x <- c(
-  base = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?",
-  table = "table=exoplanets",
-  columns = "&select=pl_hostname,ra,dec",
-  parameters = "&order=dec"
-)
-
-query <- paste(x, collapse = "")
-
-exo_raw(query)
-#> # A tibble: 4,352 x 3
-#>    pl_hostname     ra   dec
-#>    <chr>        <dbl> <dbl>
-#>  1 HD 142022 A 243.   -84.2
-#>  2 HD 39091     84.3  -80.5
-#>  3 HD 39091     84.3  -80.5
-#>  4 HD 137388   234.   -80.2
-#>  5 GJ 3021       4.05 -79.9
-#>  6 HD 63454    115.   -78.3
-#>  7 HD 212301   337.   -77.7
-#>  8 HD 97048    167.   -77.7
-#>  9 CHXR 73     167.   -77.6
-#> 10 HD 221420   353.   -77.4
-#> # … with 4,342 more rows
+tableinfo
+#> # A tibble: 1,800 x 3
+#>    table                  column       description          
+#>    <chr>                  <chr>        <chr>                
+#>  1 Planetary Systems (PS) pl_name      Planet Name          
+#>  2 Planetary Systems (PS) hostname     Host Name            
+#>  3 Planetary Systems (PS) pl_letter    Planet Letter        
+#>  4 Planetary Systems (PS) hd_name      HD ID                
+#>  5 Planetary Systems (PS) hip_name     HIP ID               
+#>  6 Planetary Systems (PS) tic_id       TIC ID               
+#>  7 Planetary Systems (PS) gaia_id      GAIA ID              
+#>  8 Planetary Systems (PS) default_flag Default Parameter Set
+#>  9 Planetary Systems (PS) sy_snum      Number of Stars      
+#> 10 Planetary Systems (PS) sy_pnum      Number of Planets    
+#> # … with 1,790 more rows
 ```
+
+## Capabilities
+
+At one time, this package used the *Exoplanet Archive Application
+Programming Interface (API)*. Since then, a handful of tables have been
+transitioned to the *Table Access Protocol (TAP) service*. More tables
+will be transitioned to TAP and as such, this package only supports
+queries from TAP. For more information, you can read
+<https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021>.
 
 ## Contributing
 

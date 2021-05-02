@@ -19,13 +19,9 @@ knitr::opts_chunk$set(
 [![Codecov test coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
 <!-- badges: end -->
 
-The goal of exoplanets is to provide access to [NASA's Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/index.html) database in R. The functionality of this package is fairly minimal and is simply an R interface to access exoplanet data in the following ways:
+The goal of exoplanets is to provide access to [NASA's Exoplanet Archive TAP Service](https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html). The functionality of this package is minimal and is simply an R interface to access exoplanet data.
 
-* By providing a table name using `exo`
-* By providing a query URL using `exo_raw`
-* By summarising the database using `exo_summary`
-
-```{r, echo=FALSE, message=FALSE, dpi=300, fig.height=4}
+```{r, echo=FALSE, message=FALSE, dpi=300, fig.height=4, fig.alt="Exoplanets color coded by discovery method"}
 # library(ggplot2)
 # library(tidyr)
 # library(dplyr)
@@ -99,64 +95,29 @@ devtools::install_github("tylurp/exoplanets")
 
 ## Example
 
-This is a basic example which shows you how to access data from the exoplanet table:
-
-```{r echo=FALSE}
-library(exoplanets)
-# formals(exo)$progress <- FALSE
-# formals(exo_raw)$progress <- FALSE
-# formals(exo_column_names)$progress <- FALSE
-```
+This is a basic example which shows you how to access data from the [k2names](https://exoplanetarchive.ipac.caltech.edu/docs/API_k2names_columns.html) table:
 
 ```{r example, message=FALSE}
 library(exoplanets)
 
-exo("exoplanets")
+exoplanets("k2names", progress = FALSE)
 ```
 
-To access data from a different table you can use the table parameter: 
+If you wish, you can select only the columns you need: 
 
 ```{r}
-exo("keplernames")
+exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
 ```
 
-To get a list of all available tables:
+Information on the tables and columns available can be found with:
 
 ```{r}
-names(exo_tables) 
+tableinfo
 ```
 
-To get a vector of column names for a specific table:
+## Capabilities
 
-```{r}
-default_names <- exo_columns("cumulative", "default")
-all_names <- exo_columns("cumulative", "all")
-
-str(default_names)
-str(all_names)
-```
-
-To summarise the database, you can use `exo_summary`, which doesn't include everything found [here](https://exoplanetarchive.ipac.caltech.edu/docs/counts_detail.html), but might in the future:
-
-```{r}
-exo_summary()
-```
-
-
-Finally, you can take a look at the [docs](https://exoplanetarchive.ipac.caltech.edu/docs/program_interfaces.html) and use `eco_raw` to write out queries in their entirety. Spaces and single quotes will be escaped automatically. The only supported format is CSV so do not request JSON, ipac, or others:
-
-```{r}
-x <- c(
-  base = "https://exoplanetarchive.ipac.caltech.edu/cgi-bin/nstedAPI/nph-nstedAPI?",
-  table = "table=exoplanets",
-  columns = "&select=pl_hostname,ra,dec",
-  parameters = "&order=dec"
-)
-
-query <- paste(x, collapse = "")
-
-exo_raw(query)
-```
+At one time, this package used the *Exoplanet Archive Application Programming Interface (API)*. Since then, a handful of tables have been transitioned to the *Table Access Protocol (TAP) service*. More tables will be transitioned to TAP and as such, this package only supports queries from TAP. For more information, you can read https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021.
 
 ## Contributing
 
