@@ -8,14 +8,8 @@ reference:
 - title: Functions
   desc: ~
   contents:
-  - exo
-  - exo_columns
-  - exo_kelt
-  - exo_kepler
-  - exo_summary
-  - exo_wasp
-  - exo_raw
+  - exoplanets
 - title: Data
   desc: ~
   contents:
-  - exo_tables
+  - tableinfo
