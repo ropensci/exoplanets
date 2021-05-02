@@ -156,20 +156,23 @@
 <p>Information on the tables and columns available can be found with:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tableinfo</span>
-<span class="co">#&gt; # A tibble: 1,800 x 3</span>
-<span class="co">#&gt;    table                  column       description          </span>
-<span class="co">#&gt;    &lt;chr&gt;                  &lt;chr&gt;        &lt;chr&gt;                </span>
-<span class="co">#&gt;  1 Planetary Systems (PS) pl_name      Planet Name          </span>
-<span class="co">#&gt;  2 Planetary Systems (PS) hostname     Host Name            </span>
-<span class="co">#&gt;  3 Planetary Systems (PS) pl_letter    Planet Letter        </span>
-<span class="co">#&gt;  4 Planetary Systems (PS) hd_name      HD ID                </span>
-<span class="co">#&gt;  5 Planetary Systems (PS) hip_name     HIP ID               </span>
-<span class="co">#&gt;  6 Planetary Systems (PS) tic_id       TIC ID               </span>
-<span class="co">#&gt;  7 Planetary Systems (PS) gaia_id      GAIA ID              </span>
-<span class="co">#&gt;  8 Planetary Systems (PS) default_flag Default Parameter Set</span>
-<span class="co">#&gt;  9 Planetary Systems (PS) sy_snum      Number of Stars      </span>
-<span class="co">#&gt; 10 Planetary Systems (PS) sy_pnum      Number of Planets    </span>
-<span class="co">#&gt; # … with 1,790 more rows</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 394 x 13</span>
+<span class="co">#&gt;    table database_column_… table_label description  in_ps_table in_ps_comp_pars…</span>
+<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;       &lt;chr&gt;           </span>
+<span class="co">#&gt;  1 ps    default_flag      Default Pa… Boolean fla… X           ""              </span>
+<span class="co">#&gt;  2 ps    soltype           Solution T… Disposition… X           ""              </span>
+<span class="co">#&gt;  3 ps    pl_controv_flag   Controvers… Flag indica… X           "X"             </span>
+<span class="co">#&gt;  4 ps    pl_name           Planet Name Planet name… X           "X"             </span>
+<span class="co">#&gt;  5 ps    hostname          Host Name   Stellar nam… X           "X"             </span>
+<span class="co">#&gt;  6 ps    pl_letter         Planet Let… Letter assi… X           "X"             </span>
+<span class="co">#&gt;  7 ps    hd_name           HD ID       Name of the… X           "X"             </span>
+<span class="co">#&gt;  8 ps    hip_name          HIP ID      Name of the… X           "X"             </span>
+<span class="co">#&gt;  9 ps    tic_id            TIC ID      Name of the… X           "X"             </span>
+<span class="co">#&gt; 10 ps    gaia_id           GAIA ID     Name of the… X           "X"             </span>
+<span class="co">#&gt; # … with 384 more rows, and 7 more variables:</span>
+<span class="co">#&gt; #   uncertainties_column_positive_negative &lt;chr&gt;, limit_column &lt;chr&gt;,</span>
+<span class="co">#&gt; #   default &lt;lgl&gt;, notes &lt;chr&gt;, displayed_string_name &lt;chr&gt;, flag_column &lt;lgl&gt;,</span>
+<span class="co">#&gt; #   number_of_measurements &lt;lgl&gt;</span></code></pre></div>
 </div>
 <div id="capabilities" class="section level2">
 <h2 class="hasAnchor">
