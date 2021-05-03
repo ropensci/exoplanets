@@ -137,13 +137,13 @@
     <span class="st">"pl_massj"</span>,
     <span class="st">"discoverymethod"</span>
   <span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; [38;5;246m# A tibble: 4 x 2[39m</span>
-<span class="co">#&gt;   database_column_name description                                                                  </span>
-<span class="co">#&gt;   [3m[38;5;246m&lt;chr&gt;[39m[23m                [3m[38;5;246m&lt;chr&gt;[39m[23m                                                                        </span>
-<span class="co">#&gt; [38;5;250m1[39m pl_name              Planet name most commonly used in the literature                             </span>
-<span class="co">#&gt; [38;5;250m2[39m discoverymethod      Method by which the planet was first identified                              </span>
-<span class="co">#&gt; [38;5;250m3[39m pl_orbper            Time the planet takes to make a complete orbit around the host star or system</span>
-<span class="co">#&gt; [38;5;250m4[39m pl_massj             Amount of matter contained in the planet, measured in units of masses of Jup…</span></code></pre></div>
+<span class="co">#&gt; # A tibble: 4 x 2</span>
+<span class="co">#&gt;   database_column_name description                                                                 </span>
+<span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt;                                                                       </span>
+<span class="co">#&gt; 1 pl_name              Planet name most commonly used in the literature                            </span>
+<span class="co">#&gt; 2 discoverymethod      Method by which the planet was first identified                             </span>
+<span class="co">#&gt; 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or syst…</span>
+<span class="co">#&gt; 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of Ju…</span></code></pre></div>
 <p>In general, if you have a specific set of columns you need, requesting those columns will be quicker than requesting all columns (default behavior). Let’s request only what we need.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">discovery</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/exoplanets.html">exoplanets</a></span><span class="op">(</span>
@@ -156,9 +156,9 @@
   <span class="op">)</span>,
   progress <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
-<span class="co">#&gt; ● https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&amp;format=csv</span>
+<span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&amp;format=csv</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; ── Column specification ───────────────────────────────────────────────────────────────────────────</span>
 <span class="co">#&gt; cols(</span>
 <span class="co">#&gt;   pl_name = col_character(),</span>
 <span class="co">#&gt;   pl_orbper = col_double(),</span>
@@ -167,20 +167,20 @@
 <span class="co">#&gt; )</span>
 
 <span class="va">discovery</span>
-<span class="co">#&gt; [38;5;246m# A tibble: 29,398 x 4[39m</span>
+<span class="co">#&gt; # A tibble: 29,398 x 4</span>
 <span class="co">#&gt;    pl_name      pl_orbper pl_massj discoverymethod</span>
-<span class="co">#&gt;    [3m[38;5;246m&lt;chr&gt;[39m[23m            [3m[38;5;246m&lt;dbl&gt;[39m[23m    [3m[38;5;246m&lt;dbl&gt;[39m[23m [3m[38;5;246m&lt;chr&gt;[39m[23m          </span>
-<span class="co">#&gt; [38;5;250m 1[39m Kepler-11 c      13.0     0.042 Transit        </span>
-<span class="co">#&gt; [38;5;250m 2[39m Kepler-11 f      46.7     0.007 Transit        </span>
-<span class="co">#&gt; [38;5;250m 3[39m HAT-P-1 b         4.47    0.532 Transit        </span>
-<span class="co">#&gt; [38;5;250m 4[39m OGLE-TR-10 b      3.10    0.62  Transit        </span>
-<span class="co">#&gt; [38;5;250m 5[39m TrES-2 b          2.47    1.20  Transit        </span>
-<span class="co">#&gt; [38;5;250m 6[39m WASP-3 b          1.85    1.76  Transit        </span>
-<span class="co">#&gt; [38;5;250m 7[39m 47 UMa b       [4m1[24m078      [31mNA[39m     Radial Velocity</span>
-<span class="co">#&gt; [38;5;250m 8[39m 47 UMa d      [4m1[24m[4m4[24m002      [31mNA[39m     Radial Velocity</span>
-<span class="co">#&gt; [38;5;250m 9[39m HD 167042 b     421.     [31mNA[39m     Radial Velocity</span>
-<span class="co">#&gt; [38;5;250m10[39m HD 210702 b     354.     [31mNA[39m     Radial Velocity</span>
-<span class="co">#&gt; [38;5;246m# … with 29,388 more rows[39m</span></code></pre></div>
+<span class="co">#&gt;    &lt;chr&gt;            &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          </span>
+<span class="co">#&gt;  1 Kepler-11 c      13.0     0.042 Transit        </span>
+<span class="co">#&gt;  2 Kepler-11 f      46.7     0.007 Transit        </span>
+<span class="co">#&gt;  3 HAT-P-1 b         4.47    0.532 Transit        </span>
+<span class="co">#&gt;  4 OGLE-TR-10 b      3.10    0.62  Transit        </span>
+<span class="co">#&gt;  5 TrES-2 b          2.47    1.20  Transit        </span>
+<span class="co">#&gt;  6 WASP-3 b          1.85    1.76  Transit        </span>
+<span class="co">#&gt;  7 47 UMa b       1078      NA     Radial Velocity</span>
+<span class="co">#&gt;  8 47 UMa d      14002      NA     Radial Velocity</span>
+<span class="co">#&gt;  9 HD 167042 b     421.     NA     Radial Velocity</span>
+<span class="co">#&gt; 10 HD 210702 b     354.     NA     Radial Velocity</span>
+<span class="co">#&gt; # … with 29,388 more rows</span></code></pre></div>
 <p>Finally, we can recreate the plot.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cols_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#86E57B"</span>, <span class="st">"#77AFD7"</span>, <span class="st">"#DCD955"</span>, <span class="st">"#CFD49C"</span>, <span class="st">"#D5CCD1"</span>, <span class="st">"#84DECA"</span>, <span class="st">"#E15AB9"</span>, <span class="st">"#D4816C"</span>, <span class="st">"#BA91D1"</span>, <span class="st">"#A152DF"</span><span class="op">)</span>
