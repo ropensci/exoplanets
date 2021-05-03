@@ -42,16 +42,36 @@ fetch_data <- function(table, columns, format, progress) {
 #' Retrieve Data from NASAs Exoplanet Archive
 #'
 #' A simple interface for accessing exoplanet data. At the bare minimum, a table
-#' name is required. Tables names are documented in the `tap` dataset.
+#' name is required. Tables names are documented in the `tableinfo` dataset.
 #'
-#' @param table A table name
-#' @param columns A vector of valid column names, by default will return all columns
+#' At one time, this package used the Exoplanet Archive Application Programming
+#' Interface (API). Since then, a handful of tables have been transitioned to
+#' the Table Access Protocol (TAP) service. More tables will be transitioned to
+#' TAP and as such, this package only supports queries from TAP. For more
+#' information, you can read
+#' \url{https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021.}
+#'
+#' @param table A table name, see `tableinfo`
+#' @param columns A vector of valid column names, by default will return all default columns, see `tableinfo`
 #' @param format Desired format, either csv, tsv, or json
 #' @param progress Whether or not to display the progress of the request
 #'
+#' @source \url{https://exoplanetarchive.ipac.caltech.edu/}
+#' @seealso tableinfo
+#'
 #' @examples
 #' if (interactive()) {
-#'   exoplanets("ps", columns = c("pl_name", "pl_massj"))
+#'   # request all default columns from the `ps` table
+#'   exoplanets("ps")
+#'
+#'   # request the planet name and discovery method from the `ps` table
+#'   exoplanets("ps", c("pl_name", "discoverymethod"))
+#'
+#'   # request in json format (returns list)
+#'   exoplanets("ps", c("pl_name", "discoverymethod"), format = "json")
+#'
+#'   # hide progress information
+#'   exoplanets("k2names", progress = FALSE)
 #' }
 #'
 #' @export
