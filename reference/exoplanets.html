@@ -48,7 +48,7 @@
 
 <meta property="og:title" content="Retrieve Data from NASAs Exoplanet Archive — exoplanets" />
 <meta property="og:description" content="A simple interface for accessing exoplanet data. At the bare minimum, a table
-name is required. Tables names are documented in the `tap` dataset." />
+name is required. Tables names are documented in the `tableinfo` dataset." />
 <meta property="og:image" content="/logo.png" />
 
 
@@ -140,7 +140,7 @@ name is required. Tables names are documented in the `tap` dataset." />
 
     <div class="ref-description">
     <p>A simple interface for accessing exoplanet data. At the bare minimum, a table
-name is required. Tables names are documented in the `tap` dataset.</p>
+name is required. Tables names are documented in the `tableinfo` dataset.</p>
     </div>
 
     <pre class="usage"><span class='fu'>exoplanets</span><span class='op'>(</span><span class='va'>table</span>, columns <span class='op'>=</span> <span class='cn'>NULL</span>, format <span class='op'>=</span> <span class='st'>"csv"</span>, progress <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
@@ -150,11 +150,11 @@ name is required. Tables names are documented in the `tap` dataset.</p>
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>table</th>
-      <td><p>A table name</p></td>
+      <td><p>A table name, see `tableinfo`</p></td>
     </tr>
     <tr>
       <th>columns</th>
-      <td><p>A vector of valid column names, by default will return all columns</p></td>
+      <td><p>A vector of valid column names, by default will return all default columns, see `tableinfo`</p></td>
     </tr>
     <tr>
       <th>format</th>
@@ -166,10 +166,34 @@ name is required. Tables names are documented in the `tap` dataset.</p>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='https://exoplanetarchive.ipac.caltech.edu/'>https://exoplanetarchive.ipac.caltech.edu/</a></p>
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>At one time, this package used the Exoplanet Archive Application Programming
+Interface (API). Since then, a handful of tables have been transitioned to
+the Table Access Protocol (TAP) service. More tables will be transitioned to
+TAP and as such, this package only supports queries from TAP. For more
+information, you can read
+<a href='https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021.'>https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021.</a></p>
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p>tableinfo</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/interactive.html'>interactive</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>{</span>
-  <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"ps"</span>, columns <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pl_name"</span>, <span class='st'>"pl_massj"</span><span class='op'>)</span><span class='op'>)</span>
+  <span class='co'># request all default columns from the `ps` table</span>
+  <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"ps"</span><span class='op'>)</span>
+
+  <span class='co'># request the planet name and discovery method from the `ps` table</span>
+  <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"ps"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pl_name"</span>, <span class='st'>"discoverymethod"</span><span class='op'>)</span><span class='op'>)</span>
+
+  <span class='co'># request in json format (returns list)</span>
+  <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"ps"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pl_name"</span>, <span class='st'>"discoverymethod"</span><span class='op'>)</span>, format <span class='op'>=</span> <span class='st'>"json"</span><span class='op'>)</span>
+
+  <span class='co'># hide progress information</span>
+  <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"k2names"</span>, progress <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 <span class='op'>}</span>
 
 </div></pre>
