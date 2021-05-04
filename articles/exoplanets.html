@@ -44,7 +44,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">exoplanets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.0</span>
       </span>
     </div>
 
@@ -138,12 +138,12 @@
     <span class="st">"discoverymethod"</span>
   <span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 4 x 2</span>
-<span class="co">#&gt;   database_column_name description                                                                 </span>
-<span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt;                                                                       </span>
-<span class="co">#&gt; 1 pl_name              Planet name most commonly used in the literature                            </span>
-<span class="co">#&gt; 2 discoverymethod      Method by which the planet was first identified                             </span>
-<span class="co">#&gt; 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or syst…</span>
-<span class="co">#&gt; 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of Ju…</span></code></pre></div>
+<span class="co">#&gt;   database_column_name description                                                                </span>
+<span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt;                                                                      </span>
+<span class="co">#&gt; 1 pl_name              Planet name most commonly used in the literature                           </span>
+<span class="co">#&gt; 2 discoverymethod      Method by which the planet was first identified                            </span>
+<span class="co">#&gt; 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or sys…</span>
+<span class="co">#&gt; 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of J…</span></code></pre></div>
 <p>In general, if you have a specific set of columns you need, requesting those columns will be quicker than requesting all columns (default behavior). Let’s request only what we need.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">discovery</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/exoplanets.html">exoplanets</a></span><span class="op">(</span>
@@ -158,7 +158,7 @@
 <span class="op">)</span>
 <span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&amp;format=csv</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; ── Column specification ───────────────────────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; ── Column specification ──────────────────────────────────────────────────────────────────────────</span>
 <span class="co">#&gt; cols(</span>
 <span class="co">#&gt;   pl_name = col_character(),</span>
 <span class="co">#&gt;   pl_orbper = col_double(),</span>
@@ -226,6 +226,7 @@
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/theme.html">theme</a></span><span class="op">(</span>panel.grid <span class="op">=</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/element.html">element_blank</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></code></pre></div>
 <p><img src="exoplanets_vignette_img-discovery-1.png" title="plot of chunk discovery" alt="plot of chunk discovery" width="100%" style="display: block; margin: auto;"></p>
+<p>And in case you were wondering, we’ve highlighted TRAPPIST-1e, an exoplanet considered to be one of the most potentially habitable exoplanets discovered so far.</p>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
