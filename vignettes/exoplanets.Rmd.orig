@@ -123,3 +123,5 @@ discovery %>%
   theme_bw() +
   theme(panel.grid = element_blank())
 ```
+
+And in case you were wondering, we've highlighted TRAPPIST-1e, an exoplanet considered to be one of the most potentially habitable exoplanets discovered so far.

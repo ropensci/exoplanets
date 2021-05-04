@@ -5,11 +5,18 @@ quiet <- function(x) {
   suppressMessages(invisible(force(x)))
 }
 
+test_that("exoplanets is memoised", {
+  expect_true(memoise::is.memoised(exoplanets))
+})
+
 test_that("parse_url works", {
   # test errors when required parameters aren't given
   expect_error(parse_url())
   expect_error(parse_url("ps"))
   expect_error(parse_url("ps", "*"))
+
+  # test errors when incorrect format given
+  expect_error(parse_url("ps", "*", format = "sqlite"))
 
   # test csv url parsing
   x <- parse_url("ps", "*", "csv")
@@ -134,5 +141,28 @@ with_mock_dir("exoplanets-table-transitspec", {
   test_that("transitspec table works", {
     column <- "centralwavelng"
     expect_true("data.frame" %in% class(quiet(exoplanets("transitspec", column))))
+  })
+})
+
+with_mock_dir("exoplanets-example-1", {
+  test_that("example 1 works", {
+    out <- quiet(exoplanets("ps", c("pl_name", "discoverymethod")))
+    expect_true("data.frame" %in% class(out))
+    expect_true(all(c("pl_name", "discoverymethod") %in% names(out)))
+  })
+})
+
+with_mock_dir("exoplanets-example-2", {
+  test_that("example 2 works", {
+    out <- quiet(exoplanets("ps", c("pl_name", "discoverymethod"), format = "json"))
+    expect_true(all(c("pl_name", "discoverymethod") %in% names(out[[1]])))
+    expect_true(inherits(out, "list"))
+  })
+})
+
+with_mock_dir("exoplanets-example-3", {
+  test_that("example 3 works", {
+    out <- quiet(exoplanets("k2names", progress = FALSE))
+    expect_true("data.frame" %in% class(out))
   })
 })

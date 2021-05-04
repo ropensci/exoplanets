@@ -26,9 +26,9 @@ fetch_data <- function(table, columns, format, progress) {
   cli::cat_bullet(BASE, cli::style_bold(url$query))
 
   if (progress) {
-    r <- httr::GET(url$url, httr::progress())
+    r <- httr::RETRY("GET", url$url, httr::progress())
   } else {
-    r <- httr::GET(url$url)
+    r <- httr::RETRY("GET", url$url)
   }
 
   httr::stop_for_status(r)

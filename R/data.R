@@ -7,5 +7,5 @@
 #' @examples
 #' tableinfo
 #'
-#' @source https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html
+#' @source \url{https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html}
 "tableinfo"
