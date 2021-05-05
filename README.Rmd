@@ -15,7 +15,7 @@ knitr::opts_chunk$set(
 # exoplanets <img src="man/figures/logo.png" align="right" height=150/>
 
 <!-- badges: start -->
-[![R build status](https://github.com/tyluRp/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/exoplanets)
+[![R build status](https://github.com/tyluRp/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/exoplanets/actions/workflows/check-pak.yaml)
 [![Codecov test coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
 <!-- badges: end -->
 
