@@ -2,12 +2,9 @@ Package: exoplanets
 Title: Access NASA's Exoplanet Archive Data, See
     <https://exoplanetarchive.ipac.caltech.edu/index.html>
 Version: 0.2.0
-Authors@R:
-    person(given = "Tyler",
-       family = "Littlefield",
-       role = c("aut", "cre"),
-       email = "tylerlittlefield@hey.com",
-       comment = c(ORCID = "0000-0002-6020-1125"))
+Authors@R: c(
+  person("Tyler", "Littlefield", email = "tylerlittlefield@hey.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6020-1125")),
+  person("Maëlle", "Salmon", role = c("ctb", "rev")))
 Description: The goal of exoplanets is to provide access to
     NASA's Exoplanet Archive TAP Service. For more information regarding
     the API please read the documentation
