@@ -96,8 +96,11 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>You can install the development version from GitHub with:</p>
+<p>You can install from from ropensci’s <em>R-universe</em> repository with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"exoplanets"</span>, repos <span class="op">=</span> <span class="st">"https://ropensci.r-universe.dev"</span><span class="op">)</span></code></pre></div>
+<p>Or you can install from GitHub with:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
 <span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ropensci/exoplanets"</span><span class="op">)</span></code></pre></div>
 </div>
@@ -105,7 +108,7 @@
 <h2 class="hasAnchor">
 <a href="#example" class="anchor"></a>Example</h2>
 <p>This is a basic example which shows you how to access data from the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/API_k2names_columns.html">k2names</a> table:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/exoplanets">exoplanets</a></span><span class="op">)</span>
 
 <span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"k2names"</span>, progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
@@ -125,7 +128,7 @@
 <span class="co">#&gt; 10 EPIC 247589423 K2-136 b K2-136 b    </span>
 <span class="co">#&gt; # … with 439 more rows</span></code></pre></div>
 <p>If you wish, you can select only the columns you need:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"ps"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"pl_name"</span>, <span class="st">"hostname"</span><span class="op">)</span>, progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&amp;format=csv</span>
 <span class="co">#&gt; </span>
@@ -149,7 +152,7 @@
 <span class="co">#&gt; 10 HD 210702 b  HD 210702 </span>
 <span class="co">#&gt; # … with 29,388 more rows</span></code></pre></div>
 <p>Information on the tables and columns available can be found with:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tableinfo</span>
 <span class="co">#&gt; # A tibble: 394 x 13</span>
 <span class="co">#&gt;    table database_column_… table_label description  in_ps_table in_ps_comp_pars…</span>
