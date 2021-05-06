@@ -87,7 +87,13 @@ knitr::include_graphics("man/figures/README-unnamed-chunk-2-1.png")
 
 ## Installation
 
-You can install the development version from GitHub with:
+You can install from from ropensci's *R-universe* repository with:
+
+```r
+install.packages("exoplanets", repos = "https://ropensci.r-universe.dev")
+```
+
+Or you can install from GitHub with:
 
 ``` r
 # install.packages("devtools")

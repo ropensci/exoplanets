@@ -23,7 +23,13 @@ interface to access exoplanet data.
 
 ## Installation
 
-You can install the development version from GitHub with:
+You can install from from ropensci’s *R-universe* repository with:
+
+``` r
+install.packages("exoplanets", repos = "https://ropensci.r-universe.dev")
+```
+
+Or you can install from GitHub with:
 
 ``` r
 # install.packages("devtools")
