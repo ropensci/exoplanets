@@ -6,9 +6,9 @@
 <!-- badges: start -->
 
 [![R build
-status](https://github.com/tyluRp/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/tyluRp/exoplanets/actions/workflows/check-pak.yaml)
+status](https://github.com/ropensci/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/exoplanets/actions/workflows/check-pak.yaml)
 [![Codecov test
-coverage](https://codecov.io/gh/tyluRp/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/tyluRp/exoplanets?branch=master)
+coverage](https://codecov.io/gh/ropensci/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/exoplanets?branch=master)
 <!-- badges: end -->
 
 The goal of exoplanets is to provide access to [NASA’s Exoplanet Archive
@@ -25,7 +25,7 @@ You can install the development version from GitHub with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("tylurp/exoplanets")
+devtools::install_github("ropensci/exoplanets")
 ```
 
 ## Example
@@ -113,6 +113,12 @@ transitioned to the *Table Access Protocol (TAP) service*. More tables
 will be transitioned to TAP and as such, this package only supports
 queries from TAP. For more information, you can read
 <https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021>.
+
+## Code of conduct
+
+Please note that this package is released with a [Contributor Code of
+Conduct](https://ropensci.org/code-of-conduct/). By contributing to this
+project, you agree to abide by its terms.
 
 ## Contributing
 

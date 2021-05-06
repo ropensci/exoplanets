@@ -8,6 +8,7 @@
 * Added memoization to `exoplanets`.
 * Using `httptest` to avoid potential CRAN errors when checking the package.
 * Precompiled vignettes to avoid potential CRAN errors when checking the package.
+* Transferred ownership to ropensci organization.
 
 # exoplanets 0.1.0
 

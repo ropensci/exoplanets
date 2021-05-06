@@ -5,12 +5,12 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "exoplanets",
-  "description": "The goal of exoplanets is to provide access to NASA's Exoplanet \n  Archive database by supplying a table name or by writing the URL query \n  manually. For more information regarding the API please read the \n  documentation <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
-  "name": "exoplanets: Access NASA's Exoplanet Archive Data, See \n  <https://exoplanetarchive.ipac.caltech.edu/index.html>",
-  "codeRepository": "https://github.com/tyluRp/exoplanets",
-  "issueTracker": "https://github.com/tyluRp/exoplanets/issues",
+  "description": "The goal of exoplanets is to provide access to\n    NASA's Exoplanet Archive TAP Service. For more information regarding\n    the API please read the documentation\n    <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
+  "name": "exoplanets: Access NASA's Exoplanet Archive Data, See\n    <https://exoplanetarchive.ipac.caltech.edu/index.html>",
+  "codeRepository": "https://github.com/ropensci/exoplanets",
+  "issueTracker": "https://github.com/ropensci/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -26,7 +26,13 @@
       "@id": "https://orcid.org/0000-0002-6020-1125"
     }
   ],
-  "contributor": {},
+  "contributor": [
+    {
+      "@type": "Person",
+      "givenName": "Maëlle",
+      "familyName": "Salmon"
+    }
+  ],
   "copyrightHolder": {},
   "funder": {},
   "maintainer": [
@@ -41,19 +47,6 @@
   "softwareSuggestions": [
     {
       "@type": "SoftwareApplication",
-      "identifier": "testthat",
-      "name": "testthat",
-      "version": ">= 3.0.0",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=testthat"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "covr",
       "name": "covr",
       "provider": {
@@ -63,30 +56,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=covr"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "knitr",
-      "name": "knitr",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=knitr"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "rmarkdown",
-      "name": "rmarkdown",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
     },
     {
       "@type": "SoftwareApplication",
@@ -114,6 +83,42 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "httptest",
+      "name": "httptest",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=httptest"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "scales",
       "name": "scales",
       "provider": {
@@ -123,6 +128,19 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=scales"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 3.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
   "softwareRequirements": [
@@ -131,42 +149,6 @@
       "identifier": "R",
       "name": "R",
       "version": ">= 2.10"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "memoise",
-      "name": "memoise",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=memoise"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "tibble",
-      "name": "tibble",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=tibble"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "httr",
-      "name": "httr",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=httr"
     },
     {
       "@type": "SoftwareApplication",
@@ -182,6 +164,30 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "httr",
+      "name": "httr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=httr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "memoise",
+      "name": "memoise",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=memoise"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "readr",
       "name": "readr",
       "provider": {
@@ -191,16 +197,29 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "tibble",
+      "name": "tibble",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=tibble"
     }
   ],
-  "readme": "https://github.com/tyluRp/exoplanets/blob/master/README.md",
-  "fileSize": "3739.23KB",
-  "contIntegration": "https://codecov.io/gh/tyluRp/exoplanets?branch=master",
+  "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
+  "fileSize": "5932.989KB",
+  "contIntegration": "https://codecov.io/gh/ropensci/exoplanets?branch=master",
   "keywords": [
     "rstats",
     "nasa",
     "exoplanets",
     "api"
   ],
-  "releaseNotes": "https://github.com/tyluRp/exoplanets/blob/master/NEWS.md"
+  "releaseNotes": "https://github.com/ropensci/exoplanets/blob/master/NEWS.md",
+  "relatedLink": "https://docs.ropensci.org/exoplanets"
 }
