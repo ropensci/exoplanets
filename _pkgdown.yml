@@ -1,8 +1,5 @@
 URL: https://docs.ropensci.org/exoplanets
 
-template:
-  package: rotemplate
-
 reference:
 - title: Functions
   desc: ~
