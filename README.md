@@ -122,14 +122,8 @@ will be transitioned to TAP and as such, this package only supports
 queries from TAP. For more information, you can read
 <https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021>.
 
-## Code of conduct
+## Contributing
 
 Please note that this package is released with a [Contributor Code of
 Conduct](https://ropensci.org/code-of-conduct/). By contributing to this
 project, you agree to abide by its terms.
-
-## Contributing
-
-Please note that the ‘exoplanets’ project is released with a
-[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
-this project, you agree to abide by its terms.
