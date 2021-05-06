@@ -9,6 +9,8 @@
 status](https://github.com/ropensci/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/exoplanets/actions/workflows/check-pak.yaml)
 [![Codecov test
 coverage](https://codecov.io/gh/ropensci/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/exoplanets?branch=master)
+[![Peer
+review](https://badges.ropensci.org/309_status.svg)](https://github.com/ropensci/software-review/issues/309)
 <!-- badges: end -->
 
 The goal of exoplanets is to provide access to [NASA’s Exoplanet Archive
