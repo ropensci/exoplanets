@@ -1,8 +1,7 @@
-destination: docs
+URL: https://docs.ropensci.org/exoplanets
+
 template:
-  params:
-    bootswatch: lumen
-    ganalytics: UA-106175087-5
+  package: rotemplate
 
 reference:
 - title: Functions
