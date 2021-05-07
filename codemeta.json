@@ -212,7 +212,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
-  "fileSize": "5932.989KB",
+  "fileSize": "5933.755KB",
   "contIntegration": "https://codecov.io/gh/ropensci/exoplanets?branch=master",
   "keywords": [
     "rstats",
@@ -221,5 +221,10 @@
     "api"
   ],
   "releaseNotes": "https://github.com/ropensci/exoplanets/blob/master/NEWS.md",
-  "relatedLink": "https://docs.ropensci.org/exoplanets"
+  "relatedLink": ["https://docs.ropensci.org/exoplanets", "https://docs.ropensci.org/exoplanets/"],
+  "review": {
+    "@type": "Review",
+    "url": "https://github.com/ropensci/software-review/issues/309",
+    "provider": "https://ropensci.org"
+  }
 }
