@@ -5,8 +5,6 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 2 notes
+0 errors | 0 warnings | 1 note
 
-* This is a resubmission. In this submission I have updated the package to use the 'new' API as the 'old' is in the process of being deprecated.
-
-* 1 note is for new submission, the other is for title case in the descriptions 'Title' field as the url is not title case.
+* This is a resubmission. In this submission I have updated the title to remove the API URL which this package uses.
