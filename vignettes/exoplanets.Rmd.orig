@@ -32,7 +32,7 @@ We will need a couple of columns to recreate the plot:
 
 To identify the column names that represent these things, we have two options:
 
-* Consult the documention at https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html
+* Consult the documentation at https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html
 * Review the table information with `tableinfo`
 
 I'd encourage you to read the documentation if you're interested in all the details, it is especially useful to familiarize yourself with what you need. In this example, we are interested in the Planetary Systems (PS) table. Per the documentation you will find:

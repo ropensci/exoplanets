@@ -58,6 +58,9 @@ fetch_data <- function(table, columns, format, progress) {
 #'
 #' @source \url{https://exoplanetarchive.ipac.caltech.edu/}
 #' @seealso tableinfo
+#' @returns
+#' A \code{data.frame} if \code{format="csv"} or \code{format="tsv"}.
+#' A \code{list} if \code{format="json"}.
 #'
 #' @examples
 #' if (interactive()) {

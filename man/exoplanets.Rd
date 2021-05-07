@@ -18,6 +18,10 @@ exoplanets(table, columns = NULL, format = "csv", progress = TRUE)
 
 \item{progress}{Whether or not to display the progress of the request}
 }
+\value{
+A \code{data.frame} if \code{format="csv"} or \code{format="tsv"}.
+A \code{list} if \code{format="json"}.
+}
 \description{
 A simple interface for accessing exoplanet data. At the bare minimum, a table
 name is required. Tables names are documented in the `tableinfo` dataset.
