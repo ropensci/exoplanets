@@ -92,7 +92,7 @@
     
 <p>In this vignette, we will cover all functionality in <code>exoplanets</code> by recreating the discovery plot shown in the packages README file. First, we’ll need to load the package.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/exoplanets">exoplanets</a></span><span class="op">)</span>
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/exoplanets/">exoplanets</a></span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org">dplyr</a></span>, warn.conflicts <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span></code></pre></div>
 <p>We will need a couple of columns to recreate the plot:</p>
@@ -104,7 +104,7 @@
 </ul>
 <p>To identify the column names that represent these things, we have two options:</p>
 <ul>
-<li>Consult the documention at <a href="https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html" class="uri">https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html</a>
+<li>Consult the documentation at <a href="https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html" class="uri">https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html</a>
 </li>
 <li>Review the table information with <code>tableinfo</code>
 </li>
@@ -150,15 +150,6 @@
   <span class="op">)</span>,
   progress <span class="op">=</span> <span class="cn">FALSE</span>
 <span class="op">)</span>
-<span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&amp;format=csv</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; ── Column specification ──────────────────────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; cols(</span>
-<span class="co">#&gt;   pl_name = col_character(),</span>
-<span class="co">#&gt;   pl_orbper = col_double(),</span>
-<span class="co">#&gt;   pl_massj = col_double(),</span>
-<span class="co">#&gt;   discoverymethod = col_character()</span>
-<span class="co">#&gt; )</span>
 
 <span class="va">discovery</span>
 <span class="co">#&gt; # A tibble: 29,398 x 4</span>
