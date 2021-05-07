@@ -6,7 +6,7 @@
   "@type": "SoftwareSourceCode",
   "identifier": "exoplanets",
   "description": "The goal of exoplanets is to provide access to\n    NASA's Exoplanet Archive TAP Service. For more information regarding\n    the API please read the documentation\n    <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
-  "name": "exoplanets: Access NASA's Exoplanet Archive Data, See\n    <https://exoplanetarchive.ipac.caltech.edu/index.html>",
+  "name": "exoplanets: Access NASA's Exoplanet Archive Data",
   "codeRepository": "https://github.com/ropensci/exoplanets",
   "issueTracker": "https://github.com/ropensci/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
@@ -212,7 +212,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
-  "fileSize": "5933.755KB",
+  "fileSize": "5934.01KB",
   "contIntegration": "https://codecov.io/gh/ropensci/exoplanets?branch=master",
   "keywords": [
     "rstats",
@@ -221,7 +221,10 @@
     "api"
   ],
   "releaseNotes": "https://github.com/ropensci/exoplanets/blob/master/NEWS.md",
-  "relatedLink": ["https://docs.ropensci.org/exoplanets", "https://docs.ropensci.org/exoplanets/"],
+  "relatedLink": [
+    "https://docs.ropensci.org/exoplanets",
+    "https://docs.ropensci.org/exoplanets/"
+  ],
   "review": {
     "@type": "Review",
     "url": "https://github.com/ropensci/software-review/issues/309",
