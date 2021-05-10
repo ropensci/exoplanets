@@ -10,7 +10,7 @@
   "codeRepository": "https://github.com/ropensci/exoplanets",
   "issueTracker": "https://github.com/ropensci/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.2.0",
+  "version": "0.2.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -212,7 +212,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
-  "fileSize": "5934.01KB",
+  "fileSize": "5934.071KB",
   "contIntegration": "https://codecov.io/gh/ropensci/exoplanets?branch=master",
   "keywords": [
     "rstats",
@@ -223,11 +223,18 @@
   "releaseNotes": "https://github.com/ropensci/exoplanets/blob/master/NEWS.md",
   "relatedLink": [
     "https://docs.ropensci.org/exoplanets",
-    "https://docs.ropensci.org/exoplanets/"
+    "https://docs.ropensci.org/exoplanets/",
+    "https://CRAN.R-project.org/package=exoplanets"
   ],
   "review": {
     "@type": "Review",
     "url": "https://github.com/ropensci/software-review/issues/309",
     "provider": "https://ropensci.org"
+  },
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
   }
 }
