@@ -18,6 +18,8 @@ knitr::opts_chunk$set(
 [![R build status](https://github.com/ropensci/exoplanets/workflows/R-CMD-check/badge.svg)](https://github.com/ropensci/exoplanets/actions/workflows/check-pak.yaml)
 [![Codecov test coverage](https://codecov.io/gh/ropensci/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/exoplanets?branch=master)
 [![Peer review](https://badges.ropensci.org/309_status.svg)](https://github.com/ropensci/software-review/issues/309)
+[![CRAN status](https://www.r-pkg.org/badges/version/exoplanets)](https://CRAN.R-project.org/package=exoplanets)
+[![CRAN_Download_Badge](https://cranlogs.r-pkg.org/badges/exoplanets)](https://cran.r-project.org/package=exoplanets)
 <!-- badges: end -->
 
 The goal of exoplanets is to provide access to [NASA's Exoplanet Archive TAP Service](https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html). The functionality of this package is minimal and is simply an R interface to access exoplanet data.
@@ -87,10 +89,10 @@ knitr::include_graphics("man/figures/README-unnamed-chunk-2-1.png")
 
 ## Installation
 
-You can install from from ropensci's *R-universe* repository with:
+Install the released version of `exoplanets` from CRAN:
 
 ```r
-install.packages("exoplanets", repos = "https://ropensci.r-universe.dev")
+install.packages("exoplanets")
 ```
 
 Or you can install from GitHub with:

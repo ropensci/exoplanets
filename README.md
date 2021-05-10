@@ -11,6 +11,9 @@ status](https://github.com/ropensci/exoplanets/workflows/R-CMD-check/badge.svg)]
 coverage](https://codecov.io/gh/ropensci/exoplanets/branch/master/graph/badge.svg)](https://codecov.io/gh/ropensci/exoplanets?branch=master)
 [![Peer
 review](https://badges.ropensci.org/309_status.svg)](https://github.com/ropensci/software-review/issues/309)
+[![CRAN
+status](https://www.r-pkg.org/badges/version/exoplanets)](https://CRAN.R-project.org/package=exoplanets)
+[![CRAN\_Download\_Badge](https://cranlogs.r-pkg.org/badges/exoplanets)](https://cran.r-project.org/package=exoplanets)
 <!-- badges: end -->
 
 The goal of exoplanets is to provide access to [NASA’s Exoplanet Archive
@@ -23,10 +26,10 @@ interface to access exoplanet data.
 
 ## Installation
 
-You can install from from ropensci’s *R-universe* repository with:
+Install the released version of `exoplanets` from CRAN:
 
 ``` r
-install.packages("exoplanets", repos = "https://ropensci.r-universe.dev")
+install.packages("exoplanets")
 ```
 
 Or you can install from GitHub with:
