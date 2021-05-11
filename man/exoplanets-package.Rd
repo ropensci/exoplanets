@@ -2,8 +2,8 @@
 % Please edit documentation in R/exoplanets-package.R
 \docType{package}
 \name{exoplanets-package}
-\alias{exoplanets}
 \alias{exoplanets-package}
+\alias{_PACKAGE}
 \title{exoplanets: Access NASA's Exoplanet Archive Data}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
