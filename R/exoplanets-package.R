@@ -1,3 +1,4 @@
+#' @aliases exoplanets-package
 #' @keywords internal
 "_PACKAGE"
 
