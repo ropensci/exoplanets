@@ -1,5 +1,8 @@
 # exoplanets (development version)
 
+* Added `forget_exoplanets` to clear the `exoplanets` cache.
+* Added pacakge level documentation with `usethis::use_package_doc`.
+
 # exoplanets 0.2.0
 
 * Complete rewrite to work with the new TAP service: https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html
