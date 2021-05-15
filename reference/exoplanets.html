@@ -133,30 +133,36 @@ name is required. Tables names are documented in the `tableinfo` dataset." />
 name is required. Tables names are documented in the `tableinfo` dataset.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>exoplanets</span><span class='op'>(</span><span class='va'>table</span>, columns <span class='op'>=</span> <span class='cn'>NULL</span>, limit <span class='op'>=</span> <span class='cn'>Inf</span>, format <span class='op'>=</span> <span class='st'>"csv"</span>, progress <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>exoplanets</span><span class='op'>(</span>
+  <span class='va'>table</span>,
+  columns <span class='op'>=</span> <span class='cn'>NULL</span>,
+  limit <span class='op'>=</span> <span class='cn'>NULL</span>,
+  format <span class='op'>=</span> <span class='st'>"csv"</span>,
+  progress <span class='op'>=</span> <span class='cn'>TRUE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>table</th>
-      <td><p>A table name, see `tableinfo`</p></td>
+      <td><p>A table name, see `tableinfo`.</p></td>
     </tr>
     <tr>
       <th>columns</th>
-      <td><p>A vector of valid column names, by default will return all default columns, see `tableinfo`</p></td>
+      <td><p>A vector of valid column names, by default will return all default columns, see `tableinfo`.</p></td>
     </tr>
     <tr>
       <th>limit</th>
-      <td><p>Number of rows to return. Defaulted to `Inf`, which returns all data in table.</p></td>
+      <td><p>Number of rows to return. If NULL, returns all data in the table.</p></td>
     </tr>
     <tr>
       <th>format</th>
-      <td><p>Desired format, either csv, tsv, or json</p></td>
+      <td><p>Desired format, either csv, tsv, or json.</p></td>
     </tr>
     <tr>
       <th>progress</th>
-      <td><p>Whether or not to display the progress of the request</p></td>
+      <td><p>Whether or not to display the progress of the request.</p></td>
     </tr>
     </table>
 
@@ -188,7 +194,7 @@ information, you can read
   <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"ps"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pl_name"</span>, <span class='st'>"discoverymethod"</span><span class='op'>)</span><span class='op'>)</span>
 
   <span class='co'># request the first 5 rows from the `keplernames` table</span>
-  <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"keplernames"</span>, <span class='st'>"*"</span>, limit <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
+  <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"keplernames"</span>, limit <span class='op'>=</span> <span class='fl'>5</span><span class='op'>)</span>
 
   <span class='co'># request in json format (returns list)</span>
   <span class='fu'>exoplanets</span><span class='op'>(</span><span class='st'>"ps"</span>, <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"pl_name"</span>, <span class='st'>"discoverymethod"</span><span class='op'>)</span>, format <span class='op'>=</span> <span class='st'>"json"</span><span class='op'>)</span>
