@@ -73,6 +73,9 @@ fetch_data <- function(table, columns, limit, format, progress) {
 #'   # request the planet name and discovery method from the `ps` table
 #'   exoplanets("ps", c("pl_name", "discoverymethod"))
 #'
+#'   # request the first 5 rows from the `keplernames` table
+#'   exoplanets("keplernames", "*", limit = 5)
+#'
 #'   # request in json format (returns list)
 #'   exoplanets("ps", c("pl_name", "discoverymethod"), format = "json")
 #'

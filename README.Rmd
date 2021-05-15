@@ -118,6 +118,12 @@ If you wish, you can select only the columns you need:
 exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
 ```
 
+You can also specify the number of rows returned using `limit`:
+
+```{r}
+exoplanets("keplernames", columns = "*", limit = 5, progress = FALSE)
+```
+
 Information on the tables and columns available can be found with:
 
 ```{r}

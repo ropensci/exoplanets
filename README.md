@@ -22,7 +22,7 @@ Service](https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html).
 The functionality of this package is minimal and is simply an R
 interface to access exoplanet data.
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" title="Exoplanets color coded by discovery method" alt="Exoplanets color coded by discovery method" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
 
 ## Installation
 
@@ -91,6 +91,29 @@ exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
 #>  9 HD 167042 b  HD 167042 
 #> 10 HD 210702 b  HD 210702 
 #> # … with 29,388 more rows
+```
+
+You can also specify the number of rows returned using `limit`:
+
+``` r
+exoplanets("keplernames", columns = "*", limit = 5, progress = FALSE)
+#> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&format=csv
+#> 
+#> ── Column specification ────────────────────────────────────────────────────────
+#> cols(
+#>   kepid = col_double(),
+#>   koi_name = col_character(),
+#>   kepler_name = col_character(),
+#>   pl_name = col_character()
+#> )
+#> # A tibble: 5 x 4
+#>     kepid koi_name  kepler_name   pl_name      
+#>     <dbl> <chr>     <chr>         <chr>        
+#> 1 7515212 K00679.02 Kepler-212 b  Kepler-212 b 
+#> 2 8210018 K02762.01 Kepler-1341 b Kepler-1341 b
+#> 3 9008737 K02768.01 Kepler-404 b  Kepler-404 b 
+#> 4 4833421 K00232.05 Kepler-122 f  Kepler-122 f 
+#> 5 9963524 K00720.02 Kepler-221 d  Kepler-221 d
 ```
 
 Information on the tables and columns available can be found with:
