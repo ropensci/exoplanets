@@ -89,7 +89,7 @@
 <!-- badges: start -->
 
 <p>The goal of exoplanets is to provide access to <a href="https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html">NASA’s Exoplanet Archive TAP Service</a>. The functionality of this package is minimal and is simply an R interface to access exoplanet data.</p>
-<p><img src="reference/figures/README-unnamed-chunk-2-1.png" title="Exoplanets color coded by discovery method" alt="Exoplanets color coded by discovery method" width="100%"></p>
+<p><img src="reference/figures/README-unnamed-chunk-2-1.png" width="100%"></p>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
@@ -148,8 +148,28 @@
 <span class="co">#&gt;  9 HD 167042 b  HD 167042 </span>
 <span class="co">#&gt; 10 HD 210702 b  HD 210702 </span>
 <span class="co">#&gt; # … with 29,388 more rows</span></code></pre></div>
-<p>Information on the tables and columns available can be found with:</p>
+<p>You can also specify the number of rows returned using <code>limit</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"keplernames"</span>, columns <span class="op">=</span> <span class="st">"*"</span>, limit <span class="op">=</span> <span class="fl">5</span>, progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&amp;format=csv</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   kepid = col_double(),</span>
+<span class="co">#&gt;   koi_name = col_character(),</span>
+<span class="co">#&gt;   kepler_name = col_character(),</span>
+<span class="co">#&gt;   pl_name = col_character()</span>
+<span class="co">#&gt; )</span>
+<span class="co">#&gt; # A tibble: 5 x 4</span>
+<span class="co">#&gt;     kepid koi_name  kepler_name   pl_name      </span>
+<span class="co">#&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;        </span>
+<span class="co">#&gt; 1 7515212 K00679.02 Kepler-212 b  Kepler-212 b </span>
+<span class="co">#&gt; 2 8210018 K02762.01 Kepler-1341 b Kepler-1341 b</span>
+<span class="co">#&gt; 3 9008737 K02768.01 Kepler-404 b  Kepler-404 b </span>
+<span class="co">#&gt; 4 4833421 K00232.05 Kepler-122 f  Kepler-122 f </span>
+<span class="co">#&gt; 5 9963524 K00720.02 Kepler-221 d  Kepler-221 d</span></code></pre></div>
+<p>Information on the tables and columns available can be found with:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tableinfo</span>
 <span class="co">#&gt; # A tibble: 394 x 13</span>
 <span class="co">#&gt;    table database_column_… table_label description  in_ps_table in_ps_comp_pars…</span>
