@@ -38,11 +38,11 @@ test_that("parse_url works", {
   expect_equal(x$query, "select+epic_id,k2_name+from+k2names+top+10&format=json")
   expect_equal(x$url, "https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+epic_id,k2_name+from+k2names+top+10&format=json")
 
-  # test tsv url parsing & limit = Inf
-  x <- parse_url("k2names", c("epic_id", "k2_name"), Inf, "tsv")
+  # test tsv url parsing & limit = NULL
+  x <- parse_url("k2names", c("epic_id", "k2_name"), NULL, "tsv")
   expect_equal(x$table, "k2names")
   expect_equal(x$columns, "epic_id,k2_name")
-  expect_equal(x$limit, Inf)
+  expect_equal(x$limit, NULL)
   expect_equal(x$format, "tsv")
   expect_equal(x$type, "text/tab-separated-values")
   expect_equal(x$query, "select+epic_id,k2_name+from+k2names&format=tsv")
@@ -167,5 +167,12 @@ with_mock_dir("exoplanets-example-3", {
   test_that("example 3 works", {
     r <- quiet(exoplanets("k2names", progress = FALSE))
     expect_s3_class(r, "data.frame")
+  })
+})
+
+with_mock_dir("exoplanets-limit", {
+  test_that("limit parameter works", {
+    r <- quiet(exoplanets("keplernames", limit = 5, progress = FALSE))
+    expect_equal(nrow(r), 5)
   })
 })

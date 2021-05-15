@@ -1,0 +1,6 @@
+kepid,koi_name,kepler_name,pl_name
+"7515212","K00679.02","Kepler-212 b","Kepler-212 b"
+"8210018","K02762.01","Kepler-1341 b","Kepler-1341 b"
+"9008737","K02768.01","Kepler-404 b","Kepler-404 b"
+"4833421","K00232.05","Kepler-122 f","Kepler-122 f"
+"9963524","K00720.02","Kepler-221 d","Kepler-221 d"

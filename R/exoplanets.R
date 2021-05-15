@@ -4,7 +4,7 @@ parse_url <- function(table, columns, limit, format) {
   }
 
   columns <- paste0(columns, collapse = ",")
-  q_lim <- ifelse(limit == Inf, "", paste0("+top+", limit))
+  q_lim <- ifelse(is.null(limit), "", paste0("+top+", limit))
   query <- paste0("select+", columns, "+from+", table, q_lim, "&format=", format)
   url <- paste0(BASE, query)
   type <- switch (format,
@@ -53,11 +53,11 @@ fetch_data <- function(table, columns, limit, format, progress) {
 #' information, you can read
 #' \url{https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021.}
 #'
-#' @param table A table name, see `tableinfo`
-#' @param columns A vector of valid column names, by default will return all default columns, see `tableinfo`
-#' @param limit Number of rows to return. Defaulted to `Inf`, which returns all data in table.
-#' @param format Desired format, either csv, tsv, or json
-#' @param progress Whether or not to display the progress of the request
+#' @param table A table name, see `tableinfo`.
+#' @param columns A vector of valid column names, by default will return all default columns, see `tableinfo`.
+#' @param limit Number of rows to return. If NULL, returns all data in the table.
+#' @param format Desired format, either csv, tsv, or json.
+#' @param progress Whether or not to display the progress of the request.
 #'
 #' @source \url{https://exoplanetarchive.ipac.caltech.edu/}
 #' @seealso tableinfo
@@ -74,7 +74,7 @@ fetch_data <- function(table, columns, limit, format, progress) {
 #'   exoplanets("ps", c("pl_name", "discoverymethod"))
 #'
 #'   # request the first 5 rows from the `keplernames` table
-#'   exoplanets("keplernames", "*", limit = 5)
+#'   exoplanets("keplernames", limit = 5)
 #'
 #'   # request in json format (returns list)
 #'   exoplanets("ps", c("pl_name", "discoverymethod"), format = "json")
@@ -84,7 +84,7 @@ fetch_data <- function(table, columns, limit, format, progress) {
 #' }
 #'
 #' @export
-exoplanets <- function(table, columns = NULL, limit = Inf, format = "csv", progress = TRUE) {
+exoplanets <- function(table, columns = NULL, limit = NULL, format = "csv", progress = TRUE) {
   if (is.null(columns)) columns <- "*"
   fetch_data(table, columns, limit, format, progress)
 }

@@ -31,6 +31,11 @@
       "@type": "Person",
       "givenName": "Maëlle",
       "familyName": "Salmon"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Mathida",
+      "familyName": "Chuk"
     }
   ],
   "copyrightHolder": {},
@@ -212,7 +217,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
-  "fileSize": "5935.53KB",
+  "fileSize": "8102.134KB",
   "contIntegration": "https://codecov.io/gh/ropensci/exoplanets?branch=master",
   "keywords": [
     "rstats",

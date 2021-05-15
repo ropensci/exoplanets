@@ -22,7 +22,7 @@ Service](https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html).
 The functionality of this package is minimal and is simply an R
 interface to access exoplanet data.
 
-<img src="man/figures/README-unnamed-chunk-2-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-2-1.png" title="Exoplanets color coded by discovery method" alt="Exoplanets color coded by discovery method" width="100%" />
 
 ## Installation
 
@@ -96,7 +96,7 @@ exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
 You can also specify the number of rows returned using `limit`:
 
 ``` r
-exoplanets("keplernames", columns = "*", limit = 5, progress = FALSE)
+exoplanets("keplernames", limit = 5, progress = FALSE)
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&format=csv
 #> 
 #> ── Column specification ────────────────────────────────────────────────────────
