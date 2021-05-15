@@ -2,6 +2,7 @@
 
 * Added `forget_exoplanets` to clear the `exoplanets` cache.
 * Added pacakge level documentation with `usethis::use_package_doc`.
+* Added a `quiet` parameter to `exoplanets` so that messages can be suppressed.
 
 # exoplanets 0.2.0
 

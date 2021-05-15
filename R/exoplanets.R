@@ -55,6 +55,7 @@ fetch_data <- function(table, columns, format, progress) {
 #' @param columns A vector of valid column names, by default will return all default columns, see `tableinfo`
 #' @param format Desired format, either csv, tsv, or json
 #' @param progress Whether or not to display the progress of the request
+#' @param quiet If TRUE, all messages will be silenced
 #'
 #' @source \url{https://exoplanetarchive.ipac.caltech.edu/}
 #' @seealso tableinfo
@@ -78,7 +79,10 @@ fetch_data <- function(table, columns, format, progress) {
 #' }
 #'
 #' @export
-exoplanets <- function(table, columns = NULL, format = "csv", progress = TRUE) {
+exoplanets <- function(table, columns = NULL, format = "csv", progress = TRUE, quiet = FALSE) {
   if (is.null(columns)) columns <- "*"
-  fetch_data(table, columns, format, progress)
+  if (quiet)
+    quiet(fetch_data(table, columns, format, progress))
+  else
+    fetch_data(table, columns, format, progress)
 }

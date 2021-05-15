@@ -7,7 +7,13 @@
 \url{https://exoplanetarchive.ipac.caltech.edu/}
 }
 \usage{
-exoplanets(table, columns = NULL, format = "csv", progress = TRUE)
+exoplanets(
+  table,
+  columns = NULL,
+  format = "csv",
+  progress = TRUE,
+  quiet = FALSE
+)
 }
 \arguments{
 \item{table}{A table name, see `tableinfo`}
@@ -17,6 +23,8 @@ exoplanets(table, columns = NULL, format = "csv", progress = TRUE)
 \item{format}{Desired format, either csv, tsv, or json}
 
 \item{progress}{Whether or not to display the progress of the request}
+
+\item{quiet}{If TRUE, all messages will be silenced}
 }
 \value{
 A \code{data.frame} if \code{format="csv"} or \code{format="tsv"}.
