@@ -1,7 +1,8 @@
 # exoplanets (development version)
 
 * Added `forget_exoplanets` to clear the `exoplanets` cache.
-* Added pacakge level documentation with `usethis::use_package_doc`.
+* Added package level documentation with `usethis::use_package_doc`.
+* Added `limit` parameter to `exoplanets`.
 
 # exoplanets 0.2.0
 

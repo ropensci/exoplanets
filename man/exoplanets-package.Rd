@@ -27,6 +27,7 @@ Useful links:
 Other contributors:
 \itemize{
   \item Maëlle Salmon [contributor, reviewer]
+  \item Mathida Chuk [contributor]
 }
 
 }

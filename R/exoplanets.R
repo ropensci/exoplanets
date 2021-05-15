@@ -1,10 +1,11 @@
-parse_url <- function(table, columns, format) {
+parse_url <- function(table, columns, limit, format) {
   if (!format %in% FORMATS) {
     stop("Expected formats are:", paste0("\n* ", FORMATS), call. = FALSE)
   }
 
   columns <- paste0(columns, collapse = ",")
-  query <- paste0("select+", columns, "+from+", table, "&format=", format)
+  q_lim <- ifelse(limit == Inf, "", paste0("+top+", limit))
+  query <- paste0("select+", columns, "+from+", table, q_lim, "&format=", format)
   url <- paste0(BASE, query)
   type <- switch (format,
     "csv" = "text/csv",
@@ -16,13 +17,14 @@ parse_url <- function(table, columns, format) {
     query = query,
     table = table,
     columns = columns,
+    limit = limit,
     format = format,
     type = type
   )
 }
 
-fetch_data <- function(table, columns, format, progress) {
-  url <- parse_url(table, columns, format)
+fetch_data <- function(table, columns, limit, format, progress) {
+  url <- parse_url(table, columns, limit, format)
   cli::cat_bullet(BASE, cli::style_bold(url$query))
 
   if (progress) {
@@ -53,6 +55,7 @@ fetch_data <- function(table, columns, format, progress) {
 #'
 #' @param table A table name, see `tableinfo`
 #' @param columns A vector of valid column names, by default will return all default columns, see `tableinfo`
+#' @param limit Number of rows to return. Defaulted to `Inf`, which returns all data in table.
 #' @param format Desired format, either csv, tsv, or json
 #' @param progress Whether or not to display the progress of the request
 #'
@@ -70,6 +73,9 @@ fetch_data <- function(table, columns, format, progress) {
 #'   # request the planet name and discovery method from the `ps` table
 #'   exoplanets("ps", c("pl_name", "discoverymethod"))
 #'
+#'   # request the first 5 rows from the `keplernames` table
+#'   exoplanets("keplernames", "*", limit = 5)
+#'
 #'   # request in json format (returns list)
 #'   exoplanets("ps", c("pl_name", "discoverymethod"), format = "json")
 #'
@@ -78,7 +84,7 @@ fetch_data <- function(table, columns, format, progress) {
 #' }
 #'
 #' @export
-exoplanets <- function(table, columns = NULL, format = "csv", progress = TRUE) {
+exoplanets <- function(table, columns = NULL, limit = Inf, format = "csv", progress = TRUE) {
   if (is.null(columns)) columns <- "*"
-  fetch_data(table, columns, format, progress)
+  fetch_data(table, columns, limit, format, progress)
 }
