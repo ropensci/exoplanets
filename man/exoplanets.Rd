@@ -7,12 +7,14 @@
 \url{https://exoplanetarchive.ipac.caltech.edu/}
 }
 \usage{
-exoplanets(table, columns = NULL, format = "csv", progress = TRUE)
+exoplanets(table, columns = NULL, limit = Inf, format = "csv", progress = TRUE)
 }
 \arguments{
 \item{table}{A table name, see `tableinfo`}
 
 \item{columns}{A vector of valid column names, by default will return all default columns, see `tableinfo`}
+
+\item{limit}{Number of rows to return. Defaulted to `Inf`, which returns all data in table.}
 
 \item{format}{Desired format, either csv, tsv, or json}
 
