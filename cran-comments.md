@@ -5,6 +5,6 @@
 
 ## R CMD check results
 
-0 errors | 0 warnings | 1 note
+0 errors | 0 warnings | 0 note
 
-* This is a resubmission. In this submission I have updated the title to remove the API URL which this package uses.
+* This is a new release. This release includes some minor improvements like cleaning up the `tableinfo` dataset, adding a `limit` parameter to pull n rows of data, and use `options` for silencing messages/progress instead of using parameters.

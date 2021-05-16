@@ -16,7 +16,8 @@ The goal of exoplanets is to provide access to
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://docs.ropensci.org/exoplanets/ (website) https://github.com/ropensci/exoplanets}
+  \item \url{https://docs.ropensci.org/exoplanets/}
+  \item \url{https://github.com/ropensci/exoplanets}
   \item Report bugs at \url{https://github.com/ropensci/exoplanets/issues}
 }
 

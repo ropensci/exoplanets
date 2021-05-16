@@ -10,7 +10,7 @@ Description: The goal of exoplanets is to provide access to
     the API please read the documentation
     <https://exoplanetarchive.ipac.caltech.edu/index.html>.
 License: MIT + file LICENSE
-URL: https://docs.ropensci.org/exoplanets/ (website) https://github.com/ropensci/exoplanets
+URL: https://docs.ropensci.org/exoplanets/, https://github.com/ropensci/exoplanets
 BugReports: https://github.com/ropensci/exoplanets/issues
 Depends:
     R (>= 2.10)
