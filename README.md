@@ -125,17 +125,17 @@ Information on the tables and columns available can be found with:
 tableinfo
 #> # A tibble: 394 x 13
 #>    table database_column_… table_label description  in_ps_table in_ps_comp_pars…
-#>    <chr> <chr>             <chr>       <chr>        <chr>       <chr>           
-#>  1 ps    default_flag      Default Pa… Boolean fla… X           ""              
-#>  2 ps    soltype           Solution T… Disposition… X           ""              
-#>  3 ps    pl_controv_flag   Controvers… Flag indica… X           "X"             
-#>  4 ps    pl_name           Planet Name Planet name… X           "X"             
-#>  5 ps    hostname          Host Name   Stellar nam… X           "X"             
-#>  6 ps    pl_letter         Planet Let… Letter assi… X           "X"             
-#>  7 ps    hd_name           HD ID       Name of the… X           "X"             
-#>  8 ps    hip_name          HIP ID      Name of the… X           "X"             
-#>  9 ps    tic_id            TIC ID      Name of the… X           "X"             
-#> 10 ps    gaia_id           GAIA ID     Name of the… X           "X"             
+#>    <chr> <chr>             <chr>       <chr>        <lgl>       <lgl>           
+#>  1 ps    default_flag      Default Pa… Boolean fla… TRUE        FALSE           
+#>  2 ps    soltype           Solution T… Disposition… TRUE        FALSE           
+#>  3 ps    pl_controv_flag   Controvers… Flag indica… TRUE        TRUE            
+#>  4 ps    pl_name           Planet Name Planet name… TRUE        TRUE            
+#>  5 ps    hostname          Host Name   Stellar nam… TRUE        TRUE            
+#>  6 ps    pl_letter         Planet Let… Letter assi… TRUE        TRUE            
+#>  7 ps    hd_name           HD ID       Name of the… TRUE        TRUE            
+#>  8 ps    hip_name          HIP ID      Name of the… TRUE        TRUE            
+#>  9 ps    tic_id            TIC ID      Name of the… TRUE        TRUE            
+#> 10 ps    gaia_id           GAIA ID     Name of the… TRUE        TRUE            
 #> # … with 384 more rows, and 7 more variables:
 #> #   uncertainties_column_positive_negative <chr>, limit_column <chr>,
 #> #   default <lgl>, notes <chr>, displayed_string_name <chr>, flag_column <lgl>,

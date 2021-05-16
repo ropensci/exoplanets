@@ -135,7 +135,7 @@ tableinfo
 
 ## Capabilities
 
-At one time, this package used the *Exoplanet Archive Application Programming Interface (API)*. Since then, a handful of tables have been transitioned to the *Table Access Protocol (TAP) service*. More tables will be transitioned to TAP and as such, this package only supports queries from TAP. For more information, you can read https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021.
+At one time, this package used the *Exoplanet Archive Application Programming Interface (API)*. Since then, a handful of tables have been transitioned to the *Table Access Protocol (TAP) service*. More tables will be transitioned to TAP and as such, this package only supports queries from TAP. For more information, you can read https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021. 
 
 ## Contributing
 
