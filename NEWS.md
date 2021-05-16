@@ -1,9 +1,14 @@
-# exoplanets (development version)
+# exoplanets 0.2.1
+
+## Breaking changes
+
+* The `progress` parameter in `exoplanets` is no longer available. It has been replaced as an option that can be set with `options`.
+
+## Minor improvements
 
 * Added `forget_exoplanets` to clear the `exoplanets` cache.
-* Added pacakge level documentation with `usethis::use_package_doc`.
+* Added package level documentation with `usethis::use_package_doc`.
 * Added `limit` parameter to `exoplanets`.
-* Removed the `progress` parameter from `exoplanets` in favor of using `options`.
 * Added `quiet` option to suppress progress and query message.
 * Cleaned up `tableinfo` to remove trailing spaces and other small improvements.
 
