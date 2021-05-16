@@ -132,12 +132,12 @@
     <span class="st">"discoverymethod"</span>
   <span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 4 x 2</span>
-<span class="co">#&gt;   database_column_name description                                                                </span>
-<span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt;                                                                      </span>
-<span class="co">#&gt; 1 pl_name              Planet name most commonly used in the literature                           </span>
-<span class="co">#&gt; 2 discoverymethod      Method by which the planet was first identified                            </span>
-<span class="co">#&gt; 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or sys…</span>
-<span class="co">#&gt; 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of J…</span></code></pre></div>
+<span class="co">#&gt;   database_column_name description                                                                     </span>
+<span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt;                                                                           </span>
+<span class="co">#&gt; 1 pl_name              Planet name most commonly used in the literature                                </span>
+<span class="co">#&gt; 2 discoverymethod      Method by which the planet was first identified                                 </span>
+<span class="co">#&gt; 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or system   </span>
+<span class="co">#&gt; 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of Jupiter</span></code></pre></div>
 <p>In general, if you have a specific set of columns you need, requesting those columns will be quicker than requesting all columns (default behavior). Let’s request only what we need.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">discovery</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/exoplanets.html">exoplanets</a></span><span class="op">(</span>
@@ -147,9 +147,17 @@
     <span class="st">"pl_orbper"</span>,
     <span class="st">"pl_massj"</span>,
     <span class="st">"discoverymethod"</span>
-  <span class="op">)</span>,
-  progress <span class="op">=</span> <span class="cn">FALSE</span>
+  <span class="op">)</span>
 <span class="op">)</span>
+<span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&amp;format=csv</span>
+<span class="co">#&gt; </span>
+<span class="co">#&gt; ── Column specification ───────────────────────────────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; cols(</span>
+<span class="co">#&gt;   pl_name = col_character(),</span>
+<span class="co">#&gt;   pl_orbper = col_double(),</span>
+<span class="co">#&gt;   pl_massj = col_double(),</span>
+<span class="co">#&gt;   discoverymethod = col_character()</span>
+<span class="co">#&gt; )</span>
 
 <span class="va">discovery</span>
 <span class="co">#&gt; # A tibble: 29,398 x 4</span>
