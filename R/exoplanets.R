@@ -1,10 +1,11 @@
-parse_url <- function(table, columns, format) {
+parse_url <- function(table, columns, limit, format) {
   if (!format %in% FORMATS) {
     stop("Expected formats are:", paste0("\n* ", FORMATS), call. = FALSE)
   }
 
   columns <- paste0(columns, collapse = ",")
-  query <- paste0("select+", columns, "+from+", table, "&format=", format)
+  q_lim <- ifelse(is.null(limit), "", paste0("+top+", limit))
+  query <- paste0("select+", columns, "+from+", table, q_lim, "&format=", format)
   url <- paste0(BASE, query)
   type <- switch (format,
     "csv" = "text/csv",
@@ -16,16 +17,17 @@ parse_url <- function(table, columns, format) {
     query = query,
     table = table,
     columns = columns,
+    limit = limit,
     format = format,
     type = type
   )
 }
 
-fetch_data <- function(table, columns, format, progress) {
-  url <- parse_url(table, columns, format)
+fetch_data <- function(table, columns, limit, format) {
+  url <- parse_url(table, columns, limit, format)
   cli::cat_bullet(BASE, cli::style_bold(url$query))
 
-  if (progress) {
+  if (getOption("exoplanets.progress")) {
     r <- httr::RETRY("GET", url$url, httr::progress())
   } else {
     r <- httr::RETRY("GET", url$url)
@@ -51,11 +53,10 @@ fetch_data <- function(table, columns, format, progress) {
 #' information, you can read
 #' \url{https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021.}
 #'
-#' @param table A table name, see `tableinfo`
-#' @param columns A vector of valid column names, by default will return all default columns, see `tableinfo`
-#' @param format Desired format, either csv, tsv, or json
-#' @param progress Whether or not to display the progress of the request
-#' @param quiet If TRUE, all messages will be silenced
+#' @param table A table name, see `tableinfo`.
+#' @param columns A vector of valid column names, by default will return all default columns, see `tableinfo`.
+#' @param limit Number of rows to return. If NULL, returns all data in the table.
+#' @param format Desired format, either csv, tsv, or json.
 #'
 #' @source \url{https://exoplanetarchive.ipac.caltech.edu/}
 #' @seealso tableinfo
@@ -71,18 +72,19 @@ fetch_data <- function(table, columns, format, progress) {
 #'   # request the planet name and discovery method from the `ps` table
 #'   exoplanets("ps", c("pl_name", "discoverymethod"))
 #'
+#'   # request the first 5 rows from the `keplernames` table
+#'   exoplanets("keplernames", limit = 5)
+#'
 #'   # request in json format (returns list)
 #'   exoplanets("ps", c("pl_name", "discoverymethod"), format = "json")
 #'
-#'   # hide progress information
-#'   exoplanets("k2names", progress = FALSE)
 #' }
 #'
 #' @export
-exoplanets <- function(table, columns = NULL, format = "csv", progress = TRUE, quiet = FALSE) {
+exoplanets <- function(table, columns = NULL, limit = NULL, format = "csv") {
   if (is.null(columns)) columns <- "*"
-  if (quiet)
-    quiet(fetch_data(table, columns, format, progress))
+  if (getOption("exoplanets.quiet"))
+    quiet(fetch_data(table, columns, limit, format))
   else
-    fetch_data(table, columns, format, progress)
+    fetch_data(table, columns, limit, format)
 }

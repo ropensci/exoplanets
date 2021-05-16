@@ -7,24 +7,16 @@
 \url{https://exoplanetarchive.ipac.caltech.edu/}
 }
 \usage{
-exoplanets(
-  table,
-  columns = NULL,
-  format = "csv",
-  progress = TRUE,
-  quiet = FALSE
-)
+exoplanets(table, columns = NULL, limit = NULL, format = "csv")
 }
 \arguments{
-\item{table}{A table name, see `tableinfo`}
+\item{table}{A table name, see `tableinfo`.}
 
-\item{columns}{A vector of valid column names, by default will return all default columns, see `tableinfo`}
+\item{columns}{A vector of valid column names, by default will return all default columns, see `tableinfo`.}
 
-\item{format}{Desired format, either csv, tsv, or json}
+\item{limit}{Number of rows to return. If NULL, returns all data in the table.}
 
-\item{progress}{Whether or not to display the progress of the request}
-
-\item{quiet}{If TRUE, all messages will be silenced}
+\item{format}{Desired format, either csv, tsv, or json.}
 }
 \value{
 A \code{data.frame} if \code{format="csv"} or \code{format="tsv"}.
@@ -50,11 +42,12 @@ if (interactive()) {
   # request the planet name and discovery method from the `ps` table
   exoplanets("ps", c("pl_name", "discoverymethod"))
 
+  # request the first 5 rows from the `keplernames` table
+  exoplanets("keplernames", limit = 5)
+
   # request in json format (returns list)
   exoplanets("ps", c("pl_name", "discoverymethod"), format = "json")
 
-  # hide progress information
-  exoplanets("k2names", progress = FALSE)
 }
 
 }

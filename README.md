@@ -48,7 +48,10 @@ table:
 ``` r
 library(exoplanets)
 
-exoplanets("k2names", progress = FALSE)
+# we will avoid printing progress in the readme
+options(exoplanets.progress = FALSE)
+
+exoplanets("k2names")
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&format=csv
 #> # A tibble: 449 x 3
 #>    epic_id        k2_name  pl_name     
@@ -69,7 +72,7 @@ exoplanets("k2names", progress = FALSE)
 If you wish, you can select only the columns you need:
 
 ``` r
-exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
+exoplanets("ps", c("pl_name", "hostname"))
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&format=csv
 #> 
 #> ── Column specification ────────────────────────────────────────────────────────
@@ -91,6 +94,29 @@ exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
 #>  9 HD 167042 b  HD 167042 
 #> 10 HD 210702 b  HD 210702 
 #> # … with 29,388 more rows
+```
+
+You can also specify the number of rows returned using `limit`:
+
+``` r
+exoplanets("keplernames", limit = 5)
+#> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&format=csv
+#> 
+#> ── Column specification ────────────────────────────────────────────────────────
+#> cols(
+#>   kepid = col_double(),
+#>   koi_name = col_character(),
+#>   kepler_name = col_character(),
+#>   pl_name = col_character()
+#> )
+#> # A tibble: 5 x 4
+#>     kepid koi_name  kepler_name   pl_name      
+#>     <dbl> <chr>     <chr>         <chr>        
+#> 1 7515212 K00679.02 Kepler-212 b  Kepler-212 b 
+#> 2 8210018 K02762.01 Kepler-1341 b Kepler-1341 b
+#> 3 9008737 K02768.01 Kepler-404 b  Kepler-404 b 
+#> 4 4833421 K00232.05 Kepler-122 f  Kepler-122 f 
+#> 5 9963524 K00720.02 Kepler-221 d  Kepler-221 d
 ```
 
 Information on the tables and columns available can be found with:
