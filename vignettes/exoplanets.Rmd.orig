@@ -13,6 +13,8 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "exoplanets_vignette_img-"
 )
+
+options(exoplanets.progress = FALSE)
 ```
 
 In this vignette, we will cover all functionality in `exoplanets` by recreating the discovery plot shown in the packages README file. First, we'll need to load the package.
@@ -70,8 +72,7 @@ discovery <- exoplanets(
     "pl_orbper",
     "pl_massj",
     "discoverymethod"
-  ),
-  progress = FALSE
+  )
 )
 
 discovery

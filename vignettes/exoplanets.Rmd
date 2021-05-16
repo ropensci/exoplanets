@@ -55,12 +55,12 @@ tableinfo %>%
     "discoverymethod"
   ))
 #> # A tibble: 4 x 2
-#>   database_column_name description                                                                
-#>   <chr>                <chr>                                                                      
-#> 1 pl_name              Planet name most commonly used in the literature                           
-#> 2 discoverymethod      Method by which the planet was first identified                            
-#> 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or sys…
-#> 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of J…
+#>   database_column_name description                                                                     
+#>   <chr>                <chr>                                                                           
+#> 1 pl_name              Planet name most commonly used in the literature                                
+#> 2 discoverymethod      Method by which the planet was first identified                                 
+#> 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or system   
+#> 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of Jupiter
 ```
 
 In general, if you have a specific set of columns you need, requesting those columns will be quicker than requesting all columns (default behavior). Let's request only what we need.
@@ -74,9 +74,17 @@ discovery <- exoplanets(
     "pl_orbper",
     "pl_massj",
     "discoverymethod"
-  ),
-  progress = FALSE
+  )
 )
+#> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&format=csv
+#> 
+#> ── Column specification ───────────────────────────────────────────────────────────────────────────────────
+#> cols(
+#>   pl_name = col_character(),
+#>   pl_orbper = col_double(),
+#>   pl_massj = col_double(),
+#>   discoverymethod = col_character()
+#> )
 
 discovery
 #> # A tibble: 29,398 x 4

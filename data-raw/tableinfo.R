@@ -40,4 +40,36 @@ names(tableinfo) <- tables$table
 
 tableinfo <- bind_rows(tableinfo, .id = "table")
 
+# more clean up
+tableinfo <- tableinfo %>%
+  # remove all trailing/leading whitespace
+  mutate(across(
+    .cols = where(is.character),
+    .fns = stringr::str_squish
+  )) %>%
+  # replace all empty character values with NA
+  mutate(across(
+    .cols = where(is.character),
+    .fns = dplyr::na_if,
+    ""
+  )) %>%
+  # if "X" return TRUE
+  mutate(across(
+    .cols = starts_with("in_ps"),
+    .fns = ~ ifelse(
+      test = .x == "X",
+      yes = TRUE,
+      no = .x
+    )
+  )) %>%
+  # if NA return FALSE
+  mutate(across(
+    .cols = starts_with("in_ps"),
+    .fns = ~ ifelse(
+      test = is.na(.x),
+      yes = FALSE,
+      no = .x
+    )
+  ))
+
 usethis::use_data(tableinfo, overwrite = TRUE)
