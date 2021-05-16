@@ -48,7 +48,10 @@ table:
 ``` r
 library(exoplanets)
 
-exoplanets("k2names", progress = FALSE)
+# we will avoid printing progress in the readme
+options(exoplanets.progress = FALSE)
+
+exoplanets("k2names")
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&format=csv
 #> # A tibble: 449 x 3
 #>    epic_id        k2_name  pl_name     
@@ -69,7 +72,7 @@ exoplanets("k2names", progress = FALSE)
 If you wish, you can select only the columns you need:
 
 ``` r
-exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
+exoplanets("ps", c("pl_name", "hostname"))
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&format=csv
 #> 
 #> ── Column specification ────────────────────────────────────────────────────────
@@ -96,7 +99,7 @@ exoplanets("ps", c("pl_name", "hostname"), progress = FALSE)
 You can also specify the number of rows returned using `limit`:
 
 ``` r
-exoplanets("keplernames", limit = 5, progress = FALSE)
+exoplanets("keplernames", limit = 5)
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&format=csv
 #> 
 #> ── Column specification ────────────────────────────────────────────────────────

@@ -7,13 +7,7 @@
 \url{https://exoplanetarchive.ipac.caltech.edu/}
 }
 \usage{
-exoplanets(
-  table,
-  columns = NULL,
-  limit = NULL,
-  format = "csv",
-  progress = TRUE
-)
+exoplanets(table, columns = NULL, limit = NULL, format = "csv")
 }
 \arguments{
 \item{table}{A table name, see `tableinfo`.}
@@ -23,8 +17,6 @@ exoplanets(
 \item{limit}{Number of rows to return. If NULL, returns all data in the table.}
 
 \item{format}{Desired format, either csv, tsv, or json.}
-
-\item{progress}{Whether or not to display the progress of the request.}
 }
 \value{
 A \code{data.frame} if \code{format="csv"} or \code{format="tsv"}.
@@ -56,8 +48,6 @@ if (interactive()) {
   # request in json format (returns list)
   exoplanets("ps", c("pl_name", "discoverymethod"), format = "json")
 
-  # hide progress information
-  exoplanets("k2names", progress = FALSE)
 }
 
 }
