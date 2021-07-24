@@ -24,7 +24,7 @@ knitr::opts_chunk$set(
 
 The goal of exoplanets is to provide access to [NASA's Exoplanet Archive TAP Service](https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html). The functionality of this package is minimal and is simply an R interface to access exoplanet data.
 
-```{r, echo=FALSE, message=FALSE, dpi=300, fig.height=4, fig.alt="Exoplanets color coded by discovery method"}
+```{r graphic, echo=FALSE, message=FALSE, dpi=300, fig.height=4, fig.alt="Exoplanets color coded by discovery method"}
 # library(ggplot2)
 # library(tidyr)
 # library(dplyr)
@@ -109,27 +109,29 @@ This is a basic example which shows you how to access data from the [k2names](ht
 ```{r example, message=FALSE}
 library(exoplanets)
 
-# we will avoid printing progress in the readme
-options(exoplanets.progress = FALSE)
+options(
+  exoplanets.progress = FALSE, # hide progress
+  readr.show_types = FALSE     # hide col spec, requires readr 2.0.0 >=
+)
 
 exoplanets("k2names")
 ```
 
 If you wish, you can select only the columns you need: 
 
-```{r}
+```{r ps example}
 exoplanets("ps", c("pl_name", "hostname"))
 ```
 
 You can also specify the number of rows returned using `limit`:
 
-```{r}
+```{r keplernames example}
 exoplanets("keplernames", limit = 5)
 ```
 
 Information on the tables and columns available can be found with:
 
-```{r}
+```{r tableinfo examples}
 tableinfo
 ```
 

@@ -16,22 +16,30 @@ tables <- r %>%
 
 links <- r %>%
   html_nodes("a") %>%
-  html_attr("href")
+  html_attr("href") %>%
+  grep(".html$", ., value = TRUE)
 
-tables$link <- paste0("https://exoplanetarchive.ipac.caltech.edu", links)
+tables$link <- c(
+  paste0("https://exoplanetarchive.ipac.caltech.edu", links),
+  NA_character_ # for object_aliases, there is not documentation/defintions
+)
 
 get_table_info <- function(link) {
-  link %>%
-    read_html() %>%
-    html_table() %>%
-    map(clean_names) %>%
-    bind_rows() %>%
-    mutate_if(is.character, str_squish) %>%
-    mutate(default = case_when(
-      str_detect(database_column_name, "†") ~ TRUE,
-      TRUE ~ FALSE
-    )) %>%
-    mutate(database_column_name = str_remove(database_column_name, "†"))
+  has_link <- !is.na(link)
+
+  if (has_link) {
+    link %>%
+      read_html() %>%
+      html_table() %>%
+      map(clean_names) %>%
+      bind_rows() %>%
+      mutate_if(is.character, str_squish) %>%
+      mutate(default = case_when(
+        str_detect(database_column_name, "†") ~ TRUE,
+        TRUE ~ FALSE
+      )) %>%
+      mutate(database_column_name = str_remove(database_column_name, "†"))
+  }
 }
 
 tableinfo <- lapply(tables$link, get_table_info)

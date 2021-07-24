@@ -48,8 +48,10 @@ table:
 ``` r
 library(exoplanets)
 
-# we will avoid printing progress in the readme
-options(exoplanets.progress = FALSE)
+options(
+  exoplanets.progress = FALSE, # hide progress
+  readr.show_types = FALSE     # hide col spec, requires readr 2.0.0 >=
+)
 
 exoplanets("k2names")
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&format=csv
@@ -58,14 +60,14 @@ exoplanets("k2names")
 #>    <chr>          <chr>    <chr>       
 #>  1 EPIC 246199087 K2-112 f TRAPPIST-1 f
 #>  2 EPIC 246199087 K2-112 h TRAPPIST-1 h
-#>  3 EPIC 220383386 K2-96 d  HD 3167 d   
-#>  4 EPIC 211331236 K2-117 c K2-117 c    
-#>  5 EPIC 212398486 K2-125 b K2-125 b    
-#>  6 EPIC 217941732 K2-130 b K2-130 b    
-#>  7 EPIC 228754001 K2-132 b K2-132 b    
-#>  8 EPIC 247887989 K2-133 d K2-133 d    
-#>  9 EPIC 246389858 K2-135 b GJ 9827 b   
-#> 10 EPIC 247589423 K2-136 b K2-136 b    
+#>  3 EPIC 211331236 K2-117 c K2-117 c    
+#>  4 EPIC 212398486 K2-125 b K2-125 b    
+#>  5 EPIC 217941732 K2-130 b K2-130 b    
+#>  6 EPIC 228754001 K2-132 b K2-132 b    
+#>  7 EPIC 247887989 K2-133 d K2-133 d    
+#>  8 EPIC 247589423 K2-136 b K2-136 b    
+#>  9 EPIC 247589423 K2-136 d K2-136 d    
+#> 10 EPIC 201912552 K2-18 c  K2-18 c     
 #> # … with 439 more rows
 ```
 
@@ -74,13 +76,7 @@ If you wish, you can select only the columns you need:
 ``` r
 exoplanets("ps", c("pl_name", "hostname"))
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&format=csv
-#> 
-#> ── Column specification ────────────────────────────────────────────────────────
-#> cols(
-#>   pl_name = col_character(),
-#>   hostname = col_character()
-#> )
-#> # A tibble: 29,398 x 2
+#> # A tibble: 29,683 x 2
 #>    pl_name      hostname  
 #>    <chr>        <chr>     
 #>  1 Kepler-11 c  Kepler-11 
@@ -89,11 +85,11 @@ exoplanets("ps", c("pl_name", "hostname"))
 #>  4 OGLE-TR-10 b OGLE-TR-10
 #>  5 TrES-2 b     TrES-2    
 #>  6 WASP-3 b     WASP-3    
-#>  7 47 UMa b     47 UMa    
-#>  8 47 UMa d     47 UMa    
-#>  9 HD 167042 b  HD 167042 
-#> 10 HD 210702 b  HD 210702 
-#> # … with 29,388 more rows
+#>  7 HD 210702 b  HD 210702 
+#>  8 BD-08 2823 b BD-08 2823
+#>  9 BD-08 2823 c BD-08 2823
+#> 10 HAT-P-30 b   HAT-P-30  
+#> # … with 29,673 more rows
 ```
 
 You can also specify the number of rows returned using `limit`:
@@ -101,14 +97,6 @@ You can also specify the number of rows returned using `limit`:
 ``` r
 exoplanets("keplernames", limit = 5)
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&format=csv
-#> 
-#> ── Column specification ────────────────────────────────────────────────────────
-#> cols(
-#>   kepid = col_double(),
-#>   koi_name = col_character(),
-#>   kepler_name = col_character(),
-#>   pl_name = col_character()
-#> )
 #> # A tibble: 5 x 4
 #>     kepid koi_name  kepler_name   pl_name      
 #>     <dbl> <chr>     <chr>         <chr>        
@@ -123,7 +111,7 @@ Information on the tables and columns available can be found with:
 
 ``` r
 tableinfo
-#> # A tibble: 394 x 13
+#> # A tibble: 546 x 13
 #>    table database_column_… table_label description  in_ps_table in_ps_comp_pars…
 #>    <chr> <chr>             <chr>       <chr>        <lgl>       <lgl>           
 #>  1 ps    default_flag      Default Pa… Boolean fla… TRUE        FALSE           
@@ -136,7 +124,7 @@ tableinfo
 #>  8 ps    hip_name          HIP ID      Name of the… TRUE        TRUE            
 #>  9 ps    tic_id            TIC ID      Name of the… TRUE        TRUE            
 #> 10 ps    gaia_id           GAIA ID     Name of the… TRUE        TRUE            
-#> # … with 384 more rows, and 7 more variables:
+#> # … with 536 more rows, and 7 more variables:
 #> #   uncertainties_column_positive_negative <chr>, limit_column <chr>,
 #> #   default <lgl>, notes <chr>, displayed_string_name <chr>, flag_column <lgl>,
 #> #   number_of_measurements <lgl>

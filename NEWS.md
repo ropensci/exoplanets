@@ -1,4 +1,6 @@
-# exoplanets (development version)
+# exoplanets 0.2.2
+
+* `tableinfo` has been updated to include additional tables.
 
 # exoplanets 0.2.1
 

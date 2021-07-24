@@ -55,12 +55,12 @@ tableinfo %>%
     "discoverymethod"
   ))
 #> # A tibble: 4 x 2
-#>   database_column_name description                                                                     
-#>   <chr>                <chr>                                                                           
-#> 1 pl_name              Planet name most commonly used in the literature                                
-#> 2 discoverymethod      Method by which the planet was first identified                                 
-#> 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or system   
-#> 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of Jupiter
+#>   database_column_name description                                                          
+#>   <chr>                <chr>                                                                
+#> 1 pl_name              Planet name most commonly used in the literature                     
+#> 2 discoverymethod      Method by which the planet was first identified                      
+#> 3 pl_orbper            Time the planet takes to make a complete orbit around the host star …
+#> 4 pl_massj             Amount of matter contained in the planet, measured in units of masse…
 ```
 
 In general, if you have a specific set of columns you need, requesting those columns will be quicker than requesting all columns (default behavior). Let's request only what we need.
@@ -77,17 +77,17 @@ discovery <- exoplanets(
   )
 )
 #> • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&format=csv
+#> Rows: 29683 Columns: 4
+#> ── Column specification ────────────────────────────────────────────────────────────────────
+#> Delimiter: ","
+#> chr (2): pl_name, discoverymethod
+#> dbl (2): pl_orbper, pl_massj
 #> 
-#> ── Column specification ───────────────────────────────────────────────────────────────────────────────────
-#> cols(
-#>   pl_name = col_character(),
-#>   pl_orbper = col_double(),
-#>   pl_massj = col_double(),
-#>   discoverymethod = col_character()
-#> )
+#> ℹ Use `spec()` to retrieve the full column specification for this data.
+#> ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 
 discovery
-#> # A tibble: 29,398 x 4
+#> # A tibble: 29,683 x 4
 #>    pl_name      pl_orbper pl_massj discoverymethod
 #>    <chr>            <dbl>    <dbl> <chr>          
 #>  1 Kepler-11 c      13.0     0.042 Transit        
@@ -96,11 +96,11 @@ discovery
 #>  4 OGLE-TR-10 b      3.10    0.62  Transit        
 #>  5 TrES-2 b          2.47    1.20  Transit        
 #>  6 WASP-3 b          1.85    1.76  Transit        
-#>  7 47 UMa b       1078      NA     Radial Velocity
-#>  8 47 UMa d      14002      NA     Radial Velocity
-#>  9 HD 167042 b     421.     NA     Radial Velocity
-#> 10 HD 210702 b     354.     NA     Radial Velocity
-#> # … with 29,388 more rows
+#>  7 HD 210702 b     354.     NA     Radial Velocity
+#>  8 BD-08 2823 b      5.6    NA     Radial Velocity
+#>  9 BD-08 2823 c    238.     NA     Radial Velocity
+#> 10 HAT-P-30 b        2.81    0.711 Transit        
+#> # … with 29,673 more rows
 ```
 
 Finally, we can recreate the plot.

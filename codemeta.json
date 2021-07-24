@@ -10,13 +10,13 @@
   "codeRepository": "https://github.com/ropensci/exoplanets",
   "issueTracker": "https://github.com/ropensci/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.0.5 (2021-03-31)",
+  "runtimePlatform": "R version 4.1.0 (2021-05-18)",
   "author": [
     {
       "@type": "Person",
@@ -217,7 +217,7 @@
     }
   ],
   "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
-  "fileSize": "8103.929KB",
+  "fileSize": "5878.496KB",
   "contIntegration": "https://codecov.io/gh/ropensci/exoplanets?branch=master",
   "keywords": [
     "rstats",
