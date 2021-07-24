@@ -82,7 +82,7 @@ descriptions are provided." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">exoplanets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -140,31 +140,31 @@ descriptions are provided.</p>
 
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 394 rows and 13 columns.</p>
+    <p>An object of class <code>tbl_df</code> (inherits from <code>tbl</code>, <code>data.frame</code>) with 546 rows and 13 columns.</p>
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
     <p><a href='https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html'>https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html</a></p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='va'>tableinfo</span>
-</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 394 x 13</span><span>
+</div><div class='output co'>#&gt; <span style='color: #949494;'># A tibble: 546 × 13</span>
 #&gt;    table database_column_… table_label description  in_ps_table in_ps_comp_pars…
-#&gt;    </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span> </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>             </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;chr&gt;</span><span>        </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>       </span><span style='color: #949494;font-style: italic;'>&lt;lgl&gt;</span><span>           
-#&gt; </span><span style='color: #BCBCBC;'> 1</span><span> ps    default_flag      Default Pa… Boolean fla… TRUE        FALSE           
-#&gt; </span><span style='color: #BCBCBC;'> 2</span><span> ps    soltype           Solution T… Disposition… TRUE        FALSE           
-#&gt; </span><span style='color: #BCBCBC;'> 3</span><span> ps    pl_controv_flag   Controvers… Flag indica… TRUE        TRUE            
-#&gt; </span><span style='color: #BCBCBC;'> 4</span><span> ps    pl_name           Planet Name Planet name… TRUE        TRUE            
-#&gt; </span><span style='color: #BCBCBC;'> 5</span><span> ps    hostname          Host Name   Stellar nam… TRUE        TRUE            
-#&gt; </span><span style='color: #BCBCBC;'> 6</span><span> ps    pl_letter         Planet Let… Letter assi… TRUE        TRUE            
-#&gt; </span><span style='color: #BCBCBC;'> 7</span><span> ps    hd_name           HD ID       Name of the… TRUE        TRUE            
-#&gt; </span><span style='color: #BCBCBC;'> 8</span><span> ps    hip_name          HIP ID      Name of the… TRUE        TRUE            
-#&gt; </span><span style='color: #BCBCBC;'> 9</span><span> ps    tic_id            TIC ID      Name of the… TRUE        TRUE            
-#&gt; </span><span style='color: #BCBCBC;'>10</span><span> ps    gaia_id           GAIA ID     Name of the… TRUE        TRUE            
-#&gt; </span><span style='color: #949494;'># … with 384 more rows, and 7 more variables:</span><span>
-#&gt; </span><span style='color: #949494;'>#   uncertainties_column_positive_negative &lt;chr&gt;, limit_column &lt;chr&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   default &lt;lgl&gt;, notes &lt;chr&gt;, displayed_string_name &lt;chr&gt;, flag_column &lt;lgl&gt;,</span><span>
-#&gt; </span><span style='color: #949494;'>#   number_of_measurements &lt;lgl&gt;</span><span></div><div class='input'>
-</div></span></pre>
+#&gt;    <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span> <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>             <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;chr&gt;</span>        <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>       <span style='color: #949494; font-style: italic;'>&lt;lgl&gt;</span>           
+#&gt; <span style='color: #BCBCBC;'> 1</span> ps    default_flag      Default Pa… Boolean fla… TRUE        FALSE           
+#&gt; <span style='color: #BCBCBC;'> 2</span> ps    soltype           Solution T… Disposition… TRUE        FALSE           
+#&gt; <span style='color: #BCBCBC;'> 3</span> ps    pl_controv_flag   Controvers… Flag indica… TRUE        TRUE            
+#&gt; <span style='color: #BCBCBC;'> 4</span> ps    pl_name           Planet Name Planet name… TRUE        TRUE            
+#&gt; <span style='color: #BCBCBC;'> 5</span> ps    hostname          Host Name   Stellar nam… TRUE        TRUE            
+#&gt; <span style='color: #BCBCBC;'> 6</span> ps    pl_letter         Planet Let… Letter assi… TRUE        TRUE            
+#&gt; <span style='color: #BCBCBC;'> 7</span> ps    hd_name           HD ID       Name of the… TRUE        TRUE            
+#&gt; <span style='color: #BCBCBC;'> 8</span> ps    hip_name          HIP ID      Name of the… TRUE        TRUE            
+#&gt; <span style='color: #BCBCBC;'> 9</span> ps    tic_id            TIC ID      Name of the… TRUE        TRUE            
+#&gt; <span style='color: #BCBCBC;'>10</span> ps    gaia_id           GAIA ID     Name of the… TRUE        TRUE            
+#&gt; <span style='color: #949494;'># … with 536 more rows, and 7 more variables:</span>
+#&gt; <span style='color: #949494;'>#   uncertainties_column_positive_negative &lt;chr&gt;, limit_column &lt;chr&gt;,</span>
+#&gt; <span style='color: #949494;'>#   default &lt;lgl&gt;, notes &lt;chr&gt;, displayed_string_name &lt;chr&gt;, flag_column &lt;lgl&gt;,</span>
+#&gt; <span style='color: #949494;'>#   number_of_measurements &lt;lgl&gt;</span></div><div class='input'>
+</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

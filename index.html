@@ -41,7 +41,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">exoplanets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -108,8 +108,10 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/exoplanets/">exoplanets</a></span><span class="op">)</span>
 
-<span class="co"># we will avoid printing progress in the readme</span>
-<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>exoplanets.progress <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>
+  exoplanets.progress <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># hide progress</span>
+  readr.show_types <span class="op">=</span> <span class="cn">FALSE</span>     <span class="co"># hide col spec, requires readr 2.0.0 &gt;=</span>
+<span class="op">)</span>
 
 <span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"k2names"</span><span class="op">)</span>
 <span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&amp;format=csv</span>
@@ -118,26 +120,20 @@
 <span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       </span>
 <span class="co">#&gt;  1 EPIC 246199087 K2-112 f TRAPPIST-1 f</span>
 <span class="co">#&gt;  2 EPIC 246199087 K2-112 h TRAPPIST-1 h</span>
-<span class="co">#&gt;  3 EPIC 220383386 K2-96 d  HD 3167 d   </span>
-<span class="co">#&gt;  4 EPIC 211331236 K2-117 c K2-117 c    </span>
-<span class="co">#&gt;  5 EPIC 212398486 K2-125 b K2-125 b    </span>
-<span class="co">#&gt;  6 EPIC 217941732 K2-130 b K2-130 b    </span>
-<span class="co">#&gt;  7 EPIC 228754001 K2-132 b K2-132 b    </span>
-<span class="co">#&gt;  8 EPIC 247887989 K2-133 d K2-133 d    </span>
-<span class="co">#&gt;  9 EPIC 246389858 K2-135 b GJ 9827 b   </span>
-<span class="co">#&gt; 10 EPIC 247589423 K2-136 b K2-136 b    </span>
+<span class="co">#&gt;  3 EPIC 211331236 K2-117 c K2-117 c    </span>
+<span class="co">#&gt;  4 EPIC 212398486 K2-125 b K2-125 b    </span>
+<span class="co">#&gt;  5 EPIC 217941732 K2-130 b K2-130 b    </span>
+<span class="co">#&gt;  6 EPIC 228754001 K2-132 b K2-132 b    </span>
+<span class="co">#&gt;  7 EPIC 247887989 K2-133 d K2-133 d    </span>
+<span class="co">#&gt;  8 EPIC 247589423 K2-136 b K2-136 b    </span>
+<span class="co">#&gt;  9 EPIC 247589423 K2-136 d K2-136 d    </span>
+<span class="co">#&gt; 10 EPIC 201912552 K2-18 c  K2-18 c     </span>
 <span class="co">#&gt; # … with 439 more rows</span></code></pre></div>
 <p>If you wish, you can select only the columns you need:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"ps"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"pl_name"</span>, <span class="st">"hostname"</span><span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&amp;format=csv</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; cols(</span>
-<span class="co">#&gt;   pl_name = col_character(),</span>
-<span class="co">#&gt;   hostname = col_character()</span>
-<span class="co">#&gt; )</span>
-<span class="co">#&gt; # A tibble: 29,398 x 2</span>
+<span class="co">#&gt; # A tibble: 29,683 x 2</span>
 <span class="co">#&gt;    pl_name      hostname  </span>
 <span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;     </span>
 <span class="co">#&gt;  1 Kepler-11 c  Kepler-11 </span>
@@ -146,23 +142,15 @@
 <span class="co">#&gt;  4 OGLE-TR-10 b OGLE-TR-10</span>
 <span class="co">#&gt;  5 TrES-2 b     TrES-2    </span>
 <span class="co">#&gt;  6 WASP-3 b     WASP-3    </span>
-<span class="co">#&gt;  7 47 UMa b     47 UMa    </span>
-<span class="co">#&gt;  8 47 UMa d     47 UMa    </span>
-<span class="co">#&gt;  9 HD 167042 b  HD 167042 </span>
-<span class="co">#&gt; 10 HD 210702 b  HD 210702 </span>
-<span class="co">#&gt; # … with 29,388 more rows</span></code></pre></div>
+<span class="co">#&gt;  7 HD 210702 b  HD 210702 </span>
+<span class="co">#&gt;  8 BD-08 2823 b BD-08 2823</span>
+<span class="co">#&gt;  9 BD-08 2823 c BD-08 2823</span>
+<span class="co">#&gt; 10 HAT-P-30 b   HAT-P-30  </span>
+<span class="co">#&gt; # … with 29,673 more rows</span></code></pre></div>
 <p>You can also specify the number of rows returned using <code>limit</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"keplernames"</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
 <span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&amp;format=csv</span>
-<span class="co">#&gt; </span>
-<span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; cols(</span>
-<span class="co">#&gt;   kepid = col_double(),</span>
-<span class="co">#&gt;   koi_name = col_character(),</span>
-<span class="co">#&gt;   kepler_name = col_character(),</span>
-<span class="co">#&gt;   pl_name = col_character()</span>
-<span class="co">#&gt; )</span>
 <span class="co">#&gt; # A tibble: 5 x 4</span>
 <span class="co">#&gt;     kepid koi_name  kepler_name   pl_name      </span>
 <span class="co">#&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;        </span>
@@ -174,7 +162,7 @@
 <p>Information on the tables and columns available can be found with:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">tableinfo</span>
-<span class="co">#&gt; # A tibble: 394 x 13</span>
+<span class="co">#&gt; # A tibble: 546 x 13</span>
 <span class="co">#&gt;    table database_column_… table_label description  in_ps_table in_ps_comp_pars…</span>
 <span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;       &lt;chr&gt;        &lt;lgl&gt;       &lt;lgl&gt;           </span>
 <span class="co">#&gt;  1 ps    default_flag      Default Pa… Boolean fla… TRUE        FALSE           </span>
@@ -187,7 +175,7 @@
 <span class="co">#&gt;  8 ps    hip_name          HIP ID      Name of the… TRUE        TRUE            </span>
 <span class="co">#&gt;  9 ps    tic_id            TIC ID      Name of the… TRUE        TRUE            </span>
 <span class="co">#&gt; 10 ps    gaia_id           GAIA ID     Name of the… TRUE        TRUE            </span>
-<span class="co">#&gt; # … with 384 more rows, and 7 more variables:</span>
+<span class="co">#&gt; # … with 536 more rows, and 7 more variables:</span>
 <span class="co">#&gt; #   uncertainties_column_positive_negative &lt;chr&gt;, limit_column &lt;chr&gt;,</span>
 <span class="co">#&gt; #   default &lt;lgl&gt;, notes &lt;chr&gt;, displayed_string_name &lt;chr&gt;, flag_column &lt;lgl&gt;,</span>
 <span class="co">#&gt; #   number_of_measurements &lt;lgl&gt;</span></code></pre></div>

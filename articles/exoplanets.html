@@ -38,7 +38,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">exoplanets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.1.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2</span>
       </span>
     </div>
 
@@ -132,12 +132,12 @@
     <span class="st">"discoverymethod"</span>
   <span class="op">)</span><span class="op">)</span>
 <span class="co">#&gt; # A tibble: 4 x 2</span>
-<span class="co">#&gt;   database_column_name description                                                                     </span>
-<span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt;                                                                           </span>
-<span class="co">#&gt; 1 pl_name              Planet name most commonly used in the literature                                </span>
-<span class="co">#&gt; 2 discoverymethod      Method by which the planet was first identified                                 </span>
-<span class="co">#&gt; 3 pl_orbper            Time the planet takes to make a complete orbit around the host star or system   </span>
-<span class="co">#&gt; 4 pl_massj             Amount of matter contained in the planet, measured in units of masses of Jupiter</span></code></pre></div>
+<span class="co">#&gt;   database_column_name description                                                          </span>
+<span class="co">#&gt;   &lt;chr&gt;                &lt;chr&gt;                                                                </span>
+<span class="co">#&gt; 1 pl_name              Planet name most commonly used in the literature                     </span>
+<span class="co">#&gt; 2 discoverymethod      Method by which the planet was first identified                      </span>
+<span class="co">#&gt; 3 pl_orbper            Time the planet takes to make a complete orbit around the host star …</span>
+<span class="co">#&gt; 4 pl_massj             Amount of matter contained in the planet, measured in units of masse…</span></code></pre></div>
 <p>In general, if you have a specific set of columns you need, requesting those columns will be quicker than requesting all columns (default behavior). Let’s request only what we need.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">discovery</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/exoplanets.html">exoplanets</a></span><span class="op">(</span>
@@ -150,17 +150,17 @@
   <span class="op">)</span>
 <span class="op">)</span>
 <span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,pl_orbper,pl_massj,discoverymethod+from+ps&amp;format=csv</span>
+<span class="co">#&gt; Rows: 29683 Columns: 4</span>
+<span class="co">#&gt; ── Column specification ────────────────────────────────────────────────────────────────────</span>
+<span class="co">#&gt; Delimiter: ","</span>
+<span class="co">#&gt; chr (2): pl_name, discoverymethod</span>
+<span class="co">#&gt; dbl (2): pl_orbper, pl_massj</span>
 <span class="co">#&gt; </span>
-<span class="co">#&gt; ── Column specification ───────────────────────────────────────────────────────────────────────────────────</span>
-<span class="co">#&gt; cols(</span>
-<span class="co">#&gt;   pl_name = col_character(),</span>
-<span class="co">#&gt;   pl_orbper = col_double(),</span>
-<span class="co">#&gt;   pl_massj = col_double(),</span>
-<span class="co">#&gt;   discoverymethod = col_character()</span>
-<span class="co">#&gt; )</span>
+<span class="co">#&gt; ℹ Use `spec()` to retrieve the full column specification for this data.</span>
+<span class="co">#&gt; ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</span>
 
 <span class="va">discovery</span>
-<span class="co">#&gt; # A tibble: 29,398 x 4</span>
+<span class="co">#&gt; # A tibble: 29,683 x 4</span>
 <span class="co">#&gt;    pl_name      pl_orbper pl_massj discoverymethod</span>
 <span class="co">#&gt;    &lt;chr&gt;            &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;          </span>
 <span class="co">#&gt;  1 Kepler-11 c      13.0     0.042 Transit        </span>
@@ -169,11 +169,11 @@
 <span class="co">#&gt;  4 OGLE-TR-10 b      3.10    0.62  Transit        </span>
 <span class="co">#&gt;  5 TrES-2 b          2.47    1.20  Transit        </span>
 <span class="co">#&gt;  6 WASP-3 b          1.85    1.76  Transit        </span>
-<span class="co">#&gt;  7 47 UMa b       1078      NA     Radial Velocity</span>
-<span class="co">#&gt;  8 47 UMa d      14002      NA     Radial Velocity</span>
-<span class="co">#&gt;  9 HD 167042 b     421.     NA     Radial Velocity</span>
-<span class="co">#&gt; 10 HD 210702 b     354.     NA     Radial Velocity</span>
-<span class="co">#&gt; # … with 29,388 more rows</span></code></pre></div>
+<span class="co">#&gt;  7 HD 210702 b     354.     NA     Radial Velocity</span>
+<span class="co">#&gt;  8 BD-08 2823 b      5.6    NA     Radial Velocity</span>
+<span class="co">#&gt;  9 BD-08 2823 c    238.     NA     Radial Velocity</span>
+<span class="co">#&gt; 10 HAT-P-30 b        2.81    0.711 Transit        </span>
+<span class="co">#&gt; # … with 29,673 more rows</span></code></pre></div>
 <p>Finally, we can recreate the plot.</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">cols_vec</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"#86E57B"</span>, <span class="st">"#77AFD7"</span>, <span class="st">"#DCD955"</span>, <span class="st">"#CFD49C"</span>, <span class="st">"#D5CCD1"</span>, <span class="st">"#84DECA"</span>, <span class="st">"#E15AB9"</span>, <span class="st">"#D4816C"</span>, <span class="st">"#BA91D1"</span>, <span class="st">"#A152DF"</span><span class="op">)</span>
