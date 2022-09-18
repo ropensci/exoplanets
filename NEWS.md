@@ -1,4 +1,4 @@
-# exoplanets (development version)
+# exoplanets 0.2.3
 
 # exoplanets 0.2.2
 

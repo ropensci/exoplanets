@@ -1,6 +1,6 @@
 Package: exoplanets
 Title: Access NASA's Exoplanet Archive Data
-Version: 0.2.2.9000
+Version: 0.2.3
 Authors@R: c(
   person("Tyler", "Littlefield", email = "tylerlittlefield@hey.com", role = c("aut", "cre"), comment = c(ORCID = "0000-0002-6020-1125")),
   person("Maëlle", "Salmon", role = c("ctb", "rev")),
