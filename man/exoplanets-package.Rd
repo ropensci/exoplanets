@@ -6,12 +6,9 @@
 \alias{_PACKAGE}
 \title{exoplanets: Access NASA's Exoplanet Archive Data}
 \description{
-\if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
+\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
 
-The goal of exoplanets is to provide access to
-    NASA's Exoplanet Archive TAP Service. For more information regarding
-    the API please read the documentation
-    <https://exoplanetarchive.ipac.caltech.edu/index.html>.
+The goal of exoplanets is to provide access to NASA's Exoplanet Archive TAP Service. For more information regarding the API please read the documentation \url{https://exoplanetarchive.ipac.caltech.edu/index.html}.
 }
 \seealso{
 Useful links:
