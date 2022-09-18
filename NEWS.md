@@ -1,5 +1,7 @@
 # exoplanets 0.2.3
 
+* Fix HTML5 issue.
+
 # exoplanets 0.2.2
 
 * `tableinfo` has been updated to include additional tables.
