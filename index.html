@@ -29,6 +29,8 @@
 <![endif]-->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -41,18 +43,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">exoplanets</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.2.2.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.2.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="articles/exoplanets.html">Get started</a>
 </li>
@@ -65,7 +61,7 @@
       </ul>
 <ul class="nav navbar-nav navbar-right">
 <li>
-  <a href="https://github.com/ropensci/exoplanets/">
+  <a href="https://github.com/ropensci/exoplanets/" class="external-link">
     <span class="fab fa-github fa-lg"></span>
      
   </a>
@@ -82,170 +78,178 @@
 
       </header><div class="row">
   <div class="contents col-md-9">
-<div id="exoplanets-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#exoplanets-" class="anchor"></a>exoplanets <img src="reference/figures/logo.png" align="right" height="150/">
+<div class="section level1">
+<div class="page-header"><h1 id="exoplanets-">exoplanets <img src="reference/figures/logo.png" align="right" height="150/"><a class="anchor" aria-label="anchor" href="#exoplanets-"></a>
 </h1></div>
 <!-- badges: start -->
-
-<p>The goal of exoplanets is to provide access to <a href="https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html">NASA’s Exoplanet Archive TAP Service</a>. The functionality of this package is minimal and is simply an R interface to access exoplanet data.</p>
+<p>The goal of exoplanets is to provide access to <a href="https://exoplanetarchive.ipac.caltech.edu/docs/TAP/usingTAP.html" class="external-link">NASA’s Exoplanet Archive TAP Service</a>. The functionality of this package is minimal and is simply an R interface to access exoplanet data.</p>
 <p><img src="reference/figures/README-unnamed-chunk-2-1.png" title="Exoplanets color coded by discovery method" alt="Exoplanets color coded by discovery method" width="100%"></p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>Install the released version of <code>exoplanets</code> from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html">install.packages</a></span><span class="op">(</span><span class="st">"exoplanets"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"exoplanets"</span><span class="op">)</span></span></code></pre></div>
 <p>Or you can install from GitHub with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># install.packages("devtools")</span>
-<span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ropensci/exoplanets"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("devtools")</span></span>
+<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"ropensci/exoplanets"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>This is a basic example which shows you how to access data from the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/API_k2names_columns.html">k2names</a> table:</p>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>This is a basic example which shows you how to access data from the <a href="https://exoplanetarchive.ipac.caltech.edu/docs/API_k2names_columns.html" class="external-link">k2names</a> table:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/exoplanets/">exoplanets</a></span><span class="op">)</span>
-
-<span class="fu"><a href="https://rdrr.io/r/base/options.html">options</a></span><span class="op">(</span>
-  exoplanets.progress <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># hide progress</span>
-  readr.show_types <span class="op">=</span> <span class="cn">FALSE</span>     <span class="co"># hide col spec, requires readr 2.0.0 &gt;=</span>
-<span class="op">)</span>
-
-<span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"k2names"</span><span class="op">)</span>
-<span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&amp;format=csv</span>
-<span class="co">#&gt; # A tibble: 449 x 3</span>
-<span class="co">#&gt;    epic_id        k2_name  pl_name     </span>
-<span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       </span>
-<span class="co">#&gt;  1 EPIC 246199087 K2-112 f TRAPPIST-1 f</span>
-<span class="co">#&gt;  2 EPIC 246199087 K2-112 h TRAPPIST-1 h</span>
-<span class="co">#&gt;  3 EPIC 211331236 K2-117 c K2-117 c    </span>
-<span class="co">#&gt;  4 EPIC 212398486 K2-125 b K2-125 b    </span>
-<span class="co">#&gt;  5 EPIC 217941732 K2-130 b K2-130 b    </span>
-<span class="co">#&gt;  6 EPIC 228754001 K2-132 b K2-132 b    </span>
-<span class="co">#&gt;  7 EPIC 247887989 K2-133 d K2-133 d    </span>
-<span class="co">#&gt;  8 EPIC 247589423 K2-136 b K2-136 b    </span>
-<span class="co">#&gt;  9 EPIC 247589423 K2-136 d K2-136 d    </span>
-<span class="co">#&gt; 10 EPIC 201912552 K2-18 c  K2-18 c     </span>
-<span class="co">#&gt; # … with 439 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://docs.ropensci.org/exoplanets/" class="external-link">exoplanets</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/options.html" class="external-link">options</a></span><span class="op">(</span></span>
+<span>  exoplanets.progress <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># hide progress</span></span>
+<span>  readr.show_types <span class="op">=</span> <span class="cn">FALSE</span>     <span class="co"># hide col spec, requires readr 2.0.0 &gt;=</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"k2names"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+k2names&amp;format=csv</span></span>
+<span><span class="co">#&gt; # A tibble: 449 x 3</span></span>
+<span><span class="co">#&gt;    epic_id        k2_name  pl_name     </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;          &lt;chr&gt;    &lt;chr&gt;       </span></span>
+<span><span class="co">#&gt;  1 EPIC 246199087 K2-112 f TRAPPIST-1 f</span></span>
+<span><span class="co">#&gt;  2 EPIC 246199087 K2-112 h TRAPPIST-1 h</span></span>
+<span><span class="co">#&gt;  3 EPIC 211331236 K2-117 c K2-117 c    </span></span>
+<span><span class="co">#&gt;  4 EPIC 212398486 K2-125 b K2-125 b    </span></span>
+<span><span class="co">#&gt;  5 EPIC 217941732 K2-130 b K2-130 b    </span></span>
+<span><span class="co">#&gt;  6 EPIC 228754001 K2-132 b K2-132 b    </span></span>
+<span><span class="co">#&gt;  7 EPIC 247887989 K2-133 d K2-133 d    </span></span>
+<span><span class="co">#&gt;  8 EPIC 247589423 K2-136 b K2-136 b    </span></span>
+<span><span class="co">#&gt;  9 EPIC 247589423 K2-136 d K2-136 d    </span></span>
+<span><span class="co">#&gt; 10 EPIC 201912552 K2-18 c  K2-18 c     </span></span>
+<span><span class="co">#&gt; # … with 439 more rows</span></span></code></pre></div>
 <p>If you wish, you can select only the columns you need:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"ps"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"pl_name"</span>, <span class="st">"hostname"</span><span class="op">)</span><span class="op">)</span>
-<span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&amp;format=csv</span>
-<span class="co">#&gt; # A tibble: 29,683 x 2</span>
-<span class="co">#&gt;    pl_name      hostname  </span>
-<span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;     </span>
-<span class="co">#&gt;  1 Kepler-11 c  Kepler-11 </span>
-<span class="co">#&gt;  2 Kepler-11 f  Kepler-11 </span>
-<span class="co">#&gt;  3 HAT-P-1 b    HAT-P-1   </span>
-<span class="co">#&gt;  4 OGLE-TR-10 b OGLE-TR-10</span>
-<span class="co">#&gt;  5 TrES-2 b     TrES-2    </span>
-<span class="co">#&gt;  6 WASP-3 b     WASP-3    </span>
-<span class="co">#&gt;  7 HD 210702 b  HD 210702 </span>
-<span class="co">#&gt;  8 BD-08 2823 b BD-08 2823</span>
-<span class="co">#&gt;  9 BD-08 2823 c BD-08 2823</span>
-<span class="co">#&gt; 10 HAT-P-30 b   HAT-P-30  </span>
-<span class="co">#&gt; # … with 29,673 more rows</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"ps"</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"pl_name"</span>, <span class="st">"hostname"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+pl_name,hostname+from+ps&amp;format=csv</span></span>
+<span><span class="co">#&gt; # A tibble: 29,683 x 2</span></span>
+<span><span class="co">#&gt;    pl_name      hostname  </span></span>
+<span><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;     </span></span>
+<span><span class="co">#&gt;  1 Kepler-11 c  Kepler-11 </span></span>
+<span><span class="co">#&gt;  2 Kepler-11 f  Kepler-11 </span></span>
+<span><span class="co">#&gt;  3 HAT-P-1 b    HAT-P-1   </span></span>
+<span><span class="co">#&gt;  4 OGLE-TR-10 b OGLE-TR-10</span></span>
+<span><span class="co">#&gt;  5 TrES-2 b     TrES-2    </span></span>
+<span><span class="co">#&gt;  6 WASP-3 b     WASP-3    </span></span>
+<span><span class="co">#&gt;  7 HD 210702 b  HD 210702 </span></span>
+<span><span class="co">#&gt;  8 BD-08 2823 b BD-08 2823</span></span>
+<span><span class="co">#&gt;  9 BD-08 2823 c BD-08 2823</span></span>
+<span><span class="co">#&gt; 10 HAT-P-30 b   HAT-P-30  </span></span>
+<span><span class="co">#&gt; # … with 29,673 more rows</span></span></code></pre></div>
 <p>You can also specify the number of rows returned using <code>limit</code>:</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"keplernames"</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span>
-<span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&amp;format=csv</span>
-<span class="co">#&gt; # A tibble: 5 x 4</span>
-<span class="co">#&gt;     kepid koi_name  kepler_name   pl_name      </span>
-<span class="co">#&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;        </span>
-<span class="co">#&gt; 1 7515212 K00679.02 Kepler-212 b  Kepler-212 b </span>
-<span class="co">#&gt; 2 8210018 K02762.01 Kepler-1341 b Kepler-1341 b</span>
-<span class="co">#&gt; 3 9008737 K02768.01 Kepler-404 b  Kepler-404 b </span>
-<span class="co">#&gt; 4 4833421 K00232.05 Kepler-122 f  Kepler-122 f </span>
-<span class="co">#&gt; 5 9963524 K00720.02 Kepler-221 d  Kepler-221 d</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="reference/exoplanets.html">exoplanets</a></span><span class="op">(</span><span class="st">"keplernames"</span>, limit <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+<span><span class="co">#&gt; • https://exoplanetarchive.ipac.caltech.edu/TAP/sync?query=select+*+from+keplernames+top+5&amp;format=csv</span></span>
+<span><span class="co">#&gt; # A tibble: 5 x 4</span></span>
+<span><span class="co">#&gt;     kepid koi_name  kepler_name   pl_name      </span></span>
+<span><span class="co">#&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;         &lt;chr&gt;        </span></span>
+<span><span class="co">#&gt; 1 7515212 K00679.02 Kepler-212 b  Kepler-212 b </span></span>
+<span><span class="co">#&gt; 2 8210018 K02762.01 Kepler-1341 b Kepler-1341 b</span></span>
+<span><span class="co">#&gt; 3 9008737 K02768.01 Kepler-404 b  Kepler-404 b </span></span>
+<span><span class="co">#&gt; 4 4833421 K00232.05 Kepler-122 f  Kepler-122 f </span></span>
+<span><span class="co">#&gt; 5 9963524 K00720.02 Kepler-221 d  Kepler-221 d</span></span></code></pre></div>
 <p>Information on the tables and columns available can be found with:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">tableinfo</span>
-<span class="co">#&gt; # A tibble: 546 x 13</span>
-<span class="co">#&gt;    table database_column_… table_label description  in_ps_table in_ps_comp_pars…</span>
-<span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;       &lt;chr&gt;        &lt;lgl&gt;       &lt;lgl&gt;           </span>
-<span class="co">#&gt;  1 ps    default_flag      Default Pa… Boolean fla… TRUE        FALSE           </span>
-<span class="co">#&gt;  2 ps    soltype           Solution T… Disposition… TRUE        FALSE           </span>
-<span class="co">#&gt;  3 ps    pl_controv_flag   Controvers… Flag indica… TRUE        TRUE            </span>
-<span class="co">#&gt;  4 ps    pl_name           Planet Name Planet name… TRUE        TRUE            </span>
-<span class="co">#&gt;  5 ps    hostname          Host Name   Stellar nam… TRUE        TRUE            </span>
-<span class="co">#&gt;  6 ps    pl_letter         Planet Let… Letter assi… TRUE        TRUE            </span>
-<span class="co">#&gt;  7 ps    hd_name           HD ID       Name of the… TRUE        TRUE            </span>
-<span class="co">#&gt;  8 ps    hip_name          HIP ID      Name of the… TRUE        TRUE            </span>
-<span class="co">#&gt;  9 ps    tic_id            TIC ID      Name of the… TRUE        TRUE            </span>
-<span class="co">#&gt; 10 ps    gaia_id           GAIA ID     Name of the… TRUE        TRUE            </span>
-<span class="co">#&gt; # … with 536 more rows, and 7 more variables:</span>
-<span class="co">#&gt; #   uncertainties_column_positive_negative &lt;chr&gt;, limit_column &lt;chr&gt;,</span>
-<span class="co">#&gt; #   default &lt;lgl&gt;, notes &lt;chr&gt;, displayed_string_name &lt;chr&gt;, flag_column &lt;lgl&gt;,</span>
-<span class="co">#&gt; #   number_of_measurements &lt;lgl&gt;</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">tableinfo</span></span>
+<span><span class="co">#&gt; # A tibble: 546 x 13</span></span>
+<span><span class="co">#&gt;    table database_column_… table_label description  in_ps_table in_ps_comp_pars…</span></span>
+<span><span class="co">#&gt;    &lt;chr&gt; &lt;chr&gt;             &lt;chr&gt;       &lt;chr&gt;        &lt;lgl&gt;       &lt;lgl&gt;           </span></span>
+<span><span class="co">#&gt;  1 ps    default_flag      Default Pa… Boolean fla… TRUE        FALSE           </span></span>
+<span><span class="co">#&gt;  2 ps    soltype           Solution T… Disposition… TRUE        FALSE           </span></span>
+<span><span class="co">#&gt;  3 ps    pl_controv_flag   Controvers… Flag indica… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt;  4 ps    pl_name           Planet Name Planet name… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt;  5 ps    hostname          Host Name   Stellar nam… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt;  6 ps    pl_letter         Planet Let… Letter assi… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt;  7 ps    hd_name           HD ID       Name of the… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt;  8 ps    hip_name          HIP ID      Name of the… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt;  9 ps    tic_id            TIC ID      Name of the… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt; 10 ps    gaia_id           GAIA ID     Name of the… TRUE        TRUE            </span></span>
+<span><span class="co">#&gt; # … with 536 more rows, and 7 more variables:</span></span>
+<span><span class="co">#&gt; #   uncertainties_column_positive_negative &lt;chr&gt;, limit_column &lt;chr&gt;,</span></span>
+<span><span class="co">#&gt; #   default &lt;lgl&gt;, notes &lt;chr&gt;, displayed_string_name &lt;chr&gt;, flag_column &lt;lgl&gt;,</span></span>
+<span><span class="co">#&gt; #   number_of_measurements &lt;lgl&gt;</span></span></code></pre></div>
 </div>
-<div id="capabilities" class="section level2">
-<h2 class="hasAnchor">
-<a href="#capabilities" class="anchor"></a>Capabilities</h2>
-<p>At one time, this package used the <em>Exoplanet Archive Application Programming Interface (API)</em>. Since then, a handful of tables have been transitioned to the <em>Table Access Protocol (TAP) service</em>. More tables will be transitioned to TAP and as such, this package only supports queries from TAP. For more information, you can read <a href="https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021" class="uri">https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021</a>.</p>
+<div class="section level2">
+<h2 id="capabilities">Capabilities<a class="anchor" aria-label="anchor" href="#capabilities"></a>
+</h2>
+<p>At one time, this package used the <em>Exoplanet Archive Application Programming Interface (API)</em>. Since then, a handful of tables have been transitioned to the <em>Table Access Protocol (TAP) service</em>. More tables will be transitioned to TAP and as such, this package only supports queries from TAP. For more information, you can read <a href="https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021" class="external-link uri">https://exoplanetarchive.ipac.caltech.edu/docs/exonews_archive.html#29April2021</a>.</p>
 </div>
-<div id="contributing" class="section level2">
-<h2 class="hasAnchor">
-<a href="#contributing" class="anchor"></a>Contributing</h2>
-<p>Please note that this package is released with a <a href="https://ropensci.org/code-of-conduct/">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+<div class="section level2">
+<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
+</h2>
+<p>Please note that this package is released with a <a href="https://ropensci.org/code-of-conduct/" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
 </div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=exoplanets">https://​cloud.r-project.org/​package=exoplanets</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/ropensci/exoplanets/">https://​github.com/​ropensci/​exoplanets/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/ropensci/exoplanets/issues">https://​github.com/​ropensci/​exoplanets/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=exoplanets" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/ropensci/exoplanets/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/ropensci/exoplanets/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Tyler Littlefield <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-6020-1125" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li><a href="authors.html">All authors...</a></li>
+<li><a href="authors.html#citation">Citing exoplanets</a></li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/ropensci/exoplanets/actions/workflows/check-pak.yaml"><img src="https://github.com/ropensci/exoplanets/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/gh/ropensci/exoplanets?branch=master"><img src="https://codecov.io/gh/ropensci/exoplanets/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
-<li><a href="https://github.com/ropensci/software-review/issues/309"><img src="https://badges.ropensci.org/309_status.svg" alt="Peer review"></a></li>
-<li><a href="https://CRAN.R-project.org/package=exoplanets"><img src="https://www.r-pkg.org/badges/version/exoplanets" alt="CRAN status"></a></li>
-<li><a href="https://cran.r-project.org/package=exoplanets"><img src="https://cranlogs.r-pkg.org/badges/exoplanets" alt="CRAN_Download_Badge"></a></li>
+<li>Tyler Littlefield <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-6020-1125" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html">More about authors...</a></li>
 </ul>
 </div>
+
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/ropensci/exoplanets/actions/workflows/check-pak.yaml" class="external-link"><img src="https://github.com/ropensci/exoplanets/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://codecov.io/gh/ropensci/exoplanets?branch=master" class="external-link"><img src="https://codecov.io/gh/ropensci/exoplanets/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/ropensci/software-review/issues/309" class="external-link"><img src="https://badges.ropensci.org/309_status.svg" alt="Peer review"></a></li>
+<li><a href="https://CRAN.R-project.org/package=exoplanets" class="external-link"><img src="https://www.r-pkg.org/badges/version/exoplanets" alt="CRAN status"></a></li>
+<li><a href="https://cran.r-project.org/package=exoplanets" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/exoplanets" alt="CRAN_Download_Badge"></a></li>
+</ul>
 </div>
+
+  </div>
 </div>
 
 
       <footer><div class="copyright">
-  <p>Developed by Tyler Littlefield.</p>
+  <p></p>
+<p>Developed by Tyler Littlefield.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
+  <p></p>
+<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer>
@@ -253,6 +257,8 @@
 
   
 
+
+  
 
   </body>
 </html>
