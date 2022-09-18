@@ -1,22 +1,26 @@
 {
-  "@context": [
-    "https://doi.org/10.5063/schema/codemeta-2.0",
-    "http://schema.org"
-  ],
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "exoplanets",
-  "description": "The goal of exoplanets is to provide access to\n    NASA's Exoplanet Archive TAP Service. For more information regarding\n    the API please read the documentation\n    <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
+  "description": "The goal of exoplanets is to provide access to NASA's Exoplanet Archive TAP Service. For more information regarding the API please read the documentation <https://exoplanetarchive.ipac.caltech.edu/index.html>.",
   "name": "exoplanets: Access NASA's Exoplanet Archive Data",
+  "relatedLink": ["https://docs.ropensci.org/exoplanets/", "https://CRAN.R-project.org/package=exoplanets"],
   "codeRepository": "https://github.com/ropensci/exoplanets",
   "issueTracker": "https://github.com/ropensci/exoplanets/issues",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.1.0 (2021-05-18)",
+  "runtimePlatform": "R version 4.2.1 (2022-06-23)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
   "author": [
     {
       "@type": "Person",
@@ -38,8 +42,6 @@
       "familyName": "Chuk"
     }
   ],
-  "copyrightHolder": {},
-  "funder": {},
   "maintainer": [
     {
       "@type": "Person",
@@ -148,14 +150,14 @@
       "sameAs": "https://CRAN.R-project.org/package=testthat"
     }
   ],
-  "softwareRequirements": [
-    {
+  "softwareRequirements": {
+    "1": {
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
       "version": ">= 2.10"
     },
-    {
+    "2": {
       "@type": "SoftwareApplication",
       "identifier": "cli",
       "name": "cli",
@@ -167,7 +169,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=cli"
     },
-    {
+    "3": {
       "@type": "SoftwareApplication",
       "identifier": "httr",
       "name": "httr",
@@ -179,7 +181,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=httr"
     },
-    {
+    "4": {
       "@type": "SoftwareApplication",
       "identifier": "memoise",
       "name": "memoise",
@@ -191,7 +193,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=memoise"
     },
-    {
+    "5": {
       "@type": "SoftwareApplication",
       "identifier": "readr",
       "name": "readr",
@@ -203,7 +205,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
     },
-    {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "tibble",
       "name": "tibble",
@@ -214,32 +216,17 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=tibble"
-    }
-  ],
-  "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
-  "fileSize": "5878.496KB",
-  "contIntegration": "https://codecov.io/gh/ropensci/exoplanets?branch=master",
-  "keywords": [
-    "rstats",
-    "nasa",
-    "exoplanets",
-    "api"
-  ],
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "5878.535KB",
   "releaseNotes": "https://github.com/ropensci/exoplanets/blob/master/NEWS.md",
-  "relatedLink": [
-    "https://docs.ropensci.org/exoplanets",
-    "https://docs.ropensci.org/exoplanets/",
-    "https://CRAN.R-project.org/package=exoplanets"
-  ],
+  "readme": "https://github.com/ropensci/exoplanets/blob/master/README.md",
+  "contIntegration": ["https://github.com/ropensci/exoplanets/actions/workflows/check-pak.yaml", "https://codecov.io/gh/ropensci/exoplanets?branch=master"],
   "review": {
     "@type": "Review",
     "url": "https://github.com/ropensci/software-review/issues/309",
     "provider": "https://ropensci.org"
   },
-  "provider": {
-    "@id": "https://cran.r-project.org",
-    "@type": "Organization",
-    "name": "Comprehensive R Archive Network (CRAN)",
-    "url": "https://cran.r-project.org"
-  }
+  "keywords": ["rstats", "nasa", "exoplanets", "api"]
 }
